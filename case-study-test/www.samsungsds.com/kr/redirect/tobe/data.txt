@@ -1,0 +1,35 @@
+{
+  "data" : [
+  {
+    "asisurl" : "/kr/gpu-server/gpu-server.html",
+    "tobeurl" : "/kr/compute-accelerated-server/accelerated-server.html"
+  },
+  {
+    "asisurl" : "/kr/event/gdc_consulting_event.html",
+    "tobeurl" : "/kr/event/gdc-consulting-event.html"
+  },
+  {
+    "asisurl" : "/kr/event/replay/chatgptenterprise_freeconsulting.html",
+    "tobeurl" : "/kr/event/replay/chatgptenterprise-freeconsulting.html"
+  },
+  {
+    "asisurl" : "/kr/event/chatgptenterprise_freeconsulting.html",
+    "tobeurl" : "/kr/event/chatgptenterprise-freeconsulting.html"
+  },
+  {
+    "asisurl" : "/kr/event/chatgptenterprise_bootcamp.html",
+    "tobeurl" : "/kr/event/chatgptenterprise-bootcamp.html"
+  },
+  {
+    "asisurl" : "/kr/event/sdsk2026_chatgptenterprise3.html",
+    "tobeurl" : "/kr/event/sdsk2026-chatgptenterprise3.html"
+  },
+  {
+    "asisurl" : "/kr/event/realtalk_may.html",
+    "tobeurl" : "/kr/event/realtalk-may.html"
+  },
+  {
+    "asisurl" : "/kr/event/ax_summit.2026.html",
+    "tobeurl" : "/kr/event/ax-summit-2026.html"
+  }]
+}

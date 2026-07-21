@@ -1,0 +1,2358 @@
+
+{
+    "data" : [{
+      "id": "1294359",
+      "success_yn": "T"
+,"success_img":"https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2026/05/27/harim-thumb_1.jpg?queryString=20260715031051"
+,"thumb_html":"<p class=\"md_txt\"><span class=\"highlight\">국내 최대 <br>AgriBiz 기업 </span><br>하림그룹 </p><div class=\"hashtag name\"><ol><li>실시간 데이터 경영 완성을 향한 ERP 혁신 여정</li></ol></div>",
+      "idx":1,
+"date":"2026-05-26",
+      "title": "국내 최대 Agribusiness 기업, 하림그룹 : 실시간 데이터 경영 완성을 향한 ERP 혁신 여정",
+      "thumEyebrow": "하림그룹",
+    
+      "company": "하림그룹",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/harim-group-one-erp.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=algWCvtWJJo",
+      "summary": "18개 계열사의 데이터를 어떻게 하나로 연결했을까요? 하림그룹은 삼성SDS와 SAP S/4HANA One ERP를 구축해 결산 기간을 12일→5일로 단축하고, 전사 실시간 데이터 경영 체계를 실현했습니다.",
+      "listCopy": "18개 계열사의 데이터를 어떻게 하나로 연결했을까요? 하림그룹은 삼성SDS와 SAP S/4HANA One ERP를 구축해 결산 기간을 12일→5일로 단축하고, 전사 실시간 데이터 경영 체계를 실현했습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2026/05/29/harim-gnb-thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2026/05/28/harim_logo.png?queryString=20260715031051",
+      "category": ["인공지능"],
+      "solutionId": [{
+              "id": "sol_390"
+          }]
+    },{
+      "id": "1293619",
+      "success_yn": "T"
+,"success_img":"https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2026/02/13/img.png?queryString=20260715031051"
+,"thumb_html":"<p class=\"md_txt\">AI는<br><span class=\"highlight\">경험할 때 </span><br>확산된다</p><div class=\"hashtag name\"><ol><li>하나투어의 ChatGPT Enterprise 도입 여정</li></ol></div>",
+      "idx":2,
+"date":"2026-02-12",
+      "title": "AI는 경험할 때 확산된다 – 하나투어의 ChatGPT Enterprise 도입 여정",
+      "thumEyebrow": "하나투어",
+    
+      "company": "하나투어",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/hanatour-case-study.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "하나투어는 ChatGPT Enterprise 도입을 통해 업무 방식과 조직 문화를 AI 중심으로 재정비함으로써 업무 효율을 높이고 고객 경험을 혁신하고 있습니다.",
+      "listCopy": "하나투어는 ChatGPT Enterprise 도입을 통해 업무 방식과 조직 문화를 AI 중심으로 재정비함으로써 업무 효율을 높이고 고객 경험을 혁신하고 있습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2026/02/13/260213_interview_thumb_1.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2026/02/13/hanatour_logo.png?queryString=20260715031051",
+      "category": ["인공지능"],
+      "solutionId": [{
+              "id": "sol_390"
+          }]
+    },{
+      "id": "1292753",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"한국에너지공단은 삼성SDS Brity Automation 도입을 통해 단순 반복 업무 부담을 해소하고 휴먼 에러를 최소화하며 핵심 업무에 집중하는 업무 효율 향상을 실현했습니다.",
+      "idx":3,
+"date":"2025-12-02",
+      "title": "한국에너지공단 업무 자동화 적용 성공 사례, 삼성SDS  Brity Automation",
+      "thumEyebrow": "한국에너지공단",
+    
+      "company": "한국에너지공단",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1292753_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=QqPqZa3kuvg",
+      "summary": "한국에너지공단은 삼성SDS Brity Automation 도입을 통해 단순 반복 업무 부담을 해소하고 휴먼 에러를 최소화하며 핵심 업무에 집중하는 업무 효율 향상을 실현했습니다.",
+      "listCopy": "한국에너지공단은 삼성SDS Brity Automation 도입을 통해 단순 반복 업무 부담을 해소하고 휴먼 에러를 최소화하며 핵심 업무에 집중하는 업무 효율 향상을 실현했습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/12/03/KEA_logo_02_list.png?queryString=20260715031051",
+      "category": ["인공지능","자동화/협업"],
+      "solutionId": [{
+              "id": "sol_7"
+          }]
+    },{
+      "id": "1291754",
+      "success_yn": "T"
+,"success_img":"https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/09/10/keyvisual_thumb_1.png?queryString=20260715031051"
+,"thumb_html":"<p class=\"md_txt\"><span class=\"highlight\">비용과 품질,</span><br>두 마리 토끼를 잡은 <br>GS칼텍스의 <br>GDC 전환기</p><div class=\"hashtag name\"><ol><li>이은주 DX센터장</li></ol></div>",
+      "idx":4,
+"date":"2025-09-08",
+      "title": "비용과 품질,두 마리 토끼를 잡은 GS칼텍스의 GDC 전환기",
+      "thumEyebrow": "GS칼텍스",
+    
+      "company": "GS칼텍스",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/gs-caltex-gdc-digital-transformation-success.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "GS칼텍스가 삼성SDS GDC를 통해 IT 운영비 절감과 품질 향상을 동시에 달성한 디지털 전환 사례를 확인해보세요.",
+      "listCopy": "화학·제조업의 디지털 전환을 선도하는 GS칼텍스. 해외 인력에 대한 편견을 깨고 삼성SDS GDC 도입으로 인프라 운영 안정성과 글로벌 경쟁력을 확보한 전략을 소개합니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/09/10/gscaltex-Interview_detail_hero_kr_0910.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/09/08/gs_logo_1.svg?queryString=20260715031051",
+      "category": ["클라우드","제조"],
+      "solutionId": [{
+              "id": "sol_347"
+          }]
+    },{
+      "id": "1287898",
+      "success_yn": "T"
+,"success_img":"https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/03/21/upstage_list_thumb.png?queryString=20260715031051"
+,"thumb_html":"<p class=\"md_txt\">업스테이지가 <br> GPU 수급난 속에서 <br><span class=\"highlight\">H100을 확보한 방법</span></p><div class=\"hashtag name\"><ol><li>김민성 LLM 사업개발 팀장</li></ol></div>",
+      "idx":5,
+"date":"2025-03-21",
+      "title": "업스테이지가GPU 수급난 속에서 H100을 확보한 방법",
+      "thumEyebrow": "업스테이지",
+    
+      "company": "업스테이지",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/gpuaas-upstage.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "",
+      "listCopy": "업스테이지, GPUaaS로 AI 혁신 가속! <span class=\"icon\"><img src=\"https://image.samsungsds.com/module_src/images/data/rocket_icon.svg\" alt=\"rocket image\"></span><br><br>삼성SDS GPUaaS를 활용해 AI 모델 학습 속도를 대폭 향상 시키고, 운영비용까지 절감한 업스테이지의 성공 스토리를 확인해보세요.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/03/31/공유하기thumb_0331.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/03/21/upstage_logo.png?queryString=20260715031051",
+      "category": ["클라우드","공공"],
+      "solutionId": [{
+              "id": "sol_332"
+          }]
+    },{
+      "id": "1287892",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"베슬에이아이는 삼성 클라우드 플랫폼의 GPUaaS 도입 후 인프라 고민에서 벗어나 MLOps·LLMOps 플랫폼 혁신에 집중하게 되었고, 신뢰도 향상과 고객 확대로 이어져 빠르게 성장해가고 있습니다. ",
+      "idx":6,
+"date":"2025-03-21",
+      "title": "GPU 인프라 고민 끝! <br>VESSL AI, AI 인프라 혁신에 집중한 비결",
+      "thumEyebrow": "베슬에이아이",
+    
+      "company": "베슬에이아이",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/vessl-ai-scp-gpuaas.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "베슬에이아이는 삼성 클라우드 플랫폼의 GPUaaS 도입 후 인프라 고민에서 벗어나 MLOps·LLMOps 플랫폼 혁신에 집중하게 되었고, 신뢰도 향상과 고객 확대로 이어져 빠르게 성장해가고 있습니다. ",
+      "listCopy": "베슬에이아이는 삼성 클라우드 플랫폼의 GPUaaS 도입 후 인프라 고민에서 벗어나 MLOps·LLMOps 플랫폼 혁신에 집중하게 되었고, 신뢰도 향상과 고객 확대로 이어져 빠르게 성장해가고 있습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/03/24/고객사례리스트)vs_logo_04.png?queryString=20260715031051",
+      "category": ["클라우드"],
+      "solutionId": [{
+              "id": "sol_332"
+          }]
+    },{
+      "id": "1287893",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"수퍼톤은 삼성 클라우드 플랫폼의 GPUaaS를 기반으로 서비스 개발 사이클을 드라마틱하게 가속하고,AI 음성 합성 기술의 품질 및 안정성을 높여 빠른 시장 진입을 실현하고 있습니다.",
+      "idx":7,
+"date":"2025-03-21",
+      "title": "콘텐츠 제작의 미래, GPUaaS로 가속화되는 AI 음성 혁명",
+      "thumEyebrow": "수퍼톤",
+    
+      "company": "수퍼톤",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/supertone-scp-gpuaas.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "수퍼톤은 삼성 클라우드 플랫폼의 GPUaaS를 기반으로 서비스 개발 사이클을 드라마틱하게 가속하고,AI 음성 합성 기술의 품질 및 안정성을 높여 빠른 시장 진입을 실현하고 있습니다.",
+      "listCopy": "수퍼톤은 삼성 클라우드 플랫폼의 GPUaaS를 기반으로 서비스 개발 사이클을 드라마틱하게 가속하고, AI 음성 합성 기술의 품질 및 안정성을 높여 빠른 시장 진입을 실현하고 있습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/12/12/kk_img_02_3.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/03/24/고객사례리스트)st_logo_04.png?queryString=20260715031051",
+      "category": ["클라우드"],
+      "solutionId": [{
+              "id": "sol_332"
+          }]
+    },{
+      "id": "1287253",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"디지털 혁신을 선도하는 스마트 공사로 나아가는 한국도로공사의 업무자동화 성공 사례를 확인해보세요.",
+      "idx":8,
+"date":"2025-01-13",
+      "title": "한국도로공사의 생성형 AI 기반 공공 업무 자동화,삼성SDS Brity Automation",
+      "thumEyebrow": "한국도로공사",
+    
+      "company": "한국도로공사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1287253_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=bszHGVsdT34",
+      "summary": "디지털 혁신을 선도하는 스마트 공사로 나아가는 한국도로공사의 업무자동화 성공 사례를 확인해보세요.",
+      "listCopy": "디지털 혁신을 선도하는 스마트 공사로 나아가는 한국도로공사의 업무자동화 성공 사례를 확인해보세요.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/01/14/list_ex.png?queryString=20260715031051",
+      "category": ["인공지능","자동화/협업"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1287177",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성바이오로직스는 최고 수준의 품질과 서비스를 제공하는 바이오 경쟁력을 강화하기 위해 업무 효율화의 새로운 혁신을 Brity Automation을 통해 실현하고 있습니다. ",
+      "idx":9,
+"date":"2025-01-02",
+      "title": "AI 기반 업무 자동화 환경 구축, 삼성SDS Brity Automation",
+      "thumEyebrow": "삼성바이오로직스",
+    
+      "company": "삼성바이오로직스",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1287177_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=lUNFGsYCa94",
+      "summary": "삼성바이오로직스는 최고 수준의 품질과 서비스를 제공하는 바이오 경쟁력을 강화하기 위해 업무 효율화의 새로운 혁신을 Brity Automation을 통해 실현하고 있습니다. ",
+      "listCopy": "삼성바이오로직스는 최고 수준의 품질과 서비스를 제공하는 바이오 경쟁력을 강화하기 위해 업무 효율화의 새로운 혁신을 Brity Automation을 통해 실현하고 있습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/01/03/list_samsung_biologics.png?queryString=20260715031051",
+      "category": ["인공지능","자동화/협업"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1286770",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"이번 아티클은 2024년 9월, 삼성SDS가 대외 고객을 대상으로 진행한 「REAL SUMMIT 2024」 행사 중, ‘A life well life , 기업의 Hyper-automation 어디까지 왔나?’ 세션 내용을 기반으로 작성되었습니다.",
+      "idx":10,
+"date":"2024-11-28",
+      "title": "'AI life well life', 기업의 Hyper-automation 어디까지 왔나?",
+      "thumEyebrow": "대상웰라이프",
+    
+      "company": "대상웰라이프",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/ai-life-well-life.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "이번 아티클은 2024년 9월, 삼성SDS가 대외 고객을 대상으로 진행한 「REAL SUMMIT 2024」 행사 중, ‘A life well life , 기업의 Hyper-automation 어디까지 왔나?’ 세션 내용을 기반으로 작성되었습니다.",
+      "listCopy": "이번 아티클은 2024년 9월, 삼성SDS가 대외 고객을 대상으로 진행한 「REAL SUMMIT 2024」 행사 중, ‘A life well life , 기업의 Hyper-automation 어디까지 왔나?’ 세션 내용을 기반으로 작성되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/11/28/ds_logo_01.png?queryString=20260715031051",
+      "category": ["자동화/협업","인공지능"],
+      "solutionId": [{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1286668",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성SDS 브리티 오토메이션을 통해 업무 자동화에 성공한 하이원 리조트의 생성형 AI 업무 자동화 사례를 확인해보세요.",
+      "idx":11,
+"date":"2024-11-21",
+      "title": "브리티 오토메이션으로 업무 자동화에 성공한 하이원 리조트",
+      "thumEyebrow": "하이원 리조트",
+    
+      "company": "하이원 리조트",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1286668_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=nZzmV7XJpW0",
+      "summary": "삼성SDS 브리티 오토메이션을 통해 업무 자동화에 성공한 하이원 리조트의 생성형 AI 업무 자동화 사례를 확인해보세요.",
+      "listCopy": "삼성SDS 브리티 오토메이션을 통해 업무 자동화에 성공한 하이원 리조트의 생성형 AI 업무 자동화 사례를 확인해보세요.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/11/21/hi_logo_04.png?queryString=20260715031051",
+      "category": ["인공지능","자동화/협업"],
+      "solutionId": [{
+              "id": "sol_7"
+          }]
+    },{
+      "id": "1286268",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"CMC Global은 Brity Copilot을 적용했을 때 놀랍게도 커뮤니케이션 오류가 30퍼센트 감소했고, 회의록 자동 생성을 통해 회의록 작성 시간을 기존 대비 25퍼센트 수준으로 효율화할 수 있었습니다.",
+      "idx":12,
+"date":"2024-11-11",
+      "title": "Brity Copilot, 이제 Personal Agent로! ",
+      "thumEyebrow": "CMC Global",
+    
+      "company": "CMC Global",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/brity-copilot-as-a-personal-agent.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "CMC Global은 Brity Copilot을 적용했을 때 놀랍게도 커뮤니케이션 오류가 30퍼센트 감소했고, 회의록 자동 생성을 통해 회의록 작성 시간을 기존 대비 25퍼센트 수준으로 효율화할 수 있었습니다.",
+      "listCopy": "CMC Global은 Brity Copilot을 적용했을 때 놀랍게도 커뮤니케이션 오류가 30퍼센트 감소했고, 회의록 자동 생성을 통해 회의록 작성 시간을 기존 대비 25퍼센트 수준으로 효율화할 수 있었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/04/30/kk_thumb_0430.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/11/11/logo_list.png?queryString=20260715031051",
+      "category": ["자동화/협업","인공지능"],
+      "solutionId": [{
+              "id": "sol_313"
+          }]
+    },{
+      "id": "1286158",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"NH농협은행이 삼성SDS 브리티 오토메이션을 선택한 이유와 업무자동화 성공 사례를 영상을 통해 확인해보세요!",
+      "idx":13,
+"date":"2024-10-29",
+      "title": "NH농협은행의 현장 중심 업무 자동화 비결, 삼성SDS Brity Automation",
+      "thumEyebrow": "NH농협은행",
+    
+      "company": "NH농협은행",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1286158_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=QoIB5Wzp7NI",
+      "summary": "NH농협은행이 삼성SDS 브리티 오토메이션을 선택한 이유와 업무자동화 성공 사례를 영상을 통해 확인해보세요!",
+      "listCopy": "NH농협은행이 삼성SDS 브리티 오토메이션을 선택한 이유와 업무자동화 성공 사례를 영상을 통해 확인해보세요!",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/10/29/nh_logo_03.png?queryString=20260715031051",
+      "category": ["인공지능","자동화/협업"],
+      "solutionId": [{
+              "id": "sol_7"
+          }]
+    },{
+      "id": "1283797",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성바이오로직스는 규제기관 및 고객사의 감사단 질의에 대한 현장 대응력을 강화하기 위해, 삼성SDS와 함께 생성형 AI를 활용한 PoC 과제를 수행했습니다.",
+      "idx":14,
+"date":"2024-04-30",
+      "title": "생성형 AI 기반 업무 자동화 사례",
+      "thumEyebrow": "삼성바이오로직스",
+    
+      "company": "삼성바이오로직스",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/samsung-biologics-case-with-brity-automation.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "삼성바이오로직스는 규제기관 및 고객사의 감사단 질의에 대한 현장 대응력을 강화하기 위해, 삼성SDS와 함께 생성형 AI를 활용한 PoC 과제를 수행했습니다.",
+      "listCopy": "삼성바이오로직스는 규제기관 및 고객사의 감사단 질의에 대한 현장 대응력을 강화하기 위해, 삼성SDS와 함께 생성형 AI를 활용한 PoC 과제를 수행했습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/04/30/kk_thumb_0430.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/04/30/kk_logo2_0430.png?queryString=20260715031051",
+      "category": ["자동화/협업","인공지능"],
+      "solutionId": [{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1282283",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"지역 경제 활성화 기회를 확장하고 민간 주도의 디지털 서비스 공급 체계를 확보하기 위해 지방자치단체는 삼성SDS의 Samsung Cloud Platform 기반 공공 클라우드 서비스 체계를 구축하였습니다.",
+      "idx":15,
+"date":"2023-10-30",
+      "title": "디지털 플랫폼 실현을 위한 공공 클라우드 서비스 체계 확보",
+      "thumEyebrow": "전라북도청",
+    
+      "company": "전라북도청",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/jeonbuk-public-sector-scp-cloud.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "지역 경제 활성화 기회를 확장하고 민간 주도의 디지털 서비스 공급 체계를 확보하기 위해 지방자치단체는 삼성SDS의 Samsung Cloud Platform 기반 공공 클라우드 서비스 체계를 구축하였습니다.",
+      "listCopy": "정부는 인공지능과 데이터 기반의 디지털 플랫폼 정부 실현을 위해 클라우드 전환을 주요 정책 방향으로 하고 있으나, 클라우드 기술 활용 영역을 공공 주도로 발전시키기에 어려움이 있었습니다. 지역 경제 활성화 기회를 확장하고 민간 주도의 디지털 서비스 공급 체계를 확보하기 위해 지방자치단체는 삼성SDS와 함께 Samsung Cloud Platform 기반 공공 클라우드 서비스 체계를 구축하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/12/12/kk_img_02_3.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/10/24/KR_고객사례_목록.png?queryString=20260715031051",
+      "category": ["클라우드","공공"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_071"
+          }]
+    },{
+      "id": "1280144",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"대동은 글로벌 경영 환경 변화에 대응하기 위한 의사결정 지원 시스템과 디지털 트랜스포메이션 인프라를 구축하기 위해 ERP 프로젝트를 추진했습니다.",
+      "idx":16,
+"date":"2023-06-26",
+      "title": "미래농업 추진을 위한 ERP 혁신",
+      "thumEyebrow": "대동",
+    
+      "company": "대동",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/daedong_case_study.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=gWZLtzK3g2M",
+      "summary": "대동은 글로벌 경영 환경 변화에 대응하기 위한 의사결정 지원 시스템과 디지털 트랜스포메이션 인프라를 구축하기 위해 ERP 프로젝트를 추진했습니다.",
+      "listCopy": "(주)대동은 ERP 시스템 도입 후 결산 일정이 많이 줄었고 표준화된 프로세스를 통한 시스템 기반의 재고 관리를 통해 재고 불일치 건수도 대폭 줄었습니다. 또한, 시스템을 통한 원가 산출이 가능해짐에 따라, 제조비 집계, 생산 오더 정산 및 제품 원가 계산을 통해 총 원가를 집계하여 사업 계획 대비 속보/실적 원가의 차이나 수익성 분석까지도 가능하게 되었습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/06/26/daedong_case_study_thumbnail.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/daedong.png?queryString=20260715031051",
+      "category": ["제조"],
+      "solutionId": [{
+              "id": "sol_051"
+          }]
+    },{
+      "id": "1282014",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"국내 식품 제조 및 유통 전문 회사인 고객사는 신사옥 준공을 계기로 안정적인 업무 시스템 환경을 구성하기 위해 삼성SDS의 Samsung Cloud Platform을 활용한 클라우드 인프라 전환을 추진하였습니다.",
+      "idx":17,
+"date":"2023-10-06",
+      "title": "클라우드 전환을 통해 신규 디지털 시스템의 안정성과 확장성 확보",
+      "thumEyebrow": "국내 식품 제조 및 유통 전문사",
+    
+      "company": "국내 식품 제조 및 유통 전문사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/food-manufacturer-scp-cloud-migration.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "국내 식품 제조 및 유통 전문 회사인 고객사는 신사옥 준공을 계기로 안정적인 업무 시스템 환경을 구성하기 위해 삼성SDS의 Samsung Cloud Platform을 활용한 클라우드 인프라 전환을 추진하였습니다.",
+      "listCopy": "국내 식품 제조 및 유통 전문 기업인 고객사는 신사옥 준공으로 증가하는 업무 시스템 요구사항을 기존 온 프레미스 환경에서 수용하는데 어려움이 있었습니다. 변화하는 경영 환경에 유연하게 대응하고 안정적인 업무 시스템 환경을 구성하기 위해 삼성SDS의 Samsung Cloud Platform을 활용한 클라우드 인프라 전환을 추진하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/10/12/식품제조_Thumb.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_2"
+          }]
+    },{
+      "id": "1279034",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"BNK 투자증권은 브리티 RPA 도입을 통해 대외 수신 문서 등록, 신용공여 및 종목 공시 자동 조회 등 증권사에서 발생하는 단순 반복 업무를 절감할 수 있었습니다.  ",
+      "idx":18,
+"date":"2023-05-31",
+      "title": "BNK 투자증권, 금융업도 손쉽게 가능한 성공적인 디지털 전환",
+      "thumEyebrow": "B 투자증권",
+    
+      "company": "B 투자증권",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1279034_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=U0h6hNRZRBI",
+      "summary": "BNK 투자증권은 브리티 RPA 도입을 통해 대외 수신 문서 등록, 신용공여 및 종목 공시 자동 조회 등 증권사에서 발생하는 단순 반복 업무를 절감할 수 있었습니다.  ",
+      "listCopy": "BNK 투자증권은 Brity RPA 도입을 통해 대외 수신 문서 등록, 신용공여 및 종목 공시 자동 조회 등 증권사에서 발생하는 단순 반복 업무를 절감할 수 있었습니다. 더불어 고부가가치 업무에 집중할 수 있는 시간을 확보한 결과, 업무 생산성의 비약적인 향상이 가능했습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/05/31/thumb_02.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/bnk.png?queryString=20260715031051",
+      "category": ["자동화/협업","금융"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1278874",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"국내 1위 화장품 제조 및 판매 기업인 아모레퍼시픽은 차별화된 고객 서비스 경험을 제공하기 위해 디지털 및 클라우드 혁신 전략을 추진했습니다. ",
+      "idx":19,
+"date":"2023-05-25",
+      "title": "클라우드 기반 ERP 인프라의 최적화,  SAP 전환 구축",
+      "thumEyebrow": "아모레퍼시픽",
+    
+      "company": "아모레퍼시픽",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/amorepacific.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "국내 1위 화장품 제조 및 판매 기업인 아모레퍼시픽은 차별화된 고객 서비스 경험을 제공하기 위해 디지털 및 클라우드 혁신 전략을 추진했습니다. ",
+      "listCopy": "아모레퍼시픽은 클라우드 기반 ERP 인프라의 최적화를 통해 IT 운영 비용 절감과 SAP Workload의 안정적인 성능을 확보하고, 평균 응답 속도를 25% 개선하는 등 사업 환경 변화에 유연한 대응이 가능하게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/06/22/아모레고객사례_썸네일.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/amorepacific.png?queryString=20260715031051",
+      "category": ["클라우드","제조"],
+      "solutionId": [{
+              "id": "sol_2"
+          }]
+    },{
+      "id": "1278857",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"에코프로는 비즈니스 프로세스를 간소화하고 업무 효율성과 정확성을 개선하며, 효과적인 의사 결정을 지원할 수 있도록 차세대 ERP 시스템을 구축하기로 결정하였습니다. 삼성SDS는 ERP 파트너로서 에코프로와 협력하여 5개 계열사에 대한 Global ERP 통합 프로세스를 재설계하고, SAP S/4HANA 기반의 ERP 시스템을 구현하였습니다.",
+      "idx":20,
+"date":"2023-05-23",
+      "title": "차세대 ERP로 글로벌 사업 운영 체계의 기틀을 확립",
+      "thumEyebrow": "에코프로",
+    
+      "company": "에코프로",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/ecopro_case_study.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "에코프로는 비즈니스 프로세스를 간소화하고 업무 효율성과 정확성을 개선하며, 효과적인 의사 결정을 지원할 수 있도록 차세대 ERP 시스템을 구축하기로 결정하였습니다. 삼성SDS는 ERP 파트너로서 에코프로와 협력하여 5개 계열사에 대한 Global ERP 통합 프로세스를 재설계하고, SAP S/4HANA 기반의 ERP 시스템을 구현하였습니다.",
+      "listCopy": "에코프로는 비즈니스 프로세스를 간소화하고 업무 효율성과 정확성을 개선하며, 효과적인 의사 결정을 지원할 수 있도록 차세대 ERP 시스템을 구축하기로 결정하였습니다. 삼성SDS는 ERP 파트너로서 에코프로와 협력하여 5개 계열사에 대한 Global ERP 통합 프로세스를 재설계하고, SAP S/4HANA 기반의 ERP 시스템을 구현하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/05/24/eco_thum.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/ecopro_1.png?queryString=20260715031051",
+      "category": ["제조"],
+      "solutionId": [{
+              "id": "sol_g"
+          },{
+              "id": "sol_051"
+          }]
+    },{
+      "id": "1278856",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"모니모는 삼성금융네트웍스 통합 브랜드가 출시한 서비스로 4개사 금융 현황을 통합적으로 조회할 수 있는 서비스로 컴플라이언스 및 보안, 안정성 및 전문성, 운영 효율성 및 연결성을 보장하기 위해 삼성 클라우드 플랫폼(SCP)을 선택했습니다.",
+      "idx":21,
+"date":"2023-05-23",
+      "title": "모니모의 선택, 삼성 클라우드 플랫폼(Samsung Cloud Platform)",
+      "thumEyebrow": "삼성금융네트웍스",
+    
+      "company": "삼성금융네트웍스",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/monimo.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "모니모는 삼성금융네트웍스 통합 브랜드가 출시한 서비스로 4개사 금융 현황을 통합적으로 조회할 수 있는 서비스로 컴플라이언스 및 보안, 안정성 및 전문성, 운영 효율성 및 연결성을 보장하기 위해 삼성 클라우드 플랫폼(SCP)을 선택했습니다.",
+      "listCopy": "삼성 클라우드 플랫폼(Samsung Cloud Platform, SCP)는 물리적으로 분리된 금융사 전용 인프라를 제공합니다. 이러한 보안 강점에 더해, 글로벌 수준의 트러블 슈팅이 가능한 전문 기술 조직(CI-TEC)과 'Lookin'이라는 IT 시스템 구성 진단 툴까지 보유하여 최적화가 가능합니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/05/25/monimo_thumbnail.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/samsung_fn.png?queryString=20260715031051",
+      "category": ["클라우드","금융"],
+      "solutionId": [{
+              "id": "sol_217"
+          }]
+    },{
+      "id": "1276642",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"글로벌 제조업체는 변화하는 비즈니스 환경과 전략에 보다 효율적이고 민첩하게 대응하기 위해 삼성 클라우드 플랫폼(SCP) 기반의 SCM SaaS를 도입했습니다.",
+      "idx":22,
+"date":"2022-12-29",
+      "title": "삼성 클라우드 플랫폼 (Samsung Cloud Platform, SCP) 기반의 차세대 SCM 체계 구축",
+      "thumEyebrow": "글로벌 제조사",
+    
+      "company": "글로벌 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/global-manufacturer-scp-scm-saas.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "글로벌 제조업체는 변화하는 비즈니스 환경과 전략에 보다 효율적이고 민첩하게 대응하기 위해 삼성 클라우드 플랫폼(SCP) 기반의 SCM SaaS를 도입했습니다.",
+      "listCopy": "삼성 클라우드 플랫폼 (Samsung Cloud Platform, SCP) 기반의 SCM SaaS 도입으로 효율적인 공급망 체계를 구축하여, 비즈니스 환경 및 전략 변화에 민첩하게 대응할 수 있는 경쟁력을 갖추게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/01/02/thumb.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","제조"],
+      "solutionId": [{
+              "id": "sol_2"
+          }]
+    },{
+      "id": "1269387",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"국도화학은 신뢰할 수 있는 파트너인 브리티웍스의 도움으로 광범위하고 강력한 디지털 트랜스포메이션을 구현했습니다.",
+      "idx":23,
+"date":"2022-07-04",
+      "title": "디지털 전환을 위한 든든한 파트너, Brity Works",
+      "thumEyebrow": "국도화학",
+    
+      "company": "국도화학",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/brityworks-kukdo.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "국도화학은 신뢰할 수 있는 파트너인 브리티웍스의 도움으로 광범위하고 강력한 디지털 트랜스포메이션을 구현했습니다.",
+      "listCopy": "국도화학은 AWS 클라우드 기반의 Brity Works(Mail, Messenger)를 전사 표준 협업 툴로 도입하여 임직원 간 협업을 더욱 효과적으로 제공하고 있습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/07/04/01_C_kukdo_646_364.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/kukdo.png?queryString=20260715031051",
+      "category": ["자동화/협업"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_037"
+          },{
+              "id": "sol_038"
+          }]
+    },{
+      "id": "1269433",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"솔루엠은 브리티 웍스를 기반으로 통합 협업 시스템을 성공적으로 구축하여 국내외 직원 업무의 효율성과 편의성을 높일 수 있게 되었습니다. ",
+      "idx":24,
+"date":"2022-07-04",
+      "title": "Brity Works 기반의 통합 협업 시스템 구축",
+      "thumEyebrow": "솔루엠",
+    
+      "company": "솔루엠",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/brityworks-solum.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "솔루엠은 브리티 웍스를 기반으로 통합 협업 시스템을 성공적으로 구축하여 국내외 직원 업무의 효율성과 편의성을 높일 수 있게 되었습니다. ",
+      "listCopy": "AWS 클라우드 기반의 Brity Works (Mail, Messenger)를 전사 도입하여 그룹웨어 및 업무 커뮤니케이션 도구로 활용하도록 하였습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/07/04/03_C_solu_m_646_364.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/solum.png?queryString=20260715031051",
+      "category": ["자동화/협업","제조"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_037"
+          },{
+              "id": "sol_038"
+          }]
+    },{
+      "id": "1269466",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"올인원 솔루션을 통해 메일, 메신저, 화상 회의가 단일 SaaS 플랫폼에 통합되어 있습니다.",
+      "idx":25,
+"date":"2022-07-04",
+      "title": "All in One 솔루션으로 협업 생산성을 높이다",
+      "thumEyebrow": "조광페인트",
+    
+      "company": "조광페인트",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/brityworks-chokwang.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "올인원 솔루션을 통해 메일, 메신저, 화상 회의가 단일 SaaS 플랫폼에 통합되어 있습니다.",
+      "listCopy": "SaaS 서비스인 Brity Works 도입을 통해 주기적으로 기능 개선이나 업그레이드를 받을 수 있게 되었으며, 보안 위협 및 시스템 장애로부터 안심하고 사용할 수 있게 되었습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/07/04/02_C_ckpc_646_364.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/chokwang.png?queryString=20260715031051",
+      "category": ["자동화/협업","제조"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_037"
+          },{
+              "id": "sol_038"
+          },{
+              "id": "sol_112"
+          }]
+    },{
+      "id": "1266264",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"한국 인터넷진흥원(KISA),SK텔레콤은 스팸 신고와 가명정보를 결합해 불법 스팸을 분석하는 정부 시범사업을 진행했습니다.",
+      "idx":26,
+"date":"2022-05-26",
+      "title": "불법 스팸 실태 분석을 위한 가명정보 결합 시범사례",
+      "thumEyebrow": "한국인터넷진흥원(KISA), SK텔레콤",
+    
+      "company": "한국인터넷진흥원(KISA), SK텔레콤",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/spammessage-analysis.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "한국 인터넷진흥원(KISA),SK텔레콤은 스팸 신고와 가명정보를 결합해 불법 스팸을 분석하는 정부 시범사업을 진행했습니다.",
+      "listCopy": "2021년 정부 시범사업으로, 불법 스팸 실태를 연구하기 위해 스팸 신고 정보와 가명정보를 결합하였습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/05/26/thumb_03.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/kisa.png?queryString=20260715031051",
+      "category": ["데이터/애널리틱스","공공","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_240"
+          }]
+    },{
+      "id": "1266087",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"국가보훈부는 적극 행정의 일환으로 보훈 행정업무에 RPA를 도입하여 연간 1만 8,679시간을 절감할 수 있게 되었습니다.",
+      "idx":27,
+"date":"2022-05-18",
+      "title": " 브리티 RPA로 더 나은 보훈을 위한 업무 자동화",
+      "thumEyebrow": "국가보훈부",
+    
+      "company": "국가보훈부",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/case-study-brityrpa-mpva.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=YG-x-4yOAH0",
+      "summary": "국가보훈부는 적극 행정의 일환으로 보훈 행정업무에 RPA를 도입하여 연간 1만 8,679시간을 절감할 수 있게 되었습니다.",
+      "listCopy": "국가보훈부는 나라를 위해 공헌하신 분들에 대한 합당한 보상을 제공하고 보다 나은 국가 유공자 예우 증진과 명예선양을 위해 브리티 RPA로 행정 업무를 혁신한 결과 기존의 사람이 수행했던 연간 1만 8천여 시간 상당의 업무를 RPA가 대신하게 되었습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/02/06/kk_img_-2.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/mpva.png?queryString=20260715031051",
+      "category": ["자동화/협업","공공"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1266086",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"한국남부발전은 디지털 기반의 업무관리 체계를 구축하기 위해 25건의 브리티 오토메이션 과제를 발굴함으로써 연간 3.3만 시간을 절감할 수 있었습니다.",
+      "idx":28,
+"date":"2022-05-18",
+      "title": "브리티 오토메이션과 함께, 공기업 서비스 혁신을 위한 업무 자동화",
+      "thumEyebrow": "한국남부발전",
+    
+      "company": "한국남부발전",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/case-study-brityrpa-kospo.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=I9B38FiOnQE ",
+      "summary": "한국남부발전은 디지털 기반의 업무관리 체계를 구축하기 위해 25건의 브리티 오토메이션 과제를 발굴함으로써 연간 3.3만 시간을 절감할 수 있었습니다.",
+      "listCopy": "한국남부발전은 삼성SDS의 브리티 오토메이션과 함께 정부 망 분리 환경에 최적화된 디지털 업무관리 체계를 구축하여 25건의 업무를 대상으로 업무 자동화 혁신을 진행한 결과, 기존의 사람이 수행했던 연간 3.3만 시간 상당의 업무를 브리티 오토메이션이 대신하게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/05/26/thumb_남부발전.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/kospo.png?queryString=20260715031051",
+      "category": ["자동화/협업","공공"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1266085",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"한국철도공사는 브리티 RPA 기반의 로봇 사원을 도입하여 일하는 방식을 혁신하고, 2020년 시범 도입을 시작으로 현재까지 47개의 단순 반복 행정업무에 RPA를 도입하여 연간 3만 4,253시간을 절감하였습니다.",
+      "idx":29,
+"date":"2022-05-18",
+      "title": "브리티 오토메이션 도입, 국민의 여정을 위한 업무 자동화",
+      "thumEyebrow": "한국철도",
+    
+      "company": "한국철도",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/case-study-brityrpa-korail.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=SmtWbm5zavw",
+      "summary": "한국철도공사는 브리티 RPA 기반의 로봇 사원을 도입하여 일하는 방식을 혁신하고, 2020년 시범 도입을 시작으로 현재까지 47개의 단순 반복 행정업무에 RPA를 도입하여 연간 3만 4,253시간을 절감하였습니다.",
+      "listCopy": "한국 철도는 국민들의 소중한 여정을 안전하게 책임지고 공공의 이익 실현 및 행정 업무 효율성을 향상시키기 위해 브리티 RPA를 도입하여 다양한 업무를 자동화한 결과, 기존의 사람이 수행했던 연간 3만 시간 상당의 업무를 브리티 오토메이션이 대신하게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/05/26/thumb_코레일.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/korail.png?queryString=20260715031051",
+      "category": ["자동화/협업","공공"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1266084",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"성균관대학교는 유학생 정보 등록, 사회봉사 검증 등 단순 반복적인 업무는 브리티 오토메이션이 수행하고 교직원은 고부가가치 업무에 집중하면서  학사 지원 업무의 품질을 높일 수 있었습니다.",
+      "idx":30,
+"date":"2022-05-18",
+      "title": "브리티 오토메이션 도입에 따른 학사 지원 업무 자동화",
+      "thumEyebrow": "성균관대학교",
+    
+      "company": "성균관대학교",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1266084_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=zI4rEvIgIK0",
+      "summary": "성균관대학교는 유학생 정보 등록, 사회봉사 검증 등 단순 반복적인 업무는 브리티 오토메이션이 수행하고 교직원은 고부가가치 업무에 집중하면서  학사 지원 업무의 품질을 높일 수 있었습니다.",
+      "listCopy": "정해진 학사 일정에 따라 진행하고 검증해야 할 무수한 업무가 기다리고 있는 대학 업무! 대량의 단순 반복적인 업무 속성 상, 많은 시간이 소비되고 휴먼에러의 위험까지 발생할 가능성이 높습니다. 외국인 유학생 정보 등록, 사회봉사 활동 증빙서류 검증 등 단순 반복적인 업무는 브리티 오토메이션이 수행하고 교직원은 고부가가치 업무에 집중하면서 학사 지원 업무의 품질을 높일 수 있었습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/05/26/thumb_성균관대.png?queryString=20260715031051",
+      "thumbImgAlt": "성균관대학교 학사 지원 업무 자동화 고객사례 대표 이미지",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/skku.png?queryString=20260715031051",
+      "category": ["자동화/협업","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1266083",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"설계, 구매, 생산, 지원 등의 영역의 다양한 사용자들을 위해 브리티 오토메이션 도입을 기획하였고, 총 12만 시간을 절감하는 효과를 거둘 수 있었습니다. ",
+      "idx":31,
+"date":"2022-05-18",
+      "title": "세계 최고 생산공정 자동화 조선소의 효과적인 사무 자동화(브리티 오토메이션) 적용",
+      "thumEyebrow": "삼성중공업",
+    
+      "company": "삼성중공업",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1266083_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=tivSbzo3plw",
+      "summary": "설계, 구매, 생산, 지원 등의 영역의 다양한 사용자들을 위해 브리티 오토메이션 도입을 기획하였고, 총 12만 시간을 절감하는 효과를 거둘 수 있었습니다. ",
+      "listCopy": "중공업의 설계, 구매, 생산, 지원 등 각 영역에 브리티 브리티 오토메이션을 도입하여 총 12만 시간을 절감하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/05/27/industry_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/samsung_shi.png?queryString=20260715031051",
+      "category": ["자동화/협업","제조"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1266082",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"송파구청은 브리티 RPA로 민원의 수집, 분류, 집계 처리를 자동화하여 여러 채널을 통해 수집된 민원 업무를 유형별, 분류별로 추이와 건수 등을 파악하여 효율적으로 월간 보고서를 작성할 수 있었습니다.",
+      "idx":32,
+"date":"2022-05-18",
+      "title": "브리티 RPA로 민원의 수집, 분류, 집계 처리 자동화",
+      "thumEyebrow": "송파구청",
+    
+      "company": "송파구청",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1266082_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=0-PAWe3KZd4",
+      "summary": "송파구청은 브리티 RPA로 민원의 수집, 분류, 집계 처리를 자동화하여 여러 채널을 통해 수집된 민원 업무를 유형별, 분류별로 추이와 건수 등을 파악하여 효율적으로 월간 보고서를 작성할 수 있었습니다.",
+      "listCopy": "민원 수집, 분류 집계 처리 자동화로 총 2,500시간을 절감하여, 현재 직원 수로 할 수 없었던, 필요한 일을 처리할 수 있게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/05/27/songpa_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/songpa.png?queryString=20260715031051",
+      "category": ["자동화/협업","공공"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1266081",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Covid-19 대응을 위한 임직원 문진을 브리티 RPA/Assistant로 자동화함으로써 10분 내 전체 임직원의 75% 응답률 확보 등 적시 관련 조치가 가능해졌습니다.",
+      "idx":33,
+"date":"2022-05-18",
+      "title": "COVID-19 실시간 비상대응 설문, 브리티 RPA/Assistan로 자동화",
+      "thumEyebrow": "삼성SDS",
+    
+      "company": "삼성SDS",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/07/27/CaseStudy-Brity_RPA_realtime_examination_200727.pdf?queryString=20211220102713",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=ZiEXp0I0CE0",
+      "summary": "Covid-19 대응을 위한 임직원 문진을 브리티 RPA/Assistant로 자동화함으로써 10분 내 전체 임직원의 75% 응답률 확보 등 적시 관련 조치가 가능해졌습니다.",
+      "listCopy": "브리티 RPA와 어시스턴트를 활용해 2.3만 명 임직원 대상 COVID-19 실시간 비상 대응 문진으로 임직원의 건강과 안전을 관리하고 있습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/05/27/covid-19_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/06/20/kk_logo2_0620.png?queryString=20260715031051",
+      "category": ["자동화/협업","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          }]
+    },{
+      "id": "1260980",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"디지털 채널을 고객 중심으로 개선하고 비즈니스 Agility를 확보하여 금융 서비스 경쟁력을 강화하고 디지털 혁신을 선도하게 되었습니다.",
+      "idx":34,
+"date":"2022-03-21",
+      "title": "금융 디지털 채널 구조 개선을 통한 서비스 경쟁력 강화",
+      "thumEyebrow": "국내 금융사",
+    
+      "company": "국내 금융사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1260980_4762.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/04/13/Leaflet_SDS_Cloud_Financial_Digital_Channel_Case_Kor_220412.pdf",
+      "videoUrl": "",
+      "summary": "디지털 채널을 고객 중심으로 개선하고 비즈니스 Agility를 확보하여 금융 서비스 경쟁력을 강화하고 디지털 혁신을 선도하게 되었습니다.",
+      "listCopy": "언택트 트렌드 가속화 및 플랫폼사와의 경쟁 등 새롭게 변화하는 금융 환경에 선도적으로 대응하기 위해 고객 중심으로 디지털 채널을 개선하고 고성능 클라우드 인프라를 구축하였습니다. 이를 통해 비즈니스 Agility를 확보하여 금융 서비스 경쟁력을 강화하고 디지털 혁신을 선도하게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/03/21/casestudy_thumb_1.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","금융"],
+      "solutionId": [{
+              "id": "sol_2"
+          }]
+    },{
+      "id": "1259645",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"KEA(한국 전자정보통신산업진흥회)는 가전 산업분야 데이터 생태계 확장에 대비할 수 있는 효율적인 IT 환경을 구축하였으며, 유연한 인프라 자원의 증감을 기대할 수 있었습니다.",
+      "idx":35,
+"date":"2022-02-18",
+      "title": "기업들의 혁신과 성장 지원을 위한 AWS 기반 공동 분석 플랫폼 구축",
+      "thumEyebrow": "KEA 한국전자정보통신산업진흥회",
+    
+      "company": "KEA 한국전자정보통신산업진흥회",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/kea-damda-aws-big-data-platform.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "KEA(한국 전자정보통신산업진흥회)는 가전 산업분야 데이터 생태계 확장에 대비할 수 있는 효율적인 IT 환경을 구축하였으며, 유연한 인프라 자원의 증감을 기대할 수 있었습니다.",
+      "listCopy": "KEA는 IoT, 빅데이터를 활용하여 가전/전자산업의 혁신적인 비즈니스 생태계를 육성하기 위해, 회원사들이 공동으로 활용할 수 있는 빅데이터 플랫폼 &quot;DAMDA&quot;를 서비스하게 되었습니다. 점차적으로 증가가 예상되는 빅데이터 활용 회원사 및 데이터들을 효과적으로 처리하기 위해, 유연한 인프라 확장성 및 성능을 보장하는 퍼블릭 클라우드를 기반으로 빅데이터 플랫폼을 구축하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2022/02/18/Offering_img.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/kea.png?queryString=20260715031051",
+      "category": ["클라우드","데이터/애널리틱스","공공"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_087"
+          },{
+              "id": "sol_090"
+          }]
+    },{
+      "id": "1258676",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"한화생명은 하이브리드 클라우드 플랫폼 구축으로 변화하는 외부 환경과 트래픽 변동성에 빠르게 대응할 수 있게 되었습니다.",
+      "idx":36,
+"date":"2021-11-01",
+      "title": "AWS 기반의 하이브리드 클라우드 플랫폼 구축",
+      "thumEyebrow": "한화생명",
+    
+      "company": "한화생명",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/cloudsecurity-hanwha.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "한화생명은 하이브리드 클라우드 플랫폼 구축으로 변화하는 외부 환경과 트래픽 변동성에 빠르게 대응할 수 있게 되었습니다.",
+      "listCopy": "AWS 기반의 하이브리드 클라우드 플랫폼을 구축하고, 금융권에 최적화된 보안과 운영 체계를 도입하여 DevSecOps를 성공적으로 도입할 수 있었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/11/02/thumb_hanwha.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/hanwaha_1.png?queryString=20260715031051",
+      "category": ["보안","금융"],
+      "solutionId": [{
+              "id": "sol_d"
+          },{
+              "id": "sol_054"
+          },{
+              "id": "sol_088"
+          }]
+    },{
+      "id": "1258570",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"AWS의 퍼블릭 클라우드에서 브라이틱스 AI를 사용하여 데이터 기반 글로벌 시장 예측 및 판매 전략을 위한 모델 개발 및 분석 플랫폼을 구축했습니다.",
+      "idx":37,
+"date":"2021-10-21",
+      "title": "Brightics AI를 사용하여 데이터 기반의 글로벌 시장 예측",
+      "thumEyebrow": "글로벌 전자 제조사",
+    
+      "company": "글로벌 전자 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/data-driven-global-market-forecasting-brighticsai.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "AWS의 퍼블릭 클라우드에서 브라이틱스 AI를 사용하여 데이터 기반 글로벌 시장 예측 및 판매 전략을 위한 모델 개발 및 분석 플랫폼을 구축했습니다.",
+      "listCopy": "A 글로벌 전자 제조사는 AI 모델을 통해 시장 예측, 영업 전략 수립에 활용하기 위해 Brightics AI를 활용한 모델 개발 및 분석 플랫폼을 Public Cloud에 구축하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/10/25/pc.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["인공지능","제조"],
+      "solutionId": [{
+              "id": "sol_1"
+          },{
+              "id": "sol_003"
+          }]
+    },{
+      "id": "1256155",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"정보 자원의 활용 효율성을 높이고, 인공지능, 빅데이터 등을 활용한 지능형 전자정부의 신속한 구현을 지원하기 위해 범정부 클라우드 기반 플랫폼 구축을 추진하게 되었습니다.",
+      "idx":38,
+"date":"2021-07-01",
+      "title": "지능형 전자정부 실현을 위한 신기술 기반 개방형 클라우드 플랫폼 구축",
+      "thumEyebrow": "차세대 전자정부",
+    
+      "company": "차세대 전자정부",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1256155_4762.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/11/05/3_Leaflet_SDS_Cloud_Government_Cloud_Platform_Case_Kor_211104.pdf",
+      "videoUrl": "",
+      "summary": "정보 자원의 활용 효율성을 높이고, 인공지능, 빅데이터 등을 활용한 지능형 전자정부의 신속한 구현을 지원하기 위해 범정부 클라우드 기반 플랫폼 구축을 추진하게 되었습니다.",
+      "listCopy": "급변하는 4차 산업혁명 시대를 맞아 신기술을 융∙복합화 한 혁신적인 차세대 전자정부 플랫폼이 요구되고 있습니다. 클라우드, 인공지능, 빅데이터, 사물인터넷 등을 활용한 지능형 전자정부의 신속한 구현을 지원하기 위해 범정부 클라우드 기반 플랫폼을 구축하게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/07/02/benefit_thumb.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","공공"],
+      "solutionId": [{
+              "id": "sol_2"
+          }]
+    },{
+      "id": "1254529",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성SDS의 기술력을 통해 Oracle Cloud로의 성공적인 퍼블릭 클라우드 전환을 완료할 수 있었습니다.",
+      "idx":39,
+"date":"2021-05-04",
+      "title": "글로벌 제조사 경영정보시스템 오라클 클라우드 전환",
+      "thumEyebrow": "글로벌 제조사",
+    
+      "company": "글로벌 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/global-manufacturer-mis-oracle-cloud-migration.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "삼성SDS의 기술력을 통해 Oracle Cloud로의 성공적인 퍼블릭 클라우드 전환을 완료할 수 있었습니다.",
+      "listCopy": "비즈니스 환경 변화에 대한 신속한 대응과 지속적으로 증가하는 IT 비용 절감을 위한 방안으로 Public 클라우드로 전환하였으며, Public 클라우드 전환 시 Pain-Point인 성능/가용성/보안을 고려한 아키텍처를 적용하여 성공적으로 전환하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/05/06/1254529_thumbnail.png?queryString=20260715031051",
+      "thumbImgAlt": "글로벌 제조사 경영정보시스템 오라클 클라우드 전환",
+      "logoImg": "",
+      "category": ["클라우드","제조"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_086"
+          },{
+              "id": "sol_087"
+          },{
+              "id": "sol_088"
+          },{
+              "id": "sol_090"
+          }]
+    },{
+      "id": "1254495",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"브리티 RPA 적용을 통한 화물정보 추적의 자동화로, 연간 총 2,200시간을 효율화하고 물류가시성을 확보하였습니다.",
+      "idx":40,
+"date":"2021-04-30",
+      "title": "Brity RPA 기반의 해외 판매 법인 물류수송 모니터링 자동화",
+      "thumEyebrow": "삼성SDS",
+    
+      "company": "삼성SDS",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1254495_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=fKQm3idIQls",
+      "summary": "브리티 RPA 적용을 통한 화물정보 추적의 자동화로, 연간 총 2,200시간을 효율화하고 물류가시성을 확보하였습니다.",
+      "listCopy": "유럽 내 항공 지연 화물에 대한 제조 고객사의 리포트 제출 요구로 17개 항공사별 웹사이트로부터 평균 1,000여 개의 화물정보를 수작업으로 추적하여, 1회 리포팅에 500분이 소요되었습니다. Brity RPA 적용을 통한 화물정보 추적의 자동화로 수작업 업무를 40분으로 단축(수작업 대비 12.5배 업무시간 절감) 하여, 연간 총 2,200시간을 효율화하고 물류가시성을 확보하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/04/30/1254495_thumbnail.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/06/20/kk_logo2_0620_1.png?queryString=20260715031051",
+      "category": ["물류","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          },{
+              "id": "sol_022"
+          },{
+              "id": "sol_107"
+          }]
+    },{
+      "id": "1254498",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"자동차 탁상 업무 자동화(연간 780시간 절감), 유통 제휴몰 정산(연간 520시간 절감), 신규 품목 및 가격정보 취합 자동화(연간 260시간 절감)등브리티 RPA를 적용하여 직원 경험 및 생산성을 개선하였습니다.",
+      "idx":41,
+"date":"2021-04-30",
+      "title": "브리티 RPA를 적용하여 리테일 물류, 유통 업무의 자동화 혁신",
+      "thumEyebrow": "유통사",
+    
+      "company": "유통사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1254498_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=gCgRUtkLT5Q",
+      "summary": "자동차 탁상 업무 자동화(연간 780시간 절감), 유통 제휴몰 정산(연간 520시간 절감), 신규 품목 및 가격정보 취합 자동화(연간 260시간 절감)등브리티 RPA를 적용하여 직원 경험 및 생산성을 개선하였습니다.",
+      "listCopy": "자동차 탁상 업무의 자동화(제조사/내부/로지 시스템 대상 반복 등록 최소화, 연간 780시간 절감), 유통 제휴몰 정산(14개 판매 사이트의 판매량/매출액 취합 보고, 연간 520시간 절감), 신규 품목 및 가격정보 취합 자동화(전일 대비 신규 품목의 판매 기준가/실 사이가 작성 후 담당자 전송, 연간 260시간 절감) 등 다양한 유통 업무에 Brity RPA를 적용하여 직원 경험 및 생산성을 개선하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/04/30/1254498_thumbmail.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          },{
+              "id": "sol_022"
+          },{
+              "id": "sol_107"
+          }]
+    },{
+      "id": "1254499",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Cello OCR과 브리티 RPA 적용을 통해, 51종 문서에서 정보를 추출하여 물류 시스템에 반영하는 수작업 업무를 자동화하여 물류비용 정산의 증빙서류 처리 시간을 혁신적으로 개선하였습니다.",
+      "idx":42,
+"date":"2021-04-30",
+      "title": "Cello OCR을 활용한 데이터 처리 자동화",
+      "thumEyebrow": "삼성SDS",
+    
+      "company": "삼성SDS",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1254499_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=SIehngy-jvo",
+      "summary": "Cello OCR과 브리티 RPA 적용을 통해, 51종 문서에서 정보를 추출하여 물류 시스템에 반영하는 수작업 업무를 자동화하여 물류비용 정산의 증빙서류 처리 시간을 혁신적으로 개선하였습니다.",
+      "listCopy": "물류 업무 과정에서 생성되는 문서를 자동 처리하기 위해 개발된 Cello OCR과 Brity RPA 적용을 통해, 유럽 내 3개 거점의 총 51종 문서에서 정보를 추출하여 물류 시스템에 반영하는 수작업 업무를 자동화하여 물류비용 정산의 증빙서류 처리 시간을 혁신적으로 개선하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/04/30/1254499_thumbnail.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/06/20/kk_logo2_0620_2.png?queryString=20260715031051",
+      "category": ["물류","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          },{
+              "id": "sol_022"
+          },{
+              "id": "sol_107"
+          }]
+    },{
+      "id": "1253627",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"AWS 전환과 Cloud in One 활용을 통해 인프라 비용 절감 및 비즈니스 변화에 대한 IT 지원 신속성, 자원 운영 효율성을 향상하였습니다.",
+      "idx":43,
+"date":"2021-03-15",
+      "title": "신속한 마케팅 대응을 위한 온라인 쇼핑몰 클라우드 전환",
+      "thumEyebrow": "에스와이에스리테일",
+    
+      "company": "에스와이에스리테일",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/sys-retail-online-shopping-aws-cloud-migration.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "AWS 전환과 Cloud in One 활용을 통해 인프라 비용 절감 및 비즈니스 변화에 대한 IT 지원 신속성, 자원 운영 효율성을 향상하였습니다.",
+      "listCopy": "최근의 급변하는 경영 환경으로 인하여 온라인 유통 분야도 클라우드 전환을 통한 TCO 절감 및 민첩한 IT 환경에 대한 니즈가 급격히 증가하고 있습니다. 에스와이에스리테일은 온라인 유통 분야의 선도 기업으로, 온라인 쇼핑몰의 퍼블릭 클라우드 전환을 통하여 안정적이고, 성능 보장 및 무중단 서비스 환경을 적용하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2025/05/23/thumb_re07.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_086"
+          },{
+              "id": "sol_087"
+          },{
+              "id": "sol_088"
+          },{
+              "id": "sol_090"
+          }]
+    },{
+      "id": "1253298",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성엔지니어링은 설계 데이터 효율성을 개선하여, 인력 효율성을 최대 80% 개선함으로써 글로벌 협업 환경과 경쟁력 강화 기반을 마련했습니다.",
+      "idx":44,
+"date":"2021-03-15",
+      "title": "기업 데이터 관리 혁신을 위한 AWS 기반 데이터뱅크 플랫폼 구축",
+      "thumEyebrow": "삼성엔지니어링",
+    
+      "company": "삼성엔지니어링",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/samsung-engineering-aws-data-lake-platform.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "삼성엔지니어링은 설계 데이터 효율성을 개선하여, 인력 효율성을 최대 80% 개선함으로써 글로벌 협업 환경과 경쟁력 강화 기반을 마련했습니다.",
+      "listCopy": "AWS가 제공하는 데이터 레이크와 마이크로 서비스 아키텍처를 활용하여, 모든 설계 데이터를 한곳으로 모으고, 이를 여러 부서가 쉽게 활용할 수 있도록 웹을 통해 개방했습니다. 이에 따라 인력 효율성이 온프레미스 환경 대비 최대 80% 개선됐으며, 정합성 높은 설계 데이터 공유로 설계 품질 또한 향상됐습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/03/16/1253298_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/samsung_engineering.png?queryString=20260715031051",
+      "category": ["클라우드","EPC"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_086"
+          },{
+              "id": "sol_087"
+          },{
+              "id": "sol_090"
+          }]
+    },{
+      "id": "1246667",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Cello WNO의 활용을 통해 전략적 의사결정과 효율적이고 체계적인 물류 운영을 가능하게 하였습니다. ",
+      "idx":45,
+"date":"2021-01-11",
+      "title": "Cello WNO를 활용한 물류 네트워크 최적화",
+      "thumEyebrow": "글로벌 제조사 및 유통사",
+    
+      "company": "글로벌 제조사 및 유통사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_How_Cello_WNO_Can_Help_Optimize_Your_Logistics_Network.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "Cello WNO의 활용을 통해 전략적 의사결정과 효율적이고 체계적인 물류 운영을 가능하게 하였습니다. ",
+      "listCopy": "Cello WNO(Warehouse Network Optimizer)를 활용해 다양한 제약조건을 반영한 시나리오 별 물동 및 비용 분석을 통해 최적 거점과 재고 배치 모델을 제안합니다. Cello WNO 적용 후 물류비와 운송비가 대폭 절감되었으며, 최적 거점 수에 기반한 배송 권역을 설정하고 서비스 정책에 부합하는 최소 비용 배송 리드타임을 확보함으로써 물류 서비스가 향상되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/01/13/1246667_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1246666",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성SDS Cello를 통해 신속하고 정확한 Picking/Packing이 지원되어 출고 효율이 향상되었으며, Cello Loading/Routing Optimizer를 활용해 적재 효율화 및 물동 정보 분석을 통한 라우트 최적화에 적용하였습니다.",
+      "idx":46,
+"date":"2021-01-11",
+      "title": "Cello를 활용한 편의점 물류의 혁신",
+      "thumEyebrow": "국내 유통사",
+    
+      "company": "국내 유통사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_How_Convenience_Retail_Logistics_Works_Case_and_Strategy.html ",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "삼성SDS Cello를 통해 신속하고 정확한 Picking/Packing이 지원되어 출고 효율이 향상되었으며, Cello Loading/Routing Optimizer를 활용해 적재 효율화 및 물동 정보 분석을 통한 라우트 최적화에 적용하였습니다.",
+      "listCopy": "삼성SDS Cello를 활용해 정시, 정량, 정품 배송이 매우 중요한 편의점 물류를 혁신한 사례입니다. 피킹 검수 프로세스 변경으로 더욱 신속하고 정확한 Picking/Packing이 지원되어 출고 효율이 향상되었으며, Cello Loading/Routing Optimizer를 활용해 적재 효율화 및 물동 정보 분석을 통한 라우트 최적화를 적용하였습니다. 또한 관리자별 맞춤형 Dashboard를 통해 경영진과 점주에게 실시간 물류 가시성을 제공하여 보다 효과적이고 시의적절한 대안 수립이 가능하게 되는 등 편의점 물류를 효율적으로 혁신하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/01/13/1246666_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1246664",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"브리티 RPA 적용을 통해 화물 Tracking 자동화를 실현하였고 Tracking 조회 속도가 30초에서 1.5초로 효율화되었습니다,",
+      "idx":47,
+"date":"2021-01-11",
+      "title": "브리티 RPA 적용을 통한 물동 Tracking 업무 효율화",
+      "thumEyebrow": "글로벌 물류사",
+    
+      "company": "글로벌 물류사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_Your_Solution_to_Logistics_Process_Automation_Brity_Works.html ",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "브리티 RPA 적용을 통해 화물 Tracking 자동화를 실현하였고 Tracking 조회 속도가 30초에서 1.5초로 효율화되었습니다,",
+      "listCopy": "Brity RPA는 삼성 SDS가 자체 개발한 AI 기반 업무 자동화 솔루션으로 비효율적인 수작업 및 반복 처리가 필요한 물동 Tracking 업무에 적용되었습니다. 이를 통해 화물 Tracking 자동화를 실현하였고 Tracking 조회 속도 또한 최적화 과정을 통해 조회 속도가 30초에서 1.5초로 효율화되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/01/13/1246664_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1246663",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"개별 매장 및 제품 단위 판매 예측이 가능한 시스템 적용을 통해 주별 판매예측 정확도는 25% 향상되었으며, 배송 계획 및 Tracking과 같은 물류 실행과 연계하여 공급망 전반을 효율화하였습니다.",
+      "idx":48,
+"date":"2021-01-11",
+      "title": "AI를 활용한 수요 예측 효율화",
+      "thumEyebrow": "글로벌 제조사 및 유통사 ",
+    
+      "company": "글로벌 제조사 및 유통사 ",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_Cello_Demand_Sensing.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "개별 매장 및 제품 단위 판매 예측이 가능한 시스템 적용을 통해 주별 판매예측 정확도는 25% 향상되었으며, 배송 계획 및 Tracking과 같은 물류 실행과 연계하여 공급망 전반을 효율화하였습니다.",
+      "listCopy": "복잡한 유통구조로 인해 독일에서 수요 예측에 어려움을 겪고 있던 기업에 AI 기반 수요예측 솔루션을 적용해 업계 최초로 개별 매장 및 제품 단위 판매 예측이 가능한 시스템을 구현하였습니다. 이를 통해 주별 판매예측 정확도는 25% 향상되었으며, 배송 계획 및 Tracking과 같은 물류 실행과 연계하여 공급망 전반을 효율화하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/01/13/1246663_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1246656",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"제지업에 통합물류솔루션 Cello를 적용하여, 세부 로케이션 관리 및 Loading Optimizer를 통한 적재 작업 효율화를 통해 물류센터 운영과 수배송을 효율할 수 있었습니다.",
+      "idx":49,
+"date":"2021-01-11",
+      "title": "Cello를 활용한 물류센터 효율화",
+      "thumEyebrow": "글로벌 제조사 및 유통사",
+    
+      "company": "글로벌 제조사 및 유통사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_Logistics_Solutions_Take_Your_Paper_Business_to_the_Next_Level.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "제지업에 통합물류솔루션 Cello를 적용하여, 세부 로케이션 관리 및 Loading Optimizer를 통한 적재 작업 효율화를 통해 물류센터 운영과 수배송을 효율할 수 있었습니다.",
+      "listCopy": "제지업은 업종의 특성상 제품 보관 및 입출고가 비효율적이고, 큰부피와 중량으로 인해 적정 차량 수배송이 어려운 상황에 직면해 있습니다. 이러한 어려움을 최소화하고 물류비를 절감하기 위해 제지업에 통합물류솔루션 Cello를 적용하였고, Virtual Warehouse System 를 활용한 세부 로케이션 관리 및 Loading Optimizer를 통한 적재작업 효율화를 통해 물류센터 운영과 수배송을 효율 할 수 있었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/01/13/1246656_thumb_2.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1245395",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Cello LMD(Last Mile Delivery)를 적용하여 배송 리드타임을 최대 4일에서 1일로 단축하였습니다.",
+      "idx":50,
+"date":"2020-11-24",
+      "title": "Cello를 활용한 2인 홈 배송 리트 타임 단축",
+      "thumEyebrow": "글로벌 제조사 판매법인 및 유통사",
+    
+      "company": "글로벌 제조사 판매법인 및 유통사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_2Man_Home_Delivery_Service_Trends_and_Cases.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "Cello LMD(Last Mile Delivery)를 적용하여 배송 리드타임을 최대 4일에서 1일로 단축하였습니다.",
+      "listCopy": "2인 홈 배송은 가구, 전자제품 등 부피가 큰 대형 제품 배송 시 업체들이 제공하는 서비스로 이 서비스의 수준은 소비자들의 구매를 결정하는 요인으로 작용할 수 있기 때문에 매우 중요합니다. 이러한 2인 홈 배송에 Cello LMD(Last Mile Delivery)를 적용하여 배송업체, 배송기사, 소비자, 판매업체, 브랜드숍 모두를 위한 배송 경로계획 및 가시성 솔루션을 제공하여  배송 리드타임을 최대 4일에서 1일로 단축하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/11/25/logistics1_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1245394",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Cello Optimizer 적용 후 적재 효율이 10% 개선되었고, 팔렛 사용이 5% 감소되었습니다.",
+      "idx":51,
+"date":"2020-11-24",
+      "title": "Cello Optimizer를 활용한 적재 최적화",
+      "thumEyebrow": "글로벌 제조사 및 유통사",
+    
+      "company": "글로벌 제조사 및 유통사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_Cello_Loading_Optimizer_is_Now_Smarter_than_Ever.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "Cello Optimizer 적용 후 적재 효율이 10% 개선되었고, 팔렛 사용이 5% 감소되었습니다.",
+      "listCopy": "적재 최적화 사례로 기존 수작업으로 수립되던 적재 계획에 Cello Optimizer를 적용하여  무게 및 부피를 자동으로 측정하고, 다양한 제약 조건을 고려한 Loading Simulation 기반  팔렛, 트럭/컨테이너 최적화로 물류 효율성이 향상되었습니다. Cello Optimizer 적용 후 적재 효율이 10% 개선되었고, 팔렛 사용이 5% 감소되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/11/25/logistics2_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1245393",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"위/변조가 불가능한 블록체인 분산 원장 기술이 접목된 물류 플랫폼 Cello Trust 적용으로 고객의 신뢰를 확보할 수 있었습니다.",
+      "idx":52,
+"date":"2020-11-24",
+      "title": "블록체인 기반 신뢰성 확보",
+      "thumEyebrow": "글로벌 제조사 및 유통사",
+    
+      "company": "글로벌 제조사 및 유통사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_Blockchain_for_Seafood_Supply_Chain_Traceability.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "위/변조가 불가능한 블록체인 분산 원장 기술이 접목된 물류 플랫폼 Cello Trust 적용으로 고객의 신뢰를 확보할 수 있었습니다.",
+      "listCopy": "블록체인 기반 수산물 유통 이력 관리의 사례로 수산물 안전성에 대한 소비자들의 우려에 따라 원산지 등의 모든 유통 정보가 투명하게 공유되고 추적 가능한 블록체인 기반 수산물 유통 이력 관리 서비스를 적용하였습니다. 위/변조가 불가능한 블록체인 분산 원장 기술이 접목된 물류 플랫폼 Cello Trust 적용으로 고객의 신뢰를 확보할 수 있었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/11/25/logistics3_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1245392",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Cello Optimizer를 활용한 라우트 최적화를 통해 배차에 소요되는 시간을 획기적으로 절감하고, 운행 차량의 수량을 줄여 운송 비용 절감 효과를 얻을 수 있었습니다.",
+      "idx":53,
+"date":"2020-11-24",
+      "title": "Cello Optimizer를 활용한 라우트 최적화",
+      "thumEyebrow": "글로벌 제조사 및 유통사",
+    
+      "company": "글로벌 제조사 및 유통사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_Delivery_Planning_Optimized_for_Different_Types_of_Shipments.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "Cello Optimizer를 활용한 라우트 최적화를 통해 배차에 소요되는 시간을 획기적으로 절감하고, 운행 차량의 수량을 줄여 운송 비용 절감 효과를 얻을 수 있었습니다.",
+      "listCopy": "라우트 최적화의 사례로 고객의 다양한 물류 특성에 맞추어 최적의 배송 계획 수립을 도와주는 Route Optimizer를 적용하여 하루에 수십에서 수백 건을 배송해야 하는 배송기사에게 그날 수행할 최적의 물량과 배송 경로를 수립해 제공해 줍니다. 이를 통해 배차에 소요되는 시간을 획기적으로 절감하고, 운행 차량의 수량을 줄여 운송 비용 절감 효과를 얻을 수 있었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/11/25/logistics4_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1245391",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Order Center 적용을 통해 선적 서류 입력이 자동화되어 오류가 감소하고 업무가 효율화되면서 Shipping Request 소요시간을 약 10배 절감하였습니다.",
+      "idx":54,
+"date":"2020-11-24",
+      "title": "Order Center를 통한 업무 효율화",
+      "thumEyebrow": "글로벌 제조사",
+    
+      "company": "글로벌 제조사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_Order_Center_Leads_Innovation_in_Logistics_Operation.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "Order Center 적용을 통해 선적 서류 입력이 자동화되어 오류가 감소하고 업무가 효율화되면서 Shipping Request 소요시간을 약 10배 절감하였습니다.",
+      "listCopy": "Order Center는 국제 운송 물류를 운영하는 담당자가 다량의 주문 특히 수출에서의 주문을 단일 화면에서 빠르고 편리하게 접수하고 처리할 수 있게 하는 시스템, 프로세스, 기술 등을 포괄하는 운영 환경입니다. Order Center 적용을 통해 단일 Portal 통합 스케줄 조회가 가능해져 연 66M/M를 절감하였습니다. 또한 선적 서류 입력이 자동화되어 오류가 감소하고 업무가 효율화되면서 Shipping Request 소요시간을 약 10배 절감하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/11/25/logistics5_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1242688",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Cello Dashboard를 활용해 프로젝트 물류 업무 효율화 및 물류비 절감 효과를 얻을 수 있었습니다. 또한 한중 FTA 적용 제안을 통해 약 5억 원의 관세를 절감하였습니다.",
+      "idx":55,
+"date":"2020-10-29",
+      "title": "프로젝트 물류 업무 효율화 및 물류비 절감",
+      "thumEyebrow": "글로벌 전자 제조사",
+    
+      "company": "글로벌 전자 제조사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/Post_COVID19_Reshoring_Strategy_ko.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "Cello Dashboard를 활용해 프로젝트 물류 업무 효율화 및 물류비 절감 효과를 얻을 수 있었습니다. 또한 한중 FTA 적용 제안을 통해 약 5억 원의 관세를 절감하였습니다.",
+      "listCopy": "글로벌 설비 이설 사례로 운송/보관 단계별 물류현황을 실시간으로 볼 수 있는 Cello Dashboard를 활용해 프로젝트 물류 업무 효율화 및 물류비 절감 효과를 얻을 수 있었습니다. 또한 사업 운영 기간 내 포장/반입 관련 Issue Zero를 달성하였으며, 한중 FTA 적용 제안을 통해 약 5억 원의 관세를 절감하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/29/logistics1_CaseStudy.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_021"
+          }]
+    },{
+      "id": "1242689",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성 SDS Cello Smart IOD 적용으로 IOD 통보 지연 및 정보의 불일치 등이 방지되는 품질 개선 효과를 얻을 수 있었습니다.",
+      "idx":56,
+"date":"2020-10-29",
+      "title": "Cello Smart IOD 적용을 통한 품질 및 생산상 향상",
+      "thumEyebrow": "글로벌 제조사 판매법인",
+    
+      "company": "글로벌 제조사 판매법인",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/Cello_Smart_IOD_A_Solution_for_Real_Time_Proof_of_Delivery_ko.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "삼성 SDS Cello Smart IOD 적용으로 IOD 통보 지연 및 정보의 불일치 등이 방지되는 품질 개선 효과를 얻을 수 있었습니다.",
+      "listCopy": "ePOD를 통한 POD 입수와 실시간 운송 Tracking 확장 개념인 삼성 SDS 자체 솔루션 Cello Smart IOD 적용으로 IOD 통보 지연 및 정보의 불일치 등이 방지되는 품질 개선 효과를 얻을 수 있었습니다. 또한 IOD 입력 업무가 기존 대비 30% 감소하였고, IOD 입력 외 총괄 관리 및 기타 유관 업무량이 10%가량 절감되는 등 생산성이 향상되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/29/logistics2_CaseStudy.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_019"
+          }]
+    },{
+      "id": "1242690",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"물류관리 포인트를 일원화하고 다양한 물류 환경 변화에 대비한 최적 Route 재설정을 통해 전문성이 필요한 위험물 운송의 안전성을 확보하고 물류비를 절감하였습니다.",
+      "idx":57,
+"date":"2020-10-29",
+      "title": "위험물 물류 운송 안전성 확보 및 물류비 절감",
+      "thumEyebrow": "글로벌 정밀화학 제조사",
+    
+      "company": "글로벌 정밀화학 제조사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/Transport_of_Dangerous_Goods_Samsung_SDS_Strategy_Case_ko.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "물류관리 포인트를 일원화하고 다양한 물류 환경 변화에 대비한 최적 Route 재설정을 통해 전문성이 필요한 위험물 운송의 안전성을 확보하고 물류비를 절감하였습니다.",
+      "listCopy": "위험물 물류 운송 사례로 물류관리 포인트를 삼성SDS로 일원화하고 다양한 물류 환경 변화에(안전 운임제 시행 등) 대비한 최적 Route 재설정을 통해 전문성이 필요한 위험물 운송의 안전성을 확보하고 물류비를 절감하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/29/logistics3_CaseStudy.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_019"
+          }]
+    },{
+      "id": "1242691",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"AI 관제센터는 데이터의 실시간 관리 및 분석을 통해 물류 이상 상황이 발생하는 즉시 현 상황을 파악하여 대처가 가능하게 해줍니다. ",
+      "idx":58,
+"date":"2020-10-29",
+      "title": "AI를 활용한 관제센터 혁신",
+      "thumEyebrow": "글로벌 제조사 및 유통사",
+    
+      "company": "글로벌 제조사 및 유통사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/KO_WP_Innovating_Control_Centers_with_AI.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "AI 관제센터는 데이터의 실시간 관리 및 분석을 통해 물류 이상 상황이 발생하는 즉시 현 상황을 파악하여 대처가 가능하게 해줍니다. ",
+      "listCopy": "AI 관제센터는 데이터의 실시간 관리 및 분석을 통해 물류 이상 상황이 발생하는 즉시 현 상황을 파악하여 대처가 가능하게 해줍니다. 이를 통해 사전에 물류 Risk를 예방할 수 있으며 신속한 의사결정을 지원합니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/29/logistics4_CaseStudy.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1240115",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"고객사는 부품-제조-출하-시장 품질 Data 확보하여, 브라이틱스 AI를 활용한 전사적 품질분석 플랫폼을 구축하였습니다.",
+      "idx":59,
+"date":"2020-10-14",
+      "title": "Brightics AI 기반의 Assembly 제조업 품질분석 플랫폼 구축 사례",
+      "thumEyebrow": "국내 전자 조립 제조사",
+    
+      "company": "국내 전자 조립 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/assembly-quality-analysis-platform.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "고객사는 부품-제조-출하-시장 품질 Data 확보하여, 브라이틱스 AI를 활용한 전사적 품질분석 플랫폼을 구축하였습니다.",
+      "listCopy": "스마트 품질관리 체계를 정착시키기 위한 부품-제조-출하-시장 품질 Data 확보하여, Brightics AI를 활용한 전사적 품질분석 플랫폼을 구축하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/14/CaseStudy_thumb_1.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["제조"],
+      "solutionId": [{
+              "id": "sol_1"
+          },{
+              "id": "sol_g"
+          }]
+    },{
+      "id": "1240109",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"스마트 공장 구축을 통해 제조 지표, 현장 모니터링, 품질 검사관리, 창고관리, 공정관리 등 제조 전반에 걸친 프로세스 정비 및 시스템화를 전국 공장 30여 개 라인에 대해서 적용하여, 제품의 품질 경쟁력을 향상시킬 수 있었습니다.",
+      "idx":60,
+"date":"2020-10-14",
+      "title": "스마트 공장 구축을 통한 제품의 품질 경쟁력을 향상",
+      "thumEyebrow": "국내 자동차 부품 제조사  ",
+    
+      "company": "국내 자동차 부품 제조사  ",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/smart-factory-automobile.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "스마트 공장 구축을 통해 제조 지표, 현장 모니터링, 품질 검사관리, 창고관리, 공정관리 등 제조 전반에 걸친 프로세스 정비 및 시스템화를 전국 공장 30여 개 라인에 대해서 적용하여, 제품의 품질 경쟁력을 향상시킬 수 있었습니다.",
+      "listCopy": "스마트 공장 구축을 통해 제조 지표, 현장 모니터링, 품질 검사관리, 창고관리, 공정관리, Lot 계통도, 품질분석, 설비관리 등 제조 전반에 걸친 프로세스 정비 및 시스템화를 전국 공장 30여 개 라인에 대해서 적용하여, 업무 효율 향상, 사용자 실수 방지 및 생산 진행정보 파악 및 추적관리를 통해 제품의 품질 경쟁력을 향상시킬 수 있었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/14/CaseStudy_thumb_2.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["제조"],
+      "solutionId": [{
+              "id": "sol_g"
+          },{
+              "id": "sol_029"
+          }]
+    },{
+      "id": "1240100",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"차세대 설비관리 시스템 구축을 통해 설비와 부품 교체 주기 최적화 및 설비 성능 증대, 설비 부품 가시성 확보와 부품 공급 효율화로 재고비용 및 구매 비용을 절감하였습니다.",
+      "idx":61,
+"date":"2020-10-14",
+      "title": "자산관리시스템(EAM) 구축을 통한 가시성 확보와 부품 공급 효율화로 재고 및 구매 비용 절감",
+      "thumEyebrow": "국내 전자부품 제조사",
+    
+      "company": "국내 전자부품 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/eam-electronic-components.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "차세대 설비관리 시스템 구축을 통해 설비와 부품 교체 주기 최적화 및 설비 성능 증대, 설비 부품 가시성 확보와 부품 공급 효율화로 재고비용 및 구매 비용을 절감하였습니다.",
+      "listCopy": "설비관리 시스템 구축을 통해 설비와 부품 교체 주기 최적화 및 설비 성능 증대, 설비 부품 가시성 확보와 부품 공급 효율화로 재고비용 및 구매 비용을 절감하였습니다",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/14/CaseStudy_thumb_3.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["제조"],
+      "solutionId": [{
+              "id": "sol_g"
+          },{
+              "id": "sol_032"
+          }]
+    },{
+      "id": "1239927",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Cello Loading Optimizer 도입을 통해 이전 대비 Pallet 적재율이 약 12% 이상 향상되어 운송비가 절감되었습니다.",
+      "idx":62,
+"date":"2020-10-08",
+      "title": "적재 최적화를 통한 창고 운영 효율화 및 물류비 절감",
+      "thumEyebrow": "글로벌 제조사 및 유통사",
+    
+      "company": "글로벌 제조사 및 유통사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1239927_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=ymvpAo2tNnY",
+      "summary": "Cello Loading Optimizer 도입을 통해 이전 대비 Pallet 적재율이 약 12% 이상 향상되어 운송비가 절감되었습니다.",
+      "listCopy": "최신의 알고리즘과 각 모듈 별 핵심 기술을 적용하여 출하 계획부터 적재까지 전 업무 프로세스가 반영된 적재 최적화를 통해 적재 효율성을 향상시킵니다. Cello Loading Optimizer 도입 이전 대비 Pallet 적재율이 약 12% 이상 향상되어 운송비가 절감되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/08/bg_benefit_logistics3_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1239928",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Cello Dynamic Dashboard는 Cello를 기반으로 집계되는 실시간 정보를 제공하여 고객의 신속한 의사결정을 돕습니다. ",
+      "idx":63,
+"date":"2020-10-08",
+      "title": "정보의 다차원 분석을 통한 신속한 이슈 파악 및 관리 효율화",
+      "thumEyebrow": "글로벌 제조사 및 유통사",
+    
+      "company": "글로벌 제조사 및 유통사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1239928_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=CXqi-Uf5dvA",
+      "summary": "Cello Dynamic Dashboard는 Cello를 기반으로 집계되는 실시간 정보를 제공하여 고객의 신속한 의사결정을 돕습니다. ",
+      "listCopy": "Dynamic Dashboard 서비스는 방대한 물류 정보를 다차원 분석을 통해 다양한 비즈니스 시각으로 물류 분석 정보를 제공합니다. 문제점을 신속하게 파악해 대응할 수 있으며 창고 및 국제 운송의 실시간 모니터링으로 효율적인 관리가 가능합니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/08/bg_benefit_logistics4_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["물류","제조","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_3"
+          }]
+    },{
+      "id": "1239427",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"고객사는 삼성SDS와 함께 기업 핵심 시스템인 MES를 대상으로 클라우드 전환을 실행했습니다. 성공적인 클라우드 전환 과정과, 이로 인해 향상된 비즈니스 경쟁력을 확인해 보세요.",
+      "idx":64,
+"date":"2020-09-29",
+      "title": "기업 핵심 시스템의 성공적 클라우드 전환, 에코프로 비엠 사례",
+      "thumEyebrow": "에코프로비엠",
+    
+      "company": "에코프로비엠",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/cloud-ecoprobm.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=jZ4tTMox9V4",
+      "summary": "고객사는 삼성SDS와 함께 기업 핵심 시스템인 MES를 대상으로 클라우드 전환을 실행했습니다. 성공적인 클라우드 전환 과정과, 이로 인해 향상된 비즈니스 경쟁력을 확인해 보세요.",
+      "listCopy": "에코프로 비엠은 2차 전지 핵심소재 생산 기업으로 국내 최초로 하이 니켈계 양극소재(NCA) 개발 및 양산화에 성공한, 양극소재 시장 2위 기업입니다. 글로벌 사업 확장을 위한 생산 공장 증설에 따라 공정의 통합적이고 유연한 관리가 요구되어, 핵심 시스템인 MES의 클라우드 전환을 실행했습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/29/thumb_5.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/ecoprobm.png?queryString=20260715031051",
+      "category": ["클라우드","제조"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_012"
+          },{
+              "id": "sol_087"
+          }]
+    },{
+      "id": "1239275",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"국내 최초로 MES에 On-Premise 수준의 안정적이고 처리 속도와 성능이 뛰어난 Public Cloud를 적용하였습니다.",
+      "idx":65,
+"date":"2020-09-28",
+      "title": "글로벌 제조 시스템 Public Cloud 구축",
+      "thumEyebrow": "글로벌 제조사",
+    
+      "company": "글로벌 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/manufacturing-public-cloud.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/11/05/4_Leaflet_SDS_Cloud_Public_Cloud_for_Global_Manufacturing_System_Kor_211104.pdf",
+      "videoUrl": "",
+      "summary": "국내 최초로 MES에 On-Premise 수준의 안정적이고 처리 속도와 성능이 뛰어난 Public Cloud를 적용하였습니다.",
+      "listCopy": "글로벌 사업 확장을 목표로 제조 생산 시스템(MES)의 통합적이고 유연한 관리에 대한 니즈가 증가하고 있습니다. 이러한 고객 니즈에 맞추어 국내 최초로 MES에 On-Premise 수준의 안정적이고 처리 속도와 성능이 뛰어난 Public Cloud를 적용하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/29/thumb_1.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","제조"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_g"
+          },{
+              "id": "sol_012"
+          },{
+              "id": "sol_029"
+          },{
+              "id": "sol_087"
+          }]
+    },{
+      "id": "1239081",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"사업장의 에너지 가시화의 통해 에너지 절감을 위한 기반을 마련하였으며, 이를 통해 합리적인 운영이 가능해졌습니다.",
+      "idx":66,
+"date":"2020-09-25",
+      "title": "데이터 기반 에너지 통합 관리 시스템 구축",
+      "thumEyebrow": "글로벌 전자 제조사",
+    
+      "company": "글로벌 전자 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/ehs-casestudy-1.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "사업장의 에너지 가시화의 통해 에너지 절감을 위한 기반을 마련하였으며, 이를 통해 합리적인 운영이 가능해졌습니다.",
+      "listCopy": "사업장의 에너지 가시화의 통해 에너지 절감을 위한 기반을 마련하였으며, 이를 통해 합리적인 운영이 가능해졌습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/29/thumb_2.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["제조"],
+      "solutionId": [{
+              "id": "sol_c"
+          },{
+              "id": "sol_g"
+          },{
+              "id": "sol_003"
+          },{
+              "id": "sol_169"
+          }]
+    },{
+      "id": "1239075",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"글로벌 표준 EHS 시스템을 구축하여 국내외 사업장의 환경/안전/보건 업무 수준을 제고했습니다. ",
+      "idx":67,
+"date":"2020-09-25",
+      "title": "데이터 기반 환경/안전/보건 시스템 체계 구현",
+      "thumEyebrow": "글로벌 전자 제조사",
+    
+      "company": "글로벌 전자 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/ehs-casestudy-2.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "글로벌 표준 EHS 시스템을 구축하여 국내외 사업장의 환경/안전/보건 업무 수준을 제고했습니다. ",
+      "listCopy": "EHS 시스템 업무 프로세스 표준화 및 신기술 기반의 글로벌 환경안전 플랫폼 구축을 통해 국내/해외 법적 규제 대응 및 환경안전사고의 사전 예방이 가능합니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/29/thumb_3.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["제조"],
+      "solutionId": [{
+              "id": "sol_c"
+          },{
+              "id": "sol_g"
+          },{
+              "id": "sol_003"
+          },{
+              "id": "sol_169"
+          }]
+    },{
+      "id": "1238509",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"챗봇을 통해 손해 보험사 설계사 및 현업의 업무 편의 증진 및 고객상담 시 즉시 답변 가능한 보험 서비스를 제공할 수 있게 되었습니다.",
+      "idx":68,
+"date":"2020-09-21",
+      "title": "손해보험사의 설계사용 챗봇 구현",
+      "thumEyebrow": "손해보험사",
+    
+      "company": "손해보험사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/chatbot-non-life-insurance.html",
+      "attachUrl": "",
+      "videoUrl": "",
+      "summary": "챗봇을 통해 손해 보험사 설계사 및 현업의 업무 편의 증진 및 고객상담 시 즉시 답변 가능한 보험 서비스를 제공할 수 있게 되었습니다.",
+      "listCopy": "챗봇을 통해 손해 보험사 설계사 및 현업의 업무 편의 증진 및 업무별 고객상담 시 필요한 각종 설명자료로 즉시 답변 가능한 보험 서비스를 제공할 수 있게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/21/thumb_2.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["금융"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_a"
+          },{
+              "id": "sol_047"
+          },{
+              "id": "sol_107"
+          }]
+    },{
+      "id": "1236862",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"인프라부터 애플리케이션에 이르기까지 클라우드로 전환하여 보다 유연하고 신속한 시장 대응이 가능한 마케팅 업무 추진이 가능하게 되었습니다.",
+      "idx":69,
+"date":"2020-09-09",
+      "title": "마케팅 혁신을 위한 클라우드 마이그레이션",
+      "thumEyebrow": "글로벌 비즈니스사",
+    
+      "company": "글로벌 비즈니스사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/cloud-marketing-system-cloud-migration.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/11/05/1_Leaflet_SDS_Cloud_Marketing_System_Cloud_Migration_Case_Kor_211104.pdf",
+      "videoUrl": "",
+      "summary": "인프라부터 애플리케이션에 이르기까지 클라우드로 전환하여 보다 유연하고 신속한 시장 대응이 가능한 마케팅 업무 추진이 가능하게 되었습니다.",
+      "listCopy": "급변하는 시장에 대응하기 위한 글로벌 기업의 마케팅 활동도 혁신을 추진 중에 있습니다. 마케팅 시스템을 인프라부터 애플리케이션에 이르기까지 클라우드로 전환하여 보다 유연하고 신속한 시장 대응이 가능한 마케팅 업무 추진이 가능하게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/11/1236862_thumb.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","제조"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_087"
+          }]
+    },{
+      "id": "1236861",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성SDS의 End-to-End 클라우드 서비스로 노후 장비 교체, IT 인프라 이중화, 데이터 백업체계 구축, 향후 비즈니스 확장을 고려한 아키텍처 구성 등 IT 환경의 전반적인 개선과 효율적인 IT 시스템을 빠르게 구축할 수 있었습니다.",
+      "idx":70,
+"date":"2020-09-09",
+      "title": "안정적인 의료 서비스 혁신을 위한 클라우드 이중화 적용 및 운영",
+      "thumEyebrow": "질병검사 전문 의료기관",
+    
+      "company": "질병검사 전문 의료기관",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/cloud-medical-service-cloud-adoption.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/11/12/Leaflet_SDS_Cloud_Medical_Service_Cloud_Adoption_Case_Kor_211110.pdf",
+      "videoUrl": "",
+      "summary": "삼성SDS의 End-to-End 클라우드 서비스로 노후 장비 교체, IT 인프라 이중화, 데이터 백업체계 구축, 향후 비즈니스 확장을 고려한 아키텍처 구성 등 IT 환경의 전반적인 개선과 효율적인 IT 시스템을 빠르게 구축할 수 있었습니다.",
+      "listCopy": "삼성SDS의 End-to-End 클라우드 서비스로 노후 장비 교체, IT 인프라 이중화, 데이터 백업체계 구축, 향후 비즈니스 확장을 고려한 아키텍처 구성 등 IT 환경의 전반적인 개선과 효율적인 IT 시스템을 빠르게 구축할 수 있었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/11/1236861_thumb.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_i"
+          }]
+    },{
+      "id": "1233988",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Brity RPA로 자동화하여 화물 Tracking 관련 업무 처리시간을 225시간에서 11시간으로 효율화하였습니다.",
+      "idx":71,
+"date":"2020-09-01",
+      "title": "DDoS 공격으로 오인받은 화물 Tracking 조회속도 혁신",
+      "thumEyebrow": "글로벌 물류사",
+    
+      "company": "글로벌 물류사",
+      "btnName": "다운로드",
+      "openWindow": true,
+      "noStory": false,
+      "linkUrl": "/kr/enterprise-asset/Logistics-BrityWorks-wp-ko.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=rW6X4XlTaZs",
+      "summary": "Brity RPA로 자동화하여 화물 Tracking 관련 업무 처리시간을 225시간에서 11시간으로 효율화하였습니다.",
+      "listCopy": "Brity RPA로 자동화하여 화물 Tracking 관련 업무 처리시간을 225시간에서 11시간으로 효율화하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/07/20/dt_customer012.png?queryString=20260715031051",
+      "thumbImgAlt": "DDoS 공격으로 오인받은 화물 Tracking 조회속도 혁신",
+      "logoImg": "",
+      "category": ["자동화/협업","물류"],
+      "solutionId": [{
+              "id": "sol_3"
+          },{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          },{
+              "id": "sol_022"
+          },{
+              "id": "sol_023"
+          }]
+    },{
+      "id": "1233981",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"Hybrid Cloud 아키텍처로 안전하고 안정적으로 모바일 페이먼트 시스템을 운영할 수 있게 되었습니다.",
+      "idx":72,
+"date":"2020-09-01",
+      "title": "Hybrid Cloud를 통한 Mobile Payment 365일 무중단 운영",
+      "thumEyebrow": "모바일 페이먼트사",
+    
+      "company": "모바일 페이먼트사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/cloud-mobile-payment-hybrid-cloud.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/11/05/2_Leaflet_SDS_Cloud_Mobile_Payment_Hybrid_Cloud_Case_Kor_211104.pdf",
+      "videoUrl": "",
+      "summary": "Hybrid Cloud 아키텍처로 안전하고 안정적으로 모바일 페이먼트 시스템을 운영할 수 있게 되었습니다.",
+      "listCopy": "모바일 페이먼트 시스템은 글로벌 지원은 물론이고, 금융거래의 급격한 증가, 예측 불가의 사고에도 무중단으로 안정적으로 운영되어야 합니다. Private Cloud와 Multi Public Cloud를 활용한 Hybrid Cloud 아키텍처로 안전하고 안정적으로 운영할 수 있게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/07/20/dt_customer005.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","금융"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_086"
+          },{
+              "id": "sol_087"
+          }]
+    },{
+      "id": "1226210",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성SDS는 브리티 RPA/Assistant를 활용한 COVID-19 실시간 비상 대응 문진을 통해 임직원의 건강과 안전을 관리하고 있습니다.",
+      "idx":73,
+"date":"2020-08-18",
+      "title": "브리티 RPA/Assistant 활용, 1.2만 명 임직원 대상 COVID-19 실시간 문진",
+      "thumEyebrow": "삼성SDS",
+    
+      "company": "삼성SDS",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/brity-rpa-covid.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/07/27/CaseStudy-Brity_RPA_realtime_examination_200727.pdf",
+      "videoUrl": "https://www.youtube.com/watch?v=ZiEXp0I0CE0",
+      "summary": "삼성SDS는 브리티 RPA/Assistant를 활용한 COVID-19 실시간 비상 대응 문진을 통해 임직원의 건강과 안전을 관리하고 있습니다.",
+      "listCopy": "삼성SDS는 Brity RPA/Assistant를 활용한 COVID-19 실시간 비상 대응 문진을 통해 임직원의 건강과 안전을 관리하고 있습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/02/dt_customer002.png?queryString=20260715031051",
+      "thumbImgAlt": "(삼성SDS) 1.2만명 임직원 대상 COVID-19 실시간 문진",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2024/06/20/kk_logo2_0620_3.png?queryString=20260715031051",
+      "category": ["자동화/협업","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_006"
+          },{
+              "id": "sol_107"
+          }]
+    },{
+      "id": "1226212",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성은 코로나19로 촉발된 언택트 시대에 국내 기업 최초로 실시하는 새로운 대규모 온라인 채용 시험을 실시, 안정적으로 시스템이 가동되며 성공적으로 진행했습니다.",
+      "idx":74,
+"date":"2020-08-18",
+      "title": "언택트 시대, 온라인 기반 비대면 시험 운영으로 채용 혁신",
+      "thumEyebrow": "삼성",
+    
+      "company": "삼성",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/brity-messenger-gsat.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/24/CaseStudy_BrityMessenger_GSAT_re.pdf",
+      "videoUrl": "",
+      "summary": "삼성은 코로나19로 촉발된 언택트 시대에 국내 기업 최초로 실시하는 새로운 대규모 온라인 채용 시험을 실시, 안정적으로 시스템이 가동되며 성공적으로 진행했습니다.",
+      "listCopy": "브리티 미팅 & 메신저를 통해 국내 기업 최초로 대규모 비대면 채용 시험을 성공적으로 실현했습니다. ",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/02/dt_customer008.png?queryString=20260715031051",
+      "thumbImgAlt": "언택트 시대, 온라인 기반 비대면 시험 운영으로 채용 혁신브리티 미팅 & 메신저를 통해 국내 기업 최초로 대규모 비대면 채용시험을 성공적으로 실현했습니다. ",
+      "logoImg": "",
+      "category": ["자동화/협업","제조"],
+      "solutionId": [{
+              "id": "sol_7"
+          },{
+              "id": "sol_037"
+          },{
+              "id": "sol_038"
+          },{
+              "id": "sol_112"
+          }]
+    },{
+      "id": "1217320",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"브라이틱스 AI를 이용한 분석 서비스로 휴대폰 판매량 예측부터 프로모션 가격 최적화까지 자동화하여 판매예측을 위한 업무 부담은 줄고 효율성은 몇 배로 증가하였습니다.",
+      "idx":75,
+"date":"2020-08-12",
+      "title": "브라이틱스 AI 기반 휴대폰 판매량 예측을 통한 프로모션 가격 최적화",
+      "thumEyebrow": "삼성전자",
+    
+      "company": "삼성전자",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1217320_4762.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=hJ-1WdAv3_M",
+      "summary": "브라이틱스 AI를 이용한 분석 서비스로 휴대폰 판매량 예측부터 프로모션 가격 최적화까지 자동화하여 판매예측을 위한 업무 부담은 줄고 효율성은 몇 배로 증가하였습니다.",
+      "listCopy": "브라이틱스 AI를 이용한 분석 서비스로 휴대폰 판매량 예측부터 프로모션 가격 최적화까지 자동화하여 판매예측을 위한 업무 부담은 줄고 효율성은 몇 배로 증가하였습니다",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/11/artimgpreview_1.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["인공지능","제조"],
+      "solutionId": [{
+              "id": "sol_1"
+          },{
+              "id": "sol_g"
+          },{
+              "id": "sol_002"
+          },{
+              "id": "sol_003"
+          },{
+              "id": "sol_004"
+          }]
+    },{
+      "id": "1226216",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성SDS 넥스레저 솔루션기반의 글로벌 전자계약 체계 구축을 통해 계약서/계약 이력에 대한 위변조 리스크 방지하고 거래 신뢰성을 강화하였습니다.",
+      "idx":76,
+"date":"2020-08-18",
+      "title": "블록체인 기반 글로벌 전자계약 체계로 연 4.5억 절감",
+      "thumEyebrow": "글로벌 제조사",
+    
+      "company": "글로벌 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": false,
+      "linkUrl": "/kr/case-study/blockchain-electronic-contract.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/07/09/CaseStudy1-Global_Electronic_Contract_System.pdf",
+      "videoUrl": "",
+      "summary": "삼성SDS 넥스레저 솔루션기반의 글로벌 전자계약 체계 구축을 통해 계약서/계약 이력에 대한 위변조 리스크 방지하고 거래 신뢰성을 강화하였습니다.",
+      "listCopy": "글로벌 제조기업 S사는 기업향 블록체인 넥스레저 기반의 글로벌 전자계약 체계 구축을 통해 계약서/계약 이력에 대한 위변조 리스크 방지하고 거래 신뢰성을 강화하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/02/dt_customer003.png?queryString=20260715031051",
+      "thumbImgAlt": "블록체인 기반 글로벌 전자계약 체계로 연 4.5억 절감글로벌 제조기업 S사는 기업향 블록체인 넥스레저 기반의 글로벌 전자계약 체계 구축을 통해 계약서/계약이력에 대한 위변조 리스크 방지하고 거래 신뢰성을 강화하였습니다 ",
+      "logoImg": "",
+      "category": ["블록체인","제조"],
+      "solutionId": [{
+              "id": "sol_4"
+          },{
+              "id": "sol_g"
+          },{
+              "id": "sol_026"
+          },{
+              "id": "sol_027"
+          }]
+    },{
+      "id": "1233985",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"부품 생산부터 A/S까지, 모든 부품의 이력이 투명하게 관리되어 기업의 신뢰를 높일 수 있습니다.",
+      "idx":77,
+"date":"2020-09-01",
+      "title": "블록체인 기반 자동차 Warranty 관리",
+      "thumEyebrow": "PEGA",
+    
+      "company": "PEGA",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/blockchain-warranty-mgmt.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/09/DPA-Blockchain-Enable-Manufacturing-Warranty-Management-Value-Chain-WP.pdf",
+      "videoUrl": "",
+      "summary": "부품 생산부터 A/S까지, 모든 부품의 이력이 투명하게 관리되어 기업의 신뢰를 높일 수 있습니다.",
+      "listCopy": "부품 생산부터 A/S까지, 모든 부품의 이력이 투명하게 관리되어 기업의 신뢰를 높일 수 있습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/07/20/dt_customer009.png?queryString=20260715031051",
+      "thumbImgAlt": "블록체인 기반 자동차 Warranty 관리",
+      "logoImg": "",
+      "category": ["블록체인","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_4"
+          },{
+              "id": "sol_026"
+          }]
+    },{
+      "id": "1233982",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"브라이틱스 AI 기반 Cello Demand Sensing의 정확하고 디테일한 수요예측을 통해, 고객은 과잉 재고 및 물류비용의 낭비를 방지하고 판매 기회를 극대화할 수 있었습니다.",
+      "idx":78,
+"date":"2020-09-01",
+      "title": "AI 기반 수요 예측을 통한 물류비용 효율화",
+      "thumEyebrow": "삼성전자 오스트리아법인",
+    
+      "company": "삼성전자 오스트리아법인",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/brightics-ai-logistics-case.html",
+      "attachUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=Suon54AgbkQ",
+      "summary": "브라이틱스 AI 기반 Cello Demand Sensing의 정확하고 디테일한 수요예측을 통해, 고객은 과잉 재고 및 물류비용의 낭비를 방지하고 판매 기회를 극대화할 수 있었습니다.",
+      "listCopy": "삼성전자 Austria 법인은 Brightics AI 기반의 디테일한 수요예측을 통해 과잉재고 및 물류비용 낭비를 방지하고 판매 기회를 극대화하고 있습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/07/20/dt_customer006.png?queryString=20260715031051",
+      "thumbImgAlt": "삼성전자 Austria 법인은 Brightics AI 기반의 디테일한 수요예측을 통해 과잉재고 및 물류비용 낭비를 방지하고 판매 기회를 극대화하고 있습니다.",
+      "logoImg": "",
+      "category": ["인공지능","제조"],
+      "solutionId": [{
+              "id": "sol_1"
+          },{
+              "id": "sol_3"
+          },{
+              "id": "sol_003"
+          },{
+              "id": "sol_023"
+          }]
+    },{
+      "id": "1225954",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"본사와 해외 건설 현장의 비즈니스를 통합된 Hybrid Cloud 환경을 제공을 통해  구축 및 운영 비용을 효율화했습니다.",
+      "idx":79,
+"date":"2020-08-12",
+      "title": "해외 엔지니어링 업무 혁신을 위한 Hybrid Cloud 플랫폼 구축",
+      "thumEyebrow": "글로벌 엔지니어링사",
+    
+      "company": "글로벌 엔지니어링사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/cloud-engineering-hybrid-cloud.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/10/05/Leaflet_SDS_Cloud_Global_Plant_Firm_Hybrid_Cloud_Case_Kor_210916_2.pdf",
+      "videoUrl": "",
+      "summary": "본사와 해외 건설 현장의 비즈니스를 통합된 Hybrid Cloud 환경을 제공을 통해  구축 및 운영 비용을 효율화했습니다.",
+      "listCopy": "본사 시스템은 안정적인 Private Cloud를, 해외 현장 시스템에는 Public Cloud를 적용하여 통합된 Hybrid Cloud 환경을 제공하였으며, 구축 및 운영 비용을 효율화하고 수분 내 장애 대응이 가능하며 해외 시스템을 통합 운영할 수 있게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/11/1225954_thumb.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","EPC"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_012"
+          },{
+              "id": "sol_013"
+          }]
+    },{
+      "id": "1225012",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"금융 시장 경쟁력을 확보하기 위해서는 포화된 데이터 센터와 노후화된 정보시스템, 재해복구센터의 부재를 해결하는 등 디지털 인프라 혁신을 이루었습니다.",
+      "idx":80,
+"date":"2020-08-12",
+      "title": "금융 디지털 혁신을 위한 데이터 센터 구축",
+      "thumEyebrow": "금융사 IT센터",
+    
+      "company": "금융사 IT센터",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/cloud-finance-it-center.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/11/12/Leaflet_SDS_Cloud_IT_Center_for_Digital_Innovation_in_Finance_Kor_211110.pdf",
+      "videoUrl": "",
+      "summary": "금융 시장 경쟁력을 확보하기 위해서는 포화된 데이터 센터와 노후화된 정보시스템, 재해복구센터의 부재를 해결하는 등 디지털 인프라 혁신을 이루었습니다.",
+      "listCopy": "금융 고객사의 방대한 데이터를 효과적으로 제어하고, 전면적인 비즈니스 중앙화와 실시간 소통, 통합 인프라 운영 및 관리가 가능하도록 데이터 센터 이전, 구축에 성공하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/02/casestudy_thumb_finance_IT_center.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","금융"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_a"
+          }]
+    },{
+      "id": "1225011",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"삼성SDS의 통합 SRE 모델 적용으로 시스템 유연성은 높이고, 신속한 애플리케이션 개발 및 운영이 실현되었습니다.",
+      "idx":81,
+"date":"2020-08-12",
+      "title": "글로벌 e커머스 시스템의 통합 운영 자동화를 위한 SRE 적용",
+      "thumEyebrow": "글로벌 e커머스",
+    
+      "company": "글로벌 e커머스",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/cloud-e-commerce-sre.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/28/(Leaflet)SDS-Cloud-Global-eCommerce-SRE-Kor-200925.pdf",
+      "videoUrl": "",
+      "summary": "삼성SDS의 통합 SRE 모델 적용으로 시스템 유연성은 높이고, 신속한 애플리케이션 개발 및 운영이 실현되었습니다.",
+      "listCopy": "점점 짧아지는 신제품 출시 주기, 글로벌 동시 론칭 등 e커머스 시장 환경에 적극 대응하기 위하여 효과적인 개발 협업과 배포 운영 자동화를 추진하였습니다. 삼성SDS의 통합 SRE 모델 적용으로 시스템 유연성은 높이고, 신속한 애플리케이션 개발 및 운영이 실현되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/02/casestudy_thumb_sre.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","유통/서비스"],
+      "solutionId": [{
+              "id": "sol_2"
+          }]
+    },{
+      "id": "1225010",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"클라우드 기반의 아키텍처 적용 및 클라우드 플랫폼(PaaS) 기반의 표준 개발 및 운영환경을 구축하여 IT 비용 절감 및 제조 안정성 강화를 실현하게 되었습니다.",
+      "idx":82,
+"date":"2020-08-12",
+      "title": "제조 시스템(MES)의 글로벌 확산 및 운영을 위한 클라우드 플랫폼(PaaS) 적용",
+      "thumEyebrow": "글로벌 제조사",
+    
+      "company": "글로벌 제조사",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/cloud-mes-paas.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/09/28/(Leaflet)SDS_Cloud_Manufacturing_System_PaaS_Case_Kor_200925.pdf",
+      "videoUrl": "",
+      "summary": "클라우드 기반의 아키텍처 적용 및 클라우드 플랫폼(PaaS) 기반의 표준 개발 및 운영환경을 구축하여 IT 비용 절감 및 제조 안정성 강화를 실현하게 되었습니다.",
+      "listCopy": "글로벌 생산 확대로 비니지스에 유연하고 능동적으로 대응할 수 있는 제조 시스템 혁신이 필요하였습니다. 클라우드 기반의 아키텍처 적용 및 클라우드 플랫폼(PaaS) 기반의 표준 개발 및 운영환경을 구축하여 IT 비용 절감 및 제조 안정성 강화를 실현하게 되었습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/02/casestudy_thumb_mes_paas_.png?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "",
+      "category": ["클라우드","제조"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_080"
+          },{
+              "id": "sol_087"
+          }]
+    },{
+      "id": "1225162",
+      "success_yn": "F"
+,"success_img":""
+,"thumb_html":"경찰, 소방, 지자체 등 재난 관련 기관이 공동으로 사용하는 4세대 무선 통신 인프라를 구축하였습니다.",
+      "idx":83,
+"date":"2020-08-12",
+      "title": "재난 관련 기관이 공동으로 사용하는 4세대 무선 통신 인프라 구축",
+      "thumEyebrow": "행정안전부",
+    
+      "company": "행정안전부",
+      "btnName": "자세히 보기",
+      "openWindow": false,
+      "noStory": true,
+      "linkUrl": "/kr/case-study/1225162_4762.html",
+      "attachUrl": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2021/11/12/Leaflet_SDS_Cloud_Disaster_and_Safety_Communications_Network_Kor_211110.pdf",
+      "videoUrl": "",
+      "summary": "경찰, 소방, 지자체 등 재난 관련 기관이 공동으로 사용하는 4세대 무선 통신 인프라를 구축하였습니다.",
+      "listCopy": "통합 관제가 가능한 전국 단일 통신 인프라를 구축하고, 신속하고 편리한 재난상황 공유를 위하여 경찰, 소방, 지자체 등 재난 관련 기관이 공동으로 사용하는 4세대 무선 통신 인프라를 구축하였습니다.",
+      "thumbImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2020/10/20/2_Cloud_thumb.jpg?queryString=20260715031051",
+      "thumbImgAlt": "",
+      "logoImg": "https://image.samsungsds.com/kr/case-study/__icsFiles/afieldfile/2023/11/14/mois.png?queryString=20260715031051",
+      "category": ["클라우드","공공"],
+      "solutionId": [{
+              "id": "sol_2"
+          },{
+              "id": "sol_015"
+          }]
+    }]
+  }

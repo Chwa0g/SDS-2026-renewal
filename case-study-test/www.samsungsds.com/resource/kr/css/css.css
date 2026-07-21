@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* CSS Document */
+@import url('/resource/kr/css/reset.css?queryString=20241025015743');
+@import url('/resource/kr/css/layout.css?queryString=20241025015743'); /* GNB, FOOTER 관련 제거 */
+@import url('/resource/kr/css/common.css?queryString=20241025015743'); /* font, wrap 관련 수정 */
+@import url('/resource/kr/css/table.css?queryString=20241025015743');
+@import url('/resource/kr/css/content.css?queryString=20241025015743');
+@import url('/resource/kr/css/content2.css?queryString=20241025015743');
+@import url('/resource/kr/css/content3.css?queryString=20241025015743');
+@import url('/resource/kr/css/popup.css?queryString=20241025015743');
+@import url('/resource/kr/css/blog.css?queryString=20241025015743');
+@import url('/resource/kr/css/library.css?queryString=20241025015743');
+@import url('/resource/kr/css/newsroom.css?queryString=20241025015743');
+@import url('/resource/kr/css/structure.css?queryString=20241025015743');
+
+/* 20241025 국문에서만 dt_solutions.css 불러와서 폰트가 중첩되는 오류로 삭제 */
+/* @import url('/resource/kr/css/dt_solutions.css?queryString=20241025015743'); */
