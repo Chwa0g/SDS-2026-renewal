@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      var message = "adfit:3PC:unsupported";
+
+      try {
+        document.cookie = "test=U; SameSite=None; Path=/; Secure; Max-Age=3600;";
+        document.cookie = "__Host-test=P; SameSite=None; Path=/; Secure; Max-Age=3600; Partitioned;";
+
+        if (/test=U/.test(document.cookie)) {
+          message = "adfit:3PC:supported";
+        } else if (/test=P/.test(document.cookie)) {
+          message = "adfit:3PC:partitioned";
+        }
+
+        document.cookie = "test=U; SameSite=None; Path=/; Secure; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+        document.cookie = "__Host-test=P; SameSite=None; Path=/; Secure; expires=Thu, 01 Jan 1970 00:00:01 GMT; Partitioned;";
+      } catch {
+        // ignore
+      }
+
+      window.parent.postMessage(message, "*");
+    </script>
+  </body>
+</html>
+
