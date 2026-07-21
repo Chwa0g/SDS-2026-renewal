@@ -24767,7 +24767,7 @@ $(function() {
         }
     }
 });
-
+ 
 // resource_tab, btn_tab_close, chkAll, chk 삭제 불가능!
 // html onclick으로 이벤트 바인딩 되어있음
 // 해당 기능은 상단에 구현됨
@@ -24775,7 +24775,7 @@ function resource_tab(obj) {}
 function btn_tab_close(obj) {}
 function chkAll(obj) {}
 function chk(obj) {}
-
+ 
 /** visionCarousel */
 function visionCarousel(el) {
     _proto = visionCarousel.prototype;
