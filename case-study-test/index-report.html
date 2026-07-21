@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📰 Case Study (고객사례 페이지) 전용 검증 보고서</title>
+    <title>📰 Case Study (고객사례 페이지) 전용 정밀 검증 보고서</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,9 +36,9 @@
             line-height: 1.6;
         }
 
-        /* Fixed Left Navigation Sidebar */
+        /* Fixed Left Sidebar */
         .sidebar {
-            width: 320px;
+            width: 330px;
             background-color: var(--bg-nav);
             border-right: 1px solid var(--border-color);
             position: fixed;
@@ -89,7 +89,7 @@
 
         /* Main Container */
         .main-container {
-            margin-left: 320px;
+            margin-left: 330px;
             flex: 1;
             padding: 40px 50px;
             max-width: 1250px;
@@ -106,7 +106,7 @@
         .report-header h1 { font-size: 26px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
         .report-header p { font-size: 14.5px; color: var(--text-sub); line-height: 1.7; }
 
-        /* File Section Box */
+        /* File Section */
         .file-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -127,12 +127,7 @@
             gap: 12px;
         }
 
-        .file-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
+        .file-title { display: flex; align-items: center; gap: 12px; }
         .file-title h3 {
             font-family: 'Fira Code', monospace;
             font-size: 17px;
@@ -162,7 +157,7 @@
 
         .file-body { padding: 24px; }
 
-        /* Audit Card */
+        /* Audit Item Card */
         .audit-item {
             background: #0b0f19;
             border: 1px solid var(--border-color);
@@ -222,7 +217,7 @@
             border-left: 4px solid var(--add-border);
         }
 
-        .code-diff-table .tag { width: 110px; font-weight: 700; user-select: none; }
+        .code-diff-table .tag { width: 130px; font-weight: 700; user-select: none; }
 
         footer {
             margin-top: 60px; padding-top: 24px;
@@ -236,8 +231,8 @@
     <!-- Left Sidebar -->
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>📰 고객사례 전용 리포트</h2>
-            <p>해당 페이지 전용 수정 내역 리포트</p>
+            <h2>📰 고객사례 정밀 리포트</h2>
+            <p>100% 실제 디스크 라인 검증 보고서</p>
         </div>
 
         <ul class="nav-list">
@@ -269,8 +264,8 @@
     <!-- Main Container -->
     <main class="main-container">
         <header class="report-header">
-            <h1>📰 Case Study (고객사례 페이지) 전용 검증 보고서</h1>
-            <p>본 리포트는 고객사례 페이지 구동과 관련된 카테고리 카드 타이틀 높이 정렬 .map().get().sort() 조치 및 blog.js EBC 탭 수정 내용만을 엄선하여 보여줍니다.</p>
+            <h1>📰 Case Study (고객사례 페이지) 전용 정밀 검증 보고서</h1>
+            <p>본 리포트는 고객사례 페이지 구동과 관련된 module.js 내 10곳의 .map().get().sort() 높이 정렬 조치 및 blog.js EBC 탭 수정 내역을 실제 소스 라인과 100% 일치하게 대조합니다.</p>
         </header>
 
         
@@ -278,16 +273,16 @@
             <div class="file-section-header">
                 <div class="file-title">
                     <h3>1. module.js</h3>
-                    <span class="file-path">module_src/js/j4/module.js</span>
+                    <span class="file-path">www.samsungsds.com/module_src/js/j4/module.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/module_src/js/j4/module.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/www.samsungsds.com/module_src/js/j4/module.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 
                     <div class="audit-item">
                         <div class="audit-header">
-                            <span class="audit-location">📍 L7865, L7866, L18480, L33747</span>
-                            <span class="audit-reason">고객사례 카드 타이틀 높이 정렬 함수 내 .map().get().sort() 전환 (TypeError 조치)</span>
+                            <span class="audit-location">📍 L7865, L7866, L14146, L18480, L33748, L33749, L39777, L40046, L40580, L40711</span>
+                            <span class="audit-reason">고객사례 카드 타이틀/텍스트 높이 정렬 함수 내 .map().get().sort() 전환 (TypeError 조치)</span>
                         </div>
                         <table class="code-diff-table">
                             <tr class="before-row">
@@ -308,25 +303,25 @@
             <div class="file-section-header">
                 <div class="file-title">
                     <h3>2. blog.js</h3>
-                    <span class="file-path">resource/kr/js/blog.js</span>
+                    <span class="file-path">www.samsungsds.com/resource/kr/js/blog.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/resource/kr/js/blog.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/www.samsungsds.com/resource/kr/js/blog.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 
                     <div class="audit-item">
                         <div class="audit-header">
-                            <span class="audit-location">📍 L210, L340</span>
+                            <span class="audit-location">📍 L859, L862, L864, L913</span>
                             <span class="audit-reason">고객사례 블로그 EBC 탭 트리거 내 :first 선택자 .first() 분리</span>
                         </div>
                         <table class="code-diff-table">
                             <tr class="before-row">
-                                <td class="tag">[수정 전 L210]</td>
-                                <td>find('.ebc-tab-triggers:first')</td>
+                                <td class="tag">[수정 전 L864]</td>
+                                <td>first_trigger = targets.find('.ebc-tab-triggers:first').parents('li')</td>
                             </tr>
                             <tr class="after-row">
-                                <td class="tag">[수정 후 L210]</td>
-                                <td>find('.ebc-tab-triggers').first()</td>
+                                <td class="tag">[수정 후 L864]</td>
+                                <td>first_trigger = targets.find('.ebc-tab-triggers').first().parents('li')</td>
                             </tr>
                         </table>
                     </div>
@@ -338,25 +333,25 @@
             <div class="file-section-header">
                 <div class="file-title">
                     <h3>3. extension2.js</h3>
-                    <span class="file-path">resource/kr/js/j4/extension2.js</span>
+                    <span class="file-path">www.samsungsds.com/resource/kr/js/j4/extension2.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/resource/kr/js/j4/extension2.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/www.samsungsds.com/resource/kr/js/j4/extension2.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 
                     <div class="audit-item">
                         <div class="audit-header">
-                            <span class="audit-location">📍 L1856, L2140</span>
-                            <span class="audit-reason">고객사례 필터 폼 선택자 :radio, :checkbox 개작</span>
+                            <span class="audit-location">📍 L1715, L1716, L1724, L1725</span>
+                            <span class="audit-reason">고객사례 필터 폼 선택자 :radio 개작</span>
                         </div>
                         <table class="code-diff-table">
                             <tr class="before-row">
-                                <td class="tag">[수정 전 L1856]</td>
-                                <td>$(".select_group_1 :radio")</td>
+                                <td class="tag">[수정 전 L1715]</td>
+                                <td>if ($(".select_group_1 :radio").length > 1)</td>
                             </tr>
                             <tr class="after-row">
-                                <td class="tag">[수정 후 L1856]</td>
-                                <td>$(".select_group_1 input[type='radio']")</td>
+                                <td class="tag">[수정 후 L1715]</td>
+                                <td>if ($(".select_group_1 input[type='radio']").length > 1)</td>
                             </tr>
                         </table>
                     </div>

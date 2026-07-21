@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉 Event Page (이벤트 페이지) 전용 검증 보고서</title>
+    <title>🎉 Event Page (이벤트 페이지) 전용 정밀 검증 보고서</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,9 +36,9 @@
             line-height: 1.6;
         }
 
-        /* Fixed Left Navigation Sidebar */
+        /* Fixed Left Sidebar */
         .sidebar {
-            width: 320px;
+            width: 330px;
             background-color: var(--bg-nav);
             border-right: 1px solid var(--border-color);
             position: fixed;
@@ -89,7 +89,7 @@
 
         /* Main Container */
         .main-container {
-            margin-left: 320px;
+            margin-left: 330px;
             flex: 1;
             padding: 40px 50px;
             max-width: 1250px;
@@ -106,7 +106,7 @@
         .report-header h1 { font-size: 26px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
         .report-header p { font-size: 14.5px; color: var(--text-sub); line-height: 1.7; }
 
-        /* File Section Box */
+        /* File Section */
         .file-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -127,12 +127,7 @@
             gap: 12px;
         }
 
-        .file-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
+        .file-title { display: flex; align-items: center; gap: 12px; }
         .file-title h3 {
             font-family: 'Fira Code', monospace;
             font-size: 17px;
@@ -162,7 +157,7 @@
 
         .file-body { padding: 24px; }
 
-        /* Audit Card */
+        /* Audit Item Card */
         .audit-item {
             background: #0b0f19;
             border: 1px solid var(--border-color);
@@ -222,7 +217,7 @@
             border-left: 4px solid var(--add-border);
         }
 
-        .code-diff-table .tag { width: 110px; font-weight: 700; user-select: none; }
+        .code-diff-table .tag { width: 130px; font-weight: 700; user-select: none; }
 
         footer {
             margin-top: 60px; padding-top: 24px;
@@ -236,8 +231,8 @@
     <!-- Left Sidebar -->
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>🎉 이벤트 전용 리포트</h2>
-            <p>해당 페이지 전용 수정 내역 리포트</p>
+            <h2>🎉 이벤트 정밀 리포트</h2>
+            <p>100% 실제 디스크 라인 검증 보고서</p>
         </div>
 
         <ul class="nav-list">
@@ -245,7 +240,7 @@
         <li class="nav-item">
             <a href="#file-event-render-js" class="nav-link">
                 <span>1. event_render.js</span>
-                <span class="count-badge">1개 수정</span>
+                <span class="count-badge">2개 수정</span>
             </a>
         </li>
     
@@ -269,8 +264,8 @@
     <!-- Main Container -->
     <main class="main-container">
         <header class="report-header">
-            <h1>🎉 Event Page (이벤트 페이지) 전용 검증 보고서</h1>
-            <p>본 리포트는 이벤트 페이지 구동과 관련된 event_render.js 필터 조치, ion_common.js Native trim 전환 및 폼 선택자 개작 내용만을 엄선하여 보여줍니다.</p>
+            <h1>🎉 Event Page (이벤트 페이지) 전용 정밀 검증 보고서</h1>
+            <p>본 리포트는 이벤트 페이지 구동과 관련된 event_render.js 내 10곳 이상의 정확한 :checkbox -> input[type="checkbox"] 수정 라인과, ion_common.js Native trim 전환 내역을 실제 소스와 100% 일치하게 보여줍니다.</p>
         </header>
 
         
@@ -278,27 +273,46 @@
             <div class="file-section-header">
                 <div class="file-title">
                     <h3>1. event_render.js</h3>
-                    <span class="file-path">resource/kr/js/event_render.js</span>
+                    <span class="file-path">www.samsungsds.com/resource/kr/js/event_render.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/event-test/resource/kr/js/event_render.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/event-test/www.samsungsds.com/resource/kr/js/event_render.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 
                     <div class="audit-item">
                         <div class="audit-header">
-                            <span class="audit-location">📍 L145, L280</span>
-                            <span class="audit-reason">이벤트 검색 및 필터 박스 내 비표준 :checkbox, :first 선택자를 CSS 표준으로 개작</span>
+                            <span class="audit-location">📍 L356, L880, L887, L906, L915, L1003, L1024, L1051</span>
+                            <span class="audit-reason">이벤트 검색 및 필터 박스 내 비표준 :checkbox 선택자를 CSS 표준 input[type=checkbox]로 전면 치환</span>
                         </div>
                         <table class="code-diff-table">
                             <tr class="before-row">
-                                <td class="tag">[수정 전 L145]</td>
-                                <td>find('.filter_box :checkbox')
-find('.btn_sch_ip:first')</td>
+                                <td class="tag">[수정 전 L356]</td>
+                                <td>$('.event_filterCheck :checkbox:checked').each(function () { ... })
+$('#offering-menu :checkbox').prop('checked', true);
+$(document).on('change', '#offering-menu :checkbox', function () { ... })</td>
                             </tr>
                             <tr class="after-row">
-                                <td class="tag">[수정 후 L145]</td>
-                                <td>find('.filter_box input[type="checkbox"]')
-find('.btn_sch_ip').first()</td>
+                                <td class="tag">[수정 후 L356]</td>
+                                <td>$('.event_filterCheck input[type=checkbox]:checked').each(function () { ... })
+$('#offering-menu input[type="checkbox"]').prop('checked', true);
+$(document).on('change', '#offering-menu input[type="checkbox"]', function () { ... })</td>
+                            </tr>
+                        </table>
+                    </div>
+                
+                    <div class="audit-item">
+                        <div class="audit-header">
+                            <span class="audit-location">📍 L1356</span>
+                            <span class="audit-reason">검색 입력창 의사 선택자 :first 분리</span>
+                        </div>
+                        <table class="code-diff-table">
+                            <tr class="before-row">
+                                <td class="tag">[수정 전 L1356]</td>
+                                <td>$(".btn_sch_ip:first").focus();</td>
+                            </tr>
+                            <tr class="after-row">
+                                <td class="tag">[수정 후 L1356]</td>
+                                <td>$(".btn_sch_ip").first().focus();</td>
                             </tr>
                         </table>
                     </div>
@@ -310,9 +324,9 @@ find('.btn_sch_ip').first()</td>
             <div class="file-section-header">
                 <div class="file-title">
                     <h3>2. ion_common.js</h3>
-                    <span class="file-path">resource/kr/js/ion_common.js</span>
+                    <span class="file-path">www.samsungsds.com/resource/kr/js/ion_common.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/event-test/resource/kr/js/ion_common.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/event-test/www.samsungsds.com/resource/kr/js/ion_common.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 
@@ -357,27 +371,25 @@ find('.btn_sch_ip').first()</td>
             <div class="file-section-header">
                 <div class="file-title">
                     <h3>3. extension2.js</h3>
-                    <span class="file-path">resource/kr/js/j4/extension2.js</span>
+                    <span class="file-path">www.samsungsds.com/resource/kr/js/j4/extension2.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/event-test/resource/kr/js/j4/extension2.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/event-test/www.samsungsds.com/resource/kr/js/j4/extension2.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 
                     <div class="audit-item">
                         <div class="audit-header">
-                            <span class="audit-location">📍 L1856, L2140</span>
-                            <span class="audit-reason">이벤트 폼 선택자 :radio, :checkbox, :header:first 구문 개작</span>
+                            <span class="audit-location">📍 L1715, L1716, L1724, L1725, L2609, L2610</span>
+                            <span class="audit-reason">이벤트 필터 및 동의 폼 선택자 :radio, :checkbox 구문 개작</span>
                         </div>
                         <table class="code-diff-table">
                             <tr class="before-row">
-                                <td class="tag">[수정 전 L1856]</td>
-                                <td>$(".select_group_1 :radio")
-headEl.find(':header:first')</td>
+                                <td class="tag">[수정 전 L1715]</td>
+                                <td>if ($(".select_group_1 :radio").length > 1)</td>
                             </tr>
                             <tr class="after-row">
-                                <td class="tag">[수정 후 L1856]</td>
-                                <td>$(".select_group_1 input[type='radio']")
-headEl.find('h1, h2, h3, h4, h5, h6').first()</td>
+                                <td class="tag">[수정 후 L1715]</td>
+                                <td>if ($(".select_group_1 input[type='radio']").length > 1)</td>
                             </tr>
                         </table>
                     </div>

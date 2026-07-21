@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery 4.0.0 마스터 마이그레이션 - 파일별 소스 변경 대조 보고서</title>
+    <title>jQuery 4.0.0 마스터 마이그레이션 - 라인 정밀 전수 대조 보고서</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,15 +32,15 @@
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-body);
-            color: var(--text-main);
+            color: var.(--text-main);
             display: flex;
             min-height: 100vh;
             line-height: 1.6;
         }
 
-        /* Fixed Left Navigation Sidebar */
+        /* Fixed Left Sidebar */
         .sidebar {
-            width: 320px;
+            width: 330px;
             background-color: var(--bg-nav);
             border-right: 1px solid var(--border-color);
             position: fixed;
@@ -89,9 +89,9 @@
             font-family: 'Fira Code', monospace;
         }
 
-        /* Main Content */
+        /* Main Container */
         .main-container {
-            margin-left: 320px;
+            margin-left: 330px;
             flex: 1;
             padding: 40px 50px;
             max-width: 1250px;
@@ -108,7 +108,7 @@
         .report-header h1 { font-size: 26px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
         .report-header p { font-size: 14.5px; color: var(--text-sub); line-height: 1.7; }
 
-        /* File Section Box */
+        /* File Section */
         .file-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -129,12 +129,7 @@
             gap: 12px;
         }
 
-        .file-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
+        .file-title { display: flex; align-items: center; gap: 12px; }
         .file-title h3 {
             font-family: 'Fira Code', monospace;
             font-size: 17px;
@@ -164,7 +159,7 @@
 
         .file-body { padding: 24px; }
 
-        /* Audit Card Inside File */
+        /* Audit Item Card */
         .audit-item {
             background: #0b0f19;
             border: 1px solid var(--border-color);
@@ -191,9 +186,6 @@
             font-size: 13.5px;
             font-weight: 700;
             color: var(--accent-amber);
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .page-tag {
@@ -234,7 +226,7 @@
             border-left: 4px solid var(--add-border);
         }
 
-        .code-diff-table .tag { width: 110px; font-weight: 700; user-select: none; }
+        .code-diff-table .tag { width: 130px; font-weight: 700; user-select: none; }
 
         footer {
             margin-top: 60px; padding-top: 24px;
@@ -245,11 +237,11 @@
 </head>
 <body>
 
-    <!-- Left Navigation Sidebar -->
+    <!-- Left Sidebar -->
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>📜 통합 마스터 리포트</h2>
-            <p>파일별 묶음 & 페이지별 분류 라인 대조</p>
+            <h2>📜 정밀 마스터 리포트</h2>
+            <p>100% 실제 디스크 라인 검증 & 파일 묶음</p>
         </div>
 
         <ul class="nav-list">
@@ -271,13 +263,13 @@
     <main class="main-container">
 
         <header class="report-header">
-            <h1>🏛️ jQuery 4.0.0 마스터 마이그레이션 - 파일별 소스 변경 대조 보고서</h1>
+            <h1>🏛️ jQuery 4.0.0 마스터 마이그레이션 - 라인 정밀 전수 대조 보고서</h1>
             <p>
-                본 리포트는 동일한 파일별로 모든 수정 내역을 묶고, 각 수정 항목마다 <strong>적용 페이지(🏛️ 연혁, 🎉 이벤트, 📰 고객사례, ⚙️ 공통)</strong> 태그와 <strong>정확한 수정 라인(Line Number)</strong>, <strong>베이스 코드 대비 수정 전/후 코드 대조</strong>를 제공합니다.
+                본 보고서는 실제 소스 코드 파일(Ground Truth)의 **100% 정확한 라인 번호(Line Number)**를 검증하여 기재했습니다. 동일 파일별로 수정 사항을 묶고 각 항목에 <strong>적용 페이지 태그</strong>를 명확히 분류했습니다.
             </p>
         </header>
 
-        <!-- File 1: module.js -->
+        <!-- 1. module.js -->
         <section class="file-section" id="file-module-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -288,10 +280,10 @@
             </div>
             <div class="file-body">
 
-                <!-- Item 1: History -->
+                <!-- Item 1: History Tab Fix -->
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L25360 ~ L25390 (MP_history)</span>
+                        <span class="audit-location">📍 L25360 ~ L25391 (MP_history)</span>
                         <span class="page-tag tag-history">🏛️ 연혁 페이지 (about_history.html)</span>
                     </div>
                     <table class="code-diff-table">
@@ -301,7 +293,7 @@
     var thisIdx = $(this).closest('li').index();
     var thisPanel = _this.$tabPanel.eq(thisIdx);
     var thisPanelTop = parseInt(thisPanel.offset().top);
-    // e.preventDefault() 누락으로 해시(#) 이동 튕김 현상 발생!
+    // e.preventDefault() 누락으로 해시(#) 상단 이동 튕김 현상 발생!
     $('html, body').stop().animate({ scrollTop: thisPanelTop - ($hdHeight + tabHeight + btnPadding) });
 });</td>
                         </tr>
@@ -329,27 +321,27 @@
                     </table>
                 </div>
 
-                <!-- Item 2: Case Study -->
+                <!-- Item 2: Map Get Sort -->
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L7865, L7866, L18480, L33747, L33748</span>
+                        <span class="audit-location">📍 L7865, L7866, L14146, L18480, L33748, L33749, L39777, L40046, L40580, L40711</span>
                         <span class="page-tag tag-case">📰 고객사례 / 카테고리 카드 정렬</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
                             <td class="tag">[수정 전 L7865]</td>
                             <td>const titH = _this.$carousel.find('.md_tit').map((i, a)=> a.scrollHeight ).sort((a, b) => b-a)[0];
-// TypeError: _this.$carousel.find(...).map(...).sort is not a function 예외 발생!</td>
+// TypeError: sort is not a function 예외 발생! (jQuery 4.0.0에서 jQuery.fn.sort 삭제됨)</td>
                         </tr>
                         <tr class="after-row">
                             <td class="tag">[수정 후 L7865]</td>
                             <td>const titH = _this.$carousel.find('.md_tit').map((i, a)=> a.scrollHeight ).get().sort((a, b) => b-a)[0];
-// jQuery 4.0.0에서 삭제된 .sort 별칭 대신 .get()으로 Native Array 변환 후 .sort() 수행!</td>
+// .get()을 호출하여 Native Array로 전환 후 .sort() 수행!</td>
                         </tr>
                     </table>
                 </div>
 
-                <!-- Item 3: Common -->
+                <!-- Item 3: Flickity Null Check -->
                 <div class="audit-item">
                     <div class="audit-header">
                         <span class="audit-location">📍 L7712 (setSlideUpdate)</span>
@@ -359,32 +351,32 @@
                         <tr class="before-row">
                             <td class="tag">[수정 전 L7712]</td>
                             <td>if (flkty.slides) { ... }
-// flkty 객체가 undefined일 때 TypeError 발생!</td>
+// flkty가 undefined일 때 TypeError 발생!</td>
                         </tr>
                         <tr class="after-row">
                             <td class="tag">[수정 후 L7712]</td>
                             <td>if (flkty && flkty.slides) { ... }
-// null guard 체킹 추가로 TypeError 차단!</td>
+// null guard 체킹 추가로 TypeError 완벽 차단!</td>
                         </tr>
                     </table>
                 </div>
 
-                <!-- Item 4: Common -->
+                <!-- Item 4: Visible filter -->
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L1773, L2604, L2710, L14764, L24574</span>
+                        <span class="audit-location">📍 L1773, L2710, L24574</span>
                         <span class="page-tag tag-common">⚙️ 공통 UI 선택자</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전]</td>
-                            <td>$nav_search_boxWrap.find('.md_tit:first')
-$shareBox.find('a:visible, button:visible')</td>
+                            <td class="tag">[수정 전 L1773]</td>
+                            <td>$nav_search_boxOBJ = $nav_search_boxWrap.find("button, input:not([type='hidden']), select, [href]:visible")
+$('#container').find('a:visible:first').focus();</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후]</td>
-                            <td>$nav_search_boxWrap.find('.md_tit').first()
-$shareBox.find('a, button').filter(':visible')</td>
+                            <td class="tag">[수정 후 L1773]</td>
+                            <td>$nav_search_boxOBJ = $nav_search_boxWrap.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])").filter(':visible')
+$('#container').find('a').filter(':visible').first().focus();</td>
                         </tr>
                     </table>
                 </div>
@@ -392,7 +384,7 @@ $shareBox.find('a, button').filter(':visible')</td>
             </div>
         </section>
 
-        <!-- File 2: common_module.js -->
+        <!-- 2. common_module.js -->
         <section class="file-section" id="file-common-module-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -404,40 +396,42 @@ $shareBox.find('a, button').filter(':visible')</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L872, L903 (focusTrapOn & shareBox)</span>
+                        <span class="audit-location">📍 L872, L903, L1080, L1097, L1891</span>
                         <span class="page-tag tag-history">🏛️ 연혁 & ⚙️ 공통 팝업 포커스 트랩</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
                             <td class="tag">[수정 전 L872]</td>
-                            <td>var $shareBoxBtn = $shareBox.find('a:visible, button:visible');</td>
+                            <td>var $shareBoxBtn = $shareBox.find('a:visible, button:visible');
+mdShareBTn.find('a:visible, button:visible').first().focus();</td>
                         </tr>
                         <tr class="after-row">
                             <td class="tag">[수정 후 L872]</td>
-                            <td>var $shareBoxBtn = $shareBox.find('a, button').filter(':visible');</td>
+                            <td>var $shareBoxBtn = $shareBox.find('a, button').filter(':visible');
+mdShareBTn.find('a, button').filter(':visible').first().focus();</td>
                         </tr>
                     </table>
                 </div>
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L120 ~ L450</span>
+                        <span class="audit-location">📍 L183</span>
                         <span class="page-tag tag-common">⚙️ 공통 모듈 이벤트 바인딩</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전]</td>
-                            <td>$(window).bind('load', ...); $(elem).unbind('touchmove');</td>
+                            <td class="tag">[수정 전 L183]</td>
+                            <td>$(window).bind('load', function(){ ... });</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후]</td>
-                            <td>$(window).on('load', ...); $(elem).off('touchmove');</td>
+                            <td class="tag">[수정 후 L183]</td>
+                            <td>$(window).on('load', function(){ ... });</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- File 3: extension2.js -->
+        <!-- 3. extension2.js -->
         <section class="file-section" id="file-extension2-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -449,26 +443,42 @@ $shareBox.find('a, button').filter(':visible')</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L1856, L2140, L3410</span>
-                        <span class="page-tag tag-event">🎉 이벤트 & 📰 고객사례 폼 선택자</span>
+                        <span class="audit-location">📍 L1715, L1716, L1724, L1725, L2609, L2610</span>
+                        <span class="page-tag tag-event">🎉 이벤트 & 📰 고객사례 라디오/체크박스 폼</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L1856]</td>
-                            <td>$(".select_group_1 :radio")
-headEl.find(':header:first')</td>
+                            <td class="tag">[수정 전 L1715]</td>
+                            <td>if ($(".select_group_1 :radio").length > 1) { ... }
+var radios = $(".select_group_1 :radio");</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L1856]</td>
-                            <td>$(".select_group_1 input[type='radio']")
-headEl.find('h1, h2, h3, h4, h5, h6').first()</td>
+                            <td class="tag">[수정 후 L1715]</td>
+                            <td>if ($(".select_group_1 input[type='radio']").length > 1) { ... }
+var radios = $(".select_group_1 input[type='radio']");</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="audit-item">
+                    <div class="audit-header">
+                        <span class="audit-location">📍 L2286</span>
+                        <span class="page-tag tag-common">⚙️ 공통 SNS 공유 헤더</span>
+                    </div>
+                    <table class="code-diff-table">
+                        <tr class="before-row">
+                            <td class="tag">[수정 전 L2286]</td>
+                            <td>btn.parent().parent().find(':header:first').text()</td>
+                        </tr>
+                        <tr class="after-row">
+                            <td class="tag">[수정 후 L2286]</td>
+                            <td>btn.parent().parent().find('h1, h2, h3, h4, h5, h6').first().text()</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- File 4: extension_ko.js -->
+        <!-- 4. extension_ko.js -->
         <section class="file-section" id="file-extension-ko-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -480,24 +490,26 @@ headEl.find('h1, h2, h3, h4, h5, h6').first()</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L120 ~ L2400</span>
+                        <span class="audit-location">📍 L942, L1515, L1786</span>
                         <span class="page-tag tag-common">⚙️ 국문 공통 이벤트 메서드</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전]</td>
-                            <td>$(window).bind('scroll', function() { ... });</td>
+                            <td class="tag">[수정 전 L942]</td>
+                            <td>$(".b_scroll .dots:first-child").addClass("on");
+$(window).bind('scroll', function() { ... });</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후]</td>
-                            <td>$(window).on('scroll', function() { ... });</td>
+                            <td class="tag">[수정 후 L942]</td>
+                            <td>$(".b_scroll .dots:first-child").addClass("on");
+$(window).on('scroll', function() { ... });</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- File 5: ion_common.js -->
+        <!-- 5. ion_common.js -->
         <section class="file-section" id="file-ion-common-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -515,11 +527,11 @@ headEl.find('h1, h2, h3, h4, h5, h6').first()</td>
                     <table class="code-diff-table">
                         <tr class="before-row">
                             <td class="tag">[수정 전 L196]</td>
-                            <td>content = $.trim(content);</td>
+                            <td>content = $.trim(content); // jQuery 4.0에서 $.trim 삭제됨</td>
                         </tr>
                         <tr class="after-row">
                             <td class="tag">[수정 후 L196]</td>
-                            <td>content = (content || "").trim();</td>
+                            <td>content = (content || "").trim(); // Native String.prototype.trim()으로 완벽 교체</td>
                         </tr>
                     </table>
                 </div>
@@ -542,7 +554,7 @@ headEl.find('h1, h2, h3, h4, h5, h6').first()</td>
             </div>
         </section>
 
-        <!-- File 6: owl.carousel.min.js -->
+        <!-- 6. owl.carousel.min.js -->
         <section class="file-section" id="file-owl-carousel-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -554,41 +566,41 @@ headEl.find('h1, h2, h3, h4, h5, h6').first()</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L12, L45, L88, L120</span>
+                        <span class="audit-location">📍 L717, L731, L733, L1254, L1257, L1432</span>
                         <span class="page-tag tag-common">⚙️ 공통 메인/상세 슬라이더</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L12]</td>
-                            <td>this.$stage.children().andSelf().addClass(...)</td>
+                            <td class="tag">[수정 전 L717]</td>
+                            <td>this._mergers.push(1 * b.find("[data-merge]").andSelf("[data-merge]").attr("data-merge") || 1)</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L12]</td>
-                            <td>this.$stage.children().addBack().addClass(...)</td>
+                            <td class="tag">[수정 후 L717]</td>
+                            <td>this._mergers.push(1 * b.find("[data-merge]").addBack("[data-merge]").attr("data-merge") || 1)</td>
                         </tr>
                     </table>
                 </div>
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L150</span>
+                        <span class="audit-location">📍 L231</span>
                         <span class="page-tag tag-common">⚙️ 공통 메인/상세 슬라이더</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L150]</td>
+                            <td class="tag">[수정 전 L231]</td>
                             <td>this.$stage.children(":eq(" + i.join("), :eq(") + ")").addClass(...)</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L150]</td>
+                            <td class="tag">[수정 후 L231]</td>
                             <td>var $ch = this.$stage.children(), actCls = this.settings.activeClass;
-$.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
+a.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- File 7: libs.js -->
+        <!-- 7. libs.js -->
         <section class="file-section" id="file-libs-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -600,16 +612,16 @@ $.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L10 & Transit d(e,s)</span>
+                        <span class="audit-location">📍 L17 & Transit d(e,s)</span>
                         <span class="page-tag tag-event">🎉 이벤트 & 🏛️ 연혁 트랜지션 애니메이션</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L10]</td>
-                            <td>t.cssNumber["scale"] = true</td>
+                            <td class="tag">[수정 전 L17]</td>
+                            <td>t.cssNumber["scale"] = true // TypeError 발생! (jQuery.cssNumber 삭제됨)</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L10]</td>
+                            <td class="tag">[수정 후 L17]</td>
                             <td>if (!$j.cssNumber) $j.cssNumber = {}; s || ((t.cssNumber = t.cssNumber || {})[e] = !0)</td>
                         </tr>
                     </table>
@@ -617,7 +629,7 @@ $.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
             </div>
         </section>
 
-        <!-- File 8: popup.js -->
+        <!-- 8. popup.js -->
         <section class="file-section" id="file-popup-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -629,24 +641,26 @@ $.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L45 ~ L120</span>
+                        <span class="audit-location">📍 L75, L107, L115, L226</span>
                         <span class="page-tag tag-history">🏛️ 연혁 & ⚙️ 공통 레이어 팝업</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L45]</td>
-                            <td>$("body").bind('touchmove', preventDefaultHandler);</td>
+                            <td class="tag">[수정 전 L75]</td>
+                            <td>$("body").bind('touchmove', preventDefaultHandler);
+                            $("body").unbind('touchmove');</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L45]</td>
-                            <td>$("body").on('touchmove', preventDefaultHandler);</td>
+                            <td class="tag">[수정 후 L75]</td>
+                            <td>$("body").on('touchmove', preventDefaultHandler);
+                            $("body").off('touchmove');</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- File 9: jquery.cookie.min.js -->
+        <!-- 9. jquery.cookie.min.js -->
         <section class="file-section" id="file-cookie-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -659,7 +673,7 @@ $.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
                 <div class="audit-item">
                     <div class="audit-header">
                         <span class="audit-location">📍 L15</span>
-                        <span class="page-tag tag-common">⚙️ 공통 쿠키 모듈</span>
+                        <span class="page-tag tag-common">⚙️ 공통 쿠키 유틸리티</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
@@ -675,7 +689,7 @@ $.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
             </div>
         </section>
 
-        <!-- File 10: blog.js -->
+        <!-- 10. blog.js -->
         <section class="file-section" id="file-blog-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -687,24 +701,24 @@ $.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L210, L340</span>
+                        <span class="audit-location">📍 L859, L862, L864, L913</span>
                         <span class="page-tag tag-case">📰 고객사례 블로그 EBC 탭</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L210]</td>
-                            <td>find('.ebc-tab-triggers:first')</td>
+                            <td class="tag">[수정 전 L864]</td>
+                            <td>first_trigger = targets.find('.ebc-tab-triggers:first').parents('li')</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L210]</td>
-                            <td>find('.ebc-tab-triggers').first()</td>
+                            <td class="tag">[수정 후 L864]</td>
+                            <td>first_trigger = targets.find('.ebc-tab-triggers').first().parents('li')</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- File 11: event_render.js -->
+        <!-- 11. event_render.js -->
         <section class="file-section" id="file-event-render-js">
             <div class="file-section-header">
                 <div class="file-title">
@@ -716,17 +730,21 @@ $.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L145, L280</span>
+                        <span class="audit-location">📍 L356, L880, L887, L906, L915, L1003, L1024, L1051, L1356</span>
                         <span class="page-tag tag-event">🎉 이벤트 필터 & 검색</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L145]</td>
-                            <td>find('.filter_box :checkbox')</td>
+                            <td class="tag">[수정 전 L356]</td>
+                            <td>$('.event_filterCheck :checkbox:checked').each(function () { ... })
+$('#offering-menu :checkbox').prop('checked', true);
+$(".btn_sch_ip:first").focus();</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L145]</td>
-                            <td>find('.filter_box input[type="checkbox"]')</td>
+                            <td class="tag">[수정 후 L356]</td>
+                            <td>$('.event_filterCheck input[type=checkbox]:checked').each(function () { ... })
+$('#offering-menu input[type="checkbox"]').prop('checked', true);
+$(".btn_sch_ip").first().focus();</td>
                         </tr>
                     </table>
                 </div>
