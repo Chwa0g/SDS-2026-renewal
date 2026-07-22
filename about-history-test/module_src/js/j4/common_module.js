@@ -1904,3 +1904,75 @@ function setupKeyboardSlideNavigation({
     };
     swiperInstance.on('slideChangeTransitionEnd', keyboardHandlers.slideChangeHandler);
 }
+
+/** 20260722 fixed_tab 공통 헬퍼 모듈 */
+var fixedTabUtils = {
+    /** GNB 서브페이지 fixed탭 위치 설정 */
+    fixedTab: function() {
+        var fixedTabArea = $('.fixed_tab'),
+            fixedTabPosition_cont = fixedTabArea.find('.tab_inner');
+
+        if ($('body.sc_down').length && fixedTabArea.hasClass('fixed')) {
+            fixedTabPosition_cont.css("top", "-1px");
+        } else {
+            fixedTabPosition_cont.css("top", "56px");
+        }
+    },
+
+    /** fixed탭 상단 고정 여부 갱신 */
+    setTabFixed: function($fixedArea) {
+        if (!$fixedArea || !$fixedArea.length) return;
+        var tabT = $fixedArea.offset().top;
+        if ($(window).scrollTop() >= tabT) {
+            $fixedArea.addClass('fixed');
+        } else {
+            $fixedArea.removeClass('fixed');
+        }
+    },
+
+    /** fixed탭 클릭 시 해당 패널 위치로 스크롤 이동 */
+    scrollTabToPanel: function($tabObj, idx, callback) {
+        if (!$tabObj || !$tabObj.panel || !$tabObj.panel.length) return;
+        $tabObj.isClick = true;
+
+        var panelT = parseInt($tabObj.panel.eq(idx).offset().top);
+        var $hd = $('.header');
+        var headH = $hd.outerHeight(true) || 56;
+        var brandColorH = $('.brandcolor').is(':hidden') || $('.brandcolor').hasClass('normal') ? 0 : $('.brandcolor').outerHeight(true);
+        var tabH = $tabObj.fixed.outerHeight(true);
+        var scrollTop = panelT - tabH - (headH - brandColorH);
+
+        $tabObj.active = idx;
+        if ($tabObj.li) $tabObj.li.removeClass('active').eq(idx).addClass('active');
+        if ($tabObj.btn) $tabObj.btn.attr({ 'aria-selected': false }).eq(idx).attr({ 'aria-selected': true });
+
+        $('html, body').stop().animate({ scrollTop: scrollTop }, 500, function() {
+            $tabObj.isClick = false;
+            if (typeof callback === 'function') callback();
+        });
+    },
+
+    /** fixed탭 활성 탭 인덱스 실시간 갱신 */
+    setTabActive: function($tabObj, setTabAttrFn) {
+        if (!$tabObj || $tabObj.isClick || !$tabObj.panel) return;
+
+        var $hd = $('.header');
+        var headH = $hd.outerHeight(true) || 56;
+        var tabH = $tabObj.fixed.outerHeight(true);
+        var active = null;
+
+        $tabObj.panel.each(function(idx, item) {
+            var offsetTop = parseInt($(item).offset().top) - (headH + tabH);
+            if ($(window).scrollTop() >= offsetTop) active = idx;
+        });
+
+        $tabObj.active = active;
+        if (typeof setTabAttrFn === 'function') {
+            setTabAttrFn();
+        }
+    }
+};
+
+window.fixedTab = fixedTabUtils.fixedTab;
+window.fixedTabUtils = fixedTabUtils;
+

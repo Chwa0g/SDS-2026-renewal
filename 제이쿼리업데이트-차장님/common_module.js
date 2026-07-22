@@ -8,7 +8,6 @@ if (typeof window !== "undefined" && window.jQuery) {
     if (!$j.isWindow) $j.isWindow = function(obj) { return obj != null && obj === obj.window; };
     if (!$j.cssProps) $j.cssProps = {};
     if (!$j.cssHooks) $j.cssHooks = {};
-    if (!$j.transit) $j.transit = { version: "0.9.12", propertyMap: {}, enabled: true, useTransitionEnd: false };
     if (typeof Object.prototype.parse === "undefined") {
         Object.defineProperty(Object.prototype, "parse", { value: function() { return this; }, writable: true, configurable: true });
     }
@@ -17,9 +16,6 @@ if (typeof window !== "undefined" && window.jQuery) {
     }
     if (typeof $j.fn.lettering === "undefined") {
         $j.fn.lettering = function() { return this; };
-    }
-    if (typeof $j.fn.flickity === "undefined") {
-        $j.fn.flickity = function() { return this; };
     }
     if ($j.ajaxPrefilter) {
         $j.ajaxPrefilter(function(options, originalOptions, jqXHR) {
@@ -873,7 +869,7 @@ $(function(){
     // 포커스 트랩 구현
     $shareBox.on("keydown", function (e) {
         // 웹접근성을 위한 버튼 리스트
-        var $shareBoxBtn = $shareBox.find('a:visible, button:visible');
+        var $shareBoxBtn = $shareBox.find('a, button').filter(':visible');
         var $share_firstBoxBtn = $shareBoxBtn.first();
         var $share_lastBoxBtn = $shareBoxBtn.last();
 
@@ -904,7 +900,7 @@ $(function(){
 
 // 공유 팝업 열릴 때 포커스 설정
 function focusTrapOn(mdShareBTn) {
-    mdShareBTn.find('a:visible, button:visible').first().focus();
+    mdShareBTn.find('a, button').filter(':visible').first().focus();
 }
 
 let lastActivatedButton = null; // 마지막으로 활성화된 버튼을 저장
@@ -1081,7 +1077,7 @@ $(function(){
 function initTailBox(){
     if(!$('.tail_wrap').length) return;
     var tailResizeTImer = new Timer(function(){
-        $('.tail_wrap:visible').closest('body').addClass('tail_chk');
+        $('.tail_wrap').filter(':visible').closest('body').addClass('tail_chk');
     },100);
 
     $(window).on('resize', function(){
@@ -1098,7 +1094,7 @@ function initTailBox(){
             $.cookie('tailboxSeeLater', 'Y', { expires: 1, path: '/' });
         }
     });
-    $('.tail_wrap:visible').closest('body').addClass('tail_chk');
+    $('.tail_wrap').filter(':visible').closest('body').addClass('tail_chk');
     //$(window).scrollTop(0);
     if (window['GNB']) GNB.setSticky();
 }
@@ -1908,3 +1904,75 @@ function setupKeyboardSlideNavigation({
     };
     swiperInstance.on('slideChangeTransitionEnd', keyboardHandlers.slideChangeHandler);
 }
+
+/** 20260722 fixed_tab 공통 헬퍼 모듈 */
+var fixedTabUtils = {
+    /** GNB 서브페이지 fixed탭 위치 설정 */
+    fixedTab: function() {
+        var fixedTabArea = $('.fixed_tab'),
+            fixedTabPosition_cont = fixedTabArea.find('.tab_inner');
+
+        if ($('body.sc_down').length && fixedTabArea.hasClass('fixed')) {
+            fixedTabPosition_cont.css("top", "-1px");
+        } else {
+            fixedTabPosition_cont.css("top", "56px");
+        }
+    },
+
+    /** fixed탭 상단 고정 여부 갱신 */
+    setTabFixed: function($fixedArea) {
+        if (!$fixedArea || !$fixedArea.length) return;
+        var tabT = $fixedArea.offset().top;
+        if ($(window).scrollTop() >= tabT) {
+            $fixedArea.addClass('fixed');
+        } else {
+            $fixedArea.removeClass('fixed');
+        }
+    },
+
+    /** fixed탭 클릭 시 해당 패널 위치로 스크롤 이동 */
+    scrollTabToPanel: function($tabObj, idx, callback) {
+        if (!$tabObj || !$tabObj.panel || !$tabObj.panel.length) return;
+        $tabObj.isClick = true;
+
+        var panelT = parseInt($tabObj.panel.eq(idx).offset().top);
+        var $hd = $('.header');
+        var headH = $hd.outerHeight(true) || 56;
+        var brandColorH = $('.brandcolor').is(':hidden') || $('.brandcolor').hasClass('normal') ? 0 : $('.brandcolor').outerHeight(true);
+        var tabH = $tabObj.fixed.outerHeight(true);
+        var scrollTop = panelT - tabH - (headH - brandColorH);
+
+        $tabObj.active = idx;
+        if ($tabObj.li) $tabObj.li.removeClass('active').eq(idx).addClass('active');
+        if ($tabObj.btn) $tabObj.btn.attr({ 'aria-selected': false }).eq(idx).attr({ 'aria-selected': true });
+
+        $('html, body').stop().animate({ scrollTop: scrollTop }, 500, function() {
+            $tabObj.isClick = false;
+            if (typeof callback === 'function') callback();
+        });
+    },
+
+    /** fixed탭 활성 탭 인덱스 실시간 갱신 */
+    setTabActive: function($tabObj, setTabAttrFn) {
+        if (!$tabObj || $tabObj.isClick || !$tabObj.panel) return;
+
+        var $hd = $('.header');
+        var headH = $hd.outerHeight(true) || 56;
+        var tabH = $tabObj.fixed.outerHeight(true);
+        var active = null;
+
+        $tabObj.panel.each(function(idx, item) {
+            var offsetTop = parseInt($(item).offset().top) - (headH + tabH);
+            if ($(window).scrollTop() >= offsetTop) active = idx;
+        });
+
+        $tabObj.active = active;
+        if (typeof setTabAttrFn === 'function') {
+            setTabAttrFn();
+        }
+    }
+};
+
+window.fixedTab = fixedTabUtils.fixedTab;
+window.fixedTabUtils = fixedTabUtils;
+

@@ -18,9 +18,12 @@
 - **📍 L7712 (`setSlideUpdate` Flickity 널 방어)**
   - **수정 전:** `if (flkty.slides) { ... }`
   - **수정 후:** `if (flkty && flkty.slides) { ... }`
-- **📍 L1773, L2710, L24574 (Sizzle 가시성 필터 분리)**
+- **📍 L21, L1773, L2710, L24574 (Sizzle 가시성 필터 분리)**
   - **수정 전:** `find("[href]:visible")` / `find('a:visible:first')`
   - **수정 후:** `find("[href]").filter(':visible')` / `find('a').filter(':visible').first()`
+- **📍 L3819 및 10개 서브페이지 모듈 (`fixed_tab` 공통 유틸리티 구조화 및 수백 줄 중복 제거)**
+  - **수정 전:** 10개 모듈(`MP_realSummit`, `MP_ai`, `MP_government`, `MP_brityworks`, `MP_logistics_story`, `M127_A`, `MP_mes`, `MP_crm`, `MP_ZTMProduct`, `MP_brityworks_gov`)마다 각각 수십 줄의 `const setTabFixed`, `const setTabActive`, 스크롤 애니메이션 및 `Math.abs($hd.position().top)` 헤더 감산 로직을 중복 구현.
+  - **수정 후:** `common_module.js`의 `fixedTabUtils` 공통 유틸리티(`fixedTabUtils.fixedTab()`, `setTabFixed()`, `scrollTabToPanel()`, `setTabActive()`)를 호출하도록 간결하게 단축 및 캡슐화.
 
 ---
 
@@ -94,3 +97,5 @@
 - **📍 L183 (`.bind('load')` 현대화)**
   - **수정 전:** `$(window).bind('load', function(){ ... });`
   - **수정 후:** `$(window).on('load', function(){ ... });`
+- **📍 L1908 ~ L1980 (`fixedTabUtils` 공통 헬퍼 모듈 신설)**
+  - **신규 추가:** 서브페이지 Fixed 탭 및 GNB 상단 고정, 클릭 스크롤, 활성화 탭 계산을 총괄하는 `fixedTabUtils` 객체 및 `window.fixedTabUtils` / `window.fixedTab` 전역 헬퍼 추가.

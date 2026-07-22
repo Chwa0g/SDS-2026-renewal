@@ -3818,16 +3818,8 @@ function M00_A(el) {
 
     /** 20241119 fixed_tab : 공통 서브페이지 fixed탭 */
     function fixedTab(){
-        let M00_A_head = _this.$el,
-            M00_A_innerGnb = M00_A_head.find('.gnb'),
-            M00_A_innerGSNB = M00_A_head.find('.gsnb'),
-            fixedTabArea = $('.fixed_tab'),
-            fixedTabPosition_cont = fixedTabArea.find('.tab_inner');
-
-        if($('body.sc_down').length && fixedTabArea.hasClass('fixed')){
-            fixedTabPosition_cont.css("top", (M00_A_head.height() - M00_A_innerGnb.outerHeight())-1)
-        } else {
-            fixedTabPosition_cont.css("top", M00_A_head.height())
+        if (window.fixedTabUtils) {
+            fixedTabUtils.fixedTab();
         }
     }
     /** //20241119 fixed_tab : 공통 서브페이지 fixed탭 */
@@ -20681,14 +20673,14 @@ function MP_realSummit(el) {
     };
  
     let _this = this;
-    let $hd = $('.M00_A');
+    let $hd = $('.header');
     //20231129 특정 url로 접근시 [브리티 코파일럿]위치로 이동
     let currentUrl = location.href;
     let param_testUrl = currentUrl.indexOf('#brityCopilot');
  
     _proto.init = function() {
         //console.log("init:: MP_realSummit");
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
  
         //20231129 특정 url로 접근시 [브리티 코파일럿]위치로 이동
@@ -20706,61 +20698,15 @@ function MP_realSummit(el) {
  
     _proto.addEvent = function() {
         _this.$tab.btn.on('click', function() {
-            _this.$tab.isClick = true;
- 
             let idx = $(this).parents('li').index();
-            let panelT = parseInt(_this.$tab.panel.eq(idx).offset().top);
- 
-            let headH = $(document).find('#header').outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $('.brandcolor').is(':hidden') || $('.brandcolor').hasClass('normal') ? 0 : $('.brandcolor').outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - tabH - (headH - headT - brandColorH);
- 
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ 'aria-selected': false }).eq(idx).attr({ 'aria-selected': true });
- 
-            $('html, body')
-                .stop()
-                .animate({ scrollTop: scrollTop }, 500, () => {
-                    let afterHeadT = Math.abs($hd.position().top);
-                    scrollTop = scrollTop - (headT - afterHeadT);
-                    $('html, body')
-                        .stop()
-                        .animate({ scrollTop: scrollTop }, 500, () => {
-                            _this.$tab.isClick = false;
-                        });
-                });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
  
         $(window).on('scroll resize', () => {
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
-    };
- 
-    const setTabFixed = function() {
-        let tabT = _this.$tab.fixed.offset().top;
-        $(window).scrollTop() >= tabT ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    };
- 
-    const setTabActive = function() {
-        if (_this.$tab.isClick) return;
- 
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
- 
-        _this.$tab.panel.each((idx, item) => {
-            let offsetTop = parseInt($(item).offset().top) - (headH + tabH);
-            if ($(window).scrollTop() >= offsetTop) active = idx;
-        });
- 
-        _this.$tab.active = active;
-        setTabAttr();
     };
  
     const setTabAttr = function(init) {
@@ -20848,11 +20794,11 @@ function MP_ai(el) {
     };
  
     let _this = this;
-    let $hd = $('.M00_A');
+    let $hd = $('.header');
  
     _proto.init = function() {
         //console.log("init:: MP_ai");
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
  
         // Event binding
@@ -20864,61 +20810,15 @@ function MP_ai(el) {
  
     _proto.addEvent = function() {
         _this.$tab.btn.on('click', function() {
-            _this.$tab.isClick = true;
- 
             let idx = $(this).parents('li').index();
-            let panelT = parseInt(_this.$tab.panel.eq(idx).offset().top);
- 
-            let headH = $(document).find('#header').outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $('.brandcolor').is(':hidden') || $('.brandcolor').hasClass('normal') ? 0 : $('.brandcolor').outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - tabH - (headH - headT - brandColorH);
- 
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ 'aria-selected': false }).eq(idx).attr({ 'aria-selected': true });
- 
-            $('html, body')
-                .stop()
-                .animate({ scrollTop: scrollTop }, 500, () => {
-                    let afterHeadT = Math.abs($hd.position().top);
-                    scrollTop = scrollTop - (headT - afterHeadT);
-                    $('html, body')
-                        .stop()
-                        .animate({ scrollTop: scrollTop }, 500, () => {
-                            _this.$tab.isClick = false;
-                        });
-                });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
  
         $(window).on('scroll resize', () => {
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
-    };
- 
-    const setTabFixed = function() {
-        let tabT = _this.$tab.fixed.offset().top;
-        $(window).scrollTop() >= tabT ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    };
- 
-    const setTabActive = function() {
-        if (_this.$tab.isClick) return;
- 
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
- 
-        _this.$tab.panel.each((idx, item) => {
-            let offsetTop = parseInt($(item).offset().top) - (headH + tabH);
-            if ($(window).scrollTop() >= offsetTop) active = idx;
-        });
- 
-        _this.$tab.active = active;
-        setTabAttr();
     };
  
     const setTabAttr = function(init) {
@@ -21017,7 +20917,7 @@ function MP_government(el) {
     this.$hoverConBox = this.$el.find('.hover_box');
 
     let _this = this;
-    let $hd = $(".M00_A");
+    let $hd = $(".header");
 
     var deviceType; // "PC", "TABLET", "MOBILE"
     var resizeTimer;
@@ -21028,7 +20928,7 @@ function MP_government(el) {
         // Device type check
         deviceType = checkDeviceType();
 
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
 
         hoverContHeight(_this); // init
@@ -21052,31 +20952,13 @@ function MP_government(el) {
 
     _proto.addEvent = function(){
         _this.$tab.btn.on("click", function(){
-            _this.$tab.isClick = true;
-
             let idx = $(this).parents('li').index();
-            let panelT = parseInt( _this.$tab.panel.eq(idx).offset().top );
-
-            let headH = $(document).find("#header").outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $(".brandcolor").is(":hidden") || $(".brandcolor").hasClass("normal") ? 0 : $(".brandcolor").outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - ( tabH ) - ( (headH - headT) - brandColorH );
-
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ "aria-selected" : false }).eq(idx).attr({ "aria-selected" : true });
-
-            $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{
-                let afterHeadT = Math.abs($hd.position().top);
-                scrollTop = scrollTop - ( headT - afterHeadT );
-                $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{ _this.$tab.isClick = false });
-            });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
 
         $(window).on('scroll resize', ()=>{
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
 
@@ -21084,37 +20966,6 @@ function MP_government(el) {
         $(window).on("resize", function(){
             resizeTimer.start();
         });
-    }
-
-    // Device type check
-    function checkDeviceType(){
-        if (window.innerWidth > 1023){
-            return "PC";
-        }else{
-            return "MOBILE";
-        }
-    }
-
-    const setTabFixed = function(){
-        let tabT = _this.$tab.fixed.offset().top;
-        ( $(window).scrollTop() >= tabT ) ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    }
-
-    const setTabActive = function(){
-        if( _this.$tab.isClick ) return;
-
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
-
-        _this.$tab.panel.each((idx, item)=>{
-            let offsetTop = parseInt( $(item).offset().top ) - ( headH + tabH );
-            if( $(window).scrollTop() >= offsetTop ) active = idx;
-        });
-
-        _this.$tab.active = active;
-        setTabAttr();
     }
 
     const setTabAttr = function(init){
@@ -25660,7 +25511,7 @@ function MP_brityworks(el) {
     this.mhItems;
  
     let _this = this;
-    let $hd = $('.M00_A');
+    let $hd = $('.header');
  
     var deviceType; // "PC", "TABLET", "MOBILE"
     var resizeTimer;
@@ -25670,7 +25521,7 @@ function MP_brityworks(el) {
         // console.log("init:: MP_brityworks");
         deviceType = checkDeviceType();
  
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
  
         // Event binding
@@ -25696,61 +25547,15 @@ function MP_brityworks(el) {
  
     _proto.addEvent = function() {
         _this.$tab.btn.on('click', function() {
-            _this.$tab.isClick = true;
- 
             let idx = $(this).parents('li').index();
-            let panelT = parseInt(_this.$tab.panel.eq(idx).offset().top);
- 
-            let headH = $(document).find('#header').outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $('.brandcolor').is(':hidden') || $('.brandcolor').hasClass('normal') ? 0 : $('.brandcolor').outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - tabH - (headH - headT - brandColorH);
- 
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ 'aria-selected': false }).eq(idx).attr({ 'aria-selected': true });
- 
-            $('html, body')
-                .stop()
-                .animate({ scrollTop: scrollTop }, 500, () => {
-                    let afterHeadT = Math.abs($hd.position().top);
-                    scrollTop = scrollTop - (headT - afterHeadT);
-                    $('html, body')
-                        .stop()
-                        .animate({ scrollTop: scrollTop }, 500, () => {
-                            _this.$tab.isClick = false;
-                        });
-                });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
  
         $(window).on('scroll resize', () => {
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
-    };
- 
-    const setTabFixed = function() {
-        let tabT = _this.$tab.fixed.offset().top;
-        $(window).scrollTop() >= tabT ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    };
- 
-    const setTabActive = function() {
-        if (_this.$tab.isClick) return;
- 
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
- 
-        _this.$tab.panel.each((idx, item) => {
-            let offsetTop = parseInt($(item).offset().top) - (headH + tabH);
-            if ($(window).scrollTop() >= offsetTop) active = idx;
-        });
- 
-        _this.$tab.active = active;
-        setTabAttr();
     };
  
     const setTabAttr = function(init) {
@@ -26098,12 +25903,12 @@ function MP_logistics_story(el) {
     };
  
     let _this = this;
-    let $hd = $('.M00_A');
+    let $hd = $('.header');
  
     _proto.init = function() {
         //console.log("init:: MP_logistics_story");
         setBulletIcon();
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
  
         // Event binding
@@ -26119,62 +25924,15 @@ function MP_logistics_story(el) {
         });
  
         _this.$tab.btn.on('click', function() {
-            _this.$tab.isClick = true;
- 
             let idx = $(this).parents('li').index();
-            let panelT = parseInt(_this.$tab.panel.eq(idx).offset().top);
- 
-            let headH = $(document).find('#header').outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $('.brandcolor').is(':hidden') || $('.brandcolor').hasClass('normal') ? 0 : $('.brandcolor').outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let gap = 0;
-            let scrollTop = panelT - tabH - (headH - headT - brandColorH) + gap;
- 
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ 'aria-selected': false }).eq(idx).attr({ 'aria-selected': true });
- 
-            $('html, body')
-                .stop()
-                .animate({ scrollTop: scrollTop }, 500, () => {
-                    let afterHeadT = Math.abs($hd.position().top);
-                    scrollTop = scrollTop - (headT - afterHeadT);
-                    $('html, body')
-                        .stop()
-                        .animate({ scrollTop: scrollTop }, 500, () => {
-                            _this.$tab.isClick = false;
-                        });
-                });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
  
         $(window).on('scroll resize', () => {
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
-    };
- 
-    const setTabFixed = function() {
-        let tabT = _this.$tab.fixed.offset().top;
-        $(window).scrollTop() >= tabT ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    };
- 
-    const setTabActive = function() {
-        if (_this.$tab.isClick) return;
- 
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = 0;
- 
-        _this.$tab.panel.each((idx, item) => {
-            let offsetTop = parseInt($(item).offset().top) - (headH + tabH);
-            if ($(window).scrollTop() >= offsetTop) active = idx;
-        });
- 
-        _this.$tab.active = active;
-        setTabAttr();
     };
  
     const setTabAttr = function(init) {
@@ -36065,7 +35823,7 @@ function M127_A(el) {
     };
 
     let _this = this;
-    let $hd = $(".M00_A");
+    let $hd = $(".header");
 
     var deviceType; // "PC", "TABLET", "MOBILE"
     var resizeTimer;
@@ -36076,7 +35834,7 @@ function M127_A(el) {
         // Device type check
         deviceType = checkDeviceType();
 
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
 
         resizeTimer = new Timer(function(){
@@ -36095,69 +35853,19 @@ function M127_A(el) {
 
     _proto.addEvent = function(){
         _this.$tab.btn.on("click", function(){
-            _this.$tab.isClick = true;
-
             let idx = $(this).parents('li').index();
-            let panelT = parseInt( _this.$tab.panel.eq(idx).offset().top );
-
-            let headH = $(document).find("#header").outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $(".brandcolor").is(":hidden") || $(".brandcolor").hasClass("normal") ? 0 : $(".brandcolor").outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - ( tabH ) - ( (headH - headT) - brandColorH );
-
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ "aria-selected" : false }).eq(idx).attr({ "aria-selected" : true });
-
-            $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{
-                let afterHeadT = Math.abs($hd.position().top);
-                scrollTop = scrollTop - ( headT - afterHeadT );
-                $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{ _this.$tab.isClick = false });
-            });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
 
         $(window).on('scroll resize', ()=>{
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
         });
 
         // Window resize
         $(window).on("resize", function(){
             resizeTimer.start();
         });
-    }
-
-    // Device type check
-    function checkDeviceType(){
-        if (window.innerWidth > 1023){
-            return "PC";
-        }else{
-            return "MOBILE";
-        }
-    }
-
-    const setTabFixed = function(){
-        let tabT = _this.$tab.fixed.offset().top;
-        ( $(window).scrollTop() >= tabT ) ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    }
-
-    const setTabActive = function(){
-        if( _this.$tab.isClick ) return;
-
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
-        _this.$tab.panel.each((idx, item)=>{
-       
-            let offsetTop = parseInt( $(item).offset().top ) - ( headH + tabH );
-            if( $(window).scrollTop() >= offsetTop ) active = idx;
-
-        });
-
-        _this.$tab.active = active;
-        setTabAttr();
     }
 
     const setTabAttr = function(init){
@@ -39154,7 +38862,7 @@ function MP_mes(el) {
     this.$featureList_cont = this.$el.find(".feature_list");
 
     let _this = this;
-    let $hd = $(".M00_A");
+    let $hd = $(".header");
     
     this.mhItems;
 
@@ -39166,7 +38874,7 @@ function MP_mes(el) {
         // console.log("init:: MP_mes");
         deviceType = checkDeviceType();
 
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
 
         // Event binding
@@ -39192,54 +38900,14 @@ function MP_mes(el) {
 
     _proto.addEvent = function(){
         _this.$tab.btn.on("click", function(){
-            _this.$tab.isClick = true;
-
             let idx = $(this).parents('li').index();
-            let panelT = parseInt( _this.$tab.panel.eq(idx).offset().top );
-
-            let headH = $(document).find("#header").outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $(".brandcolor").is(":hidden") || $(".brandcolor").hasClass("normal") ? 0 : $(".brandcolor").outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - ( tabH ) - ( (headH - headT) - brandColorH );
-
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ "aria-selected" : false }).eq(idx).attr({ "aria-selected" : true });
-
-            $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{
-                let afterHeadT = Math.abs($hd.position().top);
-                scrollTop = scrollTop - ( headT - afterHeadT );
-                $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{ _this.$tab.isClick = false });
-            });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
 
         $(window).on('scroll resize', ()=>{
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
         });
-    }
-
-    const setTabFixed = function(){
-        let tabT = _this.$tab.fixed.offset().top;
-        ( $(window).scrollTop() >= tabT ) ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    }
-
-    const setTabActive = function(){
-        if( _this.$tab.isClick ) return;
-
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
-
-        _this.$tab.panel.each((idx, item)=>{
-            let offsetTop = parseInt( $(item).offset().top ) - ( headH + tabH );
-            if( $(window).scrollTop() >= offsetTop ) active = idx;
-        });
-
-        _this.$tab.active = active;
-        setTabAttr();
     }
 
     const setTabAttr = function(init){
@@ -39355,7 +39023,7 @@ function MP_crm(el) {
     this.$featureList_cont = this.$el.find(".feature_list");
 
     let _this = this;
-    let $hd = $(".M00_A");
+    let $hd = $(".header");
     
     this.mhItems;
 
@@ -39367,7 +39035,7 @@ function MP_crm(el) {
         // console.log("init:: MP_crm");
         deviceType = checkDeviceType();
 
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
 
         // Event binding
@@ -39393,54 +39061,14 @@ function MP_crm(el) {
 
     _proto.addEvent = function(){
         _this.$tab.btn.on("click", function(){
-            _this.$tab.isClick = true;
-
             let idx = $(this).parents('li').index();
-            let panelT = parseInt( _this.$tab.panel.eq(idx).offset().top );
-
-            let headH = $(document).find("#header").outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $(".brandcolor").is(":hidden") || $(".brandcolor").hasClass("normal") ? 0 : $(".brandcolor").outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - ( tabH ) - ( (headH - headT) - brandColorH );
-
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ "aria-selected" : false }).eq(idx).attr({ "aria-selected" : true });
-
-            $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{
-                let afterHeadT = Math.abs($hd.position().top);
-                scrollTop = scrollTop - ( headT - afterHeadT );
-                $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{ _this.$tab.isClick = false });
-            });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
 
         $(window).on('scroll resize', ()=>{
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
         });
-    }
-
-    const setTabFixed = function(){
-        let tabT = _this.$tab.fixed.offset().top;
-        ( $(window).scrollTop() >= tabT ) ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    }
-
-    const setTabActive = function(){
-        if( _this.$tab.isClick ) return;
-
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
-
-        _this.$tab.panel.each((idx, item)=>{
-            let offsetTop = parseInt( $(item).offset().top ) - ( headH + tabH );
-            if( $(window).scrollTop() >= offsetTop ) active = idx;
-        });
-
-        _this.$tab.active = active;
-        setTabAttr();
     }
 
     const setTabAttr = function(init){
@@ -40140,7 +39768,7 @@ function MP_ZTMProduct(el) {
     this.$hoverConBox = this.$el.find('.hover_box');
 
     let _this = this;
-    let $hd = $(".M00_A");
+    let $hd = $(".header");
 
     var deviceType; // "PC", "TABLET", "MOBILE"
     var resizeTimer;
@@ -40151,7 +39779,7 @@ function MP_ZTMProduct(el) {
         // Device type check
         deviceType = checkDeviceType();
 
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
 
         resizeTimer = new Timer(function(){
@@ -40170,31 +39798,13 @@ function MP_ZTMProduct(el) {
 
     _proto.addEvent = function(){
         _this.$tab.btn.on("click", function(){
-            _this.$tab.isClick = true;
-
             let idx = $(this).parents('li').index();
-            let panelT = parseInt( _this.$tab.panel.eq(idx).offset().top );
-
-            let headH = $(document).find("#header").outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $(".brandcolor").is(":hidden") || $(".brandcolor").hasClass("normal") ? 0 : $(".brandcolor").outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - ( tabH ) - ( (headH - headT) - brandColorH );
-
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ "aria-selected" : false }).eq(idx).attr({ "aria-selected" : true });
-
-            $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{
-                let afterHeadT = Math.abs($hd.position().top);
-                scrollTop = scrollTop - ( headT - afterHeadT );
-                $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{ _this.$tab.isClick = false });
-            });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
 
         $(window).on('scroll resize', ()=>{
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
 
@@ -40202,38 +39812,6 @@ function MP_ZTMProduct(el) {
         $(window).on("resize", function(){
             resizeTimer.start();
         });
-    }
-
-    // Device type check
-    function checkDeviceType(){
-        if (window.innerWidth > 1023){
-            return "PC";
-        }else{
-            return "MOBILE";
-        }
-    }
-
-    const setTabFixed = function(){
-        let tabT = _this.$tab.fixed.offset().top;
-        ( $(window).scrollTop() >= tabT ) ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    }
-
-    const setTabActive = function(){
-        if( _this.$tab.isClick ) return;
-
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
-        _this.$tab.panel.each((idx, item)=>{
-       
-            let offsetTop = parseInt( $(item).offset().top ) - ( headH + tabH );
-            if( $(window).scrollTop() >= offsetTop ) active = idx;
-
-        });
-
-        _this.$tab.active = active;
-        setTabAttr();
     }
 
     const setTabAttr = function(init){
@@ -40753,7 +40331,7 @@ function MP_brityworks_gov(el) {
         // console.log("init:: MP_brityworks_gov");
         deviceType = checkDeviceType();
 
-        setTabFixed();
+        fixedTabUtils.setTabFixed(_this.$tab.fixed);
         setTabAttr('init');
 
         // Event binding
@@ -40779,55 +40357,15 @@ function MP_brityworks_gov(el) {
 
     _proto.addEvent = function(){
         _this.$tab.btn.on("click", function(){
-            _this.$tab.isClick = true;
-
             let idx = $(this).parents('li').index();
-            let panelT = parseInt( _this.$tab.panel.eq(idx).offset().top );
-
-            let headH = $(document).find("#header").outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $(".brandcolor").is(":hidden") || $(".brandcolor").hasClass("normal") ? 0 : $(".brandcolor").outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - ( tabH ) - ( (headH - headT) - brandColorH );
-
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ "aria-selected" : false }).eq(idx).attr({ "aria-selected" : true });
-
-            $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{
-                let afterHeadT = Math.abs($hd.position().top);
-                scrollTop = scrollTop - ( headT - afterHeadT );
-                $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{ _this.$tab.isClick = false });
-            });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
 
         $(window).on('scroll resize', ()=>{
-            setTabFixed();
-            setTabActive();
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
-    }
-
-    const setTabFixed = function(){
-        let tabT = _this.$tab.fixed.offset().top;
-        ( $(window).scrollTop() >= tabT ) ? _this.$tab.fixed.addClass('fixed') : _this.$tab.fixed.removeClass('fixed');
-    }
-
-    const setTabActive = function(){
-        if( _this.$tab.isClick ) return;
-
-        let headT = Math.abs($hd.position().top);
-        let headH = $hd.outerHeight(true) - headT;
-        let tabH = _this.$tab.fixed.outerHeight(true);
-        let active = null;
-
-        _this.$tab.panel.each((idx, item)=>{
-            let offsetTop = parseInt( $(item).offset().top ) - ( headH + tabH );
-            if( $(window).scrollTop() >= offsetTop ) active = idx;
-        });
-
-        _this.$tab.active = active;
-        setTabAttr();
     }
 
     const setTabAttr = function(init){

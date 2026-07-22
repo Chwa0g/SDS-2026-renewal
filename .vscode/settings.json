@@ -1,0 +1,14 @@
+{
+    "[css]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": null
+    },
+    "[scss]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": null
+    },
+    "[less]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": null
+    }
+}
