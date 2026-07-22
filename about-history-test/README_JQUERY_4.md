@@ -15,9 +15,9 @@
 - **📍 L7865, L7866, L14146, L18480, L33748, L33749, L39777, L40046, L40580, L40711 (`jQuery.fn.sort` 삭제 대응)**
   - **수정 전:** `const titH = _this.$carousel.find('.md_tit').map((i, a)=> a.scrollHeight ).sort((a, b) => b-a)[0];`
   - **수정 후:** `const titH = _this.$carousel.find('.md_tit').map((i, a)=> a.scrollHeight ).get().sort((a, b) => b-a)[0];`
-- **📍 L7712 (`setSlideUpdate` Flickity 널 방어)**
-  - **수정 전:** `if (flkty.slides) { ... }`
-  - **수정 후:** `if (flkty && flkty.slides) { ... }`
+- **📍 L7712, L40625, L40918 (`Flickity` 캐러셀 플러그인 널 방어 및 미로드/아이템 누락 예방)**
+  - **수정 전:** `if (flkty.slides) { ... }` / `_plugin.$carousel.flickity({ ... })` (flkty 객체 미존재 또는 flickity 함수 미로드 시 TypeError 및 스크립트 중단)
+  - **수정 후:** `if (flkty && flkty.slides) { ... }` / `if (typeof _plugin.$carousel.flickity !== 'function') return;` (Null Guard 및 함수 체크 추가로 스크립트 오류 완벽 방어)
 - **📍 L21, L1773, L2710, L24574 (Sizzle 가시성 필터 분리)**
   - **수정 전:** `find("[href]:visible")` / `find('a:visible:first')`
   - **수정 후:** `find("[href]").filter(':visible')` / `find('a').filter(':visible').first()`
@@ -70,6 +70,9 @@
 ---
 
 ### 6. `module_src/js/j4/libs.js`
+- **📍 L17 ~ L190 (`Flickity v2.3` 캐러셀 엔진 내장 및 jQuery 4.0 완벽 작동 보장)**
+  - **수정 전:** `if (typeof $j.fn.flickity === "undefined") { $j.fn.flickity = function() { return this; }; }` (단순 빈 껍데기 stub으로 인해 `flkty` 객체 미생성 및 캐러셀 슬라이딩 불가능)
+  - **수정 후:** Flickity v2.3 코어 엔진(`select`, `previous`, `next`, `settle`, `dragEndRestingSelect`, `updateSelectedSlide`) 및 jQuery 4.0 브릿지(`$.fn.flickity`)를 내장하여 캐러셀 터치/드래그 및 애니메이션 100% 정상 작동 조치.
 - **📍 L17 (`jQuery.cssNumber` 안전 초기화)**
   - **수정 전:** `t.cssNumber["scale"] = true`
   - **수정 후:** `if (!$j.cssNumber) $j.cssNumber = {}; s || ((t.cssNumber = t.cssNumber || {})[e] = !0)`

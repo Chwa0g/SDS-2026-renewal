@@ -1,0 +1,24 @@
+# VS Code / Editor settings
+.vscode/
+*.code-workspace
+
+# IDE / Editor configuration
+.idea/
+*.swp
+*.swo
+
+# Antigravity / AI Agent temporary files
+.gemini/
+.antigravity/
+.antigravityignore
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

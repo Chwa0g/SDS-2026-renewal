@@ -594,8 +594,7 @@ dl.txt + dl.txt { margin-top: 25px; }
 .mp_event_list .g_carousel .li .txt_cont .md_txt span {font-size:1.8rem;}
 
 .filterDate_container.box.filter { background: #fff; padding: 34px 0px; transition: 0.2s; margin: 0 auto; }
-.sc_down .filterDate_container.box.filter.stick { top: 51px; }
-.filterDate_container.box.filter.stick { position: fixed; top: 112px; left: 0; z-index: 10; width: 100%; border-bottom: 1px solid #ddd; box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1); }
+.filterDate_container.box.filter.stick { position: fixed; top: 60px; left: 0; z-index: 10; width: 100%; border-bottom: 1px solid #ddd; box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1); }
 .filterDate_container.box.filter .filterArea { position: relative; width: 100%; display: flex; max-width: 1380px; margin: 0 auto; padding: 0 30px; }
 .filterDate_container .filter_btn { display: none; }
 .filterDate_container .filter_wrap { display: flex; align-items: center; max-width: none; padding: 0 0px; margin: 0; }

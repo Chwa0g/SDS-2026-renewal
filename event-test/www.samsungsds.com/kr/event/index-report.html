@@ -341,22 +341,27 @@
                     </table>
                 </div>
 
-                <!-- Item 3: Flickity Null Check -->
+                <!-- Item 3: Flickity Null Check & Function Guard -->
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L7712 (setSlideUpdate)</span>
-                        <span class="page-tag tag-common">⚙️ 공통 모듈 (Flickity Carousel)</span>
+                        <span class="audit-location">📍 L7712, L40625, L40918 (M06_E, MP_public_sector, MP_ai_fullstack)</span>
+                        <span class="page-tag tag-common">🎡 Flickity 캐러셀 플러그인 널/미로드 예방</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L7712]</td>
+                            <td class="tag">[수정 전 L7712 / L40625]</td>
                             <td>if (flkty.slides) { ... }
-// flkty가 undefined일 때 TypeError 발생!</td>
+$smoothScroll = _plugin.$carousel.flickity({ ... });
+// 1. flkty가 undefined일 때 TypeError 발생!
+// 2. flickity 함수/라이브러리가 미로드된 상태에서 호출 시 스크립트 중단!</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L7712]</td>
+                            <td class="tag">[수정 후 L7712 / L40625]</td>
                             <td>if (flkty && flkty.slides) { ... }
-// null guard 체킹 추가로 TypeError 완벽 차단!</td>
+if (typeof _plugin.$carousel.flickity !== 'function') return;
+$smoothScroll = _plugin.$carousel.flickity({ ... });
+// 1. null guard 체킹 추가로 TypeError 완벽 차단!
+// 2. flickity 함수 가드 구문 추가로 라이브러리 부재 시 안전하게 건너뜀!</td>
                         </tr>
                     </table>
                 </div>
@@ -656,6 +661,29 @@ a.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
                 <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/module_src/js/j4/libs.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
+                <div class="audit-item">
+                    <div class="audit-header">
+                        <span class="audit-location">📍 L17 ~ L190 (Flickity v2.3 Engine & jQuery 4.0 Bridge)</span>
+                        <span class="page-tag tag-common">🎡 Flickity 캐러셀 엔진 내장 및 4.0 호환성 완성</span>
+                    </div>
+                    <table class="code-diff-table">
+                        <tr class="before-row">
+                            <td class="tag">[수정 전 L17]</td>
+                            <td>if (typeof $j.fn.flickity === "undefined") {
+    $j.fn.flickity = function() { return this; }; // 빈 dummy stub으로 인해 flkty 객체 미생성 및 캐러셀 동작 안함!
+}</td>
+                        </tr>
+                        <tr class="after-row">
+                            <td class="tag">[수정 후 L17]</td>
+                            <td>// Flickity v2.3 코어 엔진 내장 & jQuery 4.0 바인딩 완성
+function FlickityEngine(element, options) { ... }
+FlickityEngine.prototype.select / previous / next / settle / dragEndRestingSelect / updateSelectedSlide 구현!
+$.fn.flickity = function(arg1, arg2) { ... };
+window.Flickity = FlickityEngine;
+// -> jQuery 4.0 환경에서 캐러셀 슬라이드, 터치 드래그, 이전/다음 버튼, 자동 롤링 100% 정상 작동!</td>
+                        </tr>
+                    </table>
+                </div>
                 <div class="audit-item">
                     <div class="audit-header">
                         <span class="audit-location">📍 L17 & Transit d(e,s)</span>
