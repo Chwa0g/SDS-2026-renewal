@@ -105,3 +105,14 @@
   - **수정 후:** `$(window).on('load', function(){ ... });`
 - **📍 L1908 ~ L1980 (`fixedTabUtils` 공통 헬퍼 모듈 신설)**
   - **신규 추가:** 서브페이지 Fixed 탭 및 GNB 상단 고정, 클릭 스크롤, 활성화 탭 계산을 총괄하는 `fixedTabUtils` 객체 및 `window.fixedTabUtils` / `window.fixedTab` 전역 헬퍼 추가.
+- **📍 L22555 (`MP_customer_list_v1` 생성자 누락 변수 복구)**
+  - **수정 전:** 생성자 내부 `this.$pagn` 누락으로 `carouFredSel` 초기화 시 `.md_pagn` 도트 미생성
+  - **수정 후:** `this.$pagn = this.$el.find('.md_pagn');` 추가로 인디케이터 도트 100% 정상 생성
+
+---
+
+### 10. `module_src/css/module.css`
+- **📍 L14752 ~ L14753 (`MP_customer_list_v1` 캐러셀 화살표 반응형 위치 보정)**
+  - **수정 전:** `.arrow-prev { left: 50%; transform: translateY(-50%) translateX(-659px); } .arrow-next { right: 50%; transform: translateY(-50%) translateX(659px); }` (1318px 이하 화면에서 음수 위치 이동으로 잘림)
+  - **수정 후:** `.arrow-prev { left: max(20px, calc(50% - 659px)); transform: translateY(-50%); } .arrow-next { right: max(20px, calc(50% - 659px)); transform: translateY(-50%); }` (반응형 `max()` 적용으로 안전 여백 노출)
+

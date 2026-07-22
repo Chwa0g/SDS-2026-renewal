@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jQuery 4.0.0 마스터 마이그레이션 - 라인 정밀 전수 대조 보고서</title>
+    <title>📰 고객사례 (Case Study) - jQuery 4.0.0 마이그레이션 및 버그 수정 보고서</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Pretendard:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
         body {
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-body);
-            color: var.(--text-main);
+            color: var(--text-main);
             display: flex;
             min-height: 100vh;
             line-height: 1.6;
@@ -105,8 +105,8 @@
             margin-bottom: 40px;
         }
 
-        .report-header h1 { font-size: 26px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
-        .report-header p { font-size: 14.5px; color: var(--text-sub); line-height: 1.7; }
+        .report-header h1 { font-size: 24px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
+        .report-header p { font-size: 14px; color: var(--text-sub); line-height: 1.7; }
 
         /* File Section */
         .file-section {
@@ -195,8 +195,6 @@
             font-weight: 700;
         }
 
-        .tag-history { background: rgba(56, 189, 248, 0.15); color: var(--accent-blue); border: 1px solid rgba(56, 189, 248, 0.3); }
-        .tag-event { background: rgba(244, 114, 182, 0.15); color: var(--accent-pink); border: 1px solid rgba(244, 114, 182, 0.3); }
         .tag-case { background: rgba(192, 132, 252, 0.15); color: var(--accent-purple); border: 1px solid rgba(192, 132, 252, 0.3); }
         .tag-common { background: rgba(74, 222, 128, 0.15); color: var(--accent-green); border: 1px solid rgba(74, 222, 128, 0.3); }
 
@@ -240,22 +238,15 @@
     <!-- Left Sidebar -->
     <nav class="sidebar">
         <div class="sidebar-header">
-            <h2>📜 정밀 마스터 리포트</h2>
-            <p>100% 실제 디스크 라인 검증 & 파일 묶음</p>
+            <h2>📰 고객사례 리포트</h2>
+            <p>Case Study 전용 수정 항목 목록</p>
         </div>
 
         <ul class="nav-list">
-            <li class="nav-item"><a href="#file-module-js" class="nav-link"><span>1. module.js</span><span class="count-badge">5개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-common-module-js" class="nav-link"><span>2. common_module.js</span><span class="count-badge">3개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-extension2-js" class="nav-link"><span>3. extension2.js</span><span class="count-badge">2개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-extension-ko-js" class="nav-link"><span>4. extension_ko.js</span><span class="count-badge">1개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-ion-common-js" class="nav-link"><span>5. ion_common.js</span><span class="count-badge">2개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-owl-carousel-js" class="nav-link"><span>6. owl.carousel.min.js</span><span class="count-badge">2개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-libs-js" class="nav-link"><span>7. libs.js</span><span class="count-badge">1개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-popup-js" class="nav-link"><span>8. popup.js</span><span class="count-badge">1개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-cookie-js" class="nav-link"><span>9. jquery.cookie.min.js</span><span class="count-badge">1개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-blog-js" class="nav-link"><span>10. blog.js</span><span class="count-badge">1개 수정</span></a></li>
-            <li class="nav-item"><a href="#file-event-render-js" class="nav-link"><span>11. event_render.js</span><span class="count-badge">1개 수정</span></a></li>
+            <li class="nav-item"><a href="#file-module-js" class="nav-link"><span>1. module.js</span><span class="count-badge">2개 수정</span></a></li>
+            <li class="nav-item"><a href="#file-module-css" class="nav-link"><span>2. module.css</span><span class="count-badge">1개 수정</span></a></li>
+            <li class="nav-item"><a href="#file-libs-js" class="nav-link"><span>3. libs.js</span><span class="count-badge">2개 수정</span></a></li>
+            <li class="nav-item"><a href="#file-blog-js" class="nav-link"><span>4. blog.js</span><span class="count-badge">1개 수정</span></a></li>
         </ul>
     </nav>
 
@@ -263,9 +254,9 @@
     <main class="main-container">
 
         <header class="report-header">
-            <h1>🏛️ jQuery 4.0.0 마스터 마이그레이션 - 라인 정밀 전수 대조 보고서</h1>
+            <h1>📰 고객사례 (Case Study) - jQuery 4.0.0 마이그레이션 & 캐러셀 버그 수정 보고서</h1>
             <p>
-                본 보고서는 실제 소스 코드 파일(Ground Truth)의 **100% 정확한 라인 번호(Line Number)**를 검증하여 기재했습니다. 동일 파일별로 수정 사항을 묶고 각 항목에 <strong>적용 페이지 태그</strong>를 명확히 분류했습니다.
+                본 보고서는 <strong>고객사례 페이지 (<code>index-test.html</code> / <code>MP_customer_list_v1</code>)</strong> 관련 jQuery 4.0.0 버전업 호환성 수정, 캐러셀 페이지네이션 도트 및 좌/우 화살표 반응형 위치 복구 내역만을 엄선하여 기재한 고객사례 전용 보고서입니다.
             </p>
         </header>
 
@@ -276,47 +267,26 @@
                     <h3>1. module.js</h3>
                     <span class="file-path">module_src/js/j4/module.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/module_src/js/j4/module.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/www.samsungsds.com/module_src/js/j4/module.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
 
-                <!-- Item 1: History Tab Fix -->
+                <!-- Item 1: MP_customer_list_v1 Pagination Fix -->
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L25360 ~ L25391 (MP_history)</span>
-                        <span class="page-tag tag-history">🏛️ 연혁 페이지 (about_history.html)</span>
+                        <span class="audit-location">📍 L22555 (MP_customer_list_v1)</span>
+                        <span class="page-tag tag-case">📰 고객사례 메인 캐러셀 (.md_pagn)</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L25360]</td>
-                            <td>_this.tabWrap.$btn.on('click', function() {
-    var thisIdx = $(this).closest('li').index();
-    var thisPanel = _this.$tabPanel.eq(thisIdx);
-    var thisPanelTop = parseInt(thisPanel.offset().top);
-    // e.preventDefault() 누락으로 해시(#) 상단 이동 튕김 현상 발생!
-    $('html, body').stop().animate({ scrollTop: thisPanelTop - ($hdHeight + tabHeight + btnPadding) });
-});</td>
+                            <td class="tag">[수정 전 L22555]</td>
+                            <td>// MP_customer_list_v1 생성자 함수 내 this.$pagn 변수 정의 누락
+// carouFredSel({ pagination: { container: _plugin.$pagn } }) 호출 시 container가 undefined 전달되어 도트 미생성</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L25360]</td>
-                            <td>$(document).on('click', '.tab_slide_area .tab_btn', function(e) {
-    if (e) e.preventDefault(); // 1. 앵커 기본 해시(#) 이동 차단 (상단 튕김 방지)
-    var $this = $(this);
-    var thisIdx = $this.closest('li').index();
-    var thisPanel = _this.$tabPanel.eq(thisIdx); // 2. 해당 섹션 패널 (#tab1 ~ #tab4)
-    if (!thisPanel.length) return;
-
-    var curHdHeight = ($hd && $hd.find('.inner').length) ? $hd.find('.inner').height() : ($hd.height() || 80);
-    var curTabHeight = (_this.tabWrap.$area && _this.tabWrap.$area.length) ? _this.tabWrap.$area.innerHeight() : 60;
-    var btnPadding = (checkDeviceType() === 'PC') ? 50 : 100;
-
-    $('.tab_slide_area .tab_btn').removeClass('active');
-    $this.addClass('active');
-
-    // 3. 헤더/탭바 높이를 차감한 정확한 섹션 오프셋 위치로 스크롤 이동
-    var targetScroll = parseInt(thisPanel.offset().top) - (curHdHeight + curTabHeight + btnPadding);
-    $('html, body').stop().animate({ scrollTop: targetScroll }, 500);
-});</td>
+                            <td class="tag">[수정 후 L22555]</td>
+                            <td>this.$pagn = this.$el.find('.md_pagn');
+// -> container 변수가 올바르게 지정되어 .md_pagn 내부 인디케이터 도트(&lt;a&gt;&lt;span&gt;1&lt;/span&gt;&lt;/a&gt;) 100% 정상 생성!</td>
                         </tr>
                     </table>
                 </div>
@@ -324,8 +294,8 @@
                 <!-- Item 2: Map Get Sort -->
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L7865, L7866, L14146, L18480, L33748, L33749, L39777, L40046, L40580, L40711</span>
-                        <span class="page-tag tag-case">📰 고객사례 / 카테고리 카드 정렬</span>
+                        <span class="audit-location">📍 L7865, L7866, L14146, L18480, L33748</span>
+                        <span class="page-tag tag-case">📰 고객사례 카드 타이틀 높이 정렬</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
@@ -341,330 +311,56 @@
                     </table>
                 </div>
 
-                <!-- Item 3: Flickity Null Check & Function Guard -->
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L7712, L40625, L40918 (M06_E, MP_public_sector, MP_ai_fullstack)</span>
-                        <span class="page-tag tag-common">🎡 Flickity 캐러셀 플러그인 널/미로드 예방</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L7712 / L40625]</td>
-                            <td>if (flkty.slides) { ... }
-$smoothScroll = _plugin.$carousel.flickity({ ... });
-// 1. flkty가 undefined일 때 TypeError 발생!
-// 2. flickity 함수/라이브러리가 미로드된 상태에서 호출 시 스크립트 중단!</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L7712 / L40625]</td>
-                            <td>if (flkty && flkty.slides) { ... }
-if (typeof _plugin.$carousel.flickity !== 'function') return;
-$smoothScroll = _plugin.$carousel.flickity({ ... });
-// 1. null guard 체킹 추가로 TypeError 완벽 차단!
-// 2. flickity 함수 가드 구문 추가로 라이브러리 부재 시 안전하게 건너뜀!</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <!-- Item 4: Visible filter -->
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L1773, L2710, L24574</span>
-                        <span class="page-tag tag-common">⚙️ 공통 UI 선택자</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L1773]</td>
-                            <td>$nav_search_boxOBJ = $nav_search_boxWrap.find("button, input:not([type='hidden']), select, [href]:visible")
-$('#container').find('a:visible:first').focus();</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L1773]</td>
-                            <td>$nav_search_boxOBJ = $nav_search_boxWrap.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])").filter(':visible')
-$('#container').find('a').filter(':visible').first().focus();</td>
-                <!-- Item 5: fixed_tab Refactoring & Utility Call -->
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L3819 및 10개 서브페이지 모듈 (fixed_tab 공통 유틸리티 전환)</span>
-                        <span class="page-tag tag-common">📌 fixed_tab 공통 모듈화 및 수백 줄 중복 제거</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L3819]</td>
-                            <td>function fixedTab(){
-    let fixedTabArea = $('.fixed_tab'), fixedTabPosition_cont = fixedTabArea.find('.tab_inner');
-    if($('body.sc_down').length && fixedTabArea.hasClass('fixed')){ fixedTabPosition_cont.css("top", "-1px"); }
-    else { fixedTabPosition_cont.css("top", "56px"); }
-}
-// 10개 서브모듈(MP_realSummit, MP_ai, MP_government 등)마다 각각 수십 줄씩 setTabFixed, setTabActive, 스크롤 애니메이션 및 Math.abs($hd.position().top) 중복 구현</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L3819]</td>
-                            <td>function fixedTab(){
-    if (window.fixedTabUtils) { fixedTabUtils.fixedTab(); }
-}
-// 서브모듈 이벤트 바인딩: fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
-// 스크롤 이벤트: fixedTabUtils.setTabFixed(_this.$tab.fixed); fixedTabUtils.setTabActive(_this.$tab, setTabAttr);</td>
-                        </tr>
-                    </table>
-                </div>
-
             </div>
         </section>
 
-        <!-- 2. common_module.js -->
-        <section class="file-section" id="file-common-module-js">
+        <!-- 2. module.css -->
+        <section class="file-section" id="file-module-css">
             <div class="file-section-header">
                 <div class="file-title">
-                    <h3>2. common_module.js</h3>
-                    <span class="file-path">module_src/js/j4/common_module.js</span>
+                    <h3>2. module.css</h3>
+                    <span class="file-path">module_src/css/module.css</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/module_src/js/j4/common_module.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/www.samsungsds.com/module_src/css/module.css" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L1908 ~ L1980 (fixedTabUtils 공통 헬퍼 모듈)</span>
-                        <span class="page-tag tag-common">✨ fixed_tab 캡슐화 유틸리티 신설</span>
+                        <span class="audit-location">📍 L14752 ~ L14753</span>
+                        <span class="page-tag tag-case">📰 고객사례 캐러셀 좌/우 화살표 반응형 위치 보정</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L1908]</td>
-                            <td>(없음 - 각 module.js 마다 로직이 파편화되어 중복 정의되어 있었음)</td>
+                            <td class="tag">[수정 전 L14752]</td>
+                            <td>.MP_customer_list_v1 .customer_list_carousel .arrow-prev { left: 50%; transform: translateY(-50%) translateX(-659px); }
+.MP_customer_list_v1 .customer_list_carousel .arrow-next { right: 50%; transform: translateY(-50%) translateX(659px); }
+/* 1318px 이하 화면에서 translateX(±659px)로 인해 버튼이 캔버스 밖으로 밀려나 overflow:hidden에 의해 잘림 */</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L1908]</td>
-                            <td>var fixedTabUtils = {
-    fixedTab: function() { ... },
-    setTabFixed: function($fixedArea) { ... },
-    scrollTabToPanel: function($tabObj, idx, callback) { ... },
-    setTabActive: function($tabObj, setTabAttrFn) { ... }
-};
-window.fixedTab = fixedTabUtils.fixedTab;
-window.fixedTabUtils = fixedTabUtils;</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L872, L903, L1080, L1097, L1891</span>
-                        <span class="page-tag tag-history">🏛️ 연혁 & ⚙️ 공통 팝업 포커스 트랩</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L872]</td>
-                            <td>var $shareBoxBtn = $shareBox.find('a:visible, button:visible');
-mdShareBTn.find('a:visible, button:visible').first().focus();</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L872]</td>
-                            <td>var $shareBoxBtn = $shareBox.find('a, button').filter(':visible');
-mdShareBTn.find('a, button').filter(':visible').first().focus();</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L183</span>
-                        <span class="page-tag tag-common">⚙️ 공통 모듈 이벤트 바인딩</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L183]</td>
-                            <td>$(window).bind('load', function(){ ... });</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L183]</td>
-                            <td>$(window).on('load', function(){ ... });</td>
+                            <td class="tag">[수정 후 L14752]</td>
+                            <td>.MP_customer_list_v1 .customer_list_carousel .arrow-prev { left: max(20px, calc(50% - 659px)); transform: translateY(-50%); }
+.MP_customer_list_v1 .customer_list_carousel .arrow-next { right: max(20px, calc(50% - 659px)); transform: translateY(-50%); }
+/* 반응형 max() 함수 적용으로 화면 폭이 좁아져도 좌우 20px 안쪽에 버튼이 100% 노출됨 */</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- 3. extension2.js -->
-        <section class="file-section" id="file-extension2-js">
-            <div class="file-section-header">
-                <div class="file-title">
-                    <h3>3. extension2.js</h3>
-                    <span class="file-path">resource/kr/js/j4/extension2.js</span>
-                </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/resource/kr/js/j4/extension2.js" class="open-link">파일 열기 ↗</a>
-            </div>
-            <div class="file-body">
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L1715, L1716, L1724, L1725, L2609, L2610</span>
-                        <span class="page-tag tag-event">🎉 이벤트 & 📰 고객사례 라디오/체크박스 폼</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L1715]</td>
-                            <td>if ($(".select_group_1 :radio").length > 1) { ... }
-var radios = $(".select_group_1 :radio");</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L1715]</td>
-                            <td>if ($(".select_group_1 input[type='radio']").length > 1) { ... }
-var radios = $(".select_group_1 input[type='radio']");</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L2286</span>
-                        <span class="page-tag tag-common">⚙️ 공통 SNS 공유 헤더</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L2286]</td>
-                            <td>btn.parent().parent().find(':header:first').text()</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L2286]</td>
-                            <td>btn.parent().parent().find('h1, h2, h3, h4, h5, h6').first().text()</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. extension_ko.js -->
-        <section class="file-section" id="file-extension-ko-js">
-            <div class="file-section-header">
-                <div class="file-title">
-                    <h3>4. extension_ko.js</h3>
-                    <span class="file-path">resource/kr/js/j4/extension_ko.js</span>
-                </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/resource/kr/js/j4/extension_ko.js" class="open-link">파일 열기 ↗</a>
-            </div>
-            <div class="file-body">
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L942, L1515, L1786</span>
-                        <span class="page-tag tag-common">⚙️ 국문 공통 이벤트 메서드</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L942]</td>
-                            <td>$(".b_scroll .dots:first-child").addClass("on");
-$(window).bind('scroll', function() { ... });</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L942]</td>
-                            <td>$(".b_scroll .dots:first-child").addClass("on");
-$(window).on('scroll', function() { ... });</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. ion_common.js -->
-        <section class="file-section" id="file-ion-common-js">
-            <div class="file-section-header">
-                <div class="file-title">
-                    <h3>5. ion_common.js</h3>
-                    <span class="file-path">resource/kr/js/ion_common.js</span>
-                </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/resource/kr/js/ion_common.js" class="open-link">파일 열기 ↗</a>
-            </div>
-            <div class="file-body">
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L196</span>
-                        <span class="page-tag tag-event">🎉 이벤트 & ⚙️ 공통 유틸리티</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L196]</td>
-                            <td>content = $.trim(content); // jQuery 4.0에서 $.trim 삭제됨</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L196]</td>
-                            <td>content = (content || "").trim(); // Native String.prototype.trim()으로 완벽 교체</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L656</span>
-                        <span class="page-tag tag-common">⚙️ 공통 모달 포커스 트랩</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L656]</td>
-                            <td>mdShareBTn.find('a:visible, button:visible').first().focus();</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L656]</td>
-                            <td>mdShareBTn.find('a, button').filter(':visible').first().focus();</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. owl.carousel.min.js -->
-        <section class="file-section" id="file-owl-carousel-js">
-            <div class="file-section-header">
-                <div class="file-title">
-                    <h3>6. owl.carousel.min.js</h3>
-                    <span class="file-path">resource/kr/js/j4/owl.carousel.min.js</span>
-                </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/resource/kr/js/j4/owl.carousel.min.js" class="open-link">파일 열기 ↗</a>
-            </div>
-            <div class="file-body">
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L717, L731, L733, L1254, L1257, L1432</span>
-                        <span class="page-tag tag-common">⚙️ 공통 메인/상세 슬라이더</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L717]</td>
-                            <td>this._mergers.push(1 * b.find("[data-merge]").andSelf("[data-merge]").attr("data-merge") || 1)</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L717]</td>
-                            <td>this._mergers.push(1 * b.find("[data-merge]").addBack("[data-merge]").attr("data-merge") || 1)</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L231</span>
-                        <span class="page-tag tag-common">⚙️ 공통 메인/상세 슬라이더</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L231]</td>
-                            <td>this.$stage.children(":eq(" + i.join("), :eq(") + ")").addClass(...)</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L231]</td>
-                            <td>var $ch = this.$stage.children(), actCls = this.settings.activeClass;
-a.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. libs.js -->
+        <!-- 3. libs.js -->
         <section class="file-section" id="file-libs-js">
             <div class="file-section-header">
                 <div class="file-title">
-                    <h3>7. libs.js</h3>
+                    <h3>3. libs.js</h3>
                     <span class="file-path">module_src/js/j4/libs.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/module_src/js/j4/libs.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/www.samsungsds.com/module_src/js/j4/libs.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L1 ~ L20 (jQuery 4.0 :visible / :hidden 의사 선택자 폴리필)</span>
-                        <span class="page-tag tag-case">📰 고객사례 (MP_customer_list_v1) & 캐러셀 네비게이션 복구</span>
+                        <span class="audit-location">📍 L1 ~ L34 (jQuery 4.0 :visible / :hidden 의사 선택자 폴리필)</span>
+                        <span class="page-tag tag-case">📰 carouFredSel 캐러셀 네비게이션 가시성 복구</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
@@ -683,114 +379,38 @@ $j.expr.pseudos.hidden = function(elem) { return !isElemVisible(elem); };
                 </div>
                 <div class="audit-item">
                     <div class="audit-header">
-                        <span class="audit-location">📍 L17 ~ L190 (Flickity v2.3 Engine & jQuery 4.0 Bridge)</span>
-                        <span class="page-tag tag-common">🎡 Flickity 캐러셀 엔진 내장 및 4.0 호환성 완성</span>
+                        <span class="audit-location">📍 L35 ~ L206 (Flickity v2.3 Engine & jQuery 4.0 Bridge)</span>
+                        <span class="page-tag tag-case">🎡 Flickity 캐러셀 엔진 내장 및 4.0 호환성 완성</span>
                     </div>
                     <table class="code-diff-table">
                         <tr class="before-row">
-                            <td class="tag">[수정 전 L17]</td>
+                            <td class="tag">[수정 전 L35]</td>
                             <td>if (typeof $j.fn.flickity === "undefined") {
     $j.fn.flickity = function() { return this; }; // 빈 dummy stub으로 인해 flkty 객체 미생성 및 캐러셀 동작 안함!
 }</td>
                         </tr>
                         <tr class="after-row">
-                            <td class="tag">[수정 후 L17]</td>
+                            <td class="tag">[수정 후 L35]</td>
                             <td>// Flickity v2.3 코어 엔진 내장 & jQuery 4.0 바인딩 완성
 function FlickityEngine(element, options) { ... }
 FlickityEngine.prototype.select / previous / next / settle / dragEndRestingSelect / updateSelectedSlide 구현!
 $.fn.flickity = function(arg1, arg2) { ... };
 window.Flickity = FlickityEngine;
-// -> jQuery 4.0 환경에서 캐러셀 슬라이드, 터치 드래그, 이전/다음 버튼, 자동 롤링 100% 정상 작동!</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L17 & Transit d(e,s)</span>
-                        <span class="page-tag tag-event">🎉 이벤트 & 🏛️ 연혁 트랜지션 애니메이션</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L17]</td>
-                            <td>t.cssNumber["scale"] = true // TypeError 발생! (jQuery.cssNumber 삭제됨)</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L17]</td>
-                            <td>if (!$j.cssNumber) $j.cssNumber = {}; s || ((t.cssNumber = t.cssNumber || {})[e] = !0)</td>
+// -> jQuery 4.0 환경에서 고객사례 관련 캐러셀 슬라이드, 터치 드래그, 이전/다음 버튼 100% 정상 작동!</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </section>
 
-        <!-- 8. popup.js -->
-        <section class="file-section" id="file-popup-js">
-            <div class="file-section-header">
-                <div class="file-title">
-                    <h3>8. popup.js</h3>
-                    <span class="file-path">resource/kr/js/j4/popup.js</span>
-                </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/resource/kr/js/j4/popup.js" class="open-link">파일 열기 ↗</a>
-            </div>
-            <div class="file-body">
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L75, L107, L115, L226</span>
-                        <span class="page-tag tag-history">🏛️ 연혁 & ⚙️ 공통 레이어 팝업</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L75]</td>
-                            <td>$("body").bind('touchmove', preventDefaultHandler);
-                            $("body").unbind('touchmove');</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L75]</td>
-                            <td>$("body").on('touchmove', preventDefaultHandler);
-                            $("body").off('touchmove');</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 9. jquery.cookie.min.js -->
-        <section class="file-section" id="file-cookie-js">
-            <div class="file-section-header">
-                <div class="file-title">
-                    <h3>9. jquery.cookie.min.js</h3>
-                    <span class="file-path">resource/kr/js/j4/jquery.cookie.min.js</span>
-                </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/resource/kr/js/j4/jquery.cookie.min.js" class="open-link">파일 열기 ↗</a>
-            </div>
-            <div class="file-body">
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L15</span>
-                        <span class="page-tag tag-common">⚙️ 공통 쿠키 유틸리티</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L15]</td>
-                            <td>if ($.isFunction(value)) { ... }</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L15]</td>
-                            <td>if (typeof value === 'function') { ... }</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. blog.js -->
+        <!-- 4. blog.js -->
         <section class="file-section" id="file-blog-js">
             <div class="file-section-header">
                 <div class="file-title">
-                    <h3>10. blog.js</h3>
+                    <h3>4. blog.js</h3>
                     <span class="file-path">resource/kr/js/blog.js</span>
                 </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/resource/kr/js/blog.js" class="open-link">파일 열기 ↗</a>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/www.samsungsds.com/resource/kr/js/blog.js" class="open-link">파일 열기 ↗</a>
             </div>
             <div class="file-body">
                 <div class="audit-item">
@@ -812,87 +432,10 @@ window.Flickity = FlickityEngine;
             </div>
         </section>
 
-        <!-- 11. event_render.js -->
-        <section class="file-section" id="file-event-render-js">
-            <div class="file-section-header">
-                <div class="file-title">
-                    <h3>11. event_render.js</h3>
-                    <span class="file-path">resource/kr/js/event_render.js</span>
-                </div>
-                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/4.0-버전업-통합js/resource/kr/js/event_render.js" class="open-link">파일 열기 ↗</a>
-            </div>
-            <div class="file-body">
-                <div class="audit-item">
-                    <div class="audit-header">
-                        <span class="audit-location">📍 L356, L880, L887, L906, L915, L1003, L1024, L1051, L1356</span>
-                        <span class="page-tag tag-event">🎉 이벤트 필터 & 검색</span>
-                    </div>
-                    <table class="code-diff-table">
-                        <tr class="before-row">
-                            <td class="tag">[수정 전 L356]</td>
-                            <td>$('.event_filterCheck :checkbox:checked').each(function () { ... })
-$('#offering-menu :checkbox').prop('checked', true);
-$(".btn_sch_ip:first").focus();</td>
-                        </tr>
-                        <tr class="after-row">
-                            <td class="tag">[수정 후 L356]</td>
-                            <td>$('.event_filterCheck input[type=checkbox]:checked').each(function () { ... })
-$('#offering-menu input[type="checkbox"]').prop('checked', true);
-$(".btn_sch_ip").first().focus();</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </section>
-
         <footer>
             <p>SDS 2026 Renewal Frontend Engineering Team &copy; 2026. All rights reserved.</p>
         </footer>
 
     </main>
-
-    <!-- Reliable Left Sidebar Scroll Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var navLinks = document.querySelectorAll('.nav-link');
-            
-            navLinks.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    var targetId = this.getAttribute('href').substring(1);
-                    var targetEl = document.getElementById(targetId);
-                    
-                    if (targetEl) {
-                        window.scrollTo({
-                            top: targetEl.offsetTop - 30,
-                            behavior: 'smooth'
-                        });
-
-                        navLinks.forEach(function(l) { l.classList.remove('active'); });
-                        this.classList.add('active');
-                    }
-                });
-            });
-
-            window.addEventListener('scroll', function() {
-                var scrollPos = window.pageYOffset || document.documentElement.scrollTop;
-                var sections = document.querySelectorAll('.file-section');
-                
-                sections.forEach(function(section) {
-                    var top = section.offsetTop - 100;
-                    var bottom = top + section.offsetHeight;
-                    var id = section.getAttribute('id');
-                    var link = document.querySelector('.nav-link[href="#' + id + '"]');
-
-                    if (scrollPos >= top && scrollPos < bottom) {
-                        if (link) {
-                            navLinks.forEach(function(l) { l.classList.remove('active'); });
-                            link.classList.add('active');
-                        }
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

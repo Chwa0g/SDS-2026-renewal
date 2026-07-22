@@ -409,6 +409,26 @@ $('#container').find('a').filter(':visible').first().focus();</td>
                     </table>
                 </div>
 
+                <!-- Item 6: MP_customer_list_v1 Pagination Fix -->
+                <div class="audit-item">
+                    <div class="audit-header">
+                        <span class="audit-location">📍 L22555 (MP_customer_list_v1)</span>
+                        <span class="page-tag tag-case">📰 고객사례 (MP_customer_list_v1) 페이지네이션 도트 생성 복구</span>
+                    </div>
+                    <table class="code-diff-table">
+                        <tr class="before-row">
+                            <td class="tag">[수정 전 L22555]</td>
+                            <td>// MP_customer_list_v1 생성자 함수 내 this.$pagn 변수 정의 누락
+// carouFredSel({ pagination: { container: _plugin.$pagn } }) 호출 시 container가 undefined 전달되어 도트 미생성</td>
+                        </tr>
+                        <tr class="after-row">
+                            <td class="tag">[수정 후 L22555]</td>
+                            <td>this.$pagn = this.$el.find('.md_pagn');
+// -> container 변수가 올바르게 지정되어 .md_pagn 내부 인디케이터 도트(&lt;a&gt;&lt;span&gt;1&lt;/span&gt;&lt;/a&gt;) 100% 정상 생성!</td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
         </section>
 
@@ -839,6 +859,39 @@ $(".btn_sch_ip:first").focus();</td>
                             <td>$('.event_filterCheck input[type=checkbox]:checked').each(function () { ... })
 $('#offering-menu input[type="checkbox"]').prop('checked', true);
 $(".btn_sch_ip").first().focus();</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. module.css -->
+        <section class="file-section" id="file-module-css">
+            <div class="file-section-header">
+                <div class="file-title">
+                    <h3>12. module.css</h3>
+                    <span class="file-path">module_src/css/module.css</span>
+                </div>
+                <a href="file:///c:/Users/화영/Desktop/sds-2026-renewal/case-study-test/www.samsungsds.com/module_src/css/module.css" class="open-link">파일 열기 ↗</a>
+            </div>
+            <div class="file-body">
+                <div class="audit-item">
+                    <div class="audit-header">
+                        <span class="audit-location">📍 L14752 ~ L14753</span>
+                        <span class="page-tag tag-case">📰 고객사례 (MP_customer_list_v1) 캐러셀 좌/우 화살표 반응형 위치 보정</span>
+                    </div>
+                    <table class="code-diff-table">
+                        <tr class="before-row">
+                            <td class="tag">[수정 전 L14752]</td>
+                            <td>.MP_customer_list_v1 .customer_list_carousel .arrow-prev { left: 50%; transform: translateY(-50%) translateX(-659px); }
+.MP_customer_list_v1 .customer_list_carousel .arrow-next { right: 50%; transform: translateY(-50%) translateX(659px); }
+/* 1318px 이하 화면에서 translateX(±659px)로 인해 버튼이 캔버스 밖으로 밀려나 overflow:hidden에 의해 잘림 */</td>
+                        </tr>
+                        <tr class="after-row">
+                            <td class="tag">[수정 후 L14752]</td>
+                            <td>.MP_customer_list_v1 .customer_list_carousel .arrow-prev { left: max(20px, calc(50% - 659px)); transform: translateY(-50%); }
+.MP_customer_list_v1 .customer_list_carousel .arrow-next { right: max(20px, calc(50% - 659px)); transform: translateY(-50%); }
+/* 반응형 max() 함수 적용으로 화면 폭이 좁아져도 좌우 20px 안쪽에 버튼이 100% 노출됨 */</td>
                         </tr>
                     </table>
                 </div>
