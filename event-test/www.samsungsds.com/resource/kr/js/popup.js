@@ -116,7 +116,7 @@ $(function() {
                         $("html").removeClass("oh");
                         $('.layer_inner.video').find('.layer_cnt').html('<iframe class="youtube" width="100%" frameborder="0" allowfullscreen ></iframe>');
                         $("body").off('touchmove');
-                        //$("body").removeAttr("style").unbind('touchmove');
+                        //$("body").removeAttr("style").off('touchmove');
                         if ($layerId.find("video").length) {
                             var vid = $layerId.find("video").get(0);
                             vid.currentTime = 0;

@@ -193,7 +193,7 @@ function makeHtml(lang,data,idx,step,frameType){
                 if (content == null || content == "null") {
                     content = "";
                 }
-                content = $.trim(content);
+                content = (content || "").trim();
                 title = title.toString();
 
 

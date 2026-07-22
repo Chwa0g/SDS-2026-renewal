@@ -1,3 +1,4 @@
+
 //20220411 KR,EN 웹접근성 비디오 새창열림 관련 분기
 /*******************************************************************************
  * 파 일 명 : extension.js
@@ -190,16 +191,6 @@ $(function() {
     if(window.location.hostname.includes("70.225.30.31")) host = "http://70.225.30.31:8001";
 
 
-    $.get(host+"/kr/layout/header.html?queryString=20241016010700", function(data) {
-        $('#header .M00_A').html(data);
-        //header 로드후 GNB 기능 생성
-        window.GNB = new M00_A($('#header .M00_A'));
-        var root = window.location.pathname.split('/')[1];
-        if (root == 'kr' || root == 'en') {
-            //initOfferingPage();
-        }
-
-    });
 
 
     // Conatct 모듈 url, floating btn contact url merge
@@ -219,56 +210,6 @@ $(function() {
 
 
 
-
-    //플로팅 버튼 삽입 시작
-    if($("html").attr("lang") == "ko"){
-        $.get(host+'/kr/layout/floating-action.html', function(data) {
-            $('#container').append(data);
-           // createSamllNav();
-        });
-    } else {
-        $.get(host+'/kr/layout/floating-action.html', function(data) {
-            // test 페이지 에서만..
-            // if (window.location.pathname.indexOf("/test2") > -1) {
-            //     return;
-            // }
-            $('#wrap').append(data); //풀페이지 용, 수정
-            // $('#container').append(data);
-    
-            $(".floating-default").remove(); //리뉴얼 전 플로팅배너 container영역..정상 확인후 삭제해도 됨
-    
-            $('.floating_action').addClass('on');
-            setTimeout(function() {
-                $('.floating_action').removeClass('on');
-            }, 5000);
-    
-            $('.floating_action ul li a').on("mouseover focusin", function() {
-                $('.floating_action').addClass('on');
-            });
-            $('.floating_action ul li a').on('mouseleave focusout', function() {
-                $('.floating_action').removeClass('on');
-            });
-    
-            /* Floating Action Button : 20.12.30 소스취합 extenstion_ko.js 로 이동 */
-            $(window).scroll(function() {
-                scrollEvent();
-            });
-    
-            $(window).resize(function() {
-                scrollEvent();
-            });
-    
-            function scrollEvent() {
-                var scrollEnd = ($(document).height() - $(window).height()) - $('footer').innerHeight();
-    
-                if ($(window).scrollTop() >= scrollEnd) {
-                    $(".float-section.renew").addClass("act");
-                } else {
-                    $(".float-section.renew").removeClass("act");
-                }
-            }
-        });
-    }
 
     // 우측 floating nav
     function createSamllNav() {
@@ -374,13 +315,7 @@ $(function() {
 
 
 
-    //헤더 삽입 시작
-    /*AS-IS*/
-    // 푸터 삽입 시작
-    $.get(host+"/kr/layout/footer.html?queryString=20241016010700", function(data) {
-        $("#footer").html(data);
-        footerInit();
-    });
+
 
     function footerInit() {
         if($('#footer').find('.common-bottom-menu-bx').length) {
@@ -616,16 +551,6 @@ $(function() {
     }
 
 
-
-    /* ***** 헤더 삽입 시작 ***** */
-    // $('#header2').load("../layout/header2.html", function() {
-    //
-    // });
-
-    // 푸터 삽입 시작
-    // $("#footer2").load("../layout/footer2.html", function() {
-    //
-    // });
 
     /* top sch */
     $(window).on("click", function(e) {

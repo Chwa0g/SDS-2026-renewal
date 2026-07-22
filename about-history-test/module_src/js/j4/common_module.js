@@ -1939,7 +1939,7 @@ var fixedTabUtils = {
         var panelT = parseInt($tabObj.panel.eq(idx).offset().top);
         var $hd = $('.header');
         var headH = $hd.outerHeight(true) || 56;
-        var brandColorH = $('.brandcolor').is(':hidden') || $('.brandcolor').hasClass('normal') ? 0 : $('.brandcolor').outerHeight(true);
+        var brandColorH = !$('.brandcolor').length || $('.brandcolor').is(':hidden') || $('.brandcolor').hasClass('normal') ? 0 : $('.brandcolor').outerHeight(true);
         var tabH = $tabObj.fixed.outerHeight(true);
         var scrollTop = panelT - tabH - (headH - brandColorH);
 

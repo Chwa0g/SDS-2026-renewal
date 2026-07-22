@@ -861,8 +861,8 @@ $(document).ready(function() {
             targets = $(this.hash),
             targets_triggers = targets.find('.ebc-tab-triggers').parents('li'),
             targets_contents = targets.find('.ebc-tab-contents'),
-            first_trigger = targets.find('.ebc-tab-triggers:first').parents('li'),
-            first_content = targets.find('.ebc-tab-contents:first'),
+            first_trigger = targets.find('.ebc-tab-triggers').first().parents('li'),
+            first_content = targets.find('.ebc-tab-contents').first(),
             controller = $('.ebc-tabController .ebc-tabController_dropDown .ebc-tabController_text');
 
         triggers.on('click', function(event) {

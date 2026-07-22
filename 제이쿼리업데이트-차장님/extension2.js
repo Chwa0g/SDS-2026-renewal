@@ -1138,7 +1138,7 @@ $(function () {
     for (var i = 0; i < $fil_tab.length; i++) {
         fn[i] = (function(idx) {
                 return function() {
-                    $fil_con.eq(idx).find("label:first").attr("tabindex","0").focus();
+                    $fil_con.eq(idx).find("label").first().attr("tabindex","0").focus();
                 }
         }(i));
         $fil_tab.eq(i).click(fn[i]);
@@ -1148,7 +1148,7 @@ $(function () {
     $.each($fil_tab, function (idx, data) {
         var i = idx;
         $(data).click(function () {
-            $fil_con.eq(idx).find("input:first").focus();
+            $fil_con.eq(idx).find("input").first().focus();
         });
         $fil_con.eq(idx).find("input").on("keydown", function (e) {
             if (e.which == 13) {
@@ -1156,7 +1156,7 @@ $(function () {
                 $(this).focus();
             }
         });
-        $fil_con.eq(idx).find("input:last").on("keydown", function (e) {
+        $fil_con.eq(idx).find("input").last().on("keydown", function (e) {
             if (e.which == 9 && e.shiftKey == false) {
                 $(data).trigger("click");
                 $(data).focus();
@@ -1712,8 +1712,8 @@ $(function () {
     $(".ip_select select").change(function (e) {
         $(this).next().is("input") ? $(this).next().val($(this).find(":selected").text()) : $(this).next().text($(this).find(":selected").text()).css("color", "black");
 
-        if ($(".select_group_1 :radio").length > 1) {
-            var radios = $(".select_group_1 :radio");
+        if ($(".select_group_1 input[type='radio']").length > 1) {
+            var radios = $(".select_group_1 input[type='radio']");
             var index = radios.index(radios.filter(':checked'));
             if (index != this.selectedIndex) {
                 radios[this.selectedIndex].checked = true;
@@ -1721,8 +1721,8 @@ $(function () {
         }
     });
 
-    $(".select_group_1 :radio").change(function (e) {
-        var index = $(".select_group_1 :radio").index(this);
+    $(".select_group_1 input[type='radio']").change(function (e) {
+        var index = $(".select_group_1 input[type='radio']").index(this);
         $(".select_group_1 select").prop('selectedIndex', index).change();
     });
 
@@ -2283,7 +2283,7 @@ var shareTip = {
                 url = url.replace("https","http");
             }
             $share.find('.widget').attr('data-url', url);
-            $share.find('.widget').attr('data-title',btn.parent().parent().find(':header:first').text());
+            $share.find('.widget').attr('data-title',btn.parent().parent().find('h1, h2, h3, h4, h5, h6').first().text());
             $share.find('.widget').attr('data-desc','');
 
             var imgUrl = btn.parent().parent().parent().find('.thumb_imgBox').css('background-image')
@@ -2606,8 +2606,8 @@ function checkSelect(input) {
                     $('.check_msg.type1.sync').find($(options.child)).prop({ "checked": false });
                     $('.term_box').find($(options.child)).prop({ "checked": false });
 
-                    $('.check_msg.type1.sync').find($("input:checkbox")).prop({ "checked": false });
-                    $('.term_box').find($("input:checkbox")).prop({ "checked": false });
+                    $('.check_msg.type1.sync').find("input[type='checkbox']").prop({ "checked": false });
+                    $('.term_box').find("input[type='checkbox']").prop({ "checked": false });
 
 
                 }

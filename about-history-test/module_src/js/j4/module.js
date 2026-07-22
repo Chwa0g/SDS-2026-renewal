@@ -12349,6 +12349,19 @@ function M13_B(el) {
         _plugin.carousel.$item.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
         _plugin.carousel.$item.eq(_plugin.currentIndex).removeAttr('aria-hidden').find('a, button').removeAttr('tabindex');
     }
+
+    function getPosition($el) {
+        var result = {};
+        if (!$el || !$el.length) return { top: 0, left: 0, bottom: 0, right: 0, styleClip: 'rect(0px, 0px, 0px, 0px)' };
+        var pos = $el.position() || { top: 0, left: 0 };
+        result.top = pos.top;
+        result.left = pos.left;
+        result.bottom = result.top + ($el.height() || 0);
+        result.right = result.left + ($el.width() || 0);
+        result.styleClip = 'rect(' + result.top + 'px, ' + result.right + 'px, ' + result.bottom + 'px, ' + result.left + 'px)';
+
+        return result;
+    }
  
     // Update Carousel Style
     function updateIndicatorSlide(_plugin) {
@@ -22552,6 +22565,7 @@ function MP_customer_list_v1(el, noEvent) {
     this.currentIndex = this.startIndex;
     this.$carousel = this.$el.find('.carousel');
     this.$carouselItem = this.$el.find('.carousel .li');
+    this.$pagn = this.$el.find('.md_pagn');
     this.$nav = this.$el.find('.arrow-nav');
     this.$txtArea = this.$carousel.find('.txt');
     this.$navigation = this.$el.find('.navigation');
@@ -25690,7 +25704,7 @@ function MP_brityauto(el) {
     }
 
     let _this = this;
-    let $hd = $(".M00_A");
+    let $hd = $(".header");
 
     _proto.init = function(){
         //console.log("init:: MP_brityauto");
@@ -25713,32 +25727,17 @@ function MP_brityauto(el) {
     }
 
     _proto.addEvent = function(){
-        _this.$tab.btn.on("click", function(){
-            _this.$tab.isClick = true;
-
+        _this.$tab.btn.on("click", function(e){
+            e.preventDefault();
             let idx = $(this).parents('li').index();
-            let panelT = parseInt( _this.$tab.panel.eq(idx).offset().top );
-
-            let headH = $(document).find("#header").outerHeight(true);
-            let headT = Math.abs($hd.position().top);
-            let brandColorH = $(".brandcolor").is(":hidden") || $(".brandcolor").hasClass("normal") ? 0 : $(".brandcolor").outerHeight(true);
-            let tabH = _this.$tab.fixed.outerHeight(true);
-            let scrollTop = panelT - ( tabH ) - ( (headH - headT) - brandColorH );
-
-            _this.$tab.active = idx;
-            _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-            _this.$tab.btn.attr({ "aria-selected" : false }).eq(idx).attr({ "aria-selected" : true });
-
-            $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{
-                let afterHeadT = Math.abs($hd.position().top);
-                scrollTop = scrollTop - ( headT - afterHeadT );
-                $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{ _this.$tab.isClick = false });
-            });
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
 
         calBoxlength();
 
         $(window).on('scroll resize', ()=>{
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
     }

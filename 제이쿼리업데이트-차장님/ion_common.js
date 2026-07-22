@@ -1,4 +1,4 @@
-﻿if (location.protocol !== 'https:' && location.hostname === 'www.samsungsds.com') {
+if (location.protocol !== 'https:' && location.hostname === 'www.samsungsds.com') {
     location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
 
@@ -147,7 +147,7 @@ function makeHtml(lang,data,idx,step,frameType){
                 res += "<p class='newsList_txt_desc'>"+target.content+"</p>"
                 res += "</div>"
                 // res += "<div class='newsList_comment'>"
-                // res += "<span class='newsList_comment_icon'><img src='https://image.samsungsds.com/resource/en/images/icon/ico_comment_3.png?queryString=20260422050415' alt='comment icon'></span><span id='commCnt'>"+getCommentCnt(target)+"</span>"
+                // res += "<span class='newsList_comment_icon'><img src='https://image.samsungsds.com/resource/en/images/icon/ico_comment_3.png?queryString=20260720032819' alt='comment icon'></span><span id='commCnt'>"+getCommentCnt(target)+"</span>"
                 // res += "</div>"
                 res += "</a>"
                 res += "</div>"
@@ -199,7 +199,7 @@ function makeHtml(lang,data,idx,step,frameType){
 
 
                 if (target.thum_img.indexOf('no_thumb.png') > -1) {
-                    target.thum_img = 'https://image.samsungsds.com/resource/en/images/comp_image_'+parseInt(Math.floor((Math.random()*5) + 1))+'.jpg?queryString=20260422050415';
+                    target.thum_img = 'https://image.samsungsds.com/resource/en/images/comp_image_'+parseInt(Math.floor((Math.random()*5) + 1))+'.jpg?queryString=20260720032819';
                 }
                 if(target.thum_f_w !== undefined) {
                     if (target.thum_f_w.indexOf('no_thumb.png') > -1) {
@@ -535,7 +535,7 @@ function catDataTrans (frameType,catNm,keyArt) { // frameType[insight,media], ca
                 if (catAllArt[i].category == 'Press Release' || catAllArt[i].category == '보도자료') {
                     // if (catAllArt[i] == catAdminTemp) continue;
                     if (catAllArt[i].thum_img.indexOf('no_thumb.png') > -1) {
-                        catAllArt[i].thum_img = 'https://image.samsungsds.com/resource/en/images/comp_image_'+parseInt(Math.floor((Math.random()*5) + 1))+'.jpg?queryString=20260422050415';
+                        catAllArt[i].thum_img = 'https://image.samsungsds.com/resource/en/images/comp_image_'+parseInt(Math.floor((Math.random()*5) + 1))+'.jpg?queryString=20260720032819';
                     }
                     if(catAllArt[i].thum_f_w !== undefined) {
                         if (catAllArt[i].thum_f_w.indexOf('no_thumb.png') > -1) {
@@ -653,7 +653,7 @@ function mediaTabs () {
 }
 
 function focusTrapOn(mdShareBTn) {
-    mdShareBTn.find('a:visible, button:visible').first().focus();
+    mdShareBTn.find('a, button').filter(':visible').first().focus();
 }
 
 var lastActivatedButton_ion = null;
@@ -983,7 +983,7 @@ $(document).ready(function(){
     if(corp == 'kr'){
          if(baseURI.split('/')[4]=='index.html' || baseURI.split('/')[4]=='' ){
         $.ajax({
-            url: '/'+corp+'/main2024/ev_banner/ev_banner.html??queryString=20260422050415',
+            url: '/'+corp+'/main2024/ev_banner/ev_banner.html??queryString=20260720032819',
             method: "get",
             data: null,
             dataType: "html",

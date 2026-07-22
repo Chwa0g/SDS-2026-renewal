@@ -25704,7 +25704,7 @@ function MP_brityauto(el) {
     }
 
     let _this = this;
-    let $hd = $(".M00_A");
+    let $hd = $(".header");
 
     _proto.init = function(){
         //console.log("init:: MP_brityauto");
@@ -25728,42 +25728,16 @@ function MP_brityauto(el) {
 
     _proto.addEvent = function(){
         _this.$tab.btn.on("click", function(e){
-            if (e) e.preventDefault();
+            e.preventDefault();
             let idx = $(this).parents('li').index();
-
-            if (window.fixedTabUtils) {
-                fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
-            } else {
-                _this.$tab.isClick = true;
-                let panelT = parseInt( _this.$tab.panel.eq(idx).offset().top );
-
-                let headH = $(document).find("#header").outerHeight(true) || 56;
-                let headT = ($hd && $hd.length && $hd.position()) ? Math.abs($hd.position().top) : 0;
-                let brandColorH = $(".brandcolor").is(":hidden") || $(".brandcolor").hasClass("normal") ? 0 : $(".brandcolor").outerHeight(true);
-                let tabH = _this.$tab.fixed.outerHeight(true) || 50;
-                let scrollTop = panelT - ( tabH ) - ( (headH - headT) - brandColorH );
-
-                _this.$tab.active = idx;
-                _this.$tab.li.removeClass('active').eq(idx).addClass('active');
-                _this.$tab.btn.attr({ "aria-selected" : false }).eq(idx).attr({ "aria-selected" : true });
-
-                $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{
-                    let afterHeadT = ($hd && $hd.length && $hd.position()) ? Math.abs($hd.position().top) : 0;
-                    scrollTop = scrollTop - ( headT - afterHeadT );
-                    $('html, body').stop().animate({ scrollTop: scrollTop }, 500, ()=>{ _this.$tab.isClick = false });
-                });
-            }
+            fixedTabUtils.scrollTabToPanel(_this.$tab, idx);
         });
 
         calBoxlength();
 
         $(window).on('scroll resize', ()=>{
-            if (window.fixedTabUtils) {
-                fixedTabUtils.setTabFixed(_this.$tab.fixed);
-                fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
-            } else {
-                if (window.fixedTab) window.fixedTab();
-            }
+            fixedTabUtils.setTabFixed(_this.$tab.fixed);
+            fixedTabUtils.setTabActive(_this.$tab, setTabAttr);
             animateInViewElements();
         });
     }
