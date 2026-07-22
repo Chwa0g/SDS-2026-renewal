@@ -663,6 +663,26 @@ a.each(i, function (idx, val) { $ch.eq(val).addClass(actCls) });</td>
             <div class="file-body">
                 <div class="audit-item">
                     <div class="audit-header">
+                        <span class="audit-location">📍 L1 ~ L20 (jQuery 4.0 :visible / :hidden 의사 선택자 폴리필)</span>
+                        <span class="page-tag tag-case">📰 고객사례 (MP_customer_list_v1) & 캐러셀 네비게이션 복구</span>
+                    </div>
+                    <table class="code-diff-table">
+                        <tr class="before-row">
+                            <td class="tag">[수정 전 L1]</td>
+                            <td>// jQuery 4.0에서 :visible, :hidden 의사 선택자가 삭제되어 carouFredSel 내부 .is(':visible') 평가 실패
+// -> 슬라이드 개수를 0개로 오판하여 네비게이션(.md_pagn)과 좌우 슬라이드 버튼(.arrow-prev, .arrow-next)을 강제 hide() 함!</td>
+                        </tr>
+                        <tr class="after-row">
+                            <td class="tag">[수정 후 L1]</td>
+                            <td>var isElemVisible = function(elem) { return !!(elem.offsetWidth || elem.offsetHeight || (elem.getClientRects && elem.getClientRects().length)); };
+$j.expr.pseudos.visible = isElemVisible;
+$j.expr.pseudos.hidden = function(elem) { return !isElemVisible(elem); };
+// -> jQuery 4.0 환경에서도 offsetWidth/Height 기준 정밀 가시성 판단으로 네비게이션 도트 및 좌우 버튼 100% 정상 표시!</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="audit-item">
+                    <div class="audit-header">
                         <span class="audit-location">📍 L17 ~ L190 (Flickity v2.3 Engine & jQuery 4.0 Bridge)</span>
                         <span class="page-tag tag-common">🎡 Flickity 캐러셀 엔진 내장 및 4.0 호환성 완성</span>
                     </div>

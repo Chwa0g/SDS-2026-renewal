@@ -11,6 +11,7 @@ if (typeof window !== "undefined" && window.jQuery) {
     if (typeof Object.prototype.parse === "undefined") {
         Object.defineProperty(Object.prototype, "parse", { value: function () { return this; }, writable: true, configurable: true });
     }
+
     if ($j.easing && !$j.easing.easeOutQuint) {
         $j.easing.easeOutQuint = function (x) { return 1 - Math.pow(1 - x, 5); };
     }

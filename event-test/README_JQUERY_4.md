@@ -70,6 +70,9 @@
 ---
 
 ### 6. `module_src/js/j4/libs.js`
+- **📍 L1 ~ L20 (`jQuery 4.0 :visible` 및 `:hidden` 의사 선택자 폴리필 추가)**
+  - **수정 전:** jQuery 4.0에서 `:visible`, `:hidden` 의사 선택자가 네이티브 `querySelectorAll`로 대체되며 `carouFredSel` 등의 플러그인 내부에서 `.is(':visible')` / `.filter(':hidden')` 평가 실패 ➔ 슬라이드 개수 0개 판정으로 네비게이션(`.md_pagn`) 및 좌우 버튼(`.arrow-prev`, `.arrow-next`) 강제 `hide()` 처리됨.
+  - **수정 후:** `jQuery.expr.pseudos.visible` 및 `hidden` 폴리필(`offsetWidth` / `offsetHeight` 렌더링 체킹)을 최상단에 등록하여 `carouFredSel` 및 모든 슬라이더의 네비게이션/버튼 표시 및 카운팅 정상화.
 - **📍 L17 ~ L190 (`Flickity v2.3` 캐러셀 엔진 내장 및 jQuery 4.0 완벽 작동 보장)**
   - **수정 전:** `if (typeof $j.fn.flickity === "undefined") { $j.fn.flickity = function() { return this; }; }` (단순 빈 껍데기 stub으로 인해 `flkty` 객체 미생성 및 캐러셀 슬라이딩 불가능)
   - **수정 후:** Flickity v2.3 코어 엔진(`select`, `previous`, `next`, `settle`, `dragEndRestingSelect`, `updateSelectedSlide`) 및 jQuery 4.0 브릿지(`$.fn.flickity`)를 내장하여 캐러셀 터치/드래그 및 애니메이션 100% 정상 작동 조치.

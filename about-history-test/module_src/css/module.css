@@ -14749,8 +14749,8 @@ html[lang="en"] .cube_main.v2 .cube_section .ban .diagram_wrap .img .md_btn.f0 {
 .MP_customer_list_v1 .customer_list_carousel .navigation .md_pagn a.selected { background: #fff; }
 .MP_customer_list_v1 .customer_list_carousel .navigation .md_pagn a span { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0px 0px 0px 0px); border: 0; }
 .MP_customer_list_v1 .customer_list_carousel .arrow-nav { position: absolute; top: 50%; width: 30px; height: 56px; z-index: 2; }
-.MP_customer_list_v1 .customer_list_carousel .arrow-prev { left: 50%; transform: translateY(-50%) translateX(-659px); }
-.MP_customer_list_v1 .customer_list_carousel .arrow-next { right: 50%; transform: translateY(-50%) translateX(659px); }
+.MP_customer_list_v1 .customer_list_carousel .arrow-prev { left: max(20px, calc(50% - 659px)); transform: translateY(-50%); }
+.MP_customer_list_v1 .customer_list_carousel .arrow-next { right: max(20px, calc(50% - 659px)); transform: translateY(-50%); }
 .MP_customer_list_v1 .customer_list_carousel .arrow-nav::before { position: absolute; top: 9px; width: 39px; height: 39px; border-top: 2px solid #fff; border-left: 2px solid #fff; transition: border-color 0.3s; opacity: 1; content: ''; }
 .MP_customer_list_v1 .customer_list_carousel .arrow-nav:hover::before { border-color: #2189ff; }
 .MP_customer_list_v1 .customer_list_carousel .arrow-prev::before { left: 9px; transform: rotate(-45deg); }

@@ -22552,6 +22552,7 @@ function MP_customer_list_v1(el, noEvent) {
     this.currentIndex = this.startIndex;
     this.$carousel = this.$el.find('.carousel');
     this.$carouselItem = this.$el.find('.carousel .li');
+    this.$pagn = this.$el.find('.md_pagn');
     this.$nav = this.$el.find('.arrow-nav');
     this.$txtArea = this.$carousel.find('.txt');
     this.$navigation = this.$el.find('.navigation');
