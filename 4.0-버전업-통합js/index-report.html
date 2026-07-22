@@ -429,6 +429,27 @@ $('#container').find('a').filter(':visible').first().focus();</td>
                     </table>
                 </div>
 
+                <!-- Item 7: MP_brityauto Fixed Tab Fix -->
+                <div class="audit-item">
+                    <div class="audit-header">
+                        <span class="audit-location">📍 L25717 ~ L25746 (MP_brityauto)</span>
+                        <span class="page-tag tag-common">⚙️ Brity Auto fixed_tab 널 억제 및 fixedTabUtils 연동</span>
+                    </div>
+                    <table class="code-diff-table">
+                        <tr class="before-row">
+                            <td class="tag">[수정 전 L25724]</td>
+                            <td>let headT = Math.abs($hd.position().top);
+// $hd($(".M00_A")) 부재 시 $hd.position()이 undefined가 되어 TypeError 발생!</td>
+                        </tr>
+                        <tr class="after-row">
+                            <td class="tag">[수정 후 L25717]</td>
+                            <td>if (window.fixedTabUtils) { fixedTabUtils.scrollTabToPanel(_this.$tab, idx); }
+// 1. fixedTabUtils 공통 헬퍼 연동으로 스크롤 이동 및 fixed 탭 상태 갱신 공통화
+// 2. Fallback에 ($hd && $hd.length && $hd.position()) 안전 가드 체킹 추가로 TypeError 완벽 차단!</td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
         </section>
 

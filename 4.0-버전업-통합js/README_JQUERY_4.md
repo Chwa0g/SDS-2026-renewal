@@ -108,6 +108,10 @@
 - **📍 L22555 (`MP_customer_list_v1` 생성자 누락 변수 복구)**
   - **수정 전:** 생성자 내부 `this.$pagn` 누락으로 `carouFredSel` 초기화 시 `.md_pagn` 도트 미생성
   - **수정 후:** `this.$pagn = this.$el.find('.md_pagn');` 추가로 인디케이터 도트 100% 정상 생성
+- **📍 L25717 ~ L25746 (`MP_brityauto` Fixed 탭 가드 및 fixedTabUtils 연동)**
+  - **수정 전:** `Math.abs($hd.position().top)` 호출 시 `$hd` 부재/미노출로 TypeError 발생
+  - **수정 후:** `fixedTabUtils.scrollTabToPanel(_this.$tab, idx);` 공통 유틸 연동 및 fallback `$hd.position()` 안전 가드 체킹 추가
+
 
 ---
 
