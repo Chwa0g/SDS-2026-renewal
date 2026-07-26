@@ -985,6 +985,27 @@ const Header = (function () {
         openSearch();
     }
 
+    function bindSearchLastFocusClose() {
+        $searchPanel.off("keydown.headerSearchLastFocus").on("keydown.headerSearchLastFocus", function (e) {
+            if ($searchButton.attr("aria-expanded") !== "true") return;
+            if (e.key !== "Tab" || e.shiftKey) return;
+
+            const $focusable = getFocusableElements($searchPanel);
+            const $last = $focusable.last();
+
+            if (!$last.length) return;
+            if (e.target !== $last[0]) return;
+
+            e.preventDefault();
+
+            closeSearch({
+                returnFocus: false,
+            });
+
+            focusMainContent();
+        });
+    }
+
     /* =========================
        Mega menu panel
     ========================= */
@@ -1232,6 +1253,28 @@ const Header = (function () {
 
                 closeSearchSuggest();
                 $searchInput.trigger("focus");
+            })
+            .on("keydown.headerSearchSuggest", ".header-search__suggest-close", function (e) {
+                if (e.key !== "Tab" || e.shiftKey) return;
+
+                e.preventDefault();
+
+                preventSearchSuggestOpen = true;
+
+                closeSearchSuggest();
+
+                const $firstRecommend = getFocusableElements($searchPanel.find(".header-search__recommend")).first();
+
+                if ($firstRecommend.length) {
+                    $firstRecommend.trigger("focus");
+                    return;
+                }
+
+                closeSearch({
+                    returnFocus: false,
+                });
+
+                focusMainContent();
             });
 
         $(document)
@@ -1504,6 +1547,7 @@ const Header = (function () {
         bindMobileMenu();
         bindLnb();
         bindSearch();
+        bindSearchLastFocusClose();
     }
 
     function initMegaMenu() {
@@ -1615,33 +1659,52 @@ const Header = (function () {
 /* =========================
    Footer
 ========================= */
+/* =========================
+   Footer
+========================= */
 const Footer = (function () {
     const ACTIVE_CLASS = "is-open";
     const EVENT_NAMESPACE = ".footer";
 
     let $footer = $();
+
+    // 모바일에서만 아코디언
     let $navGroup = $();
     let $navTitle = $();
 
-    function reset() {
+    // PC / MO 공통 아코디언
+    let $accordionGroup = $();
+    let $accordionTitle = $();
+
+    function closeNavAccordion() {
         $navGroup.removeClass(ACTIVE_CLASS);
         $navTitle.attr("aria-expanded", "false");
     }
 
-    function enableAccordion() {
+    function closeCommonAccordion() {
+        $accordionGroup.removeClass(ACTIVE_CLASS);
+        $accordionTitle.attr("aria-expanded", "false");
+    }
+
+    function reset() {
+        closeNavAccordion();
+        closeCommonAccordion();
+    }
+
+    /**
+     * 모바일 footer nav 아코디언
+     */
+    function enableNavAccordion() {
         $navTitle
             .attr("aria-expanded", "false")
-            .off(`click${EVENT_NAMESPACE}`)
-            .on(`click${EVENT_NAMESPACE}`, function () {
+            .off(`click${EVENT_NAMESPACE}Nav`)
+            .on(`click${EVENT_NAMESPACE}Nav`, function () {
                 const $button = $(this);
                 const $group = $button.closest(".footer__nav-group");
                 const isOpen = $group.hasClass(ACTIVE_CLASS);
 
-                // 일단 전체 닫기
-                $navGroup.removeClass(ACTIVE_CLASS);
-                $navTitle.attr("aria-expanded", "false");
+                closeNavAccordion();
 
-                // 원래 닫혀있던 애만 다시 열기
                 if (!isOpen) {
                     $group.addClass(ACTIVE_CLASS);
                     $button.attr("aria-expanded", "true");
@@ -1649,28 +1712,57 @@ const Footer = (function () {
             });
     }
 
-    function disableAccordion() {
-        $navTitle.off(`click${EVENT_NAMESPACE}`).attr("aria-expanded", "true");
+    function disableNavAccordion() {
+        $navTitle.off(`click${EVENT_NAMESPACE}Nav`).attr("aria-expanded", "true");
 
         $navGroup.removeClass(ACTIVE_CLASS);
     }
 
+    /**
+     * PC / MO 공통 아코디언
+     */
+    function enableCommonAccordion() {
+        $accordionTitle
+            .attr("aria-expanded", "false")
+            .off(`click${EVENT_NAMESPACE}Accordion`)
+            .on(`click${EVENT_NAMESPACE}Accordion`, function () {
+                const $button = $(this);
+                const $group = $button.closest(".footer__accordion-group");
+                const isOpen = $group.hasClass(ACTIVE_CLASS);
+
+                // 공통 아코디언도 하나만 열리게
+                closeCommonAccordion();
+
+                if (!isOpen) {
+                    $group.addClass(ACTIVE_CLASS);
+                    $button.attr("aria-expanded", "true");
+                }
+            });
+    }
+
     function init() {
         $footer = $(".footer");
-        $navGroup = $(".footer__nav-group");
-        $navTitle = $(".footer__nav-group:not(.footer__nav-group--family) .footer__nav-title");
 
-        if (!$footer.length || !$navGroup.length || !$navTitle.length) return;
+        if (!$footer.length) return;
+
+        $navGroup = $footer.find(".footer__nav-group");
+        $navTitle = $footer.find(".footer__nav-group:not(.footer__nav-group--family) .footer__nav-title");
+
+        $accordionGroup = $footer.find(".footer__accordion-group");
+        $accordionTitle = $footer.find(".footer__accordion-title");
+
+        if ($accordionGroup.length && $accordionTitle.length) {
+            enableCommonAccordion();
+        }
     }
 
     return {
         init,
         reset,
-        enableAccordion,
-        disableAccordion,
+        enableAccordion: enableNavAccordion,
+        disableAccordion: disableNavAccordion,
     };
 })();
-
 /* =========================
    countUp
 ========================= */
@@ -1705,7 +1797,55 @@ const countUp = (() => {
         return decimal !== undefined ? `${formattedInteger}.${decimal}` : formattedInteger;
     }
 
-    function setup($el) {
+    function createDigitTrack(loopCount = 2) {
+        let html = "";
+
+        for (let loop = 0; loop <= loopCount; loop++) {
+            for (let number = 0; number <= 9; number++) {
+                html += `<span class="count-up__number">${number}</span>`;
+            }
+        }
+
+        return html;
+    }
+
+    function render($el) {
+        const target = Number($el.data("countUpTarget"));
+        const decimals = Number($el.data("countUpDecimals")) || 0;
+        const useComma = Boolean($el.data("countUpUseComma"));
+        const formattedTarget = formatValue(target, decimals, useComma);
+        const loopCount = Number($el.data("countUpLoopCount")) || 2;
+
+        console.log([...formattedTarget]);
+        const html = [...formattedTarget]
+            .map((character, index) => {
+                if (/\d/.test(character)) {
+                    return `
+                        <span
+                            class="count-up__digit"
+                            data-digit="${character}"
+                            data-index="${index}"
+                            aria-hidden="true"
+                        >
+                            <span class="count-up__track">
+                                ${createDigitTrack(loopCount)}
+                            </span>
+                        </span>
+                    `;
+                }
+
+                return `
+                    <span class="count-up__separator" aria-hidden="true">
+                        ${character}
+                    </span>
+                `;
+            })
+            .join("");
+
+        $el.attr("aria-label", formattedTarget).html(html);
+    }
+
+    function setup($el, settings = {}) {
         if ($el.data("countUpReady")) return;
 
         const parsed = parseValue($el.text());
@@ -1716,69 +1856,81 @@ const countUp = (() => {
             countUpTarget: parsed.target,
             countUpDecimals: parsed.decimals,
             countUpUseComma: parsed.useComma,
+            countUpLoopCount: settings.loopCount ?? 2,
             countUpReady: true,
         });
 
-        $el.text(formatValue(0, parsed.decimals, parsed.useComma));
+        render($el);
     }
 
-    function animate($el, duration) {
-        setup($el);
+    function setInitialPosition($el) {
+        $el.find(".count-up__track").each(function () {
+            this.style.transition = "none";
+            this.style.transform = "translateY(0)";
+        });
+        //미리 렌더링
+        $el[0]?.offsetHeight;
+    }
 
-        const target = Number($el.data("countUpTarget"));
-        const decimals = Number($el.data("countUpDecimals")) || 0;
-        const useComma = Boolean($el.data("countUpUseComma"));
+    function animate($el, options = {}) {
+        const settings = {
+            duration: 1000,
+            stagger: 60,
+            loopCount: 2,
+            ...options,
+        };
 
-        if (Number.isNaN(target)) return;
+        setup($el, settings);
 
         const animationId = `${Date.now()}-${Math.random()}`;
+        const $digits = $el.find(".count-up__digit");
 
         $el.data("countUpAnimationId", animationId);
 
-        const startTime = performance.now();
+        setInitialPosition($el);
 
-        function step(now) {
-            if ($el.data("countUpAnimationId") !== animationId) {
-                return;
-            }
+        requestAnimationFrame(() => {
+            if ($el.data("countUpAnimationId") !== animationId) return;
 
-            const progress = Math.min((now - startTime) / duration, 1);
+            $digits.each(function (digitIndex) {
+                const $digit = $(this);
+                const $track = $digit.find(".count-up__track");
+                const targetDigit = Number($digit.data("digit"));
 
-            const eased = 1 - Math.pow(1 - progress, 4);
+                /*
+                 * 숫자 한 칸 높이가 1em이므로
+                 * 반복 횟수 × 10 + 목표 숫자만큼 위로 이동
+                 */
+                const targetIndex = settings.loopCount * 10 + targetDigit;
+                const delay = digitIndex * settings.stagger;
+                // 오른쪽부터 시작
+                // const delay = ($digits.length - digitIndex - 1) * settings.stagger;
 
-            const current = target * eased;
-
-            $el.text(formatValue(current, decimals, useComma));
-
-            if (progress < 1) {
-                requestAnimationFrame(step);
-                return;
-            }
-
-            $el.text(formatValue(target, decimals, useComma));
-        }
-
-        requestAnimationFrame(step);
+                $track.css({
+                    transition: `transform ${settings.duration}ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
+                    transform: `translateY(-${targetIndex}em)`,
+                });
+            });
+        });
     }
 
     function reset($el) {
         setup($el);
 
-        const decimals = Number($el.data("countUpDecimals")) || 0;
-        const useComma = Boolean($el.data("countUpUseComma"));
-
         $el.removeData("counted");
         $el.removeData("countUpAnimationId");
 
-        $el.text(formatValue(0, decimals, useComma));
+        setInitialPosition($el);
     }
 
     function init($scope, options = {}) {
         const settings = {
             selector: ".count-up",
             duration: 1000,
+            stagger: 60,
             threshold: 0.4,
             repeat: true,
+            loopCount: 2,
             ...options,
         };
 
@@ -1789,7 +1941,7 @@ const countUp = (() => {
         destroy();
 
         $targets.each(function () {
-            setup($(this));
+            setup($(this), settings);
         });
 
         observer = new IntersectionObserver(
@@ -1801,7 +1953,12 @@ const countUp = (() => {
                         if ($el.data("counted")) return;
 
                         $el.data("counted", true);
-                        animate($el, settings.duration);
+
+                        animate($el, {
+                            duration: settings.duration,
+                            stagger: settings.stagger,
+                            loopCount: settings.loopCount,
+                        });
 
                         if (!settings.repeat) {
                             observer.unobserve(entry.target);

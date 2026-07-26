@@ -77,10 +77,12 @@ function createMainSwiper(key, selector, isLoop, duration = 3000, autoplayState 
 }
 
 $(function () {
-    countUp.init($(".main"), {
-        duration: 1500,
-        threshold: 0.4,
+    countUp.init($(document), {
+        duration: 2000,
+        stagger: 70, //ms
+        threshold: 0.4, //IntersectionObserver 옵션
         repeat: true,
+        loopCount: 2, //턴 수
     });
 
     // KV
@@ -205,11 +207,11 @@ $(function () {
         function restoreOriginalOrder() {
             const $realItems = getRealItems();
 
-            $realItems
-                .sort(function (a, b) {
+            $(
+                $realItems.toArray().sort(function (a, b) {
                     return Number($(a).attr("data-index")) - Number($(b).attr("data-index"));
-                })
-                .appendTo($list);
+                }),
+            ).appendTo($list);
         }
 
         function renderPagination() {
