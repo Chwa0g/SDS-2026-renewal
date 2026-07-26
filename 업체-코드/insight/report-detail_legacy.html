@@ -3370,14 +3370,14 @@
 		</main>
 
 		<!-- footer -->
-		<footer class="footer">
+		<footer class="footer" data-lenis-prevent>
 			<div class="footer__inner">
 				<div class="footer__top">
 					<nav class="footer__nav" aria-label="푸터 메뉴">
 						<div class="footer__nav-group footer__nav-group--quick">
 							<ul class="footer__nav-list">
 								<li class="footer__nav-item">
-									<a href="#" class="footer__nav-link"> 모든 오퍼링 보기</a>
+									<a href="#" class="footer__nav-link">모든 오퍼링 보기</a>
 								</li>
 								<li class="footer__nav-item">
 									<a href="#" class="footer__nav-link">사이트맵</a>
@@ -3460,22 +3460,22 @@
 								</ul>
 							</div>
 						</div>
-						<div class="footer__nav-group footer__nav-group--family footer__accordion-group">
-							<button type="button" class="footer__nav-title footer__family-button footer__accordion-title" aria-controls="footerNav05" aria-expanded="false">
+						<div class="footer__nav-group footer__nav-group--family">
+							<button type="button" class="footer__nav-title footer__family-button" aria-controls="footerNav05" aria-expanded="false">
 								패밀리사이트<i class="footer__down-icon" aria-hidden="true"></i>
 							</button>
-							<div class="footer__nav-box footer__accordion-content" aria-controls="footerNav05">
-								<!-- <ul class="footer__nav-list">
-                            <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">패밀리사이트1</a>
-                            </li>
-                            <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">패밀리사이트2</a>
-                            </li>
-                            <li class="footer__nav-item">
-                                <a href="#" class="footer__nav-link">패밀리사이트3</a>
-                            </li>
-                        </ul> -->
+							<div class="footer__nav-box" aria-controls="footerNav05">
+								<ul class="footer__nav-list">
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">패밀리사이트1</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">패밀리사이트2</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">패밀리사이트3</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</nav>
@@ -3486,10 +3486,33 @@
 					<div class="footer__info">
 						<ul class="footer__policy-list">
 							<li class="footer__policy-item">
-								<a href="#" class="footer__policy-link footer__policy-link--privacy">
-									개인정보처리방침
-									<i class="footer__down-icon" aria-hidden="true"></i>
-								</a>
+								<div class="footer__popup">
+									<button type="button" class="footer__policy-link footer__policy-link--privacy footer__popup-button" aria-expanded="false" aria-controls="footerTerms">
+										개인정보처리방침
+										<i class="footer__down-icon" aria-hidden="true"></i>
+									</button>
+
+									<div class="footer__popup-content" aria-controls="footerTerms">
+										<div class="footer__popup-inner">
+											<div class="footer__popup-title">개인정보처리방침</div>
+
+											<ul class="footer__nav-list">
+												<li class="footer__nav-item">
+													<a href="#" class="footer__nav-link" target="_blank" title="새창열림">개인정보처리방침1</a>
+												</li>
+												<li class="footer__nav-item">
+													<a href="#" class="footer__nav-link" target="_blank" title="새창열림">개인정보처리방침2</a>
+												</li>
+												<li class="footer__nav-item">
+													<a href="#" class="footer__nav-link" target="_blank" title="새창열림">개인정보처리방침3</a>
+												</li>
+											</ul>
+											<button type="button" class="footer__popup-close">
+												<span class="blind">닫기</span>
+											</button>
+										</div>
+									</div>
+								</div>
 							</li>
 							<li class="footer__policy-item">
 								<a href="#" class="footer__policy-link">이용약관</a>
@@ -3539,11 +3562,50 @@
 							</ul>
 						</div>
 
-						<div class="footer__language">
-							<button type="button" class="footer__language-button" aria-expanded="false">
+						<div class="footer__language footer__popup">
+							<button type="button" class="footer__language-button footer__popup-button" aria-expanded="false" aria-controls="footerLang">
 								Korea / 한국어
 								<i class="footer__down-icon" aria-hidden="true"></i>
 							</button>
+
+							<div class="footer__popup-content" aria-controls="footerLang">
+								<div class="footer__popup-inner">
+									<div class="footer__popup-title">지역/언어를 선택해 주세요.</div>
+
+									<ul class="footer__nav-list">
+										<li class="footer__nav-item is-active">
+											<a href="https://www.samsungsds.com/kr/index.html" class="footer__nav-link" target="_blank" title="새창열림"> Korea / <span class="ko">한국어</span> </a>
+										</li>
+										<li class="footer__nav-item">
+											<a href="https://www.samsungsds.com/ap/index.html" class="footer__nav-link" target="_blank" title="새창열림"> APAC / English </a>
+										</li>
+										<li class="footer__nav-item">
+											<a href="https://www.samsungsds.com.cn/cn/index.html" class="footer__nav-link" target="_blank" title="새창열림"> China / <span class="ch">中文</span> </a>
+										</li>
+										<li class="footer__nav-item">
+											<a href="https://www.samsungsds.com/eu/index.html" class="footer__nav-link" target="_blank" title="새창열림"> Europe / English </a>
+										</li>
+										<li class="footer__nav-item">
+											<a href="https://www.samsungsds.com/en/index.html" class="footer__nav-link" target="_blank" title="새창열림"> Global / English </a>
+										</li>
+										<li class="footer__nav-item">
+											<a href="https://www.samsungsds.com/in/index.html" class="footer__nav-link" target="_blank" title="새창열림"> India / English </a>
+										</li>
+										<li class="footer__nav-item">
+											<a href="https://www.samsungsds.com/la/index.html" class="footer__nav-link" target="_blank" title="새창열림"> Latin America / Português </a>
+										</li>
+										<li class="footer__nav-item">
+											<a href="https://www.samsungsds.com/us/index.html" class="footer__nav-link" target="_blank" title="새창열림"> USA / English </a>
+										</li>
+										<li class="footer__nav-item">
+											<a href="https://www.samsungsds.com/vn/index.html" class="footer__nav-link" target="_blank" title="새창열림"> Vietnam / Vietnamese </a>
+										</li>
+									</ul>
+									<button type="button" class="footer__popup-close">
+										<span class="blind">닫기</span>
+									</button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -3551,7 +3613,6 @@
 		</footer>
 		<div class="floating-menu">
 			<a href="#" class="floating-menu__button floating-menu__button--chat" aria-label="상담 문의"></a>
-
 			<button type="button" class="floating-menu__button floating-menu__button--top js-back-to-top" aria-label="페이지 상단으로 이동"></button>
 		</div>
 

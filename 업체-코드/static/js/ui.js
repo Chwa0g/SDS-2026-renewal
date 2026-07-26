@@ -1668,42 +1668,43 @@ const Footer = (function () {
 
     let $footer = $();
 
-    // 모바일에서만 아코디언
+    // footer nav
     let $navGroup = $();
     let $navTitle = $();
 
-    // PC / MO 공통 아코디언
-    let $accordionGroup = $();
-    let $accordionTitle = $();
+    // family
+    let $familyGroup = $();
+    let $familyTitle = $();
 
-    function closeNavAccordion() {
-        $navGroup.removeClass(ACTIVE_CLASS);
-        $navTitle.attr("aria-expanded", "false");
+    // PC / MO 공통 드롭다운 팝업
+    let $popupGroup = $();
+    let $popupButton = $();
+
+    function closeAccordion($group, $button) {
+        $group.removeClass(ACTIVE_CLASS);
+        $button.attr("aria-expanded", "false");
     }
 
-    function closeCommonAccordion() {
-        $accordionGroup.removeClass(ACTIVE_CLASS);
-        $accordionTitle.attr("aria-expanded", "false");
-    }
-
-    function reset() {
-        closeNavAccordion();
-        closeCommonAccordion();
+    function getFocusableElements($container) {
+        return $container
+            .find(["a[href]", "button:not([disabled])", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])", '[tabindex]:not([tabindex="-1"])'].join(","))
+            .filter(":visible");
     }
 
     /**
-     * 모바일 footer nav 아코디언
+     * MO footer nav
+     * 일반 nav + family가 한 묶음으로 작동
      */
-    function enableNavAccordion() {
+    function enableMobileNav() {
         $navTitle
             .attr("aria-expanded", "false")
-            .off(`click${EVENT_NAMESPACE}Nav`)
-            .on(`click${EVENT_NAMESPACE}Nav`, function () {
+            .off(`click${EVENT_NAMESPACE}MobileNav`)
+            .on(`click${EVENT_NAMESPACE}MobileNav`, function () {
                 const $button = $(this);
                 const $group = $button.closest(".footer__nav-group");
                 const isOpen = $group.hasClass(ACTIVE_CLASS);
 
-                closeNavAccordion();
+                closeAccordion($navGroup, $navTitle);
 
                 if (!isOpen) {
                     $group.addClass(ACTIVE_CLASS);
@@ -1712,32 +1713,151 @@ const Footer = (function () {
             });
     }
 
-    function disableNavAccordion() {
-        $navTitle.off(`click${EVENT_NAMESPACE}Nav`).attr("aria-expanded", "true");
+    function disableMobileNav() {
+        $navTitle.off(`click${EVENT_NAMESPACE}MobileNav`);
 
-        $navGroup.removeClass(ACTIVE_CLASS);
+        closeAccordion($navGroup, $navTitle);
     }
 
     /**
-     * PC / MO 공통 아코디언
+     * PC family
      */
-    function enableCommonAccordion() {
-        $accordionTitle
+    function closePcFamily() {
+        closeAccordion($familyGroup, $familyTitle);
+
+        $(document).off(`click${EVENT_NAMESPACE}PcFamilyOutside`);
+    }
+
+    function bindPcFamilyOutsideClick() {
+        $(document)
+            .off(`click${EVENT_NAMESPACE}PcFamilyOutside`)
+            .on(`click${EVENT_NAMESPACE}PcFamilyOutside`, function (e) {
+                if ($(e.target).closest(".footer__nav-group--family").length) return;
+
+                closePcFamily();
+            });
+    }
+
+    function enablePcFamily() {
+        $familyTitle
             .attr("aria-expanded", "false")
-            .off(`click${EVENT_NAMESPACE}Accordion`)
-            .on(`click${EVENT_NAMESPACE}Accordion`, function () {
+            .off(`click${EVENT_NAMESPACE}PcFamily`)
+            .on(`click${EVENT_NAMESPACE}PcFamily`, function () {
                 const $button = $(this);
-                const $group = $button.closest(".footer__accordion-group");
+                const $group = $button.closest(".footer__nav-group--family");
                 const isOpen = $group.hasClass(ACTIVE_CLASS);
 
-                // 공통 아코디언도 하나만 열리게
-                closeCommonAccordion();
+                closePcFamily();
 
                 if (!isOpen) {
                     $group.addClass(ACTIVE_CLASS);
                     $button.attr("aria-expanded", "true");
+
+                    bindPcFamilyOutsideClick();
                 }
             });
+    }
+
+    function disablePcFamily() {
+        $familyTitle.off(`click${EVENT_NAMESPACE}PcFamily`);
+
+        closePcFamily();
+    }
+
+    /**
+     * PC / MO 공통 드롭다운 팝업
+     */
+    function closePopup() {
+        closeAccordion($popupGroup, $popupButton);
+
+        $(document).off(`click${EVENT_NAMESPACE}PopupOutside`).off(`keydown${EVENT_NAMESPACE}PopupLastFocus`);
+    }
+
+    function bindPopupOutsideClick() {
+        $(document)
+            .off(`click${EVENT_NAMESPACE}PopupOutside`)
+            .on(`click${EVENT_NAMESPACE}PopupOutside`, function (e) {
+                const $target = $(e.target);
+
+                // 닫기 버튼 클릭
+                if ($target.closest(".footer__popup-close").length) {
+                    closePopup();
+                    return;
+                }
+
+                // 팝업 버튼 또는 팝업 내부 클릭은 유지
+                if ($target.closest(".footer__popup-button, .footer__popup-inner").length) {
+                    return;
+                }
+
+                // 딤 영역 및 팝업 바깥 클릭
+                closePopup();
+            });
+    }
+
+    function bindPopupLastFocusClose($popup) {
+        $(document)
+            .off(`keydown${EVENT_NAMESPACE}PopupLastFocus`)
+            .on(`keydown${EVENT_NAMESPACE}PopupLastFocus`, function (e) {
+                if (e.key !== "Tab" || e.shiftKey) return;
+
+                const $focusable = getFocusableElements($popup.find(".footer__popup-inner"));
+                const $last = $focusable.last();
+
+                if (!$last.length) return;
+                if (e.target !== $last[0]) return;
+
+                // preventDefault 하지 않음
+                // 팝업만 닫고 다음 요소로 자연스럽게 이동
+                closePopup();
+            });
+    }
+
+    function enablePopup() {
+        $popupButton
+            .attr("aria-expanded", "false")
+            .off(`click${EVENT_NAMESPACE}Popup`)
+            .on(`click${EVENT_NAMESPACE}Popup`, function () {
+                const $button = $(this);
+                const $popup = $button.closest(".footer__popup");
+                const isOpen = $popup.hasClass(ACTIVE_CLASS);
+
+                closePopup();
+
+                if (!isOpen) {
+                    $popup.addClass(ACTIVE_CLASS);
+                    $button.attr("aria-expanded", "true");
+
+                    bindPopupOutsideClick();
+                    bindPopupLastFocusClose($popup);
+                }
+            });
+    }
+
+    function disablePopup() {
+        $popupButton.off(`click${EVENT_NAMESPACE}Popup`);
+
+        closePopup();
+    }
+
+    function enableMobile() {
+        disablePcFamily();
+        enableMobileNav();
+    }
+
+    function enablePc() {
+        disableMobileNav();
+        enablePcFamily();
+
+        $navTitle.not($familyTitle).attr("aria-expanded", "true");
+    }
+
+    function reset() {
+        disableMobileNav();
+        disablePcFamily();
+
+        // 공통 팝업 클릭 이벤트는 유지
+        closePopup();
     }
 
     function init() {
@@ -1745,22 +1865,30 @@ const Footer = (function () {
 
         if (!$footer.length) return;
 
+        // MO에서는 family 포함 전체
         $navGroup = $footer.find(".footer__nav-group");
-        $navTitle = $footer.find(".footer__nav-group:not(.footer__nav-group--family) .footer__nav-title");
+        $navTitle = $navGroup.find(".footer__nav-title");
 
-        $accordionGroup = $footer.find(".footer__accordion-group");
-        $accordionTitle = $footer.find(".footer__accordion-title");
+        // PC에서는 family만
+        $familyGroup = $footer.find(".footer__nav-group--family");
+        $familyTitle = $familyGroup.find(".footer__nav-title");
 
-        if ($accordionGroup.length && $accordionTitle.length) {
-            enableCommonAccordion();
+        // PC / MO 공통 팝업
+        $popupGroup = $footer.find(".footer__popup");
+        $popupButton = $footer.find(".footer__popup-button");
+
+        if ($popupGroup.length && $popupButton.length) {
+            enablePopup();
         }
     }
 
     return {
         init,
         reset,
-        enableAccordion: enableNavAccordion,
-        disableAccordion: disableNavAccordion,
+        enableMobile,
+        enablePc,
+        enablePopup,
+        disablePopup,
     };
 })();
 /* =========================
@@ -2714,7 +2842,6 @@ const LayoutHandler = createBreakpointHandler({
     onReset: function () {
         $("html").removeClass("layout-pc layout-mo");
 
-        //Header.reset();
         Footer.reset();
     },
 
@@ -2722,14 +2849,14 @@ const LayoutHandler = createBreakpointHandler({
         // 1024 이하
         $("html").removeClass("layout-pc").addClass("layout-mo");
 
-        Footer.enableAccordion();
+        Footer.enableMobile();
     },
 
     onOver: function () {
         // 1024 초과
         $("html").removeClass("layout-mo").addClass("layout-pc");
 
-        Footer.disableAccordion();
+        Footer.enablePc();
     },
 
     onChange: function () {
