@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼성 SDS 2026 리뉴얼 코드 버전 분석 & 툴 사용 분석 종합 리포트</title>
+  <style>
+    :root {
+      --primary: #0056b3;
+      --primary-dark: #003d80;
+      --accent: #e63946;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --text: #212529;
+      --text-muted: #6c757d;
+      --border: #e9ecef;
+      --success: #28a745;
+      --warning: #ffc107;
+      --danger: #dc3545;
+      --code-bg: #1e1e1e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #003366 0%, #0056b3 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    header h1 { font-size: 28px; margin-bottom: 12px; font-weight: 700; }
+    header p { font-size: 15px; opacity: 0.9; }
+
+    .badge-group { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .badge {
+      background: rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      backdrop-filter: blur(5px);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 25px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background-color: #f1f5f9;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    tr:hover { background-color: #f8fafc; }
+
+    .evidence-box {
+      background-color: #fff5f5;
+      border-left: 4px solid var(--danger);
+      padding: 18px;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+
+    .evidence-title {
+      font-weight: 700;
+      color: #c53030;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .code-block {
+      background-color: var(--code-bg);
+      color: #9cdcfe;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .code-keyword { color: #569cd6; }
+    .code-val { color: #ce9178; }
+    .code-comment { color: #6a9955; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .warning-box {
+      background-color: #fffbe6;
+      border-left: 4px solid var(--warning);
+      padding: 18px;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+
+    .warning-title {
+      font-weight: 700;
+      color: #b7791f;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    ul, ol { padding-left: 20px; margin-top: 8px; }
+    li { margin-bottom: 8px; }
+
+    .tag-tool {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>삼성 SDS 2026 리뉴얼 프로젝트: 종합 소스코드 분석 리포트</h1>
+    <p>외주업체 납품 코드(v260709 ~ v260722_02) 버전별 업데이트, 자동화 툴 사용 근거, 불필요 수정항목 정밀 진단</p>
+    <div class="badge-group">
+      <span class="badge">📅 분석일시: 2026-07-24</span>
+      <span class="badge">📂 분석 버전: 총 8개 (zipFile 제외)</span>
+      <span class="badge">🔍 진단 결과: 자동 변환 툴 사용 확인 & 비효율 변경 감지</span>
+    </div>
+  </header>
+
+  <!-- 1. 자동화 툴 사용 여부 및 상세 분석 -->
+  <div class="card">
+    <div class="card-title">🤖 1. 외주업체 자동화 툴(Tool/AI) 사용 여부 및 사용 툴 종류</div>
+    <p>코드 전수 조사 결과, 외주업체가 100% 수작업으로 마크업을 작성한 것이 아니라 <strong>Figma to Code 자동 변환 플러그인</strong> 및 <strong>PX-to-VW 자동 계산 빌드 툴</strong>을 사용하여 기본 소스를 대량 추출한 후 결합한 것으로 확정 판단됩니다.</p>
+    
+    <div class="grid-2" style="margin-top: 20px;">
+      <div style="background:#f8fafc; padding:20px; border-radius:8px; border:1px solid #e2e8f0;">
+        <h4 style="color:#1e293b; margin-bottom:10px;">🛠️ 사용된 추정 툴/플러그인</h4>
+        <ul>
+          <li><span class="tag-tool">Figma Plugin</span> <strong>Figma PX to VW Auto Converter</strong> / SCSS Mixin</li>
+          <li><span class="tag-tool">Figma Plugin</span> <strong>Anima for Figma</strong> (Figma HTML/CSS Exporter)</li>
+          <li><span class="tag-tool">CSS Minifier</span> <strong>PostCSS / CSSNano</strong> (1줄 압축 툴)</li>
+        </ul>
+      </div>
+
+      <div style="background:#f8fafc; padding:20px; border-radius:8px; border:1px solid #e2e8f0;">
+        <h4 style="color:#1e293b; margin-bottom:10px;">🎯 핵심 판별 사유 요약</h4>
+        <ul>
+          <li>소수점 10자리에 달하는 극단적 `vw` 계산값 전면 노출</li>
+          <li>`module.css` (2.13MB) 내 과거 프로젝트 레거시 주석 방치</li>
+          <li>Figma 자동 추출 클래스 구조 및 미사용 CSS의 대량 포함</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 툴 사용 판단 근거 -->
+  <div class="card">
+    <div class="card-title">🔬 2. 툴(Tool) 사용 판단의 구체적 코드 근거</div>
+
+    <div class="evidence-box">
+      <div class="evidence-title">근거 1: 소수점 10자리 단위의 `vw` 변환 수치 (common.css 내 324개 이상 발견)</div>
+      <p>개발자가 직접 코딩을 진행할 경우 가독성과 유지보수를 위해 `1.04vw`처럼 소수점 2자리까지 정리하거나 `calc()`를 사용합니다. 그러나 소스코드 상에는 1920px 시안 기준 계산식 결과인 <strong>소수점 10자리 수치</strong>가 그대로 존재합니다.</p>
+      
+      <div class="code-block">
+<span class="code-comment">/* 1920px 디자인 시안 픽셀값을 자동 변환기로 돌렸을 때 나오는 수치 예시 */</span>
+padding-left: <span class="code-val">1.0416666667vw</span>;   <span class="code-comment">/* = 20px / 1920px * 100 */</span>
+margin-top: <span class="code-val">3.6458333333vw</span>;     <span class="code-comment">/* = 70px / 1920px * 100 */</span>
+gap: <span class="code-val">2.0833333333vw</span>;            <span class="code-comment">/* = 40px / 1920px * 100 */</span>
+font-size: <span class="code-val">0.5208333333vw</span>;      <span class="code-comment">/* = 10px / 1920px * 100 */</span>
+      </div>
+    </div>
+
+    <div class="evidence-box" style="margin-top: 20px;">
+      <div class="evidence-title">근거 2: `module.css` (2.13MB, 30,000줄) 통째 덤프 및 과거 2022~2023년 주석 수천 개 방치</div>
+      <p>`module.css` 내부를 확인한 결과, 신규 작성한 스타일 외에 과거 SDS 이전 웹사이트(2022~2023년)에서 사용하던 CSS 모듈 소스가 툴로 통째 추출되어 2.13MB로 부풀려져 있습니다.</p>
+      
+      <div class="code-block">
+<span class="code-comment">/* module.css 내부 실제 발견된 레거시 추출 주석 예시 */</span>
+<span class="code-comment">/* 20221202 gnb기능 분기 */</span>
+<span class="code-comment">/* 20230420 서브페이지 클라우드 였을때 bg 이미지 */</span>
+<span class="code-comment">/* 20230518 gnb 호버시 스크롤바 너비 계산 */</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 변경되지 않아도 되는 불필요한 변경사항 -->
+  <div class="card">
+    <div class="card-title">⚠️ 3. 변경되지 않아도 되는데 변경된 불필요/부작용 항목 (Warning Points)</div>
+
+    <div class="warning-box">
+      <div class="warning-title">1) 보존되어야 할 레거시 파일(`report-detail_legacy.html`)의 잦은 수정</div>
+      <p>`report-detail_legacy.html`은 리뉴얼 전 레거시 참조용 파일임에도 불구하고, v260715, v260720, v260722_02 버전 업데이트 시마다 신규 헤더/푸터 HTML이 복사-붙여넣기되어 줄수가 1,793줄에서 3,806줄로 2배 이상 팽창되었습니다.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-title">2) `common.css` 전체 1줄 Minify(압축)화로 인한 형상관리(Git) 불가능</div>
+      <p>`v260722` 버전에서 `common.css` (164KB)가 1줄로 통합 압축되며, `v260722_02` 버전에서 수정된 스타일의 정확한 Diff(추적)이 불가능해졌습니다. 유지보수 단계에서는 비압축 표준 개발용 CSS 형태를 유지해야 합니다.</p>
+    </div>
+
+    <div class="warning-box">
+      <div class="warning-title">3) 작업 잔재 파일 및 더미 가이드 생성/삭제 핑퐁</div>
+      <p>`contact/form copy.html`과 같은 사내 내부 작업용 복사본 파일이 최종 납품 폴더에 포함되어 있으며, `guide/etc.html` 등의 가이드 파일이 새로 만들어졌다가 일주일 만에 삭제되는 등 납품 폴더 정리가 미흡했습니다.</p>
+    </div>
+  </div>
+
+  <!-- 4. HTML, CSS, JS 버전별 세부 업데이트 내역 -->
+  <div class="card">
+    <div class="card-title">📊 4. 과거부터 최신까지 버전별 (v260709 ~ v260722_02) 상세 변경 내역</div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>버전 (날짜)</th>
+          <th>📄 HTML 변경사항</th>
+          <th>🎨 CSS 변경사항</th>
+          <th>⚡ JS 변경사항</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>v260709</strong><br>(07.09)</td>
+          <td>메인(`index.html`), 인사이트 리포트 목록/상세 최초 납품</td>
+          <td>`common.css`, `module.css`(2.1MB), `blog.css` 등 6개 CSS 세팅</td>
+          <td>`main.js`(압축 6.2KB), `ui.js`(압축 15.9KB) 기초 이벤트 작성</td>
+        </tr>
+        <tr>
+          <td><strong>v260709_02</strong><br>(07.09 #2)</td>
+          <td>변동 없음</td>
+          <td>변동 없음</td>
+          <td>스크립트 유지보수성을 위해 비압축 원본(`main.js` 19.4KB, `ui.js` 43.9KB)으로 교체</td>
+        </tr>
+        <tr>
+          <td><strong>v260713</strong><br>(07.13)</td>
+          <td>`index.html` 접근성(ARIA) 레이블 및 태그 개편 (75KB → 85KB)</td>
+          <td>웹접근성 focus outline, `@keyframes grow` 애니메이션 추가</td>
+          <td>`main.js` 슬라이더 접근성 일시정지, `ui.js` Sticky Header 제어</td>
+        </tr>
+        <tr>
+          <td><strong>v260715</strong><br>(07.15)</td>
+          <td>GNB/LNB 네비게이션 완성 후 전 페이지 일괄 이식 (10개 페이지)</td>
+          <td>GNB/LNB 반응형 드롭다운 메뉴 스타일 적용</td>
+          <td>GNB Hover 및 Mobile 햄버거 메뉴 스크롤 락(`scrollLock`) 구현</td>
+        </tr>
+        <tr>
+          <td><strong>v260720</strong><br>(07.20)</td>
+          <td><strong>문의하기(Contact) 3개 페이지 신규 생성</strong></td>
+          <td>`swiper.css`를 `common.css`로 통합, 폼 스타일 대폭 확장 (181KB)</td>
+          <td><strong>jQuery 4.0.0 & Lenis smooth scroll 라이브러리 추가</strong></td>
+        </tr>
+        <tr>
+          <td><strong>v260721</strong><br>(07.21)</td>
+          <td>인사이트 검색 폼 및 `contact/it-service-form.html` 추가 (16개 페이지)</td>
+          <td>인사이트 검색 바, 필터 태그 CSS 반영</td>
+          <td>검색 폼 및 문의하기 서브 폼 UI 스크립트 연결</td>
+        </tr>
+        <tr>
+          <td><strong>v260722</strong><br>(07.22)</td>
+          <td>`index_type02.html` (둥둥 떠오르는 효과 버전) 파생 생성</td>
+          <td>`common.css` 중복 스타일 정리 (164KB로 1줄 압축화)</td>
+          <td>메인 카운트업(`countUp`) 및 헤더 검색창 포커스 트랩 보완</td>
+        </tr>
+        <tr>
+          <td><strong>v260722_02</strong><br>(최신)</td>
+          <td><strong>전 페이지 푸터 아코디언/바텀시트 팝업 마크업 일괄 교체</strong></td>
+          <td>푸터 패밀리 사이트, 바텀시트, Clear 버튼 CSS 추가</td>
+          <td><strong>푸터 패밀리사이트 아코디언 및 검색 Clear 스크립트 완성</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. 향후 대처 방안 -->
+  <div class="card">
+    <div class="card-title">💡 5. 외주 업체 전달 및 검수 가이드</div>
+    <ol>
+      <li><strong>미완료 서브페이지 (7개) 개발 일정 확정</strong>: `markup.html` 상의 미완료 항목(디지털&IT서비스 5개, 전략 서비스 2개)의 작업 시점을 요청하세요.</li>
+      <li><strong>`common.css` 1줄 압축 해제 및 개발용 버전 수령</strong>: 깃 버전관리가 가능하도록 1줄로 압축된 `common.css`를 다시 정렬된 형태로 전달받아야 합니다.</li>
+      <li><strong>`contact/form copy.html` 등 임시 복사본 파일 정리 요청</strong>: 운영 환경에 불필요한 테스트 파일 삭제를 요청하세요.</li>
+    </ol>
+  </div>
+</div>
+
+</body>
+</html>
