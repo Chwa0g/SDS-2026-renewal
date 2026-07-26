@@ -37,9 +37,15 @@
 		const markupPcList = [{
 				공통: [{
 						depth2: "layout",
-						info: "header, footer",
+						info: "header, footer, lnb, 검색폼",
 						src: "guide/layout",
-						state: ""
+						state: "end"
+					},
+					{
+						depth2: "layout",
+						info: "header, footer, lnb 나열 버전, 검색폼",
+						src: "guide/layout_lnb02",
+						state: "end"
 					},
 					// { depth2: "button", info: "style", src: "", state: "guide/button" },
 					{
@@ -126,11 +132,24 @@
 			},
 			{
 				문의하기: [{
-					depth2: "문의하기",
-					info: "",
-					src: "",
-					state: ""
-				}],
+						depth2: "유형선택",
+						info: "",
+						src: "contact/index",
+						state: "end"
+					},
+					{
+						depth2: "작성",
+						info: "",
+						src: "contact/form",
+						state: "end"
+					},
+					{
+						depth2: "완료",
+						info: "",
+						src: "contact/complete",
+						state: "end"
+					},
+				],
 			},
 			{
 				"전략 서비스": [{
@@ -177,6 +196,10 @@
 				<div class="download">
 					<a href="/v260713.zip" download="v260713.zip">현재 버전 다운로드 (v260713.zip)</a>
 					<span>: 메인(접근성)</span>
+				</div>
+				<div class="download">
+					<a href="/v260715.zip" download="v260715.zip">현재 버전 다운로드 (v260715.zip)</a>
+					<span>: lnb, gnb(mo, pc)</span>
 				</div>
 				<ul class="urlList">
 					<li class="head">

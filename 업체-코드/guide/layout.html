@@ -24,20 +24,15 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/static/images/favicon/android-chrome-512x512.png" />
 <meta name="theme-color" content="#ffffff" /> -->
 
-	<title>SAMSUNG SDS-레이아웃</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="/static/css/swiper.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="/static/js/swiper-bundle.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+	<title>SAMSUNG SDS=레이아웃</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/common.css" />
+	<script src="../static/js/jquery-4.0.0.min.js"></script>
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="../static/js/lenis.min.js"></script>
 </head>
 
 <body>
-	<div id="wrap" class="warp">
+	<div id="wrap" class="wrap">
 		<a href="#mainContent" class="skip-nav">본문 바로가기</a>
 		<header class="header">
 			<div class="header__box">
@@ -112,7 +107,7 @@
 					<!-- //LNB -->
 
 
-					<button type="button" class="header__search-button" aria-label="검색 열기">
+					<button type="button" class="header__search-button" aria-label="검색 열기" aria-expanded="false" aria-controls="headerSearch">
 						<span class="header__search-icon" aria-hidden="true"></span>
 					</button>
 				</div>
@@ -124,7 +119,7 @@
 							<div class="mega-menu__inner">
 								<!-- 디지털 & IT서비스 -->
 								<div class="mega-menu__section mega-menu__section--it-service">
-									<h2 class="mega-menu__title">IT서비스</h2>
+									<div class="mega-menu__title">IT서비스</div>
 
 									<ul class="mega-menu__list mega-menu__list--depth2">
 										<li class="mega-menu__item">
@@ -158,7 +153,7 @@
 
 								<!-- 물류 서비스 -->
 								<div class="mega-menu__section mega-menu__section--logistics">
-									<h2 class="mega-menu__title">물류 서비스</h2>
+									<div class="mega-menu__title">물류 서비스</div>
 
 									<ul class="mega-menu__list mega-menu__list--depth2">
 										<li class="mega-menu__item">
@@ -179,7 +174,7 @@
 
 								<!-- 인사이트 -->
 								<div class="mega-menu__section mega-menu__section--insight">
-									<h2 class="mega-menu__title">인사이트</h2>
+									<div class="mega-menu__title">인사이트</div>
 
 									<ul class="mega-menu__list mega-menu__list--depth2">
 										<li class="mega-menu__item">
@@ -196,7 +191,7 @@
 
 								<!-- 회사정보 -->
 								<div class="mega-menu__section mega-menu__section--company">
-									<h2 class="mega-menu__title">회사정보</h2>
+									<div class="mega-menu__title">회사정보</div>
 
 									<ul class="mega-menu__list mega-menu__list--depth2">
 										<li class="mega-menu__item">
@@ -220,7 +215,7 @@
 											</button>
 										</li>
 										<li class="mega-menu__item">
-											<a href="#" class="mega-menu__link"><span class="mega-menu__link-text">이벤트 / 웹비나</span></a>
+											<a href="#" class="mega-menu__link"><span class="mega-menu__link-text">이벤트 / 웨비나</span></a>
 										</li>
 										<li class="mega-menu__item">
 											<a href="#" class="mega-menu__link"><span class="mega-menu__link-text">채용</span></a>
@@ -230,7 +225,7 @@
 
 								<!-- 지원 -->
 								<div class="mega-menu__section mega-menu__section--support">
-									<h2 class="mega-menu__title">지원</h2>
+									<div class="mega-menu__title">지원</div>
 
 									<ul class="mega-menu__list mega-menu__list--depth2">
 										<li class="mega-menu__item">
@@ -239,15 +234,12 @@
 										<li class="mega-menu__item">
 											<a href="#" class="mega-menu__link mega-menu__link--support"><span class="mega-menu__link-text">파트너 지원</span></a>
 										</li>
-										<li class="mega-menu__item">
-											<a href="#" class="mega-menu__link mega-menu__link--support"><span class="mega-menu__link-text">교육 지원</span></a>
-										</li>
 									</ul>
 								</div>
 
 								<!-- Featured -->
 								<div class="mega-menu__section mega-menu__section--featured">
-									<h2 class="mega-menu__title">Featured</h2>
+									<div class="mega-menu__title">Featured</div>
 
 									<ul class="mega-menu__list mega-menu__list--depth2">
 										<li class="mega-menu__item">
@@ -261,7 +253,7 @@
 
 								<!-- 서비스 포털 바로가기 -->
 								<div class="mega-menu__section mega-menu__section--external">
-									<h2 class="mega-menu__title">서비스 포털 바로가기</h2>
+									<div class="mega-menu__title">서비스 포털 바로가기</div>
 
 									<ul class="mega-menu__list mega-menu__list--external">
 										<li class="mega-menu__item">
@@ -275,9 +267,6 @@
 										</li>
 										<li class="mega-menu__item">
 											<a href="#" class="mega-menu__link mega-menu__link--external" target="_blank" rel="noopener"><span class="mega-menu__link-text">Cello Square</span></a>
-										</li>
-										<li class="mega-menu__item">
-											<a href="#" class="mega-menu__link mega-menu__link--external" target="_blank" rel="noopener"><span class="mega-menu__link-text">모든 오퍼링 보기</span></a>
 										</li>
 									</ul>
 								</div>
@@ -294,9 +283,9 @@
 											AI 풀스택 역량으로<br />
                                     데이터를 가치로 바꿉니다.
 										</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 									</div>
 
 									<!-- 3depth -->
@@ -406,16 +395,18 @@
 											AI 풀스택 역량으로<br />
                                     데이터를 가치로 바꿉니다.
 										</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 									</div>
 									<!-- 3depth -->
 									<div class="mega-menu__sub-section mega-menu__sub-section--depth3">
 										<div class="mega-menu__sub-list">
 											<div class="mega-menu__sub-list-wrap">
-												<a href="#" class="mega-menu__sub-list-title">클라우드의 특별함</a>
 												<ul class="mega-menu__sub-list-inner">
+													<li class="mega-menu__sub-item">
+														<a href="#" class="mega-menu__sub-link mega-menu__sub-link--hl"><span class="mega-menu__link-text">클라우드의 특별함</span></a>
+													</li>
 													<li class="mega-menu__sub-item">
 														<button type="button" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel02_01">
 															<span class="mega-menu__link-text"> Samsung Cloud Platform</span>
@@ -590,9 +581,9 @@
 									<div class="mega-menu__sub-head">
 										<div class="mega-menu__sub-title">비즈니스 솔루션</div>
 										<div class="mega-menu__sub-desc">협업, 자동화, 엔터프라이즈 솔루션으로 기업의 프로세스를 혁신합니다.</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 										<div class="mega-menu__sub-desc">클라우드 전환/운영/서비스, 데이터센터 - 클라우드의 모든 것을 갖췄습니다.</div>
 									</div>
 
@@ -799,13 +790,13 @@
 
 							<!-- 디지털 혁신 -->
 							<div class="mega-menu__sub-box" id="menuPanel04">
-								<div class="mega-menu__inner">
+								<div class="mega-menu__inner mega-menu__inner--long">
 									<div class="mega-menu__sub-head">
 										<div class="mega-menu__sub-title">디지털 혁신</div>
 										<div class="mega-menu__sub-desc">기업의 AI 및 디지털화를 위한 진단부터 구축까지 함께합니다.</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 									</div>
 
 									<div class="mega-menu__sub-section mega-menu__sub-section--depth3">
@@ -830,6 +821,10 @@
 													<li class="mega-menu__sub-item">
 														<a href="#" class="mega-menu__sub-link"><span class="mega-menu__link-text">디지털 금융</span></a>
 													</li>
+												</ul>
+											</div>
+											<div class="mega-menu__sub-list-wrap">
+												<ul class="mega-menu__sub-list-inner">
 													<li class="mega-menu__sub-item">
 														<a href="#" class="mega-menu__sub-link"><span class="mega-menu__link-text">디지털 공공</span></a>
 													</li>
@@ -854,9 +849,9 @@
 									<div class="mega-menu__sub-head">
 										<div class="mega-menu__sub-title">물류 소개</div>
 										<div class="mega-menu__sub-desc">글로벌 물류의 새로운 기준을 제시합니다.</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 									</div>
 
 									<div class="mega-menu__sub-section mega-menu__sub-section--depth3">
@@ -925,9 +920,9 @@
 									<div class="mega-menu__sub-head">
 										<div class="mega-menu__sub-title">회사소개</div>
 										<div class="mega-menu__sub-desc">40+년 IT 혁신 경험으로 AI 시대를 이끌어갑니다.</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 									</div>
 
 									<div class="mega-menu__sub-section mega-menu__sub-section--depth3">
@@ -965,9 +960,9 @@
 									<div class="mega-menu__sub-head">
 										<div class="mega-menu__sub-title">투자정보</div>
 										<div class="mega-menu__sub-desc">신뢰할 수 있는 재무정보와 경영 현황을 안내합니다.</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 									</div>
 
 									<div class="mega-menu__sub-section mega-menu__sub-section--depth3">
@@ -1001,13 +996,13 @@
 
 							<!-- 지속가능경영 -->
 							<div class="mega-menu__sub-box" id="menuPanel08">
-								<div class="mega-menu__inner">
+								<div class="mega-menu__inner mega-menu__inner--long">
 									<div class="mega-menu__sub-head">
 										<div class="mega-menu__sub-title">지속가능경영</div>
 										<div class="mega-menu__sub-desc">기술로 지속 가능한 성장과신뢰를 만들어갑니다.</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 									</div>
 
 									<div class="mega-menu__sub-section mega-menu__sub-section--depth3">
@@ -1029,6 +1024,10 @@
 													<li class="mega-menu__sub-item">
 														<a href="#" class="mega-menu__sub-link"><span class="mega-menu__link-text">사회공헌</span></a>
 													</li>
+												</ul>
+											</div>
+											<div class="mega-menu__sub-list-wrap">
+												<ul class="mega-menu__sub-list-inner">
 													<li class="mega-menu__sub-item">
 														<a href="#" class="mega-menu__sub-link"><span class="mega-menu__link-text">안전보건경영</span></a>
 													</li>
@@ -1057,9 +1056,9 @@
 									<div class="mega-menu__sub-head">
 										<div class="mega-menu__sub-title">뉴스룸</div>
 										<div class="mega-menu__sub-desc">삼성SDS의 오늘을 가장 빠르게 전합니다.</div>
-										<div class="mega-menu__sub-thumb">
-											<img src="" alt="" />
-										</div>
+										<!-- <div class="mega-menu__sub-thumb">
+                                    <img src="" alt="" />
+                                </div> -->
 									</div>
 
 									<div class="mega-menu__sub-section mega-menu__sub-section--depth3">
@@ -1234,7 +1233,7 @@
 
 																<li class="mobile-menu__item">
 																	<a href="#" class="mobile-menu__link">
-																		<span class="mobile-menu__link-text">이벤트 / 웹비나</span>
+																		<span class="mobile-menu__link-text">이벤트 / 웨비나</span>
 																	</a>
 																</li>
 
@@ -1269,12 +1268,6 @@
 																		<span class="mobile-menu__link-text">파트너 지원</span>
 																	</a>
 																</li>
-
-																<li class="mobile-menu__item">
-																	<a href="#" class="mobile-menu__link">
-																		<span class="mobile-menu__link-text">교육 지원</span>
-																	</a>
-																</li>
 															</ul>
 														</div>
 													</div>
@@ -1289,7 +1282,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">AI &amp; 데이터</h2>
+													<div class="mobile-menu__page-title">AI &amp; 데이터</div>
 												</div>
 
 												<ul class="mobile-menu__list mobile-menu__list--arrow">
@@ -1328,7 +1321,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">AI 전환(AX)</h2>
+													<div class="mobile-menu__page-title">AI 전환(AX)</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1351,7 +1344,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">생성형 AI 서비스</h2>
+													<div class="mobile-menu__page-title">생성형 AI 서비스</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1386,7 +1379,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">AI 업무혁신</h2>
+													<div class="mobile-menu__page-title">AI 업무혁신</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1421,7 +1414,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">데이터 분석</h2>
+													<div class="mobile-menu__page-title">데이터 분석</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1456,7 +1449,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">클라우드</h2>
+													<div class="mobile-menu__page-title">클라우드</div>
 												</div>
 												<ul class="mobile-menu__list mobile-menu__list--arrow">
 													<li class="mobile-menu__item">
@@ -1505,7 +1498,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">Samsung Cloud Platform</h2>
+													<div class="mobile-menu__page-title">Samsung Cloud Platform</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1564,7 +1557,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">매니지드 서비스</h2>
+													<div class="mobile-menu__page-title">매니지드 서비스</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1605,7 +1598,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">클라우드 보안</h2>
+													<div class="mobile-menu__page-title">클라우드 보안</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1652,7 +1645,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">보안 솔루션 &amp; 서비스</h2>
+													<div class="mobile-menu__page-title">보안 솔루션 &amp; 서비스</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1693,7 +1686,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">데이터센터/네트워크</h2>
+													<div class="mobile-menu__page-title">데이터센터/네트워크</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1722,7 +1715,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">데이터센터</h2>
+													<div class="mobile-menu__page-title">데이터센터</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1757,7 +1750,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">네트워크</h2>
+													<div class="mobile-menu__page-title">네트워크</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1804,7 +1797,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">비즈니스 솔루션</h2>
+													<div class="mobile-menu__page-title">비즈니스 솔루션</div>
 												</div>
 
 												<ul class="mobile-menu__list mobile-menu__list--arrow">
@@ -1843,7 +1836,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">Brity Works</h2>
+													<div class="mobile-menu__page-title">Brity Works</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1923,7 +1916,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">엔터프라이즈 애플리케이션</h2>
+													<div class="mobile-menu__page-title">엔터프라이즈 애플리케이션</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -1985,7 +1978,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">공급망 관리(SCM)</h2>
+													<div class="mobile-menu__page-title">공급망 관리(SCM)</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -2020,7 +2013,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">고객 관계 관리(CRM)</h2>
+													<div class="mobile-menu__page-title">고객 관계 관리(CRM)</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -2052,7 +2045,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">인적 자본 관리(HCM)</h2>
+													<div class="mobile-menu__page-title">인적 자본 관리(HCM)</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -2087,7 +2080,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">제조 자동화</h2>
+													<div class="mobile-menu__page-title">제조 자동화</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -2116,7 +2109,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">디지털 혁신</h2>
+													<div class="mobile-menu__page-title">디지털 혁신</div>
 												</div>
 
 												<ul class="mobile-menu__list">
@@ -2165,7 +2158,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">물류 소개</h2>
+													<div class="mobile-menu__page-title">물류 소개</div>
 												</div>
 
 												<ul class="mobile-menu__list mobile-menu__list--arrow">
@@ -2204,7 +2197,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">글로벌 공급망</h2>
+													<div class="mobile-menu__page-title">글로벌 공급망</div>
 
 													<button type="button" class="mobile-menu__home-button" data-menu-home>메뉴 처음</button>
 												</div>
@@ -2243,7 +2236,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">회사소개</h2>
+													<div class="mobile-menu__page-title">회사소개</div>
 												</div>
 
 												<ul class="mobile-menu__list">
@@ -2277,7 +2270,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">투자정보</h2>
+													<div class="mobile-menu__page-title">투자정보</div>
 												</div>
 
 												<ul class="mobile-menu__list">
@@ -2311,7 +2304,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">지속가능경영</h2>
+													<div class="mobile-menu__page-title">지속가능경영</div>
 												</div>
 
 												<ul class="mobile-menu__list">
@@ -2330,21 +2323,6 @@
 													<li class="mobile-menu__item">
 														<a href="#" class="mobile-menu__link"><span class="mobile-menu__link-text">사회공헌</span></a>
 													</li>
-													<li class="mobile-menu__item">
-														<a href="#" class="mobile-menu__link"><span class="mobile-menu__link-text">안전보건경영</span></a>
-													</li>
-													<li class="mobile-menu__item">
-														<a href="#" class="mobile-menu__link"><span class="mobile-menu__link-text">동반성장</span></a>
-													</li>
-													<li class="mobile-menu__item">
-														<a href="#" class="mobile-menu__link"><span class="mobile-menu__link-text">윤리 &amp; 준법경영</span></a>
-													</li>
-													<li class="mobile-menu__item">
-														<a href="#" class="mobile-menu__link"><span class="mobile-menu__link-text">디지털 책임</span></a>
-													</li>
-													<li class="mobile-menu__item">
-														<a href="#" class="mobile-menu__link"><span class="mobile-menu__link-text">보고서 &amp; 정책</span></a>
-													</li>
 												</ul>
 											</div>
 										</div>
@@ -2357,7 +2335,7 @@
 												<div class="mobile-menu__page-head">
 													<button type="button" class="mobile-menu__back-button" data-menu-back aria-label="이전 메뉴로 돌아가기"></button>
 
-													<h2 class="mobile-menu__page-title">뉴스룸</h2>
+													<div class="mobile-menu__page-title">뉴스룸</div>
 												</div>
 
 												<ul class="mobile-menu__list">
@@ -2378,7 +2356,7 @@
 
 								<!-- 공통 Featured -->
 								<section class="mobile-menu__featured">
-									<h2 class="mobile-menu__featured-title">Featured</h2>
+									<div class="mobile-menu__featured-title">Featured</div>
 
 									<ul class="mobile-menu__featured-list">
 										<li class="mobile-menu__featured-item">
@@ -2410,6 +2388,129 @@
 						</div>
 					</div>
 				</nav>
+
+				<!-- 검색창 -->
+				<div class="header-search" id="headerSearch" aria-hidden="true" inert data-lenis-prevent>
+					<div class="header-search__inner">
+						<button type="button" class="header-search__close" aria-label="검색 닫기">
+							<span class="blind">검색 닫기</span>
+						</button>
+
+						<div class="header-search__content">
+							<form action="" method="get" class="header-search__box" role="search">
+								<div class="header-search__field">
+									<label for="headerSearchInput" class="blind">검색어 입력</label>
+
+									<input type="search" id="headerSearchInput" name="keyword" class="header-search__input" placeholder="검색어를 입력하세요" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="headerSearchSuggest" />
+
+									<button type="submit" class="header-search__submit" aria-label="검색">
+										<span class="blind">검색</span>
+									</button>
+								</div>
+
+								<!-- 포커스 시 노출 -->
+								<div class="header-search__suggest" id="headerSearchSuggest" aria-hidden="true">
+									<!-- 검색어가 없을 때 -->
+									<div class="header-search__suggest-default">
+										<div class="header-search__suggest-columns">
+											<!-- 최근검색어 -->
+											<section class="header-search__suggest-section">
+												<div class="header-search__suggest-title">최근검색어</div>
+
+												<ul class="header-search__recent-list" aria-label="최근검색어 목록"></ul>
+
+												<p class="header-search__recent-empty">최근 검색어가 없습니다.</p>
+											</section>
+
+											<!-- 인기검색어 -->
+											<section class="header-search__suggest-section">
+												<div class="header-search__suggest-title">인기검색어</div>
+
+												<ol class="header-search__popular-list">
+													<li>
+														<a href="/kr/search.html?keyword=esg" class="header-search__suggest-link"> esg </a>
+													</li>
+													<li>
+														<a href="/kr/search.html?keyword=ESG" class="header-search__suggest-link"> ESG </a>
+													</li>
+													<li>
+														<a href="/kr/search.html?keyword=디지털" class="header-search__suggest-link"> 디지털 </a>
+													</li>
+													<li>
+														<a href="/kr/search.html?keyword=AX" class="header-search__suggest-link"> AX </a>
+													</li>
+													<li>
+														<a href="/kr/search.html?keyword=이갑수" class="header-search__suggest-link"> 이갑수 </a>
+													</li>
+													<li>
+														<a href="/kr/search.html?keyword=조남용" class="header-search__suggest-link"> 조남용 </a>
+													</li>
+													<li>
+														<a href="/kr/search.html?keyword=국립환경과학원" class="header-search__suggest-link"> 국립환경과학원 </a>
+													</li>
+												</ol>
+											</section>
+										</div>
+
+										<div class="header-search__suggest-bottom">
+											<button type="button" class="header-search__recent-clear">최근검색어 전체 삭제</button>
+
+											<button type="button" class="header-search__suggest-close">닫기</button>
+										</div>
+									</div>
+
+									<!-- 입력 중 자동완성 -->
+									<div class="header-search__autocomplete" aria-hidden="true">
+										<div class="header-search__suggest-columns">
+											<div class="header-search__suggest-title">자동완성</div>
+											<p class="header-search__autocomplete-empty">일치하는 검색어가 없습니다.</p>
+
+											<ul class="header-search__autocomplete-list" role="listbox"></ul>
+										</div>
+										<div class="header-search__suggest-bottom">
+											<button type="button" class="header-search__suggest-close">닫기</button>
+										</div>
+									</div>
+								</div>
+							</form>
+
+							<!-- 기존 추천검색어 -->
+							<div class="header-search__recommend">
+								<strong class="header-search__recommend-title">추천검색어</strong>
+
+								<ul class="header-search__keyword-list">
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword">ChatGPT</a>
+									</li>
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword">패브릭스</a>
+									</li>
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword"> 브리티 코파일럿 </a>
+									</li>
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword"> 브리티 오토메이션 </a>
+									</li>
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword">인공지능</a>
+									</li>
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword"> 하이브리드 클라우드 </a>
+									</li>
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword"> 클라우드 전환 </a>
+									</li>
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword"> 첼로스퀘어 </a>
+									</li>
+									<li class="header-search__keyword-item">
+										<a href="#" class="header-search__keyword"> 팩토리 솔루션 </a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</header>
 
@@ -2604,20 +2705,9 @@
 
 	</div>
 </body>
+<script src="../../static/js/ui.js"></script>
 <!-- 페이지 관련 스크립트 -->
-<script>
-	function popupFn() {
-		popup.confirm({
-			text: "들어갈 텍스트\n엔터엔터",
-			cancel: function() {
-				$("#wrap").css("background", "#fff");
-			},
-			check: function() {
-				$("#wrap").css("background", "yellow");
-			},
-		});
-	}
-</script>
+<script></script>
 <!--//페이지 관련 스크립트 -->
 
 </html>

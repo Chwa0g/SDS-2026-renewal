@@ -30,9 +30,8 @@
 	<script src="../static/js/lenis.min.js"></script>
 </head>
 
-
 <body>
-	<div id="wrap" class="wrap main">
+	<div id="wrap" class="wrap">
 		<!-- header -->
 		<a href="#mainContent" class="skip-nav">본문 바로가기</a>
 		<header class="header header--transparent">
@@ -50,6 +49,62 @@
 						</h1>
 					</div>
 
+
+					<!-- LNB -->
+					<div class="lnb-temp">
+						<div class="lnb-temp__inner">
+							<a href="#" class="lnb-temp__home">브리티웍스(공공)</a>
+
+							<span class="lnb-temp__current" aria-current="page"> OVERVIEW </span>
+
+							<div class="lnb-temp__menu">
+								<button type="button" class="lnb-temp__button" aria-expanded="false" aria-controls="lnbTempPanel">문의하기</button>
+
+								<div class="lnb-temp__panel" id="lnbTempPanel" aria-hidden="true" hidden inert>
+									<div class="lnb-temp__panel-inner">
+										<div class="lnb-temp__panel-content">
+											<a href="#" class="lnb-temp__shortcut">바로가기</a>
+
+											<ul class="lnb-temp__list">
+												<li class="lnb-temp__item">
+													<a href="#" class="lnb-temp__link" target="_blank" rel="noopener" title="새 창 열림"> 메뉴 테스트 01 </a>
+												</li>
+
+												<li class="lnb-temp__item">
+													<a href="#" class="lnb-temp__link" target="_blank" rel="noopener" title="새 창 열림"> 메뉴 테스트 02 </a>
+												</li>
+
+												<li class="lnb-temp__item">
+													<a href="#" class="lnb-temp__link" target="_blank" rel="noopener" title="새 창 열림"> 메뉴 테스트 03 </a>
+												</li>
+
+												<li class="lnb-temp__item">
+													<a href="#" class="lnb-temp__link" target="_blank" rel="noopener" title="새 창 열림"> 메뉴 테스트 04 </a>
+												</li>
+
+												<li class="lnb-temp__item">
+													<a href="#" class="lnb-temp__link" target="_blank" rel="noopener" title="새 창 열림"> 메뉴 테스트 05 </a>
+												</li>
+
+												<li class="lnb-temp__item">
+													<a href="#" class="lnb-temp__link" target="_blank" rel="noopener" title="새 창 열림"> 메뉴 테스트 06 </a>
+												</li>
+
+												<li class="lnb-temp__item">
+													<a href="#" class="lnb-temp__link" target="_blank" rel="noopener" title="새 창 열림"> 메뉴 테스트 07 </a>
+												</li>
+
+												<li class="lnb-temp__item">
+													<a href="#" class="lnb-temp__link" target="_blank" rel="noopener" title="새 창 열림"> 메뉴 테스트 08 </a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- //LNB -->
 
 
 					<button type="button" class="header__search-button" aria-label="검색 열기" aria-expanded="false" aria-controls="headerSearch">
@@ -2460,853 +2515,277 @@
 		</header>
 
 
-		<main class="main" id="mainContent">
-			<!-- main-kv -->
-			<section class="main-kv section">
-				<div class="main-kv__bg" aria-hidden="true">
-					<div class="main-kv__video-box">
-						<video class="main-kv__video" autoplay muted loop playsinline>
-							<source src="/static/images/main/fixed_bg.mp4" type="video/mp4" />
-						</video>
-					</div>
-					<img src="/static/images/main/fixed_bg_mo.jpg" alt="" />
+		<main id="mainConent" class="contact">
+			<!-- 문의하기 비주얼 -->
+			<section class="contact-visual">
+				<div class="contact-visual__background">
+					<img src="/static/images/contact/contact_visual.jpg" alt="" />
 				</div>
-				<div class="section__inner">
-					<h2 class="main-kv__title">Making <b>AX</b> REAL</h2>
-					<div class="main-kv__grid">
-						<div class="main-kv__col main-kv__insight">
-							<div class="main-kv__swiper main-kv__swiper--insight swiper">
-								<div class="main-kv__slides swiper-wrapper">
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_insight_item_01.jpg)">
-										<p class="main-kv__eyebrow">인사이트</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												공공 AX, 기술보다 먼저<br class="is-pc" />
-                                                    설계해야 할 것은 무엇인가
-											</a>
-										</h3>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_insight_item_01.jpg)">
-										<p class="main-kv__eyebrow">인사이트</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												공공 AX, 기술보다 먼저<br />
-                                                    설계해야 할 것은 무엇인가
-											</a>
-										</h3>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-								</div>
-								<div class="main-kv__swiper-footer">
-									<div class="swiper-control swiper-control--type02">
-										<button aria-label="이전 슬라이드" class="swiper-control__button swiper-control__button--prev" type="button"></button>
-										<div class="swiper-pagination"></div>
-										<button aria-label="다음 슬라이드" class="swiper-control__button swiper-control__button--next" type="button"></button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="main-kv__col main-kv__hero">
-							<div class="main-kv__swiper main-kv__swiper--hero swiper">
-								<div class="main-kv__slides swiper-wrapper">
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_hero_item_01.jpg)">
-										<p class="main-kv__eyebrow">삼성SDS AX 전략</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												삼성SDS<br />
-                                                    AI 풀스택 서비스
-											</a>
-										</h3>
-										<p class="main-kv__text">
-											우리 기업의 맞는 AI,<br />
-                                                도입에서 운영 확산까지 한 번에
-										</p>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_hero_item_01.jpg)">
-										<p class="main-kv__eyebrow">삼성SDS AX 전략</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												삼성SDS<br />
-                                                    AI 풀스택 서비스
-											</a>
-										</h3>
-										<p class="main-kv__text">
-											우리 기업의 맞는 AI,<br />
-                                                도입에서 운영 확산까지 한 번에
-										</p>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-								</div>
-								<div class="main-kv__swiper-footer">
-									<div class="swiper-control swiper-control--white">
-										<div class="swiper-pagination"></div>
-										<div class="swiper-control__buttons">
-											<button aria-label="이전 슬라이드" class="swiper-control__button swiper-control__button--prev" type="button"></button>
-											<button aria-label="다음 슬라이드" class="swiper-control__button swiper-control__button--next" type="button"></button>
-											<button aria-label="슬라이드 정지" class="swiper-control__button swiper-control__button--play" type="button"></button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="main-kv__col main-kv__news">
-							<div class="main-kv__swiper main-kv__swiper--news swiper">
-								<div class="main-kv__slides swiper-wrapper">
-									<div class="main-kv__swiper-item swiper-slide">
-										<p class="main-kv__eyebrow">언론보도</p>
-										<div class="main-kv__news-link">
-											<h3 class="main-kv__subject ell-3"><a href="#">삼성SDS, 브리티웍스로 온AI 모바일 서비스 지원한다!</a></h3>
-											<p class="main-kv__text ell-3">
-												삼성SDS는 생성형 AI 기반 협업솔루션 ‘브리티웍스(Brity Works)’가 행정안전부 ‘온AI(지능형 업무관리 플랫폼)’의 공식 협업 솔루션으로 선정됐다고 밝혔다.
-											</p>
-										</div>
-										<div class="main-kv__news-link">
-											<h3 class="main-kv__subject ell-3"><a href="#">삼성SDS, OpenAI와 협력 강화 ‘챗GPT 에듀’로 교육기관 대상 안전한 AI 활용 환경 제공</a></h3>
-											<p class="main-kv__text ell-3">
-												삼성SDS는 생성형 AI 기반 협업솔루션 ‘브리티웍스(Brity Works)’가 행정안전부 ‘온AI(지능형 업무관리 플랫폼)’의 공식 협업 솔루션으로 선정됐다고 밝혔다.
-											</p>
-										</div>
-									</div>
-									<div class="main-kv__swiper-item swiper-slide">
-										<p class="main-kv__eyebrow">언론보도</p>
-										<div class="main-kv__news-link">
-											<h3 class="main-kv__subject ell-3"><a href="#">삼성SDS, 브리티웍스로 온AI 모바일 서비스 지원한다!</a></h3>
-											<p class="main-kv__text ell-3">
-												삼성SDS는 생성형 AI 기반 협업솔루션 ‘브리티웍스(Brity Works)’가 행정안전부 ‘온AI(지능형 업무관리 플랫폼)’의 공식 협업 솔루션으로 선정됐다고 밝혔다.
-											</p>
-										</div>
-										<div class="main-kv__news-link">
-											<h3 class="main-kv__subject ell-3"><a href="#">삼성SDS, OpenAI와 협력 강화 ‘챗GPT 에듀’로 교육기관 대상 안전한 AI 활용 환경 제공</a></h3>
-											<p class="main-kv__text ell-3">
-												삼성SDS는 생성형 AI 기반 협업솔루션 ‘브리티웍스(Brity Works)’가 행정안전부 ‘온AI(지능형 업무관리 플랫폼)’의 공식 협업 솔루션으로 선정됐다고 밝혔다.
-											</p>
-										</div>
-									</div>
-								</div>
-								<div class="main-kv__swiper-footer">
-									<div class="swiper-control swiper-control--type02">
-										<button aria-label="이전 슬라이드" class="swiper-control__button swiper-control__button--prev" type="button"></button>
-										<div class="swiper-pagination"></div>
-										<button aria-label="다음 슬라이드" class="swiper-control__button swiper-control__button--next" type="button"></button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="main-kv__col main-kv__ask">
-							<h3 class="main-kv__subject"><a href="#">무엇이든 물어보세요.</a></h3>
-							<a class="button button--more-02" href="#"><span class="button__text">문의하기</span></a>
-						</div>
-						<div class="main-kv__col main-kv__summit">
-							<div class="main-kv__swiper main-kv__swiper--summit swiper">
-								<div class="main-kv__slides swiper-wrapper">
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_summit_item_01.jpg)">
-										<p class="main-kv__eyebrow">Summit 2026</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												REAL Summit <br class="is-pc" />
-                                                    2026
-											</a>
-										</h3>
-										<p class="main-kv__text">
-											국내 최대 AX 컨퍼런스,<br />
-                                                현장의 인사이트를 직접 확인하세요.
-										</p>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_summit_item_01.jpg)">
-										<p class="main-kv__eyebrow">Summit 2026</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												REAL Summit<br />
-                                                    2026
-											</a>
-										</h3>
-										<p class="main-kv__text">
-											국내 최대 AX 컨퍼런스,<br />
-                                                현장의 인사이트를 직접 확인하세요.
-										</p>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_summit_item_01.jpg)">
-										<p class="main-kv__eyebrow">Summit 2026</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												REAL Summit<br />
-                                                    2026
-											</a>
-										</h3>
-										<p class="main-kv__text">
-											국내 최대 AX 컨퍼런스,<br />
-                                                현장의 인사이트를 직접 확인하세요.
-										</p>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-								</div>
-								<div class="main-kv__swiper-footer">
-									<div class="swiper-control swiper-control--type02 swiper-control--white">
-										<button aria-label="이전 슬라이드" class="swiper-control__button swiper-control__button--prev" type="button"></button>
-										<div class="swiper-pagination"></div>
-										<button aria-label="다음 슬라이드" class="swiper-control__button swiper-control__button--next" type="button"></button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="main-kv__col main-kv__resource">
-							<div class="main-kv__swiper main-kv__swiper--resource swiper">
-								<div class="main-kv__slides swiper-wrapper">
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_resource_item_01.jpg)">
-										<p class="main-kv__eyebrow">리소스</p>
-										<h3 class="main-kv__subject"><a href="#">생성형 AI도입, 국내 기업들은 어디까지 왔나</a></h3>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_resource_item_01.jpg)">
-										<p class="main-kv__eyebrow">리소스</p>
-										<h3 class="main-kv__subject"><a href="#">생성형 AI도입, 국내 기업들은 어디까지 왔나</a></h3>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-								</div>
-								<div class="main-kv__swiper-footer">
-									<div class="swiper-control swiper-control--type02">
-										<button aria-label="이전 슬라이드" class="swiper-control__button swiper-control__button--prev" type="button"></button>
-										<div class="swiper-pagination"></div>
-										<button aria-label="다음 슬라이드" class="swiper-control__button swiper-control__button--next" type="button"></button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="main-kv__col main-kv__case">
-							<div class="main-kv__swiper main-kv__swiper--case swiper">
-								<div class="main-kv__slides swiper-wrapper">
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_case_item_01.jpg)">
-										<p class="main-kv__eyebrow">고객사례</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												업스테이지가 GPU 수급난 속에서<br />
-                                                    H100을 확보한 방법
-											</a>
-										</h3>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_case_item_01.jpg)">
-										<p class="main-kv__eyebrow">고객사례</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												업스테이지가 GPU 수급난 속에서<br />
-                                                    H100을 확보한 방법
-											</a>
-										</h3>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-									<div class="main-kv__swiper-item swiper-slide" style="background-image: url(/static/images/main/kv_case_item_01.jpg)">
-										<p class="main-kv__eyebrow">고객사례</p>
-										<h3 class="main-kv__subject">
-											<a href="#">
-												업스테이지가 GPU 수급난 속에서<br />
-                                                    H100을 확보한 방법
-											</a>
-										</h3>
-										<a class="button button--more" href="#"><span class="button__text">자세히 보기</span></a>
-									</div>
-								</div>
-								<div class="main-kv__swiper-footer">
-									<div class="swiper-control">
-										<div class="swiper-pagination"></div>
-										<div class="swiper-control__buttons">
-											<button aria-label="이전 슬라이드" class="swiper-control__button swiper-control__button--prev" type="button"></button>
-											<button aria-label="다음 슬라이드" class="swiper-control__button swiper-control__button--next" type="button"></button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- //main-kv -->
-
-			<!-- main-overview -->
-			<section class="main-overview section">
-				<div class="section__inner">
-					<div class="main-overview__content">
-						<div class="section__intro">
-							<h2 class="section__title">
-								<a href="#"><strong class="point">삼성SDS</strong> <br class="is-mo" />한눈에 보기</a>
-							</h2>
-							<a href="#" class="button button--more"><span class="button__text">자세히 보기</span></a>
-						</div>
-
-						<ul class="main-overview__list">
-							<li class="main-overview__item">
-								<span class="main-overview__label">매출</span>
-								<strong class="main-overview__value count-up">13.9</strong>
-								<em class="main-overview__unit">조원</em>
-							</li>
-							<li class="main-overview__item">
-								<span class="main-overview__label">사업지역</span>
-								<strong class="main-overview__value count-up">40</strong>
-								<em class="main-overview__unit">개국</em>
-							</li>
-							<li class="main-overview__item">
-								<span class="main-overview__label">IT 경험</span>
-								<strong class="main-overview__value count-up">41</strong>
-								<em class="main-overview__unit">년</em>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<!-- //main-overview -->
-
-			<!-- main-promotion -->
-			<section class="main-promotion section">
-				<div class="section__inner">
-					<div class="main-promotion__content">
-						<div class="main-promotion__swiper main-promotion__swiper--event swiper">
-							<div class="main-promotion__slides swiper-wrapper">
-								<div class="main-promotion__item swiper-slide" style="background-image: url(/static/images/main/promotion_event_item_01.jpg)">
-									<span class="main-promotion__item-category">EVENT</span>
-									<strong class="main-promotion__item-title">
-                                            <a href="#"
-                                                >삼성SDS와 함께하는<br />
-                                                전자정부의 날 · 공공 AI 박람회</a
-                                            >
-                                        </strong>
-									<p class="main-promotion__item-text">
-										AI가 바꾸는 행정의 모든 것, <br />
-                                            전자정부의 날 · 공공 AI 박람회에서 직접 체험하세요.
-									</p>
-									<p class="main-promotion__item-text">일시 : 2026년 6월 23일(화) ~ 24일(수) | 장소 : 킨텍스 2전시장 9홀 B</p>
-									<a href="#" class="button button--more"><span class="button__text">자세히 보기</span></a>
-								</div>
-								<div class="main-promotion__item swiper-slide" style="background-image: url(/static/images/main/promotion_event_item_01.jpg)">
-									<span class="main-promotion__item-category">Newsletter Subscription</span>
-									<strong class="main-promotion__item-title">
-                                            <a href="#">Insights for What's Next!</a>
-                                        </strong>
-									<p class="main-promotion__item-text">매월 삼성SDS가 제작·엄선한 최신의 IT 트랜드 리포트 및 <br />전문 분석 자료 안내를 메일로 받아보세요. (무료)</p>
-
-									<a href="#" class="button button--more"><span class="button__text">구독 신청하기</span></a>
-								</div>
-							</div>
-							<div class="main-promotion__swiper-footer">
-								<div class="swiper-control swiper-control--white">
-									<div class="swiper-pagination"></div>
-									<div class="swiper-control__buttons">
-										<button type="button" class="swiper-control__button swiper-control__button--prev" aria-label="이전 슬라이드"></button>
-										<button type="button" class="swiper-control__button swiper-control__button--next" aria-label="다음 슬라이드"></button>
-										<button type="button" class="swiper-control__button swiper-control__button--play" aria-label="슬라이드 정지"></button>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="main-promotion__swiper main-promotion__swiper--award swiper">
-							<div class="main-promotion__slides swiper-wrapper">
-								<div class="main-promotion__item swiper-slide">
-									<span class="main-promotion__item-category">Awards & Recognition</span>
-
-									<div class="main-promotion__item-source">Forrester</div>
-
-									<strong class="main-promotion__item-title">
-                                            <a href="#">[Recognition] Forrester에서 발간한 The Public Cloud Platforms Landscape 보고서에 주목할 만한 벤더로 등재</a></strong>
-									<ul class="main-promotion__item-list">
-										<li class="main-promotion__item-detail">The Public Cloud Platform Landscape, Q1 2026</li>
-									</ul>
-								</div>
-								<div class="main-promotion__item swiper-slide">
-									<span class="main-promotion__item-category">Awards & Recognition</span>
-
-									<div class="main-promotion__item-source">Forrester</div>
-
-									<strong class="main-promotion__item-title">
-                                            <a href="#">[Recognition] Forrester에서 발간한 The Public Cloud Platforms Landscape 보고서에 주목할 만한 벤더로 등재</a></strong>
-									<ul class="main-promotion__item-list">
-										<li class="main-promotion__item-detail">The Public Cloud Platform Landscape, Q1 2026</li>
-									</ul>
-									<a href="/파일경로/파일명.pdf" download class="button button--download">
-										<span class="button__text">리포트 다운로드</span>
-									</a>
-								</div>
-								<div class="main-promotion__item swiper-slide">
-									<span class="main-promotion__item-category">Awards & Recognition</span>
-
-									<div class="main-promotion__item-source">iF Design Awards</div>
-
-									<strong class="main-promotion__item-title"> <a href="#">삼성SDS, 글로벌 디자인 어워드 3개 부문 Winner 수상</a></strong>
-									<ul class="main-promotion__item-list">
-										<li class="main-promotion__item-detail">
-											글로벌 디자인 어워드인 iF Design Awards 2026에서 ESG Platform, Brity Meeting, Nexprime SCM이 각각 본상인 Winner를 수상하였습니다.
-										</li>
-									</ul>
-									<ul class="main-promotion__item-links">
-										<li class="main-promotion__item-link-item">
-											<a href="#" class="main-promotion__item-link">ESG Platform </a>
-										</li>
-
-										<li class="main-promotion__item-link-item">
-											<a href="#" class="main-promotion__item-link"> Brity Meeting </a>
-										</li>
-
-										<li class="main-promotion__item-link-item">
-											<a href="#" class="main-promotion__item-link"> SCM </a>
-										</li>
-									</ul>
-								</div>
-								<div class="main-promotion__item swiper-slide">
-									<span class="main-promotion__item-category">Awards & Recognition</span>
-
-									<div class="main-promotion__item-source">IDC</div>
-
-									<strong class="main-promotion__item-title"> <a href="#">[Recognition] 2024 IDC MarketScape 4개 부문 등재</a></strong>
-									<ul class="main-promotion__item-list">
-										<li class="main-promotion__item-detail">
-											IDC MarketScape: Worldwide Cybersecurity Consulting Services 2024 Vendor Assessment (Doc #US50463223, March 2024)
-										</li>
-										<li class="main-promotion__item-detail">IDC MarketScape: Worldwide Cloud Security Services in the AI Era 2024 Vendor Assessment (2024)</li>
-										<li class="main-promotion__item-detail">
-											IDC MarketScape: Asia/Pacific Professional Security Services 2024 Vendor Assessment (Doc #AP51571324, September 2024)
-										</li>
-										<li class="main-promotion__item-detail">
-											IDC MarketScape: Asia/Pacific Managed Security Services 2024 Vendor Assessment (Doc #AP51571224, September 2024)
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="main-promotion__swiper-footer">
-								<div class="swiper-control">
-									<div class="swiper-pagination"></div>
-									<div class="swiper-control__buttons">
-										<button type="button" class="swiper-control__button swiper-control__button--prev" aria-label="이전 슬라이드"></button>
-										<button type="button" class="swiper-control__button swiper-control__button--next" aria-label="다음 슬라이드"></button>
-										<button type="button" class="swiper-control__button swiper-control__button--play" aria-label="슬라이드 정지"></button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- //main-promotion -->
-
-			<!-- main-insight -->
-			<section class="main-insight section">
-				<div class="section__inner">
-					<div class="section__head">
-						<h2 class="section__title"><a href="#">시대를 선도하는 인사이트를 만나보세요</a></h2>
-						<a href="#" class="button--more">더 보기</a>
-					</div>
-					<div class="main-insight__swiper">
-						<div class="main-insight__content swiper">
-							<div class="main-insight__list swiper-wrapper">
-								<div class="main-insight__item swiper-slide" data-index="0">
-									<button type="button" class="main-insight__button" aria-label="GenAI 도입의 단계적 여정 상세 내용 열기"></button>
-
-									<div class="main-insight__item-content">
-										<div class="main-insight__item-thumbnail">
-											<div class="main-insight__item-thumbnail-inner">
-												<img src="/static/images/main/insight_item_01.jpg" alt="" />
-											</div>
-											<a href="#" href="http://www.naver.com" target="_blank"></a>
-										</div>
-
-										<span class="main-insight__item-badge">AX</span>
-
-										<h3 class="main-insight__item-title">
-											<a href="http://www.naver.com" target="_blank" class="main-insight__item-link">
-												GenAI 도입의 단계적 여정<br />
-                                                    - 누가, 언제 무엇을 보고 결정하는가
-											</a>
-										</h3>
-
-										<p class="main-insight__description">국내 기업 670명의 데이터를 분석한 생성형 AI 도입 과정의 단계별 의사결정 구조와 성공적인 도입 전략을 분석합니다.</p>
-									</div>
-								</div>
-
-								<div class="main-insight__item swiper-slide" data-index="1">
-									<button type="button" class="main-insight__button" aria-label="인사이트 타이틀 상세 내용 열기"></button>
-
-									<div class="main-insight__item-content">
-										<div class="main-insight__item-thumbnail">
-											<div class="main-insight__item-thumbnail-inner">
-												<img src="/static/images/main/promotion_event_item_01.jpg" alt="" />
-											</div>
-											<a href="#" href="http://www.naver.com" target="_blank"></a>
-										</div>
-
-										<span class="main-insight__item-badge">카테고리</span>
-
-										<h3 class="main-insight__item-title">
-											<a href="https://www.samsungsds.com/kr/index.html" target="_blank" class="main-insight__item-link"> 인사이트 타이틀 </a>
-										</h3>
-
-										<p class="main-insight__description">인사이트 설명 내용2</p>
-									</div>
-								</div>
-
-								<div class="main-insight__item swiper-slide" data-index="2">
-									<button type="button" class="main-insight__button" aria-label="인사이트 타이틀 상세 내용 열기"></button>
-
-									<div class="main-insight__item-content">
-										<div class="main-insight__item-thumbnail">
-											<div class="main-insight__item-thumbnail-inner">
-												<img src="/static/images/main/insight_item_01.jpg" alt="" />
-											</div>
-											<a href="#" href="http://www.naver.com" target="_blank"></a>
-										</div>
-
-										<span class="main-insight__item-badge">카테고리</span>
-
-										<h3 class="main-insight__item-title">
-											<a href="https://www.samsungsds.com/kr/index.html" target="_blank" class="main-insight__item-link"> 인사이트 타이틀 </a>
-										</h3>
-
-										<p class="main-insight__description">인사이트 설명 내용3</p>
-									</div>
-								</div>
-
-								<div class="main-insight__item swiper-slide" data-index="3">
-									<button type="button" class="main-insight__button" aria-label="인사이트 타이틀 상세 내용 열기"></button>
-
-									<div class="main-insight__item-content">
-										<div class="main-insight__item-thumbnail">
-											<div class="main-insight__item-thumbnail-inner">
-												<img src="/static/images/main/insight_item_01.jpg" alt="" />
-											</div>
-											<a href="#" href="http://www.naver.com" target="_blank"></a>
-										</div>
-										<span class="main-insight__item-badge">카테고리</span>
-
-										<h3 class="main-insight__item-title">
-											<a href="https://www.samsungsds.com/kr/index.html" target="_blank" class="main-insight__item-link"> 인사이트 타이틀 </a>
-										</h3>
-										<p class="main-insight__description">인사이트 설명 내용4</p>
-									</div>
-								</div>
-
-								<div class="main-insight__item swiper-slide" data-index="4">
-									<button type="button" class="main-insight__button" aria-label="인사이트 타이틀 상세 내용 열기"></button>
-
-									<div class="main-insight__item-content">
-										<div class="main-insight__item-thumbnail">
-											<div class="main-insight__item-thumbnail-inner">
-												<img src="/static/images/main/insight_item_01.jpg" alt="" />
-											</div>
-											<a href="#" href="http://www.naver.com" target="_blank"></a>
-										</div>
-
-										<span class="main-insight__item-badge">카테고리</span>
-
-										<h3 class="main-insight__item-title">
-											<a href="https://www.samsungsds.com/kr/index.html" target="_blank" class="main-insight__item-link"> 인사이트 타이틀 </a>
-										</h3>
-
-										<p class="main-insight__description">인사이트 설명 내용5</p>
-									</div>
-								</div>
-
-								<div class="main-insight__item swiper-slide" data-index="5">
-									<button type="button" class="main-insight__button" aria-label="인사이트 타이틀 상세 내용 열기"></button>
-
-									<div class="main-insight__item-content">
-										<div class="main-insight__item-thumbnail">
-											<div class="main-insight__item-thumbnail-inner">
-												<img src="/static/images/main/insight_item_01.jpg" alt="" />
-											</div>
-											<a href="#" href="http://www.naver.com" target="_blank"></a>
-										</div>
-
-										<span class="main-insight__item-badge">카테고리</span>
-
-										<h3 class="main-insight__item-title">
-											<a href="https://www.samsungsds.com/kr/index.html" target="_blank" class="main-insight__item-link"> 인사이트 타이틀 </a>
-										</h3>
-
-										<p class="main-insight__description">인사이트 설명 내용6</p>
-									</div>
-								</div>
-
-								<div class="main-insight__item swiper-slide" data-index="6">
-									<button type="button" class="main-insight__button" aria-label="인사이트 타이틀 상세 내용 열기"></button>
-
-									<div class="main-insight__item-content">
-										<div class="main-insight__item-thumbnail">
-											<div class="main-insight__item-thumbnail-inner">
-												<img src="/static/images/main/promotion_event_item_01.jpg" alt="" />
-											</div>
-											<a href="#" href="http://www.naver.com" target="_blank"></a>
-										</div>
-
-										<span class="main-insight__item-badge">카테고리</span>
-
-										<h3 class="main-insight__item-title">
-											<a href="https://www.samsungsds.com/kr/index.html" target="_blank" class="main-insight__item-link"> 인사이트 타이틀 </a>
-										</h3>
-
-										<p class="main-insight__description">인사이트 설명 내용7</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="main-insight__footer">
-							<div class="main-insight__description-list">
-								<p class="main-insight__description main-insight__description--footer is-active">
-									국내 기업 670명의 데이터를 분석한 생성형 AI 도입 과정의 단계별 의사결정 구조와 성공적인 도입 전략을 분석합니다.
-								</p>
-								<p class="main-insight__description main-insight__description--footer">인사이트 설명2</p>
-								<p class="main-insight__description main-insight__description--footer">인사이트 설명3</p>
-								<p class="main-insight__description main-insight__description--footer">인사이트 설명4</p>
-								<p class="main-insight__description main-insight__description--footer">인사이트 설명5</p>
-								<p class="main-insight__description main-insight__description--footer">인사이트 설명6</p>
-								<p class="main-insight__description main-insight__description--footer">인사이트 설명7</p>
-							</div>
-						</div>
-						<div class="main-insight__swiper-footer">
-							<div class="swiper-control">
-								<div class="swiper-pagination swiper-pagination-bullets"></div>
-								<div class="swiper-control__buttons">
-									<button type="button" class="swiper-control__button swiper-control__button--prev" aria-label="이전 슬라이드"></button>
-									<button type="button" class="swiper-control__button swiper-control__button--next" aria-label="다음 슬라이드"></button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- //main-insight -->
-
-			<!-- main-service -->
-			<section class="main-service section">
-				<div class="section__inner">
-					<div class="section__head">
-						<h2 class="section__title">
-							<a href="#">삼성SDS만의 AI기술과 서비스, <br class="is-mo" />
-                                    지금 바로 확인해 보세요</a>
+				<nav class="breadcrumb" aria-label="현재 위치">
+					<ol class="breadcrumb__list">
+						<li class="breadcrumb__item">
+							<a href="/" class="breadcrumb__link">Home</a>
+						</li>
+						<li class="breadcrumb__item">
+							<a href="#" class="breadcrumb__link">문의하기</a>
+						</li>
+						<li class="breadcrumb__item" aria-current="page">
+							<span class="breadcrumb__current">사업 문의</span>
+						</li>
+					</ol>
+				</nav>
+				<div class="contact-visual__inner">
+					<div class="contact-visual__content">
+						<h2 class="contact-visual__title">
+							삼성SDS에게<br />
+                                무엇이든 물어보세요!
 						</h2>
-						<a href="#" class="button--more"><span class="button__text">더 보기</span></a>
-					</div>
-					<div class="main-service__swiper swiper">
-						<div class="main-service__slides swiper-wrapper">
-							<div class="main-service__item swiper-slide" style="background-image: url(/static/images/main/service_item_01.jpg)">
-								<div class="main-service__item-inner">
-									<span class="main-service__item-category">AI & 데이터</span>
-									<strong class="main-service__item-title">
-                                            <a href="#"
-                                                >파운데이션 모델 서비스<br />
-                                                ChatGPT Enterprise</a
-                                            >
-                                        </strong>
-									<a href="#" class="button button--more-02"><span class="button__text">자세히 보기</span></a>
-								</div>
-							</div>
-							<div class="main-service__item swiper-slide" style="background-image: url(/static/images/main/service_item_02.jpg)">
-								<div class="main-service__item-inner">
-									<span class="main-service__item-category">비즈니스 솔루션</span>
-									<strong class="main-service__item-title">
-                                            <a href="#"
-                                                >업무 자동화<br />
-                                                Brity Automation</a
-                                            >
-                                        </strong>
-									<a href="#" class="button button--more-02"><span class="button__text">자세히 보기</span></a>
-								</div>
-							</div>
-							<div class="main-service__item swiper-slide" style="background-image: url(/static/images/main/service_item_03.jpg)">
-								<div class="main-service__item-inner">
-									<span class="main-service__item-category">AI & 데이터</span>
-									<strong class="main-service__item-title">
-                                            <a href="#"
-                                                >AI 에이전트 플랫폼<br />
-                                                FabriX</a
-                                            >
-                                        </strong>
-									<a href="#" class="button button--more-02"><span class="button__text">자세히 보기</span></a>
-								</div>
-							</div>
-							<div class="main-service__item swiper-slide" style="background-image: url(/static/images/main/service_item_04.jpg)">
-								<div class="main-service__item-inner">
-									<span class="main-service__item-category">클라우드 & 인프라</span>
-									<strong class="main-service__item-title">
-                                            <a href="#"
-                                                >클라우드 서비스<br />
-                                                Samsung Cloud Platform</a
-                                            >
-                                        </strong>
-									<a href="#" class="button button--more-02"><span class="button__text">자세히 보기</span></a>
-								</div>
-							</div>
-							<div class="main-service__item swiper-slide" style="background-image: url(/static/images/main/service_item_05.jpg)">
-								<div class="main-service__item-inner">
-									<span class="main-service__item-category">비즈니스 솔루션</span>
-									<strong class="main-service__item-title">
-                                            <a href="#"
-                                                >협업 솔루션<br />
-                                                Brity Works</a
-                                            >
-                                        </strong>
-									<a href="#" class="button button--more-02"><span class="button__text">자세히 보기</span></a>
-								</div>
-							</div>
-							<div class="main-service__item swiper-slide" style="background-image: url(/static/images/main/service_item_06.jpg)">
-								<div class="main-service__item-inner">
-									<span class="main-service__item-category">물류 서비스</span>
-									<strong class="main-service__item-title">
-                                            <a href="#"
-                                                >디지털 물류 서비스<br />
-                                                Cello Square</a
-                                            >
-                                        </strong>
-									<a href="#" class="button button--more-02"><span class="button__text">자세히 보기</span></a>
-								</div>
-							</div>
-						</div>
-						<div class="main-service__swiper-footer">
-							<div class="swiper-control">
-								<div class="swiper-pagination"></div>
-								<div class="swiper-control__buttons">
-									<button aria-label="이전 슬라이드" class="swiper-control__button swiper-control__button--prev" type="button"></button>
-									<button aria-label="다음 슬라이드" class="swiper-control__button swiper-control__button--next" type="button"></button>
-									<button aria-label="슬라이드 재생" class="swiper-control__button swiper-control__button--play is-paused" type="button"></button>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</section>
-			<!-- //main-service -->
 
-			<!-- main-client -->
-			<section class="main-client section">
-				<div class="section__inner">
-					<div class="section__head">
-						<h2 class="section__title">
-							<a href="#">이미 많은 기업이 <br class="is-mo" />삼성SDS와 함께하고 있습니다</a>
-						</h2>
-						<a href="#" class="button--more"><span class="button__text">더 보기</span></a>
+			<!-- 문의 유형 -->
+			<section class="contact-inquiry section">
+				<div class="section__inner contact-inquiry__inner">
+					<div class="section__main-head">
+						<h3 class="section__main-title">무엇이 궁금하신가요?</h3>
+						<p class="section__description">문의유형을 선택해 주세요. <br class="is-mo" />각 분야별 전문가가 빠른 시일 안에 답변드립니다.</p>
 					</div>
-				</div>
-				<div class="main-client__marquee">
-					<div class="main-client__marquee-track">
-						<div class="main-client__marquee-group">
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/supertone.png" alt="Supertone" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/vessl_ai.png" alt="VESSL AI" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/cmc_global.png" alt="CMC Global" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/ecopro.png" alt="ECOPRO" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/samsung_biologics.png" alt="삼성바이오로직스" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/secta9ine.png" alt="섹타나인" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/hanatour.png" alt="하나투어" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/high1.png" alt="하이원리조트" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/daesang_wellife.png" alt="대상웰라이프" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/amorepacific.png" alt="아모레퍼시픽" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/gscaltex.png" alt="GS칼텍스" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/upstage.png" alt="UPSTAGE AI" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/energy_agency.png" alt="한국에너지공단" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/ex.png" alt="한국도로공사" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/daedong.png" alt="대동" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/nh.png" alt="농협은행" />
-							</div>
-						</div>
-						<div class="main-client__marquee-group">
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/supertone.png" alt="Supertone" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/vessl_ai.png" alt="VESSL AI" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/cmc_global.png" alt="CMC Global" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/ecopro.png" alt="ECOPRO" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/samsung_biologics.png" alt="삼성바이오로직스" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/secta9ine.png" alt="섹타나인" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/hanatour.png" alt="하나투어" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/high1.png" alt="하이원리조트" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/daesang_wellife.png" alt="대상웰라이프" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/amorepacific.png" alt="아모레퍼시픽" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/gscaltex.png" alt="GS칼텍스" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/upstage.png" alt="UPSTAGE AI" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/energy_agency.png" alt="한국에너지공단" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/ex.png" alt="한국도로공사" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/daedong.png" alt="대동" />
-							</div>
-							<div class="main-client__marquee-item">
-								<img src="/static/images/main/client/nh.png" alt="농협은행" />
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- //main-client -->
 
-			<!-- contact-banner -->
-			<section class="contact-banner section">
-				<div class="section__inner contact-banner__inner">
-					<div class="section__head">
-						<div class="section__heading">
-							<div class="contact-banner__eyebrow">CONTACT US</div>
-							<h2 class="contact-banner__title">무엇이든 물어보세요.</h2>
-							<p class="contact-banner__description">AI 도입부터 최적화까지, 맞춤형 솔루션을 제안해 드립니다.</p>
+					<div class="contact-inquiry__content">
+						<div class="contact-inquiry__grid">
+							<!-- 사업/일반 문의 -->
+							<div class="contact-inquiry__item contact-inquiry__item--business">
+								<div class="contact-inquiry__thumbnail">
+									<img src="/static/images/contact/inquiry_business.jpg" alt="" />
+								</div>
+
+								<div class="contact-inquiry__body">
+									<h4 class="contact-inquiry__title">사업/일반 문의</h4>
+									<p class="contact-inquiry__description">클라우드, IT 서비스 관련 문의 및 오픈이노베이션, 채용, 일반 문의 등</p>
+
+									<div class="contact-inquiry__buttons">
+										<a href="#" class="contact-inquiry__button button button--black">사업 문의</a>
+
+										<a href="#" class="contact-inquiry__button button button--black">일반 문의</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- 물류 사업 문의 -->
+							<div class="contact-inquiry__item contact-inquiry__item--logistics">
+								<div class="contact-inquiry__thumbnail">
+									<img src="/static/images/contact/inquiry_logistics.jpg" alt="" />
+								</div>
+
+								<div class="contact-inquiry__body">
+									<h4 class="contact-inquiry__title">물류 사업 문의</h4>
+									<p class="contact-inquiry__description">Cello Square 관련 서비스 이용, 상품문의, 제휴 문의 등</p>
+
+									<div class="contact-inquiry__buttons">
+										<a href="#" class="contact-inquiry__button button button--black">물류 사업 문의하기</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- 솔루션 기술 지원 문의 -->
+							<div class="contact-inquiry__item contact-inquiry__item--solution">
+								<div class="contact-inquiry__thumbnail">
+									<img src="/static/images/contact/inquiry_solution.jpg" alt="" />
+								</div>
+
+								<div class="contact-inquiry__body">
+									<h4 class="contact-inquiry__title">솔루션 기술 지원 문의</h4>
+									<p class="contact-inquiry__description">솔루션 관련 기술 문의, 개선 의견 등</p>
+									<div class="contact-inquiry__buttons">
+										<a href="#" class="contact-inquiry__button button button--black" target="_blank" title="새 창 열림"> 고객지원 Portal </a>
+									</div>
+								</div>
+							</div>
+
+							<!-- 기타 문의 -->
+							<div class="contact-inquiry__item contact-inquiry__item--etc">
+								<div class="contact-inquiry__etc-list">
+									<section class="contact-inquiry__etc-item">
+										<div class="contact-inquiry__etc-content">
+											<h4 class="contact-inquiry__title">도어락 및 월패드 기술지원(A/S)</h4>
+
+											<p class="contact-inquiry__description">도어락/월패드 사업이 직방으로 매각되어 직방에서 기술지원(A/S)을 제공하고 있습니다.</p>
+										</div>
+
+										<div class="contact-inquiry__etc-contact">
+											<a href="tel:1588-4141" class="contact-inquiry__etc-tel"> 1588 · 4141 </a>
+
+											<a href="mailto:help.homeiot@zigbang.com" class="contact-inquiry__etc-email">help.homeiot@zigbang.com </a>
+										</div>
+									</section>
+
+									<section class="contact-inquiry__etc-item">
+										<div class="contact-inquiry__etc-content">
+											<h4 class="contact-inquiry__title">삼성물산 평택(고덕) 사업장 EMM 삭제 문의</h4>
+											<p class="contact-inquiry__description">운영시간 08:30~18:00</p>
+											<p class="contact-inquiry__description">평택(고덕) 사업장 외 문의는 각 사업장 보안팀에 문의 바랍니다.</p>
+										</div>
+
+										<div class="contact-inquiry__etc-contact">
+											<a href="tel:07071282181" class="contact-inquiry__etc-tel"> 070 · 7128 · 2181~2 </a>
+
+											<a href="mailto:secu.pjt@samsung.com" class="contact-inquiry__etc-email"> secu.pjt@samsung.com </a>
+										</div>
+									</section>
+								</div>
+							</div>
 						</div>
 					</div>
-					<a href="#" class="button--more">문의하기</a>
 				</div>
 			</section>
-			<!-- //contact-banner -->
+
+			<!-- 자주 묻는 질문 -->
+			<section class="contact-faq section">
+				<div class="section__inner contact-faq__inner">
+					<div class="section__head">
+						<h3 class="section__title">자주 묻는 질문</h3>
+					</div>
+
+					<div class="contact-faq__list">
+						<!-- 활성화 상태 -->
+						<div class="contact-faq__item is-active">
+							<h4 class="contact-faq__question">
+								<button type="button" class="contact-faq__button" aria-expanded="true" aria-controls="contactFaqPanel01" id="contactFaqButton01">
+									<span class="contact-faq__question-mark" aria-hidden="true">Q</span>
+
+									<span class="contact-faq__question-text"> 삼성물산 평택(고덕) 사업장 EMM 삭제 관련 문의는 어떻게 해야 하나요? </span>
+								</button>
+							</h4>
+
+							<div class="contact-faq__answer" id="contactFaqPanel01" role="region" aria-labelledby="contactFaqButton01">
+								<div class="contact-faq__answer-inner">
+									<span class="contact-faq__answer-mark" aria-hidden="true"> A </span>
+
+									<div class="contact-faq__answer-content">
+										삼성물산 평택(고덕) 사업장 EMM 삭제 관련 문의 안내입니다.<br />
+                                            EMM 삭제 문의는 평택 사업장 보안실에 방문 요청 또는 고객센터로 전화 접수 후 처리 가능합니다. 감사합니다.
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="contact-faq__item">
+							<h4 class="contact-faq__question">
+								<button type="button" class="contact-faq__button" aria-expanded="false" aria-controls="contactFaqPanel02" id="contactFaqButton02">
+									<span class="contact-faq__question-mark" aria-hidden="true">Q</span>
+
+									<span class="contact-faq__question-text"> SDS가 보유한 솔루션, 적용사례 등을 한눈에 볼 수 있는 공간이 있나요? </span>
+								</button>
+							</h4>
+
+							<div class="contact-faq__answer" id="contactFaqPanel02" role="region" aria-labelledby="contactFaqButton02" hidden>
+								<div class="contact-faq__answer-inner">
+									<span class="contact-faq__answer-mark" aria-hidden="true"> A </span>
+
+									<div class="contact-faq__answer-content">
+										<p>답변 내용이 들어갑니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="contact-faq__item">
+							<h4 class="contact-faq__question">
+								<button type="button" class="contact-faq__button" aria-expanded="false" aria-controls="contactFaqPanel03" id="contactFaqButton03">
+									<span class="contact-faq__question-mark" aria-hidden="true">Q</span>
+
+									<span class="contact-faq__question-text"> 중고등/대학생 혹은 일반인 대상 기업 탐방 프로그램이나 외국인을 위한 프로그램이 있나요? </span>
+								</button>
+							</h4>
+
+							<div class="contact-faq__answer" id="contactFaqPanel03" role="region" aria-labelledby="contactFaqButton03" hidden>
+								<div class="contact-faq__answer-inner">
+									<span class="contact-faq__answer-mark" aria-hidden="true"> A </span>
+
+									<div class="contact-faq__answer-content">
+										<p>답변 내용이 들어갑니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="contact-faq__item">
+							<h4 class="contact-faq__question">
+								<button type="button" class="contact-faq__button" aria-expanded="false" aria-controls="contactFaqPanel04" id="contactFaqButton04">
+									<span class="contact-faq__question-mark" aria-hidden="true">Q</span>
+
+									<span class="contact-faq__question-text"> 이전에 삼성SDS에서 근무를 했습니다. 경력증명서를 발급 받으려면 어떻게 해야 하나요? </span>
+								</button>
+							</h4>
+
+							<div class="contact-faq__answer" id="contactFaqPanel04" role="region" aria-labelledby="contactFaqButton04" hidden>
+								<div class="contact-faq__answer-inner">
+									<span class="contact-faq__answer-mark" aria-hidden="true"> A </span>
+
+									<div class="contact-faq__answer-content">
+										<p>답변 내용이 들어갑니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="contact-faq__item">
+							<h4 class="contact-faq__question">
+								<button type="button" class="contact-faq__button" aria-expanded="false" aria-controls="contactFaqPanel05" id="contactFaqButton05">
+									<span class="contact-faq__question-mark" aria-hidden="true">Q</span>
+
+									<span class="contact-faq__question-text"> SDS와 파트너사로 협업을 하고 싶습니다. 지원 방법을 알고 싶습니다. </span>
+								</button>
+							</h4>
+
+							<div class="contact-faq__answer" id="contactFaqPanel05" role="region" aria-labelledby="contactFaqButton05" hidden>
+								<div class="contact-faq__answer-inner">
+									<span class="contact-faq__answer-mark" aria-hidden="true"> A </span>
+
+									<div class="contact-faq__answer-content">
+										<p>답변 내용이 들어갑니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 뉴스레터 -->
+			<section class="contact-newsletter section">
+				<div class="section__inner contact-newsletter__inner">
+					<div class="contact-newsletter__content">
+						<h3 class="section__title"><strong>삼성SDS 소식</strong>이 궁금하신가요?</h3>
+
+						<p class="contact-newsletter__description">뉴스레터를 구독하면, 최신 소식을 가장 먼저 받아 볼 수 있습니다.</p>
+
+						<a href="#" class="contact-newsletter__button button button--black"> 뉴스레터 구독하기 </a>
+					</div>
+
+					<ul class="contact-newsletter__sns-list" aria-label="SNS 링크">
+						<li class="contact-newsletter__sns-item">
+							<a href="#" class="contact-newsletter__sns-link contact-newsletter__sns-link--linkedin" aria-label="LinkedIn"></a>
+						</li>
+						<li class="contact-newsletter__sns-item">
+							<a href="#" class="contact-newsletter__sns-link contact-newsletter__sns-link--facebook" aria-label="Facebook"></a>
+						</li>
+						<li class="contact-newsletter__sns-item">
+							<a href="#" class="contact-newsletter__sns-link contact-newsletter__sns-link--twitter" aria-label="Twitter"></a>
+						</li>
+						<li class="contact-newsletter__sns-item">
+							<a href="#" class="contact-newsletter__sns-link contact-newsletter__sns-link--instagram" aria-label="Instagram"></a>
+						</li>
+						<li class="contact-newsletter__sns-item">
+							<a href="#" class="contact-newsletter__sns-link contact-newsletter__sns-link--youtube" aria-label="Youtube"></a>
+						</li>
+						<li class="contact-newsletter__sns-item">
+							<a href="#" class="contact-newsletter__sns-link contact-newsletter__sns-link--naver" aria-label="Naver"></a>
+						</li>
+					</ul>
+				</div>
+			</section>
 		</main>
 
 		<!-- footer -->
@@ -3499,7 +2978,29 @@
 	</div>
 
 	<script src="/static/js/ui.js"></script>
-	<script src="/static/js/main.js"></script>
+
+	<!-- 페이지 스크릷트 -->
+	<script>
+		$(function() {
+			// faq
+			$(".contact-faq__button").on("click", function() {
+				const $button = $(this);
+				const $item = $button.closest(".contact-faq__item");
+				const $panel = $("#" + $button.attr("aria-controls"));
+				const isOpen = $button.attr("aria-expanded") === "true";
+
+				$(".contact-faq__item").removeClass("is-active");
+				$(".contact-faq__button").attr("aria-expanded", "false");
+				$(".contact-faq__answer").prop("hidden", true);
+
+				if (isOpen) return;
+
+				$item.addClass("is-active");
+				$button.attr("aria-expanded", "true");
+				$panel.prop("hidden", false);
+			});
+		});
+	</script>
 </body>
 
 </html>

@@ -23,19 +23,11 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/static/images/favicon/android-chrome-512x512.png" />
 <meta name="theme-color" content="#ffffff" /> -->
 
-	<title>guide</title>
-	<title>SAMSUNG SDS-ETC</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="/static/css/swiper.css" />
-	<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
-	<link rel="stylesheet" href="/static/css/guide.css" />
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-	<script src="/static/js/swiper-bundle.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-	<script src="/static/js/ui.js"></script>
+	<title>SAMSUNG SDS</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/common.css" />
+	<script src="../static/js/jquery-4.0.0.min.js"></script>
+	<script src="../static/js/swiper-bundle.min.js"></script>
+	<script src="../static/js/lenis.min.js"></script>
 </head>
 <style>
 	.design-guide-panel {
@@ -77,11 +69,6 @@
 				<!-- // button -->
 				<!-- select -->
 				<div class="design-guide-panel panel-select">
-					<script>
-						$(function() {
-							CustomSelectbox.init();
-						});
-					</script>
 					<div class="page-header">
 						<h2>Select</h2>
 						<p>
@@ -464,6 +451,8 @@
 			//     $box.find(".code-text-wrap").toggleClass("on");
 			// });
 		});
+
+		CustomSelectbox.init();
 	});
 
 	function cleanCodeIndent(str) {

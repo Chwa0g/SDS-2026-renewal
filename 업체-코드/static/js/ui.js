@@ -304,6 +304,7 @@ const Header = (function () {
     const $win = $(window);
 
     const ACTIVE_CLASS = "header--open";
+    const SEARCH_OPEN_CLASS = "header--search-open";
     const ACTIVE_PANEL_CLASS = "is-active";
 
     const FOCUSABLE_SELECTOR = ["a[href]", "button:not([disabled])", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])", '[tabindex]:not([tabindex="-1"])'].join(",");
@@ -317,13 +318,89 @@ const Header = (function () {
     // Mobile menu
     let $mobileMenu = $();
     let $mobilePages = $();
-    let $mobileMainPage = $();
 
     // LNB
     let $lnb = $();
     let $lnbMenu = $();
     let $lnbButton = $();
     let $lnbPanel = $();
+
+    // Search
+    let $searchButton = $();
+    let $searchPanel = $();
+    let $searchCloseButton = $();
+    let $searchForm = $();
+    let $searchInput = $();
+    let $searchSuggest = $();
+    let $searchSuggestDefault = $();
+    let $searchAutocomplete = $();
+    let $searchAutocompleteList = $();
+    let $searchAutocompleteEmpty = $();
+    let $searchRecentList = $();
+    let $searchRecentEmpty = $();
+    let $searchRecentClear = $();
+
+    const SEARCH_SUGGEST_OPEN_CLASS = "is-open";
+    const SEARCH_SUGGEST_ACTIVE_CLASS = "is-active";
+    const SEARCH_RECENT_STORAGE_KEY = "headerRecentKeywords";
+    const SEARCH_RECENT_MAX_COUNT = 10;
+
+    let preventSearchSuggestOpen = false;
+
+    const autocompleteKeywords = [
+        "AI",
+        "AI 서비스",
+        "AI 에이전트",
+        "AX",
+        "ChatGPT",
+        "ESG",
+        "FabriX",
+        "Samsung Cloud Platform",
+        "기업용 생성형 AI",
+        "디지털 전환",
+        "물류 자동화",
+        "브리티 코파일럿",
+        "브리티 오토메이션",
+        "생성형 AI",
+        "인공지능",
+        "첼로스퀘어",
+        "클라우드",
+        "클라우드 전환",
+        "하이브리드 클라우드",
+        "팩토리 솔루션",
+    ];
+
+    /* =========================
+       Common
+    ========================= */
+    function setExpandedState($button, isOpen) {
+        $button.attr("aria-expanded", String(isOpen));
+    }
+
+    function setPanelState($panel, isOpen, options = {}) {
+        const { useHidden = false } = options;
+
+        if (!$panel.length) return;
+
+        const properties = {
+            inert: !isOpen,
+        };
+
+        if (useHidden) {
+            properties.hidden = !isOpen;
+        }
+
+        $panel.prop(properties).attr("aria-hidden", String(!isOpen)).toggleClass(ACTIVE_PANEL_CLASS, isOpen);
+    }
+
+    function setHeaderControlState($button, isOpen, labels) {
+        const { open, close } = labels;
+
+        $button.toggleClass(ACTIVE_PANEL_CLASS, isOpen).attr({
+            "aria-expanded": String(isOpen),
+            "aria-label": isOpen ? close : open,
+        });
+    }
 
     function getFocusableElements($scope) {
         return $scope
@@ -382,20 +459,16 @@ const Header = (function () {
         if ($header.hasClass(ACTIVE_CLASS)) return;
 
         closeLnb();
+        closeSearch();
 
         $header.addClass(ACTIVE_CLASS);
 
-        $menuButton.addClass(ACTIVE_PANEL_CLASS).attr({
-            "aria-expanded": "true",
-            "aria-label": "전체 메뉴 닫기",
+        setHeaderControlState($menuButton, true, {
+            open: "전체 메뉴 열기",
+            close: "전체 메뉴 닫기",
         });
 
-        $megaMenu
-            .prop({
-                // hidden: false,
-                inert: false,
-            })
-            .attr("aria-hidden", "false");
+        setPanelState($megaMenu, true);
 
         NonScroll.enable($wrap);
     }
@@ -407,20 +480,15 @@ const Header = (function () {
 
         $header.removeClass(ACTIVE_CLASS);
 
-        $menuButton.removeClass(ACTIVE_PANEL_CLASS).attr({
-            "aria-expanded": "false",
-            "aria-label": "전체 메뉴 열기",
+        setHeaderControlState($menuButton, false, {
+            open: "전체 메뉴 열기",
+            close: "전체 메뉴 닫기",
         });
 
         resetDepth();
         resetMobileMenu();
 
-        $megaMenu
-            .prop({
-                //hidden: true,
-                inert: true,
-            })
-            .attr("aria-hidden", "true");
+        setPanelState($megaMenu, false);
 
         NonScroll.disable();
 
@@ -453,7 +521,7 @@ const Header = (function () {
     function hideMobilePage($page) {
         if (!$page.length) return;
 
-        $page.removeClass(ACTIVE_PANEL_CLASS).prop("inert", true).attr("aria-hidden", "true");
+        setPanelState($page, false);
     }
 
     function showMobilePage(pageName, options = {}) {
@@ -466,7 +534,7 @@ const Header = (function () {
             hideMobilePage($(this));
         });
 
-        $targetPage.addClass(ACTIVE_PANEL_CLASS).prop("inert", false).attr("aria-hidden", "false");
+        setPanelState($targetPage, true);
 
         const $scroll = $targetPage.find(".mobile-menu__scroll").first();
 
@@ -490,7 +558,7 @@ const Header = (function () {
 
         $section.toggleClass("is-open", isOpen);
 
-        $button.attr("aria-expanded", String(isOpen));
+        setExpandedState($button, isOpen);
 
         if ($panel.length) {
             $panel.prop("inert", !isOpen).attr("aria-hidden", String(!isOpen));
@@ -585,19 +653,14 @@ const Header = (function () {
             });
         }
 
+        closeSearch();
+
         $lnbMenu.addClass(ACTIVE_PANEL_CLASS);
 
-        $lnbButton.attr({
-            "aria-expanded": "true",
+        setExpandedState($lnbButton, true);
+        setPanelState($lnbPanel, true, {
+            useHidden: true,
         });
-
-        $lnbPanel
-            .prop({
-                hidden: false,
-                inert: false,
-            })
-            .attr("aria-hidden", "false")
-            .addClass(ACTIVE_PANEL_CLASS);
     }
 
     function closeLnb(options = {}) {
@@ -607,17 +670,10 @@ const Header = (function () {
 
         $lnbMenu.removeClass(ACTIVE_PANEL_CLASS);
 
-        $lnbButton.attr({
-            "aria-expanded": "false",
+        setExpandedState($lnbButton, false);
+        setPanelState($lnbPanel, false, {
+            useHidden: true,
         });
-
-        $lnbPanel
-            .prop({
-                hidden: true,
-                inert: true,
-            })
-            .attr("aria-hidden", "true")
-            .removeClass(ACTIVE_PANEL_CLASS);
 
         if (returnFocus) {
             $lnbButton.trigger("focus");
@@ -636,6 +692,300 @@ const Header = (function () {
     }
 
     /* =========================
+       Search
+    ========================= */
+    function escapeSearchHtml(value) {
+        return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+    }
+
+    function escapeSearchRegExp(value) {
+        return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    function getRecentKeywords() {
+        try {
+            const keywords = JSON.parse(localStorage.getItem(SEARCH_RECENT_STORAGE_KEY) || "[]");
+
+            return Array.isArray(keywords) ? keywords : [];
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function setRecentKeywords(keywords) {
+        try {
+            localStorage.setItem(SEARCH_RECENT_STORAGE_KEY, JSON.stringify(keywords));
+        } catch (error) {
+            // localStorage를 사용할 수 없는 환경에서는 저장하지 않음
+        }
+    }
+
+    function addRecentKeyword(keyword) {
+        const value = String(keyword || "").trim();
+
+        if (!value) return;
+
+        const keywords = getRecentKeywords().filter(function (item) {
+            return String(item).toLowerCase() !== value.toLowerCase();
+        });
+
+        keywords.unshift(value);
+
+        setRecentKeywords(keywords.slice(0, SEARCH_RECENT_MAX_COUNT));
+    }
+
+    function removeRecentKeyword(keyword) {
+        const value = String(keyword || "").trim();
+
+        const keywords = getRecentKeywords().filter(function (item) {
+            return String(item).toLowerCase() !== value.toLowerCase();
+        });
+
+        setRecentKeywords(keywords);
+        renderRecentKeywords();
+    }
+
+    function clearRecentKeywords() {
+        try {
+            localStorage.removeItem(SEARCH_RECENT_STORAGE_KEY);
+        } catch (error) {
+            // localStorage를 사용할 수 없는 환경에서는 무시
+        }
+
+        renderRecentKeywords();
+    }
+
+    function renderRecentKeywords() {
+        if (!$searchRecentList.length) return;
+
+        const keywords = getRecentKeywords();
+
+        $searchRecentList.empty();
+
+        if (!keywords.length) {
+            $searchRecentEmpty.addClass("is-visible");
+            $searchRecentClear.prop("disabled", true);
+            return;
+        }
+
+        $searchRecentEmpty.removeClass("is-visible");
+        $searchRecentClear.prop("disabled", false);
+
+        const html = keywords
+            .map(function (keyword) {
+                const safeKeyword = escapeSearchHtml(keyword);
+
+                return `
+                    <li class="header-search__recent-item">
+                        <button
+                            type="button"
+                            class="header-search__recent-link"
+                            data-keyword="${safeKeyword}"
+                        >
+                            ${safeKeyword}
+                        </button>
+
+                        <button
+                            type="button"
+                            class="header-search__recent-delete"
+                            data-keyword="${safeKeyword}"
+                            aria-label="${safeKeyword} 최근검색어 삭제"
+                        ></button>
+                    </li>
+                `;
+            })
+            .join("");
+
+        $searchRecentList.html(html);
+    }
+
+    function highlightAutocompleteKeyword(keyword, searchValue) {
+        const safeKeyword = escapeSearchHtml(keyword);
+        const safeValue = escapeSearchRegExp(escapeSearchHtml(searchValue));
+
+        if (!safeValue) return safeKeyword;
+
+        return safeKeyword.replace(new RegExp(`(${safeValue})`, "gi"), '<span class="header-search__autocomplete-word">$1</span>');
+    }
+
+    function renderAutocomplete(value) {
+        if (!$searchAutocompleteList.length) return;
+
+        const keyword = String(value || "")
+            .trim()
+            .toLowerCase();
+
+        $searchAutocompleteList.empty();
+        $searchAutocompleteEmpty.removeClass("is-visible");
+
+        if (!keyword) return;
+
+        const matchedKeywords = autocompleteKeywords
+            .filter(function (item) {
+                return item.toLowerCase().includes(keyword);
+            })
+            .slice(0, 10);
+
+        if (!matchedKeywords.length) {
+            $searchAutocompleteEmpty.addClass("is-visible");
+            return;
+        }
+
+        const html = matchedKeywords
+            .map(function (item, index) {
+                const safeItem = escapeSearchHtml(item);
+
+                return `
+                    <li
+                        class="header-search__autocomplete-item"
+                        id="headerSearchOption${index + 1}"
+                        role="option"
+                    >
+                        <button
+                            type="button"
+                            class="header-search__autocomplete-button"
+                            data-keyword="${safeItem}"
+                        >
+                            ${highlightAutocompleteKeyword(item, value)}
+                        </button>
+                    </li>
+                `;
+            })
+            .join("");
+
+        $searchAutocompleteList.html(html);
+    }
+
+    function showSearchDefault() {
+        renderRecentKeywords();
+
+        $searchSuggestDefault.addClass(SEARCH_SUGGEST_ACTIVE_CLASS);
+        $searchAutocomplete.removeClass(SEARCH_SUGGEST_ACTIVE_CLASS).attr("aria-hidden", "true");
+    }
+
+    function showSearchAutocomplete(value) {
+        renderAutocomplete(value);
+
+        $searchSuggestDefault.removeClass(SEARCH_SUGGEST_ACTIVE_CLASS);
+        $searchAutocomplete.addClass(SEARCH_SUGGEST_ACTIVE_CLASS).attr("aria-hidden", "false");
+    }
+
+    function openSearchSuggest() {
+        if (!$searchSuggest.length || !$searchInput.length) return;
+
+        const value = String($searchInput.val() || "").trim();
+
+        $searchSuggest.addClass(SEARCH_SUGGEST_OPEN_CLASS).attr("aria-hidden", "false");
+        $searchInput.attr("aria-expanded", "true");
+
+        if (value) {
+            showSearchAutocomplete(value);
+        } else {
+            showSearchDefault();
+        }
+    }
+
+    function closeSearchSuggest() {
+        if (!$searchSuggest.length) return;
+
+        $searchSuggest.removeClass(SEARCH_SUGGEST_OPEN_CLASS).attr("aria-hidden", "true");
+
+        $searchInput.attr("aria-expanded", "false").removeAttr("aria-activedescendant");
+
+        $searchSuggestDefault.removeClass(SEARCH_SUGGEST_ACTIVE_CLASS);
+        $searchAutocomplete.removeClass(SEARCH_SUGGEST_ACTIVE_CLASS).attr("aria-hidden", "true");
+    }
+
+    function selectSearchKeyword(keyword, options = {}) {
+        const { submit = false } = options;
+        const value = String(keyword || "").trim();
+
+        if (!value) return;
+
+        $searchInput.val(value);
+        addRecentKeyword(value);
+        closeSearchSuggest();
+
+        if (submit) {
+            $searchForm.trigger("submit");
+            return;
+        }
+
+        $searchInput.trigger("focus");
+    }
+
+    function openSearch() {
+        if (!$searchButton.length || !$searchPanel.length) return;
+        if ($searchButton.attr("aria-expanded") === "true") return;
+
+        if ($header.hasClass(ACTIVE_CLASS)) {
+            close({
+                returnFocus: false,
+            });
+        }
+
+        closeLnb();
+
+        $header.addClass(SEARCH_OPEN_CLASS);
+
+        setHeaderControlState($searchButton, true, {
+            open: "검색 열기",
+            close: "검색 닫기",
+        });
+
+        setPanelState($searchPanel, true);
+
+        $wrap.addClass("is-dimmed");
+
+        NonScroll.enable($wrap);
+
+        const $input = $searchPanel.find(".header-search__input").first();
+
+        // if ($input.length) {
+        //     $input.trigger("focus");
+        // }
+    }
+
+    function closeSearch(options = {}) {
+        const { returnFocus = false } = options;
+
+        if (!$searchButton.length || !$searchPanel.length) return;
+
+        const isOpen = $searchButton.attr("aria-expanded") === "true";
+
+        closeSearchSuggest();
+
+        $header.removeClass(SEARCH_OPEN_CLASS);
+
+        setHeaderControlState($searchButton, false, {
+            open: "검색 열기",
+            close: "검색 닫기",
+        });
+
+        setPanelState($searchPanel, false);
+
+        if (isOpen) {
+            $wrap.removeClass("is-dimmed");
+            NonScroll.disable();
+        }
+
+        if (returnFocus) {
+            $searchButton.trigger("focus");
+        }
+    }
+
+    function toggleSearch() {
+        const isOpen = $searchButton.attr("aria-expanded") === "true";
+
+        if (isOpen) {
+            closeSearch();
+            return;
+        }
+
+        openSearch();
+    }
+
+    /* =========================
        Mega menu panel
     ========================= */
     function getPanel($link) {
@@ -643,7 +993,7 @@ const Header = (function () {
 
         if (!panelId) return $();
 
-        return $megaMenu.find("#" + panelId);
+        return $megaMenu.find(`#${panelId}`);
     }
 
     function getController($panel) {
@@ -655,12 +1005,7 @@ const Header = (function () {
     }
 
     function hidePanel($panel) {
-        $panel
-            .prop({
-                inert: true,
-            })
-            .attr("aria-hidden", "true")
-            .removeClass(ACTIVE_PANEL_CLASS);
+        setPanelState($panel, false);
     }
 
     function showPanel($link) {
@@ -668,21 +1013,16 @@ const Header = (function () {
 
         if (!$panel.length) return $();
 
-        $link.attr("aria-expanded", "true");
+        setExpandedState($link, true);
 
         $link.closest(".mega-menu__item, .mega-menu__sub-item").addClass(ACTIVE_PANEL_CLASS);
 
-        $panel
-            .prop({
-                inert: false,
-            })
-            .attr("aria-hidden", "false")
-            .addClass(ACTIVE_PANEL_CLASS);
+        setPanelState($panel, true);
 
         return $panel;
     }
 
-    function resetSubDepth($scope) {
+    function resetSubPanels($scope) {
         $scope.find(".mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
 
         $scope.find(".mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
@@ -692,46 +1032,44 @@ const Header = (function () {
         });
     }
 
-    function resetDepth() {
-        $megaMenu.find(".mega-menu__link--has-depth, " + ".mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
+    function resetSubDepth($scope) {
+        resetSubPanels($scope);
+    }
 
-        $megaMenu.find(".mega-menu__item, .mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+    function resetMainDepth() {
+        $megaMenu.find(".mega-menu__link--has-depth").attr("aria-expanded", "false").closest(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
 
-        $megaMenu.find(".mega-menu__main > " + ".mega-menu__inner > " + ".mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
+        $megaMenu.find(".mega-menu__main > .mega-menu__inner > .mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
+    }
 
-        $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
-
+    function hideSubBoxes() {
         $megaMenu.find(".mega-menu__sub-box").each(function () {
-            hidePanel($(this));
-        });
-
-        $megaMenu.find(".mega-menu__sub-list[id]").each(function () {
             hidePanel($(this));
         });
     }
 
+    function resetDepth() {
+        $megaMenu.find(".mega-menu__link--has-depth, .mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
+
+        $megaMenu.find(".mega-menu__item, .mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+
+        $megaMenu.find(".mega-menu__main > .mega-menu__inner > .mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
+
+        $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
+
+        hideSubBoxes();
+        resetSubPanels($megaMenu);
+    }
+
     function closeSubPanel() {
-        $megaMenu.find(".mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
-
-        $megaMenu.find(".mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
-
-        $megaMenu.find(".mega-menu__sub-list[id]").each(function () {
-            hidePanel($(this));
-        });
-
-        $megaMenu.find(".mega-menu__sub-box").each(function () {
-            hidePanel($(this));
-        });
+        resetSubPanels($megaMenu);
+        hideSubBoxes();
 
         $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
     }
 
     function closeMainDepth() {
-        $megaMenu.find(".mega-menu__link--has-depth").attr("aria-expanded", "false");
-
-        $megaMenu.find(".mega-menu__link--has-depth").closest(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
-
-        $megaMenu.find(".mega-menu__main > " + ".mega-menu__inner > " + ".mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
+        resetMainDepth();
     }
 
     function closeCurrentPanel($panel) {
@@ -741,7 +1079,9 @@ const Header = (function () {
 
         hidePanel($panel);
 
-        $controller.attr("aria-expanded", "false").closest(".mega-menu__item, .mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+        setExpandedState($controller, false);
+
+        $controller.closest(".mega-menu__item, .mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
 
         $controller.trigger("focus");
 
@@ -793,14 +1133,134 @@ const Header = (function () {
 
         $win.off("keydown.lnb").on("keydown.lnb", function (e) {
             if (e.key !== "Escape") return;
-
-            if ($lnbButton.attr("aria-expanded") !== "true") {
-                return;
-            }
+            if ($lnbButton.attr("aria-expanded") !== "true") return;
 
             e.preventDefault();
 
             closeLnb({
+                returnFocus: true,
+            });
+        });
+    }
+
+    function bindSearch() {
+        if (!$searchButton.length || !$searchPanel.length) return;
+
+        $searchButton.off("click.headerSearch").on("click.headerSearch", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            toggleSearch();
+        });
+
+        $searchCloseButton.off("click.headerSearch").on("click.headerSearch", function (e) {
+            e.preventDefault();
+
+            closeSearch({
+                returnFocus: true,
+            });
+        });
+
+        $searchPanel.off("click.headerSearch").on("click.headerSearch", function (e) {
+            e.stopPropagation();
+        });
+
+        $searchInput
+            .off(".headerSearchSuggest")
+            .on("focus.headerSearchSuggest", function () {
+                if (preventSearchSuggestOpen) {
+                    preventSearchSuggestOpen = false;
+                    return;
+                }
+
+                openSearchSuggest();
+            })
+            .on("input.headerSearchSuggest", function () {
+                const value = String($(this).val() || "");
+
+                if (!$searchSuggest.hasClass(SEARCH_SUGGEST_OPEN_CLASS)) {
+                    openSearchSuggest();
+                    return;
+                }
+
+                if (value.trim()) {
+                    showSearchAutocomplete(value);
+                } else {
+                    showSearchDefault();
+                }
+            });
+
+        $searchForm.off("submit.headerSearchSuggest").on("submit.headerSearchSuggest", function (e) {
+            const keyword = String($searchInput.val() || "").trim();
+
+            if (!keyword) {
+                e.preventDefault();
+                openSearchSuggest();
+                $searchInput.trigger("focus");
+                return;
+            }
+
+            addRecentKeyword(keyword);
+        });
+
+        $searchSuggest
+            .off(".headerSearchSuggest")
+            .on("click.headerSearchSuggest", ".header-search__recent-link", function () {
+                selectSearchKeyword($(this).attr("data-keyword"));
+            })
+            .on("click.headerSearchSuggest", ".header-search__recent-delete", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                removeRecentKeyword($(this).attr("data-keyword"));
+            })
+            .on("click.headerSearchSuggest", ".header-search__recent-clear", function (e) {
+                e.preventDefault();
+
+                clearRecentKeywords();
+            })
+            .on("click.headerSearchSuggest", ".header-search__autocomplete-button", function () {
+                selectSearchKeyword($(this).attr("data-keyword"));
+            })
+            .on("click.headerSearchSuggest", ".header-search__suggest-link", function () {
+                addRecentKeyword($(this).text());
+            })
+            .on("click.headerSearchSuggest", ".header-search__suggest-close", function (e) {
+                e.preventDefault();
+
+                preventSearchSuggestOpen = true;
+
+                closeSearchSuggest();
+                $searchInput.trigger("focus");
+            });
+
+        $(document)
+            .off("click.headerSearchOutside")
+            .on("click.headerSearchOutside", function (e) {
+                if ($searchButton.attr("aria-expanded") !== "true") return;
+
+                const $target = $(e.target);
+
+                if ($target.closest(".header__search-button, .header-search").length) {
+                    return;
+                }
+
+                closeSearch();
+            });
+
+        $win.off("keydown.headerSearch").on("keydown.headerSearch", function (e) {
+            if (e.key !== "Escape") return;
+            if ($searchButton.attr("aria-expanded") !== "true") return;
+
+            e.preventDefault();
+
+            if ($searchSuggest.hasClass(SEARCH_SUGGEST_OPEN_CLASS)) {
+                closeSearchSuggest();
+                $searchInput.trigger("focus");
+                return;
+            }
+
+            closeSearch({
                 returnFocus: true,
             });
         });
@@ -835,7 +1295,9 @@ const Header = (function () {
                 $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
 
                 if ($controller.length) {
-                    $controller.attr("aria-expanded", "false").closest(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
+                    setExpandedState($controller, false);
+
+                    $controller.closest(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
 
                     $controller.closest(".mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
 
@@ -902,15 +1364,8 @@ const Header = (function () {
 
                 if (!$targetPanel.length) return;
 
-                $megaMenu.find(".mega-menu__link--has-depth").attr("aria-expanded", "false");
-
-                $megaMenu.find(".mega-menu__link--has-depth").closest(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
-
-                $megaMenu.find(".mega-menu__main > " + ".mega-menu__inner > " + ".mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
-
-                $megaMenu.find(".mega-menu__sub-box").each(function () {
-                    hidePanel($(this));
-                });
+                resetMainDepth();
+                hideSubBoxes();
 
                 $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
 
@@ -937,15 +1392,10 @@ const Header = (function () {
             .off("click.header")
             .on("click.header", function (e) {
                 const $link = $(this);
-
                 const $currentSection = $link.closest(".mega-menu__sub-section");
-
                 const $currentItem = $link.closest(".mega-menu__sub-item");
-
                 const $nextSections = $currentSection.nextAll(".mega-menu__sub-section");
-
                 const hasDepth = $link.hasClass("mega-menu__sub-link--has-depth");
-
                 const $targetPanel = getPanel($link);
 
                 if (hasDepth) {
@@ -982,7 +1432,7 @@ const Header = (function () {
 
             const $focused = $(e.target);
 
-            const $panel = $focused.closest(".mega-menu__sub-box.is-active, " + ".mega-menu__sub-list[id].is-active");
+            const $panel = $focused.closest(".mega-menu__sub-box.is-active, .mega-menu__sub-list[id].is-active");
 
             if (!$panel.length) return;
 
@@ -1009,7 +1459,6 @@ const Header = (function () {
             if (e.shiftKey) return;
 
             const $focusable = getFocusableElements($header);
-
             const $last = $focusable.last();
 
             if (!$last.length) return;
@@ -1034,6 +1483,10 @@ const Header = (function () {
             returnFocus: false,
         });
 
+        closeSearch({
+            returnFocus: false,
+        });
+
         $megaMenu.find(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
 
         $megaMenu.find(".mega-menu__item.is-current").addClass(ACTIVE_PANEL_CLASS);
@@ -1050,6 +1503,55 @@ const Header = (function () {
         bindLastFocusClose();
         bindMobileMenu();
         bindLnb();
+        bindSearch();
+    }
+
+    function initMegaMenu() {
+        setPanelState($megaMenu, false);
+
+        $megaMenu.find(".mega-menu__sub-box").each(function () {
+            hidePanel($(this));
+        });
+
+        $megaMenu.find(".mega-menu__sub-list[id]").each(function () {
+            hidePanel($(this));
+        });
+    }
+
+    function initMobileMenu() {
+        if (!$mobileMenu.length) return;
+
+        resetMobileMenu({
+            focus: false,
+        });
+    }
+
+    function initLnb() {
+        if (!$lnbPanel.length) return;
+
+        $lnbMenu.removeClass(ACTIVE_PANEL_CLASS);
+
+        setExpandedState($lnbButton, false);
+
+        setPanelState($lnbPanel, false, {
+            useHidden: true,
+        });
+    }
+
+    function initSearch() {
+        if (!$searchPanel.length) return;
+
+        $header.removeClass(SEARCH_OPEN_CLASS);
+
+        setHeaderControlState($searchButton, false, {
+            open: "검색 열기",
+            close: "검색 닫기",
+        });
+
+        setPanelState($searchPanel, false);
+
+        closeSearchSuggest();
+        showSearchDefault();
     }
 
     function init() {
@@ -1062,7 +1564,6 @@ const Header = (function () {
         // Mobile menu
         $mobileMenu = $megaMenu.find(".mega-menu__mo .mobile-menu");
         $mobilePages = $mobileMenu.find(".mobile-menu__page");
-        $mobileMainPage = getMobilePage("main");
 
         // LNB
         $lnb = $(".lnb-temp");
@@ -1070,52 +1571,29 @@ const Header = (function () {
         $lnbButton = $lnb.find(".lnb-temp__button");
         $lnbPanel = $lnb.find(".lnb-temp__panel");
 
+        // Search
+        $searchButton = $(".header__search-button");
+        $searchPanel = $(".header-search");
+        $searchCloseButton = $searchPanel.find(".header-search__close");
+        $searchForm = $searchPanel.find(".header-search__box");
+        $searchInput = $searchPanel.find(".header-search__input");
+        $searchSuggest = $searchPanel.find(".header-search__suggest");
+        $searchSuggestDefault = $searchPanel.find(".header-search__suggest-default");
+        $searchAutocomplete = $searchPanel.find(".header-search__autocomplete");
+        $searchAutocompleteList = $searchPanel.find(".header-search__autocomplete-list");
+        $searchAutocompleteEmpty = $searchPanel.find(".header-search__autocomplete-empty");
+        $searchRecentList = $searchPanel.find(".header-search__recent-list");
+        $searchRecentEmpty = $searchPanel.find(".header-search__recent-empty");
+        $searchRecentClear = $searchPanel.find(".header-search__recent-clear");
+
         if (!$header.length || !$headerBox.length || !$menuButton.length || !$megaMenu.length) {
             return;
         }
 
-        $megaMenu
-            .prop({
-                //hidden: true,
-                inert: true,
-            })
-            .attr("aria-hidden", "true");
-
-        $megaMenu
-            .find(".mega-menu__sub-box")
-            .prop({
-                inert: true,
-            })
-            .attr("aria-hidden", "true");
-
-        $megaMenu
-            .find(".mega-menu__sub-list[id]")
-            .prop({
-                inert: true,
-            })
-            .attr("aria-hidden", "true");
-
-        if ($mobileMenu.length) {
-            resetMobileMenu({
-                focus: false,
-            });
-        }
-
-        if ($lnbPanel.length) {
-            $lnbMenu.removeClass(ACTIVE_PANEL_CLASS);
-
-            $lnbButton.attr({
-                "aria-expanded": "false",
-            });
-
-            $lnbPanel
-                .prop({
-                    hidden: true,
-                    inert: true,
-                })
-                .attr("aria-hidden", "true")
-                .removeClass(ACTIVE_PANEL_CLASS);
-        }
+        initMegaMenu();
+        initMobileMenu();
+        initLnb();
+        initSearch();
 
         bind();
     }
@@ -1129,9 +1607,11 @@ const Header = (function () {
         openLnb,
         closeLnb,
         toggleLnb,
+        openSearch,
+        closeSearch,
+        toggleSearch,
     };
 })();
-
 /* =========================
    Footer
 ========================= */
@@ -1527,10 +2007,10 @@ const CustomSelectbox = (function () {
         const $selectedText = $select.find(SELECTEDTEXT);
 
         if ($selectedText.length) {
-            return $.trim($selectedText.text());
+            return $selectedText.text().trim();
         }
 
-        return $.trim($select.find(SELECTED).text());
+        return $select.find(SELECTED).text().trim();
     }
 
     function setDefaultText($select) {
@@ -1567,10 +2047,10 @@ const CustomSelectbox = (function () {
         const $text = $option.find(".custom-selectbox__text");
 
         if ($text.length) {
-            return $.trim($text.text());
+            return $text.text().trim();
         }
 
-        return $.trim($option.text());
+        return $option.text().trim();
     }
 
     function setOptionSelected($option, selected) {
@@ -2007,6 +2487,65 @@ function bindSwiperAutoplayToggle() {
             }
         });
 }
+
+/* =========================
+    Scroll Engine
+    ========================= */
+const scrollEngine = (function () {
+    let triggers = [];
+    let handler = null;
+
+    function addTrigger(config) {
+        triggers.push(config);
+    }
+
+    function clear() {
+        triggers = [];
+        destroy();
+    }
+
+    function init() {
+        if (handler) return;
+
+        handler = () => {
+            const winH = window.innerHeight;
+            const scrollTop = $(window).scrollTop();
+
+            triggers.forEach(({ target, activeClass, offsetRatio }) => {
+                target.each(function () {
+                    const $el = $(this);
+                    const top = $el.offset().top;
+
+                    if (scrollTop + winH * offsetRatio > top && !$el.hasClass(activeClass)) {
+                        $el.addClass(activeClass);
+                    } else if (scrollTop + winH * offsetRatio <= top && $el.hasClass(activeClass)) {
+                        $el.removeClass(activeClass);
+                    }
+                });
+            });
+        };
+
+        $(window).on("scroll.scrollEngine", handler);
+        handler();
+    }
+
+    function refresh() {
+        handler && handler();
+    }
+
+    function destroy() {
+        $(window).off("scroll.scrollEngine");
+        handler = null;
+    }
+
+    return {
+        addTrigger,
+        clear,
+        init,
+        refresh,
+        destroy,
+    };
+})();
 
 /* =========================
    Layout Handler
