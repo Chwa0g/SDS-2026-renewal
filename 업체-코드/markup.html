@@ -14,7 +14,24 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<!-- build:js -->
 	<script src="/markup/markup.js"></script>
-	<!-- endbuild -->
+	<!-- end build -->
+	<style>
+		.download {
+			margin-bottom: 20px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			color: #333;
+		}
+
+		.download a {
+			display: inline-flex;
+			border-bottom: 1px solid;
+			font-size: 17px;
+			color: #000;
+			font-weight: 500;
+		}
+	</style>
 	<script>
 		//state-> 완료: end , 진행중: ing
 		const markupPcList = [{
@@ -149,6 +166,18 @@
 				</div>
 				<h2>SAMSUNG SDS</h2>
 				<div class="state"><span class="ing">진행중</span><span class="end">완료</span><span class="allEnd">모두완료</span></div>
+				<div class="download">
+					<a href="/v260709.zip" download="v260709.zip">현재 버전 다운로드 (v0709.zip)</a>
+					<span>: 메인(접근성)/인사이트 리포트 목록, 상세</span>
+				</div>
+				<div class="download">
+					<a href="/v260709_02.zip" download="v260709_02.zip">현재 버전 다운로드_js압축버전 (v0709_02.zip)</a>
+					<span>: 메인(접근성)/인사이트 리포트 목록, 상세</span>
+				</div>
+				<div class="download">
+					<a href="/v260713.zip" download="v260713.zip">현재 버전 다운로드 (v260713.zip)</a>
+					<span>: 메인(접근성) / 인사이트 리포트 목록, 상세</span>
+				</div>
 				<ul class="urlList">
 					<li class="head">
 						<div class="depth_1">타이틀</div>

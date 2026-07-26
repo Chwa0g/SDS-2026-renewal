@@ -884,6 +884,175 @@ const Footer = (function () {
 })();
 
 /* =========================
+   countUp
+========================= */
+const countUp = (() => {
+    let observer = null;
+
+    function parseValue(text) {
+        const raw = String(text).trim();
+        const useComma = raw.includes(",");
+        const normalized = raw.replace(/,/g, "");
+        const target = Number.parseFloat(normalized);
+
+        if (Number.isNaN(target)) return null;
+
+        const decimals = (normalized.split(".")[1] || "").length;
+
+        return {
+            target,
+            decimals,
+            useComma,
+        };
+    }
+
+    function formatValue(value, decimals, useComma) {
+        const fixedValue = Number(value).toFixed(decimals);
+
+        if (!useComma) return fixedValue;
+
+        const [integer, decimal] = fixedValue.split(".");
+        const formattedInteger = Number(integer).toLocaleString();
+
+        return decimal !== undefined ? `${formattedInteger}.${decimal}` : formattedInteger;
+    }
+
+    function setup($el) {
+        if ($el.data("countUpReady")) return;
+
+        const parsed = parseValue($el.text());
+
+        if (!parsed) return;
+
+        $el.data({
+            countUpTarget: parsed.target,
+            countUpDecimals: parsed.decimals,
+            countUpUseComma: parsed.useComma,
+            countUpReady: true,
+        });
+
+        $el.text(formatValue(0, parsed.decimals, parsed.useComma));
+    }
+
+    function animate($el, duration) {
+        setup($el);
+
+        const target = Number($el.data("countUpTarget"));
+        const decimals = Number($el.data("countUpDecimals")) || 0;
+        const useComma = Boolean($el.data("countUpUseComma"));
+
+        if (Number.isNaN(target)) return;
+
+        const animationId = `${Date.now()}-${Math.random()}`;
+
+        $el.data("countUpAnimationId", animationId);
+
+        const startTime = performance.now();
+
+        function step(now) {
+            if ($el.data("countUpAnimationId") !== animationId) {
+                return;
+            }
+
+            const progress = Math.min((now - startTime) / duration, 1);
+
+            const eased = 1 - Math.pow(1 - progress, 4);
+
+            const current = target * eased;
+
+            $el.text(formatValue(current, decimals, useComma));
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+                return;
+            }
+
+            $el.text(formatValue(target, decimals, useComma));
+        }
+
+        requestAnimationFrame(step);
+    }
+
+    function reset($el) {
+        setup($el);
+
+        const decimals = Number($el.data("countUpDecimals")) || 0;
+        const useComma = Boolean($el.data("countUpUseComma"));
+
+        $el.removeData("counted");
+        $el.removeData("countUpAnimationId");
+
+        $el.text(formatValue(0, decimals, useComma));
+    }
+
+    function init($scope, options = {}) {
+        const settings = {
+            selector: ".count-up",
+            duration: 1000,
+            threshold: 0.4,
+            repeat: true,
+            ...options,
+        };
+
+        const $targets = $scope.find(settings.selector).add($scope.filter(settings.selector));
+
+        if (!$targets.length) return;
+
+        destroy();
+
+        $targets.each(function () {
+            setup($(this));
+        });
+
+        observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const $el = $(entry.target);
+
+                    if (entry.isIntersecting) {
+                        if ($el.data("counted")) return;
+
+                        $el.data("counted", true);
+                        animate($el, settings.duration);
+
+                        if (!settings.repeat) {
+                            observer.unobserve(entry.target);
+                        }
+
+                        return;
+                    }
+
+                    if (settings.repeat) {
+                        reset($el);
+                    }
+                });
+            },
+            {
+                threshold: settings.threshold,
+            },
+        );
+
+        $targets.each(function () {
+            observer.observe(this);
+        });
+    }
+
+    function destroy() {
+        if (!observer) return;
+
+        observer.disconnect();
+        observer = null;
+    }
+
+    return {
+        init,
+        animate,
+        reset,
+        destroy,
+    };
+})();
+
+/* =========================
    swiper
 ========================= */
 const createResponsiveSwiper = function (swiperTargets = [], options = {}) {
@@ -1532,7 +1701,7 @@ const LayoutHandler = createBreakpointHandler({
     },
 
     onChange: function () {
-        // breakpoint 변경 시 필요한 작업 있으면 추가
+        // breakpoint 변경
     },
 });
 
@@ -1544,8 +1713,6 @@ $(function () {
     Header.init();
     Footer.init();
     LayoutHandler.init(true);
-
-    //const navigation = performance.getEntriesByType("navigation")[0];
 
     // 탑버튼
     $(".js-back-to-top").on("click", function () {

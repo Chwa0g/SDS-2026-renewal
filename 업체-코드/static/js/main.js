@@ -6,6 +6,8 @@ function bindSwiperAutoplayToggle() {
             const $button = $(this);
             const $swiper = $button.closest(".swiper");
 
+            console.log($swiper, "dkldld");
+
             if (!$swiper.length) return;
 
             const swiper = $swiper[0].swiper;
@@ -36,9 +38,27 @@ function createMainSwiper(key, selector, isLoop, duration = 3000, autoplayState 
                   delay: duration,
                   disableOnInteraction: false,
               },
+              //   pagination: {
+              //       el: `${selector} .swiper-pagination`,
+              //       type: "fraction",
+              //   },
               pagination: {
                   el: `${selector} .swiper-pagination`,
-                  type: "fraction",
+                  clickable: true,
+                  renderBullet(index, className) {
+                      return `
+                        <button
+                            type="button"
+                            class="${className}"
+                            aria-label="${index + 1}번째 슬라이드로 이동"
+                        >
+                            <span class="swiper-pagination-bullet__number">
+                                ${String(index + 1).padStart(2, "0")}
+                            </span>
+                            <span class="swiper-pagination-bullet__bar"></span>
+                        </button>
+                    `;
+                  },
               },
               navigation: {
                   prevEl: `${selector} .swiper-control__button--prev`,
@@ -48,9 +68,14 @@ function createMainSwiper(key, selector, isLoop, duration = 3000, autoplayState 
         : {
               slidesPerView: 1,
               watchOverflow: true,
+              loop: true,
               pagination: {
                   el: `${selector} .swiper-pagination`,
                   type: "bullets",
+              },
+              navigation: {
+                  prevEl: `${selector} .swiper-control__button--prev`,
+                  nextEl: `${selector} .swiper-control__button--next`,
               },
           };
 
@@ -78,7 +103,7 @@ function createMainSwiper(key, selector, isLoop, duration = 3000, autoplayState 
         if (swiper && swiper.autoplay) {
             swiper.autoplay.stop();
 
-            $(selector).find(".swiper-control__button--play").addClass("is-paused").attr("aria-label", "슬라이드 재생");
+            if ($(selector).find(".swiper-control__button--play").length > 0) $(selector).find(".swiper-control__button--play").addClass("is-paused").attr("aria-label", "슬라이드 재생");
         }
     }
 
@@ -86,18 +111,23 @@ function createMainSwiper(key, selector, isLoop, duration = 3000, autoplayState 
 }
 
 $(function () {
+    countUp.init($(".main"), {
+        duration: 1500,
+        threshold: 0.4,
+        repeat: true,
+    });
+
     // KV
     const mainKvSwiperHero = createMainSwiper("mainKvSwiperHero", ".main-kv__swiper--hero", true, 7000);
 
     const mainKvSwiper01 = createMainSwiper("mainKvSwiper01", ".main-kv__swiper--insight");
     const mainKvSwiper02 = createMainSwiper("mainKvSwiper02", ".main-kv__swiper--resource");
     const mainKvSwiper03 = createMainSwiper("mainKvSwiper03", ".main-kv__swiper--summit");
-    const mainKvSwiper04 = createMainSwiper("mainKvSwiper04", ".main-kv__swiper--case");
-    const mainKvSwiper05 = createMainSwiper("mainKvSwiper05", ".main-kv__swiper--news", true, 5000, "paused");
-
+    const mainKvSwiper04 = createMainSwiper("mainKvSwiper04", ".main-kv__swiper--case", true, 5000, "paused");
+    const mainKvSwiper05 = createMainSwiper("mainKvSwiper05", ".main-kv__swiper--news");
     // promotion
-    const mainPromotionSwiper01 = createMainSwiper("mainPromotionSwiper01", ".main-promotion__swiper--event", true, 5000);
-    const mainPromotionSwiper02 = createMainSwiper("mainPromotionSwiper02", ".main-promotion__swiper--award", true, 5000);
+    const mainPromotionSwiper01 = createMainSwiper("mainPromotionSwiper01", ".main-promotion__swiper--event", true, 5000, "paused");
+    const mainPromotionSwiper02 = createMainSwiper("mainPromotionSwiper02", ".main-promotion__swiper--award", true, 5000, "paused");
 
     // insight
     const MainInsightSwiper = (function () {
@@ -115,7 +145,24 @@ $(function () {
                 pagination: {
                     el: `${SELECTOR} .swiper-pagination`,
                     clickable: true,
-                    type: "bullets",
+                    renderBullet(index, className) {
+                        return `
+                        <button
+                            type="button"
+                            class="${className}"
+                            aria-label="${index + 1}번째 슬라이드로 이동"
+                        >
+                            <span class="swiper-pagination-bullet__number">
+                                ${String(index + 1).padStart(2, "0")}
+                            </span>
+                            <span class="swiper-pagination-bullet__bar"></span>
+                        </button>
+                    `;
+                    },
+                },
+                navigation: {
+                    prevEl: `${SELECTOR} .swiper-control__button--prev`,
+                    nextEl: `${SELECTOR} .swiper-control__button--next`,
                 },
             });
         }
@@ -139,6 +186,10 @@ $(function () {
         const ITEM_SELECTOR = ".main-insight__item";
         const BUTTON_SELECTOR = ".main-insight__button";
         const DESCRIPTION_SELECTOR = ".main-insight__description--footer";
+        const PAGINATION_SELECTOR = ".swiper-pagination";
+        const BULLET_SELECTOR = ".swiper-pagination-bullet";
+        const PREV_SELECTOR = ".swiper-control__button--prev";
+        const NEXT_SELECTOR = ".swiper-control__button--next";
 
         const ACTIVE_CLASS = "is-active";
         const CLONE_CLASS = "is-clone";
@@ -181,7 +232,102 @@ $(function () {
         function setup() {
             removeClones();
             resetTransform(false);
+            renderPagination();
             applyNormalState(false);
+        }
+
+        function restoreOriginalOrder() {
+            const $realItems = getRealItems();
+
+            $realItems
+                .sort(function (a, b) {
+                    return Number($(a).attr("data-index")) - Number($(b).attr("data-index"));
+                })
+                .appendTo($list);
+        }
+
+        function renderPagination() {
+            const $pagination = $swiper.find(PAGINATION_SELECTOR).first();
+            const itemLength = getRealItems().length;
+
+            if (!$pagination.length) return;
+
+            let html = "";
+
+            for (let index = 0; index < itemLength; index++) {
+                html += `
+                <button
+                    type="button"
+                    class="swiper-pagination-bullet"
+                    aria-label="${index + 1}번째 슬라이드로 이동"
+                    data-index="${index}"
+                >
+                    <span class="swiper-pagination-bullet__number">
+                        ${String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span class="swiper-pagination-bullet__bar"></span>
+                </button>
+            `;
+            }
+
+            $pagination.html(html);
+        }
+
+        function updatePaginationByItem($item) {
+            if (!$item || !$item.length) return;
+
+            const activeIndex = Number($item.attr("data-index"));
+            const $bullets = $swiper.find(BULLET_SELECTOR);
+
+            if (Number.isNaN(activeIndex) || !$bullets.length) return;
+
+            $bullets.removeClass("swiper-pagination-bullet-active").removeAttr("aria-current");
+
+            $bullets.filter(`[data-index="${activeIndex}"]`).addClass("swiper-pagination-bullet-active").attr("aria-current", "true");
+        }
+
+        function slideToOriginalIndex(targetIndex) {
+            if (isAnimating) return;
+
+            const $realItems = getRealItems();
+
+            const $targetItem = $realItems.filter(function () {
+                return Number($(this).attr("data-index")) === targetIndex;
+            });
+
+            if (!$targetItem.length) return;
+
+            const step = $realItems.index($targetItem);
+
+            if (step <= 0) return;
+
+            slideTo(step);
+        }
+
+        function bindControl() {
+            $swiper.off(".mainInsightControl");
+
+            $swiper.on("click.mainInsightControl", BULLET_SELECTOR, function () {
+                const targetIndex = Number($(this).attr("data-index"));
+
+                if (Number.isNaN(targetIndex)) return;
+
+                slideToOriginalIndex(targetIndex);
+            });
+
+            $swiper.on("click.mainInsightControl", NEXT_SELECTOR, function () {
+                if (isAnimating || getRealItems().length <= 1) return;
+
+                slideTo(1);
+            });
+
+            $swiper.on("click.mainInsightControl", PREV_SELECTOR, function () {
+                const itemLength = getRealItems().length;
+
+                if (isAnimating || itemLength <= 1) return;
+
+                slideTo(itemLength - 1);
+            });
         }
 
         function bindResize() {
@@ -253,6 +399,7 @@ $(function () {
                 slideTo(clickedIndex);
             });
 
+            bindControl();
             bindResize();
         }
 
@@ -274,7 +421,6 @@ $(function () {
             removeClones();
 
             const $movingItems = $realItems.slice(0, step);
-
             const $clones = $movingItems.clone(false);
 
             $clones.addClass(CLONE_CLASS).removeClass(ACTIVE_CLASS).attr("aria-hidden", "true");
@@ -286,9 +432,6 @@ $(function () {
             resetTransform(false);
             applyNormalStateWithClones(step, false);
 
-            /*
-             * 브라우저가 clone 추가 상태를 먼저 렌더링하도록 함
-             */
             forceReflow();
 
             requestAnimationFrame(function () {
@@ -315,9 +458,6 @@ $(function () {
             const $realItems = getRealItems();
             const $movingItems = $realItems.slice(0, step);
 
-            /*
-             * 앞쪽 요소를 실제 DOM 뒤로 이동
-             */
             $list.append($movingItems);
 
             removeClones();
@@ -327,9 +467,6 @@ $(function () {
 
             isAnimating = false;
 
-            /*
-             * 키보드로 실행한 경우에만
-             */
             if (isKeyboardAction && $focusTarget.length && $.contains(document, $focusTarget[0])) {
                 $focusTarget.trigger("focus");
             }
@@ -353,7 +490,9 @@ $(function () {
             });
 
             $realItems.eq(0).addClass(ACTIVE_CLASS);
+
             updateDescriptionByItem($realItems.eq(0));
+            updatePaginationByItem($realItems.eq(0));
         }
 
         function applyNormalStateWithClones(step, animate) {
@@ -408,9 +547,6 @@ $(function () {
                     return;
                 }
 
-                /*
-                 * 클릭한 항목부터 is-pos-0 적용
-                 */
                 const pos = index - step;
                 const ratio = getNormalRatio(pos);
 
@@ -418,9 +554,6 @@ $(function () {
                 $item.addClass(`${POS_PREFIX}${pos}`);
             });
 
-            /*
-             * 오른쪽 clone의 위치
-             */
             $clones.each(function (index) {
                 const $clone = $(this);
                 const pos = WIDTH_RATIOS.length - step + index;
@@ -431,7 +564,9 @@ $(function () {
             });
 
             $realItems.eq(step).addClass(ACTIVE_CLASS);
+
             updateDescriptionByItem($realItems.eq(step));
+            updatePaginationByItem($realItems.eq(step));
         }
 
         function updateDescriptionByItem($item) {
@@ -556,11 +691,14 @@ $(function () {
             clearKeyboardState();
 
             $(window).off(".mainInsightResize");
+            $swiper.off(".mainInsightControl");
 
             if ($list.length) {
                 $list.off(".mainInsight");
 
                 removeClones();
+                restoreOriginalOrder();
+
                 resetTransform(false);
                 applyNormalState(false);
             }
@@ -582,6 +720,28 @@ $(function () {
                 options: {
                     slidesPerView: 1.6,
                     spaceBetween: 15,
+                    pagination: {
+                        el: ".main-service__swiper .swiper-pagination",
+                        clickable: true,
+                        renderBullet(index, className) {
+                            return `
+                        <button
+                            type="button"
+                            class="${className}"
+                            aria-label="${index + 1}번째 슬라이드로 이동"
+                        >
+                            <span class="swiper-pagination-bullet__number">
+                                ${String(index + 1).padStart(2, "0")}
+                            </span>
+                            <span class="swiper-pagination-bullet__bar"></span>
+                        </button>
+                    `;
+                        },
+                    },
+                    navigation: {
+                        prevEl: ".main-service__swiper .swiper-control__button--prev",
+                        nextEl: ".main-service__swiper .swiper-control__button--next",
+                    },
                     breakpoints: {
                         768: {
                             slidesPerView: 2.7,
@@ -606,25 +766,25 @@ $(function () {
     bindSwiperAutoplayToggle();
 
     // 링크
-    $(".js-link-group").each(function () {
-        const $group = $(this);
-        const $more = $group.find(".js-link-more");
+    // $(".js-link-group").each(function () {
+    //     const $group = $(this);
+    //     const $more = $group.find(".js-link-more");
 
-        $more.on("click", function () {
-            const $activeItem = $group.find(".js-link-item").filter(".swiper-slide-active, .is-active").first();
-            const href = $activeItem.data("href");
-            const target = $activeItem.data("target");
+    //     $more.on("click", function () {
+    //         const $activeItem = $group.find(".js-link-item").filter(".swiper-slide-active, .is-active").first();
+    //         const href = $activeItem.data("href");
+    //         const target = $activeItem.data("target");
 
-            if (!href) return;
+    //         if (!href) return;
 
-            if (target === "_blank") {
-                window.open(href, "_blank");
-                return;
-            }
+    //         if (target === "_blank") {
+    //             window.open(href, "_blank");
+    //             return;
+    //         }
 
-            window.location.href = href;
-        });
-    });
+    //         window.location.href = href;
+    //     });
+    // });
 
     const MainHandler = createBreakpointHandler({
         breakpoint: 1024,
