@@ -1,33 +1,3 @@
-// 자동 재생 - 공통
-function bindSwiperAutoplayToggle() {
-    $(document)
-        .off("click.swiperAutoplayToggle")
-        .on("click.swiperAutoplayToggle", ".swiper-control__button--play", function () {
-            const $button = $(this);
-            const $swiper = $button.closest(".swiper");
-
-            console.log($swiper, "dkldld");
-
-            if (!$swiper.length) return;
-
-            const swiper = $swiper[0].swiper;
-
-            if (!swiper || !swiper.autoplay) return;
-
-            const isPaused = $button.hasClass("is-paused");
-
-            if (isPaused) {
-                swiper.autoplay.start();
-
-                $button.removeClass("is-paused").attr("aria-label", "슬라이드 정지");
-            } else {
-                swiper.autoplay.stop();
-
-                $button.addClass("is-paused").attr("aria-label", "슬라이드 재생");
-            }
-        });
-}
-
 // KV 스와이퍼
 function createMainSwiper(key, selector, isLoop, duration = 3000, autoplayState = "playing") {
     const options = isLoop
@@ -38,10 +8,6 @@ function createMainSwiper(key, selector, isLoop, duration = 3000, autoplayState 
                   delay: duration,
                   disableOnInteraction: false,
               },
-              //   pagination: {
-              //       el: `${selector} .swiper-pagination`,
-              //       type: "fraction",
-              //   },
               pagination: {
                   el: `${selector} .swiper-pagination`,
                   clickable: true,

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="kr">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="description" content="" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<!-- favicon -->
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<!-- <link rel="icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicon/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/static/images/favicon/android-chrome-512x512.png" />
+<meta name="theme-color" content="#ffffff" /> -->
+
+	<title>SAMSUNG SDS-POPUP</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+	<link rel="stylesheet" href="/static/css/guide.css" />
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="/static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<style>
+	.design-guide-wrap {
+		display: none;
+	}
+
+	.code-view .layer-popup {
+		position: relative;
+		height: 1080px;
+		display: block;
+	}
+
+	.red {
+		color: red;
+	}
+</style>
+
+<body>
+	<div id="wrapper" class="design-guide">
+		<main>
+			<!-- popup -->
+			<div class="design-guide-wrap is-on">
+				<h1>POPUP</h1>
+				<div class="text-box">
+					**팝업 실행: <span class="red">popup.open('class나 id');</span><br />
+                        **팝업 종료: <span class="red">popup.close('class나 id');</span><br />
+				</div>
+				<table class="table-a">
+					<caption>
+						팝업
+					</caption>
+					<colgroup>
+						<col style="width: 200px" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">코드</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>알림창</th>
+							<td>
+								<div class="code-box">
+									<p>확인 버튼</p>
+									<div class="js-code">
+										**실행방법
+										<span class="red"> popup.confirm('들어갈 텍스트'); </span>
+									</div>
+									<div class="code-view">
+										<div class="layer-popup pop-confirm" style="height: 300px">
+											<div class="popup-wrap">
+												<div class="popup-inner">
+													<div class="popup-body">
+														<p class="confirm-text title-s2">들어갈 텍스트</p>
+														<div class="btn-wrap"><a href="#" class="btn-type-b btn-check">확인</a></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="code-box">
+									<p>취소, 확인 버튼</p>
+									<div class="js-code">
+										**실행방법
+										<span class="red">
+                                                버튼에 기능 넣고 싶을 때 popup.confirm({ text: '들어갈 텍스트', cancel: function(){ 처리할 취소 fn(); }, check: function(){ 처리할 확인 fn(); } });
+                                                없으면 지워도 됩니다. popup.confirm({ text: '들어갈 텍스트', check: function(){ 처리할 확인 fn(); } });
+                                            </span>
+									</div>
+									<div class="code-view">
+										<div class="layer-popup pop-confirm" style="height: 300px">
+											<div class="popup-wrap">
+												<div class="popup-inner">
+													<div class="popup-body">
+														<p class="confirm-text title-s2">들어갈 텍스트</p>
+														<div class="btn-wrap"><a href="#" class="btn-type-c btn-cancel">취소</a><a href="#" class="btn-type-b btn-check">확인</a></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>유튜브 팝업</th>
+							<td>
+								<div class="code-box">
+									<p>pr/media.html</p>
+									<div class="code-view">
+										<div class="layer-popup pop-humanright" id="humanrightPop1" style="height: 400px">
+											<div class="popup-wrap">
+												<div class="popup-inner">
+													<div class="popup-head">
+														<p class="humanright-title title-s2">제목</p>
+														<a href="#" class="btn-close">닫기</a>
+													</div>
+													<ul class="humanright-cont">
+														<li>내용</li>
+														<li>내용</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>유튜브 팝업</th>
+							<td>
+								<div class="code-box">
+									<p>pr/media.html</p>
+									<div class="code-view">
+										<div class="layer-popup pop-youtube" id="youtebePop">
+											<div class="popup-wrap">
+												<div class="popup-inner">
+													<div class="popup-head">
+														<div class="youtube-title title-s1">[동아IR주유소] 올리고를 알면 길이 보인다! 필요한 정보 쪽집게 과외</div>
+														<p class="text-3">
+															✌ 동아IR주유소 ✌ '올리고가 뭐지?편’은 글로벌 CDMO 비즈니스를 하는 에스티팜의 주력 사업, 올리고 약물에 대해 쉽게 이해하기 위해 준비한
+															이야기입니다.
+														</p>
+														<a href="#" class="btn-close">닫기</a>
+													</div>
+													<div class="youtube">
+														<iframe src="https://www.youtube.com/embed/IBG4hCwqq6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- // popup -->
+		</main>
+	</div>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+	$(function() {
+		$(".code-box").each(function() {
+			let str = $(this).find(".code-view").html(),
+				_ = $(this);
+			_.append('<div class="code-text-wrap"><a href="javascript:void(0);" class="code-toggle">코드 보기</a><div class="code-text"></div></div>');
+			_.find(".code-text").text(str);
+			_.find(".code-toggle").on("click", function() {
+				_.find(".code-text-wrap").toggleClass("on");
+			});
+		});
+	});
+</script>
+<!--//페이지 관련 스크립트 -->
+
+</html>

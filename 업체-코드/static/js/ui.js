@@ -314,6 +314,17 @@ const Header = (function () {
     let $menuButton = $();
     let $megaMenu = $();
 
+    // Mobile menu
+    let $mobileMenu = $();
+    let $mobilePages = $();
+    let $mobileMainPage = $();
+
+    // LNB
+    let $lnb = $();
+    let $lnbMenu = $();
+    let $lnbButton = $();
+    let $lnbPanel = $();
+
     function getFocusableElements($scope) {
         return $scope
             .find(FOCUSABLE_SELECTOR)
@@ -364,8 +375,13 @@ const Header = (function () {
         }
     }
 
+    /* =========================
+       전체 메뉴
+    ========================= */
     function open() {
         if ($header.hasClass(ACTIVE_CLASS)) return;
+
+        closeLnb();
 
         $header.addClass(ACTIVE_CLASS);
 
@@ -376,7 +392,7 @@ const Header = (function () {
 
         $megaMenu
             .prop({
-                hidden: false,
+                // hidden: false,
                 inert: false,
             })
             .attr("aria-hidden", "false");
@@ -397,10 +413,11 @@ const Header = (function () {
         });
 
         resetDepth();
+        resetMobileMenu();
 
         $megaMenu
             .prop({
-                hidden: true,
+                //hidden: true,
                 inert: true,
             })
             .attr("aria-hidden", "true");
@@ -424,6 +441,203 @@ const Header = (function () {
         return false;
     }
 
+    /* =========================
+       Mobile menu
+    ========================= */
+    function getMobilePage(pageName) {
+        if (!pageName) return $();
+
+        return $mobilePages.filter(`[data-menu-page="${pageName}"]`).first();
+    }
+
+    function hideMobilePage($page) {
+        if (!$page.length) return;
+
+        $page.removeClass(ACTIVE_PANEL_CLASS).prop("inert", true).attr("aria-hidden", "true");
+    }
+
+    function showMobilePage(pageName, options = {}) {
+        const { focus = true } = options;
+        const $targetPage = getMobilePage(pageName);
+
+        if (!$targetPage.length) return;
+
+        $mobilePages.each(function () {
+            hideMobilePage($(this));
+        });
+
+        $targetPage.addClass(ACTIVE_PANEL_CLASS).prop("inert", false).attr("aria-hidden", "false");
+
+        const $scroll = $targetPage.find(".mobile-menu__scroll").first();
+
+        if ($scroll.length) {
+            $scroll.scrollTop(0);
+        }
+
+        if (!focus) return;
+
+        const $focusTarget = $targetPage.find("[data-menu-back], .mobile-menu__section-button, .mobile-menu__link").filter(":visible").first();
+
+        if ($focusTarget.length) {
+            $focusTarget.trigger("focus");
+        }
+    }
+
+    function setMobileSection($section, isOpen) {
+        const $button = $section.find("> .mobile-menu__section-button");
+        const panelId = $button.attr("aria-controls");
+        const $panel = panelId ? $section.find(`#${panelId}`) : $();
+
+        $section.toggleClass("is-open", isOpen);
+
+        $button.attr("aria-expanded", String(isOpen));
+
+        if ($panel.length) {
+            $panel.prop("inert", !isOpen).attr("aria-hidden", String(!isOpen));
+        }
+    }
+
+    function resetMobileMenu(options = {}) {
+        const { focus = false } = options;
+
+        if (!$mobileMenu.length || !$mobilePages.length) return;
+
+        showMobilePage("main", {
+            focus,
+        });
+    }
+
+    function bindMobileSectionAccordion() {
+        $mobileMenu
+            .find(".mobile-menu__section-button")
+            .off("click.mobileMenu")
+            .on("click.mobileMenu", function (e) {
+                e.preventDefault();
+
+                const $button = $(this);
+                const $section = $button.closest(".mobile-menu__section");
+                const isOpen = $button.attr("aria-expanded") === "true";
+
+                setMobileSection($section, !isOpen);
+            });
+    }
+
+    function bindMobilePageMove() {
+        $mobileMenu
+            .find("[data-menu-target]")
+            .off("click.mobileMenu")
+            .on("click.mobileMenu", function (e) {
+                const targetPage = $(this).attr("data-menu-target");
+
+                if (!getMobilePage(targetPage).length) return;
+
+                e.preventDefault();
+
+                showMobilePage(targetPage);
+            });
+    }
+
+    function bindMobileBack() {
+        $mobileMenu
+            .find("[data-menu-back]")
+            .off("click.mobileMenu")
+            .on("click.mobileMenu", function (e) {
+                e.preventDefault();
+
+                const $currentPage = $(this).closest(".mobile-menu__page");
+                const parentPage = $currentPage.attr("data-parent-page") || "main";
+
+                showMobilePage(parentPage);
+            });
+    }
+
+    function bindMobileHome() {
+        $mobileMenu
+            .find("[data-menu-home]")
+            .off("click.mobileMenu")
+            .on("click.mobileMenu", function (e) {
+                e.preventDefault();
+
+                resetMobileMenu({
+                    focus: true,
+                });
+            });
+    }
+
+    function bindMobileMenu() {
+        if (!$mobileMenu.length) return;
+
+        bindMobileSectionAccordion();
+        bindMobilePageMove();
+        bindMobileBack();
+        bindMobileHome();
+    }
+
+    /* =========================
+       LNB
+    ========================= */
+    function openLnb() {
+        if (!$lnbButton.length || !$lnbPanel.length) return;
+
+        if ($header.hasClass(ACTIVE_CLASS)) {
+            close({
+                returnFocus: false,
+            });
+        }
+
+        $lnbMenu.addClass(ACTIVE_PANEL_CLASS);
+
+        $lnbButton.attr({
+            "aria-expanded": "true",
+        });
+
+        $lnbPanel
+            .prop({
+                hidden: false,
+                inert: false,
+            })
+            .attr("aria-hidden", "false")
+            .addClass(ACTIVE_PANEL_CLASS);
+    }
+
+    function closeLnb(options = {}) {
+        const { returnFocus = false } = options;
+
+        if (!$lnbButton.length || !$lnbPanel.length) return;
+
+        $lnbMenu.removeClass(ACTIVE_PANEL_CLASS);
+
+        $lnbButton.attr({
+            "aria-expanded": "false",
+        });
+
+        $lnbPanel
+            .prop({
+                hidden: true,
+                inert: true,
+            })
+            .attr("aria-hidden", "true")
+            .removeClass(ACTIVE_PANEL_CLASS);
+
+        if (returnFocus) {
+            $lnbButton.trigger("focus");
+        }
+    }
+
+    function toggleLnb() {
+        const isOpen = $lnbButton.attr("aria-expanded") === "true";
+
+        if (isOpen) {
+            closeLnb();
+            return;
+        }
+
+        openLnb();
+    }
+
+    /* =========================
+       Mega menu panel
+    ========================= */
     function getPanel($link) {
         const panelId = $link.attr("aria-controls");
 
@@ -534,11 +748,61 @@ const Header = (function () {
         return true;
     }
 
+    /* =========================
+       Events
+    ========================= */
     function bindMenuButton() {
         $menuButton.off("click.header").on("click.header", function (e) {
             e.preventDefault();
 
             toggle();
+        });
+    }
+
+    function bindLnb() {
+        if (!$lnb.length || !$lnbButton.length || !$lnbPanel.length) {
+            return;
+        }
+
+        $lnbButton.off("click.lnb").on("click.lnb", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            toggleLnb();
+        });
+
+        $lnbPanel.off("click.lnb").on("click.lnb", function (e) {
+            e.stopPropagation();
+        });
+
+        $(document)
+            .off("click.lnbOutside")
+            .on("click.lnbOutside", function (e) {
+                if ($lnbButton.attr("aria-expanded") !== "true") {
+                    return;
+                }
+
+                const $target = $(e.target);
+
+                if ($target.closest(".lnb-temp__menu").length) {
+                    return;
+                }
+
+                closeLnb();
+            });
+
+        $win.off("keydown.lnb").on("keydown.lnb", function (e) {
+            if (e.key !== "Escape") return;
+
+            if ($lnbButton.attr("aria-expanded") !== "true") {
+                return;
+            }
+
+            e.preventDefault();
+
+            closeLnb({
+                returnFocus: true,
+            });
         });
     }
 
@@ -724,7 +988,9 @@ const Header = (function () {
 
             const $first = getFocusableElements($panel).first();
 
-            if (!$first.length || e.target !== $first[0]) return;
+            if (!$first.length || e.target !== $first[0]) {
+                return;
+            }
 
             const $controller = getController($panel);
 
@@ -764,6 +1030,10 @@ const Header = (function () {
             returnFocus: false,
         });
 
+        closeLnb({
+            returnFocus: false,
+        });
+
         $megaMenu.find(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
 
         $megaMenu.find(".mega-menu__item.is-current").addClass(ACTIVE_PANEL_CLASS);
@@ -778,6 +1048,8 @@ const Header = (function () {
         bindSubDepthHasPanel();
         bindBackToParentDepth();
         bindLastFocusClose();
+        bindMobileMenu();
+        bindLnb();
     }
 
     function init() {
@@ -787,13 +1059,24 @@ const Header = (function () {
         $menuButton = $(".header__menu-button");
         $megaMenu = $("#megaMenu");
 
+        // Mobile menu
+        $mobileMenu = $megaMenu.find(".mega-menu__mo .mobile-menu");
+        $mobilePages = $mobileMenu.find(".mobile-menu__page");
+        $mobileMainPage = getMobilePage("main");
+
+        // LNB
+        $lnb = $(".lnb-temp");
+        $lnbMenu = $lnb.find(".lnb-temp__menu");
+        $lnbButton = $lnb.find(".lnb-temp__button");
+        $lnbPanel = $lnb.find(".lnb-temp__panel");
+
         if (!$header.length || !$headerBox.length || !$menuButton.length || !$megaMenu.length) {
             return;
         }
 
         $megaMenu
             .prop({
-                hidden: true,
+                //hidden: true,
                 inert: true,
             })
             .attr("aria-hidden", "true");
@@ -812,6 +1095,28 @@ const Header = (function () {
             })
             .attr("aria-hidden", "true");
 
+        if ($mobileMenu.length) {
+            resetMobileMenu({
+                focus: false,
+            });
+        }
+
+        if ($lnbPanel.length) {
+            $lnbMenu.removeClass(ACTIVE_PANEL_CLASS);
+
+            $lnbButton.attr({
+                "aria-expanded": "false",
+            });
+
+            $lnbPanel
+                .prop({
+                    hidden: true,
+                    inert: true,
+                })
+                .attr("aria-hidden", "true")
+                .removeClass(ACTIVE_PANEL_CLASS);
+        }
+
         bind();
     }
 
@@ -821,6 +1126,9 @@ const Header = (function () {
         close,
         toggle,
         reset,
+        openLnb,
+        closeLnb,
+        toggleLnb,
     };
 })();
 
@@ -1673,6 +1981,34 @@ const CustomSelectbox = (function () {
 //$select.trigger("change.customSelect", [value, text]);
 
 /* =========================
+   Etc
+========================= */
+function bindSwiperAutoplayToggle() {
+    $(document)
+        .off("click.swiperAutoplayToggle")
+        .on("click.swiperAutoplayToggle", ".swiper-control__button--play", function () {
+            const $button = $(this);
+            const $swiper = $button.closest(".swiper");
+
+            if (!$swiper.length) return;
+
+            const swiper = $swiper[0].swiper;
+
+            if (!swiper || !swiper.autoplay) return;
+
+            const isPaused = $button.hasClass("is-paused");
+
+            if (isPaused) {
+                swiper.autoplay.start();
+                $button.removeClass("is-paused").attr("aria-label", "슬라이드 정지");
+            } else {
+                swiper.autoplay.stop();
+                $button.addClass("is-paused").attr("aria-label", "슬라이드 재생");
+            }
+        });
+}
+
+/* =========================
    Layout Handler
 ========================= */
 const LayoutHandler = createBreakpointHandler({
@@ -1682,7 +2018,7 @@ const LayoutHandler = createBreakpointHandler({
     onReset: function () {
         $("html").removeClass("layout-pc layout-mo");
 
-        Header.reset();
+        //Header.reset();
         Footer.reset();
     },
 

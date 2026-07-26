@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="kr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="description" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <!-- favicon -->
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <!-- <link rel="icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicon/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/static/images/favicon/android-chrome-512x512.png" />
+<meta name="theme-color" content="#ffffff" /> -->
+
+        <title>guide</title>
+        <title>SAMSUNG SDS-ETC</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/static/css/swiper.css" />
+        <link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+        <link rel="stylesheet" href="/static/css/guide.css" />
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="/static/js/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+        <script src="/static/js/ui.js"></script>
+    </head>
+    <style>
+        .design-guide-wrap {
+            display: none;
+        }
+    </style>
+
+    <body>
+        <div id="wrapper" class="design-guide">
+            <main>
+                <aside class="sidebar">
+                    <div class="sidebar-logo">
+                        <div class="name">UI 컴포넌트 가이드</div>
+                        <div class="version">Project Guide · v1.1</div>
+                    </div>
+                    <div class="sidebar-section">폼 요소</div>
+                    <a class="sidebar-link sidebar-link-button active" href="?button"> <span class="dot"></span>Button</a>
+                    <a class="sidebar-link sidebar-link-form" href="?form"><span class="dot"></span>select</a>
+                </aside>
+                <!-- button -->
+                <div class="design-guide-wrap">
+                    <div class="design-guide-wrap panel-button">
+                        <h1>Button</h1>
+                        <table class="table-a">
+                            <caption>
+                                버튼 공통
+                            </caption>
+                            <colgroup>
+                                <col style="width: 200px" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">구분</th>
+                                    <th scope="col">defult</th>
+                                    <th scope="col">on</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>disabled</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>btn-a</th>
+                                    <td colspan="2">
+                                        <div class="code-box">
+                                            <div class="code-view">
+                                                <div class="bottom-btn-wrap">
+                                                    <a href="#" class="btn-type-a"><span>더 보기</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>btn-b/th></th>
+                                    <td colspan="2">
+                                        <style>
+                                            .btn-type-b {
+                                                width: 110px;
+                                                line-height: 40px;
+                                                border-radius: 20px;
+                                            }
+                                        </style>
+                                        <div class="code-box">
+                                            <div class="code-view">
+                                                <a href="#" class="btn-type-b"><span>더 보기</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>link</th>
+                                    <td colspan="2">
+                                        <div class="code-box">
+                                            <p>더보기 버튼 - 블랙</p>
+                                            <div class="code-view">
+                                                <a href="#" title="헬스케어" class="btn-page-move"><span>MORE VIEW</span><i class="ico-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="code-box">
+                                            <p>더보기 버튼 - 화이트</p>
+                                            <div class="code-view" style="padding: 10px 0; background-color: #000">
+                                                <a href="#" title="헬스케어" class="btn-page-move white"><span>MORE VIEW</span><i class="ico-link"></i></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>자세히 보기</th>
+                                    <td colspan="2">
+                                        <div class="code-box">
+                                            <div class="code-view">
+                                                <a href="#" class="btn-detail"><span>자세히 보기</span></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- // button -->
+                    <!-- form -->
+                    <div class="design-guide-wrap panel-form">
+                        <h1>Form</h1>
+                        <table class="table-a">
+                            <caption>
+                                폼 공통
+                            </caption>
+                            <colgroup>
+                                <col style="width: 200px" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2">구분</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>select</th>
+                                    <td>
+                                        <style>
+                                            select {
+                                                padding-left: 10px;
+                                                height: 45px;
+                                                width: 250px;
+                                            }
+                                        </style>
+                                        <div class="code-box">
+                                            <p>셀렉트박스 - 멀티, 업데이트X</p>
+                                            <br />
+                                            <p style="font-size: 14px; color: red">
+                                                data-multiple="true" <br />
+                                                data-update-title="false"<br />
+                                                <br />
+                                                <span style="color: #666"> 미리 선택하려면 input에 checked 넣어주세요. </span>
+                                            </p>
+                                            <div class="code-view">
+                                                <div class="custom-selectbox" data-multiple="true" data-update-title="false" style="max-width: 30rem">
+                                                    <button type="button" class="custom-selectbox__selected">셀렉트박스 제목</button>
+                                                    <div class="custom-selectbox__box">
+                                                        <div class="custom-selectbox__box-inner">
+                                                            <div class="custom-selectbox__list">
+                                                                <div class="custom-selectbox__title">제목 입력</div>
+                                                                <div class="custom-selectbox__options">
+                                                                    <label class="custom-selectbox__option custom-selectbox__option--all">
+                                                                        <input type="checkbox" class="custom-selectbox__checkbox" />
+                                                                        <div class="custom-selectbox__label">
+                                                                            <span class="custom-selectbox__text">전체선택</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="custom-selectbox__option">
+                                                                        <input type="checkbox" class="custom-selectbox__checkbox" value="chk01_01" checked />
+                                                                        <div class="custom-selectbox__label">
+                                                                            <span class="custom-selectbox__text">선택1</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="custom-selectbox__option">
+                                                                        <input type="checkbox" class="custom-selectbox__checkbox" value="chk01_02" />
+                                                                        <div class="custom-selectbox__label">
+                                                                            <span class="custom-selectbox__text">선택2</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="custom-selectbox__option">
+                                                                        <input type="checkbox" class="custom-selectbox__checkbox" value="chk01_03" />
+                                                                        <div class="custom-selectbox__label">
+                                                                            <span class="custom-selectbox__text">선택3</span>
+                                                                        </div>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-selectbox__footer">
+                                                                    <button type="button" class="custom-selectbox__close">확인</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" class="custom-selectbox__input" name="chk01" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="code-box">
+                                            <p>셀렉트박스 - 멀티, 업데이트O</p>
+                                            <br />
+                                            <p style="font-size: 14px; color: red">
+                                                data-multiple="true" <br />
+                                                data-update-title="true"<br />
+                                            </p>
+                                            <div class="code-view">
+                                                <div class="custom-selectbox" data-multiple="true" data-update-title="true" style="max-width: 30rem">
+                                                    <button type="button" class="custom-selectbox__selected">셀렉트박스 제목</button>
+                                                    <div class="custom-selectbox__box">
+                                                        <div class="custom-selectbox__box-inner">
+                                                            <div class="custom-selectbox__list">
+                                                                <div class="custom-selectbox__title">제목 입력</div>
+                                                                <div class="custom-selectbox__options">
+                                                                    <label class="custom-selectbox__option custom-selectbox__option--all">
+                                                                        <input type="checkbox" class="custom-selectbox__checkbox" />
+                                                                        <div class="custom-selectbox__label">
+                                                                            <span class="custom-selectbox__text">전체선택</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="custom-selectbox__option">
+                                                                        <input type="checkbox" class="custom-selectbox__checkbox" value="chk02_01" />
+                                                                        <div class="custom-selectbox__label">
+                                                                            <span class="custom-selectbox__text">선택1</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="custom-selectbox__option">
+                                                                        <input type="checkbox" class="custom-selectbox__checkbox" value="chk02_02" checked />
+                                                                        <div class="custom-selectbox__label">
+                                                                            <span class="custom-selectbox__text">선택2</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="custom-selectbox__option">
+                                                                        <input type="checkbox" class="custom-selectbox__checkbox" value="chk02_03" checked />
+                                                                        <div class="custom-selectbox__label">
+                                                                            <span class="custom-selectbox__text">선택3</span>
+                                                                        </div>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="custom-selectbox__footer">
+                                                                    <button type="button" class="custom-selectbox__close">확인</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" class="custom-selectbox__input" name="chk01" value="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $(function () {
+                                                CustomSelectbox.init();
+                                            });
+                                        </script>
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                <th>문의 폼</th>
+                                <td>
+                                    <div class="code-box">
+                                        <style>
+                                            .field-table {
+                                                text-align: left;
+                                            }
+                                        </style>
+                                        <div class="code-view">
+                                            <div class="field-table">
+                                                <div class="field-wrap">
+                                                    <div class="field user">
+                                                        <strong class="field-name">한줄<span class="ess">*</span></strong>
+                                                        <div class="field-insert">
+                                                            <input type="text" name="" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field-wrap">
+                                                    <div class="field half">
+                                                        <strong class="field-name">half<span class="ess">*</span></strong>
+                                                        <div class="field-insert">
+                                                            <input type="text" name="" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="field half">
+                                                        <strong class="field-name">half<span class="ess">*</span></strong>
+                                                        <div class="field-insert">
+                                                            <input type="text" name="" placeholder="(숫자만 입력)" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="field-wrap">
+                                                    <div class="field">
+                                                        <strong class="field-name">첨부파일</strong>
+                                                        <div class="field-insert">
+                                                            <input type="text" class="upload-name" placeholder="첨부파일은 1개 최대10MB 이하만 등록 가능합니다." readonly="" />
+                                                            <input type="file" id="addFile" name="" accept="" />
+                                                            <label for="addFile" class="btn-type-b">파일 추가</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- // form -->
+                    <!-- component -->
+                    <div class="design-guide-wrap panel-component">
+                        <h1>Component</h1>
+                        <table class="table-a">
+                            <caption>
+                                블록 요소(세트) 공통
+                            </caption>
+                            <colgroup>
+                                <col style="width: 200px" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2">구분</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                <th>검색폼</th>
+                                <td>
+                                    <div class="code-box">
+                                        <p>상단 검색 - 필터 x</p>
+                                        <div class="code-view">
+                                            <div class="search-box">
+                                                <div class="search-form">
+                                                    <div class="input-wrap">
+                                                        <input type="text" class="input-search" id="serchInput" placeholder="검색어를 입력하세요" />
+                                                        <a href="#" class="btn-input-reset" data-reset="serchInput">제거</a>
+                                                    </div>
+                                                    <div class="search-btns">
+                                                        <a href="#" class="btn-search">검색</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="code-box">
+                                        <p>상단 검색 - 필터 o</p>
+                                        <div class="code-view"></div>
+                                    </div>
+                                </td>
+                            </tr> -->
+                                <tr>
+                                    <th>checkbox</th>
+                                    <td>
+                                        <div class="code-box">
+                                            <div class="code-view">
+                                                <label class="checkbox" id="chk01">
+                                                    <input type="checkbox" class="checkbox__input" />
+                                                    <div class="checkbox__label">
+                                                        <span class="checkbox__text">체크박스 1</span>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>tab-a</th>
+                                    <td>
+                                        <div class="code-box">
+                                            <style>
+                                                .tab-type-a a {
+                                                    padding: 1rem 1.6rem;
+                                                }
+                                            </style>
+                                            <p>check-a</p>
+                                            <div class="code-view">
+                                                <ul class="tab-type-a">
+                                                    <li class="tab-item on"><a href="governance-3-1.html">탭1-on</a></li>
+                                                    <li class="tab-item"><a href="governance-3-2.html">탭2</a></li>
+                                                    <li class="tab-item"><a href="governance-3-3.html">탭3</a></li>
+                                                    <li class="tab-item"><a href="governance-3-4.html">탭4</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //component -->
+                </div>
+            </main>
+        </div>
+    </body>
+    <!-- 페이지 관련 스크립트 -->
+    <script>
+        $(function () {
+            if (!location.href.split("?")[1]) location.href = "?button";
+
+            $(".sidebar-link-" + location.href.split("?")[1]).addClass("is-on");
+            $(".design-guide-wrap.panel-" + location.href.split("?")[1]).addClass("is-on");
+
+            $(".code-box").each(function () {
+                let str = $(this).find(".code-view").html(),
+                    _ = $(this);
+                _.append('<div class="code-text-wrap"><a href="javascript:void(0);" class="code-toggle">코드 보기</a><div class="code-text"></div></div>');
+                _.find(".code-text").text(str);
+                _.find(".code-toggle").on("click", function () {
+                    _.find(".code-text-wrap").toggleClass("on");
+                });
+            });
+        });
+    </script>
+    <!--//페이지 관련 스크립트 -->
+</html>
