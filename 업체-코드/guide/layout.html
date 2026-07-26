@@ -1,0 +1,744 @@
+<!doctype html>
+<!-- main만 html class에 main-intro 넣어주세요 -->
+<html lang="kr">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="description" content="" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<!-- favicon -->
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<!-- <link rel="icon" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicon/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicon/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="/static/images/favicon/android-chrome-512x512.png" />
+<meta name="theme-color" content="#ffffff" /> -->
+
+	<title>SAMSUNG SDS-레이아웃</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="/static/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+
+<body>
+	<div id="wrap" class="warp">
+		<header class="header">
+			<div class="header__box">
+				<div class="header__inner">
+					<div class="header__start">
+						<button type="button" class="header__menu-button" aria-label="전체 메뉴 열기" aria-expanded="false" aria-controls="megaMenu">
+							<span class="header__menu-icon" aria-hidden="true"></span>
+						</button>
+
+						<h1 class="header__logo">
+							<a href="#" class="header__logo-link">
+								<span class="blind">Samsung SDS</span>
+							</a>
+						</h1>
+					</div>
+
+					<button type="button" class="header__search-button" aria-label="검색 열기">
+						<span class="header__search-icon" aria-hidden="true"></span>
+					</button>
+				</div>
+
+				<nav id="megaMenu" class="mega-menu" aria-label="전체 메뉴" aria-hidden="true">
+					<div class="mega-menu__main">
+						<div class="mega-menu__inner">
+							<!-- 디지털 & IT서비스 -->
+							<div class="mega-menu__section">
+								<h2 class="mega-menu__title">IT서비스</h2>
+
+								<ul class="mega-menu__list mega-menu__list--depth2">
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel01">AI&amp;데이터</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel02">클라우드&amp;인프라</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel03">비즈니스 솔루션</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel04">디지털 트랜스포메이션</a>
+									</li>
+								</ul>
+
+								<ul class="mega-menu__list mega-menu__list--etc mega-menu__list--depth2">
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">R&D</a>
+									</li>
+								</ul>
+							</div>
+
+							<!-- 물류서비스 -->
+							<div class="mega-menu__section">
+								<h2 class="mega-menu__title">물류</h2>
+
+								<ul class="mega-menu__list mega-menu__list--depth2">
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">물류 소개</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">디지털 물류 혁신 스토리</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">디지털 물류 서비스 | Cello Square</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel05">글로벌 공급망</a>
+									</li>
+								</ul>
+							</div>
+
+							<!-- 인사이트 -->
+							<div class="mega-menu__section">
+								<h2 class="mega-menu__title">인사이트</h2>
+
+								<ul class="mega-menu__list mega-menu__list--depth2">
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">인사이트 리포트</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">고객사례</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">리소스</a>
+									</li>
+								</ul>
+							</div>
+
+							<!-- 회사정보 -->
+							<div class="mega-menu__section">
+								<h2 class="mega-menu__title">회사정보</h2>
+
+								<ul class="mega-menu__list mega-menu__list--depth2">
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel06">회사소개</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel07">투자정보</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel08">지속가능경영</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel09">뉴스룸</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--has-depth" aria-expanded="false" aria-controls="menuPanel10">이벤트/웨비나</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">채용</a>
+									</li>
+								</ul>
+							</div>
+
+							<!-- 지원 -->
+							<div class="mega-menu__section">
+								<h2 class="mega-menu__title">지원</h2>
+
+								<ul class="mega-menu__list mega-menu__list--depth2">
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">고객 지원</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">파트너 지원</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link">교육 지원</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="mega-menu__section mega-menu__section--service">
+								<ul class="mega-menu__list mega-menu__list--depth2">
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--service">AI Full Stack 서비스</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--service">디지털 공공</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--service">전략 오퍼링 3</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--service">전략 오퍼링 4</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="mega-menu__section mega-menu__section--external">
+								<ul class="mega-menu__list mega-menu__list--external">
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--external" target="_blank" rel="noopener">Samsung Cloud Platform</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--external" target="_blank" rel="noopener">Brity Works</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--external" target="_blank" rel="noopener">Brity Automation</a>
+									</li>
+									<li class="mega-menu__item">
+										<a href="#" class="mega-menu__link mega-menu__link--external" target="_blank" rel="noopener">Cello Square</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="mega-menu__sub">
+						<!-- AI & 데이터 -->
+						<div class="mega-menu__sub-box" id="menuPanel01">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">AI&amp;데이터</div>
+
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">AI 에이전트 플랫폼 | FabriX</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">AI기반 빅데이터 분석 플랫폼 | Brightics Machine Learning</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">데이터 라이프사이클 관리 플랫폼 | Brightics Data Hub</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">데이터 결합 분석 서비스</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">파운데이션 모델 서비스 | ChatGPT Enterprise</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 클라우드 & 인프라 -->
+						<div class="mega-menu__sub-box" id="menuPanel02">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">클라우드&amp;인프라</div>
+
+								<!-- 3depth -->
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel01_01">클라우드 서비스 | Samsung Cloud Platform</a>
+											</li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel01_02">매니지드 서비스</a>
+											</li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel01_03">클라우드 보안</a>
+											</li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel01_04">데이터센터/네트워크</a>
+											</li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link">GDC(Global Development Center)</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- 4depth -->
+								<div class="mega-menu__sub-section">
+									<div class="mega-menu__sub-list" id="menuPanel01_01">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">엔터프라이즈 클라우드</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">금융 클라우드</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">공공 클라우드</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">PrivateCloud</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">GPUaaS Service | GPUaaS</a></li>
+										</ul>
+									</div>
+
+									<div class="mega-menu__sub-list" id="menuPanel01_02">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">클라우드 컨설팅</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">클라우드 전환/구축</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">클라우드 운영</a></li>
+										</ul>
+									</div>
+
+									<div class="mega-menu__sub-list" id="menuPanel01_03">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">클라우드 보안 제어 서비스</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">클라우드 보안 진단 서비스</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">클라우드 보안 솔루션 운영 서비스</a></li>
+										</ul>
+									</div>
+
+									<div class="mega-menu__sub-list" id="menuPanel01_04">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel01_04_01">데이터센터</a>
+											</li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel01_04_02">네트워크</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- 5depth -->
+								<div class="mega-menu__sub-section">
+									<div class="mega-menu__sub-list" id="menuPanel01_04_01">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">데이터센터 설계/구축/이전</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">데이터센터 운영</a></li>
+										</ul>
+									</div>
+
+									<div class="mega-menu__sub-list" id="menuPanel01_04_02">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">국내/해외 데이터 통신 서비스</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">네트워크 설계/구축</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">통신망 설계/구축</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">통신망 분석</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 비즈니스 솔루션 -->
+						<div class="mega-menu__sub-box" id="menuPanel03">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">비즈니스 솔루션</div>
+
+								<!-- 3depth -->
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel03_01">협업&amp;생산성 | Brity Works</a>
+											</li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link">업무 자동화 | Brity Automation</a>
+											</li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel03_03">엔터프라이즈 애플리케이션</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- 4depth -->
+								<div class="mega-menu__sub-section">
+									<div class="mega-menu__sub-list" id="menuPanel03_01">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link"> Brity Works (공공기관 전용)</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link"> Brity Copilot</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Brity Mail</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Brity Messenger</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Brity Meeting</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Brity Drive</a></li>
+										</ul>
+									</div>
+
+									<div class="mega-menu__sub-list" id="menuPanel03_03">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">전사적 자원 관리(ERP)</a></li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel03_03_01">공급망 관리(SCM)</a>
+											</li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">구매 및 협력사 관리(SRM) | Caltenda</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">고객 관계 관리(CRM)</a></li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel03_03_02">인적 자본 관리 (HCM)</a>
+											</li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">제품 수명주기 관리(PLM)</a></li>
+											<li class="mega-menu__sub-item">
+												<a href="#" class="mega-menu__sub-link mega-menu__sub-link--has-depth" aria-expanded="false" aria-controls="menuPanel03_03_03">제조 자동화</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- 5depth -->
+								<div class="mega-menu__sub-section">
+									<div class="mega-menu__sub-list" id="menuPanel03_03_01">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">넥스프라임 SCM Response</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">넥스프라임 SCM Mobile</a></li>
+										</ul>
+									</div>
+
+									<div class="mega-menu__sub-list" id="menuPanel03_03_02">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Nexprime HCM 급여</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Nexprime HCM 근태</a></li>
+										</ul>
+									</div>
+
+									<div class="mega-menu__sub-list" id="menuPanel03_03_03">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Nexplant MES</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Nexplant AMHS</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 디지털 트랜스포메이션 -->
+						<div class="mega-menu__sub-box" id="menuPanel04">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">디지털 트랜스포메이션</div>
+
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">디지털 전환 진단</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">디지털 전환 컨설팅</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">CX 이노베이션</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">디지털 금융</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">디지털 공공</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">디지털 헬스</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">디지털 EHS(SDS 서비스)</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">개발 프레임워크 | Anyframe</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 글로벌 공급망 -->
+						<div class="mega-menu__sub-box" id="menuPanel05">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">글로벌 공급망</div>
+
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">국제 화물 운송</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">물류센터 및 내륙운송</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">이커머스 물류</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">프로젝트 물류</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">IT 기반 물류 서비스</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 회사소개 -->
+						<div class="mega-menu__sub-box" id="menuPanel06">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">회사소개</div>
+
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">삼성SDS 소개</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">비전</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">CEO 소개</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">연혁</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">사업장 소개</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">Awards&amp;Recognition</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 투자정보 -->
+						<div class="mega-menu__sub-box" id="menuPanel07">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">투자정보</div>
+
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">이사회 및 위원회</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">재무정보</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">IR 행사 &amp; 실적발표</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">주주총회</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">공시 및 알림</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">FAQ</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 지속가능경영 -->
+						<div class="mega-menu__sub-box" id="menuPanel08">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">지속가능경영</div>
+
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">ESG 소식</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">ESG 경영체계</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">환경/에너지 경영</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">인권경영</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">사회공헌</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">안전보건경영</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">동반성장</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">윤리&amp;준법경영</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">디지털 책임</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">보고서&amp;정책</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 뉴스룸 -->
+						<div class="mega-menu__sub-box" id="menuPanel09">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">뉴스룸</div>
+
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">언론보도</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">이슈와 팩트</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">미디어 갤러리</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 이벤트 & 행사 -->
+						<div class="mega-menu__sub-box" id="menuPanel10">
+							<div class="mega-menu__inner">
+								<div class="mega-menu__sub-title">이벤트/웨비나</div>
+
+								<div class="mega-menu__sub-section mega-menu__sub-section--first">
+									<div class="mega-menu__sub-list">
+										<ul class="mega-menu__sub-list-inner">
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">이벤트</a></li>
+											<li class="mega-menu__sub-item"><a href="#" class="mega-menu__sub-link">웨비나</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+
+		<!-- container -->
+		<main role="main" style="height: 500px"></main>
+		<!-- //container -->
+		<footer class="footer">
+			<div class="footer__inner">
+				<div class="footer__top">
+					<nav class="footer__nav" aria-label="푸터 메뉴">
+						<div class="footer__nav-group footer__nav-group--quick">
+							<ul class="footer__nav-list">
+								<li class="footer__nav-item">
+									<a href="#" class="footer__nav-link"> 모든 오퍼링 보기</a>
+								</li>
+								<li class="footer__nav-item">
+									<a href="#" class="footer__nav-link">사이트맵</a>
+								</li>
+								<li class="footer__nav-item">
+									<a href="#" class="footer__nav-link"> 클라우드 용어집 </a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="footer__nav-group">
+							<button type="button" class="footer__nav-title" aria-controls="footerNav01">회사정보<i class="footer__down-icon" aria-hidden="true"></i></button>
+							<div class="footer__nav-box" id="footerNav01">
+								<ul class="footer__nav-list">
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">회사소개</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">공지사항</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">채용</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">Awards &amp; Recognition</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="footer__nav-group">
+							<button type="button" class="footer__nav-title" aria-controls="footerNav02">SDS NOW<i class="footer__down-icon" aria-hidden="true"></i></button>
+							<div class="footer__nav-box" id="footerNav02">
+								<ul class="footer__nav-list">
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">인사이트리포트</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">언론보도</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">이벤트</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="footer__nav-group">
+							<button type="button" class="footer__nav-title" aria-controls="footerNav03">고객지원<i class="footer__down-icon" aria-hidden="true"></i></button>
+							<div class="footer__nav-box" aria-controls="footerNav03">
+								<ul class="footer__nav-list">
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">문의하기</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">기술지원</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">보안신고센터</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">개인정보침해신고</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">제보하기</a>
+									</li>
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link">라이선스</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__nav-group">
+							<button type="button" class="footer__nav-title" aria-controls="footerNav04">채널 파트너<i class="footer__down-icon" aria-hidden="true"></i></button>
+							<div class="footer__nav-box" id="footerNav04">
+								<ul class="footer__nav-list">
+									<li class="footer__nav-item">
+										<a href="#" class="footer__nav-link footer__nav-link--external">파트너 허브</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="footer__nav-group footer__nav-group--family">
+							<button type="button" class="footer__nav-title footer__family-button" aria-expanded="false">패밀리사이트<i class="footer__down-icon" aria-hidden="true"></i></button>
+
+							<!-- <ul class="footer__family-list" hidden>
+                        <li class="footer__family-item">
+                            <a href="#" class="footer__family-link">패밀리사이트 1</a>
+                        </li>
+                        <li class="footer__family-item">
+                            <a href="#" class="footer__family-link">패밀리사이트 2</a>
+                        </li>
+                    </ul> -->
+						</div>
+					</nav>
+					<button type="button" class="footer__top-button js-back-to-top">위로<i class="footer__down-icon" aria-hidden="true"></i></button>
+					<!-- 
+            <div class="footer__family">
+                <button type="button" class="footer__family-button" aria-expanded="false">
+                    패밀리사이트
+                    <span class="footer__family-icon" aria-hidden="true"></span>
+                </button>
+            </div> -->
+				</div>
+
+				<div class="footer__bottom">
+					<div class="footer__info">
+						<ul class="footer__policy-list">
+							<li class="footer__policy-item">
+								<a href="#" class="footer__policy-link footer__policy-link--privacy">
+									개인정보처리방침
+									<i class="footer__down-icon" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="footer__policy-item">
+								<a href="#" class="footer__policy-link">이용약관</a>
+							</li>
+							<li class="footer__policy-item">
+								<a href="#" class="footer__policy-link">서비스 이용약관</a>
+							</li>
+							<li class="footer__policy-item">
+								<a href="#" class="footer__policy-link">이메일무단수집거부</a>
+							</li>
+							<li class="footer__policy-item">
+								<a href="#" class="footer__policy-link">아이디어 정책</a>
+							</li>
+							<li class="footer__policy-item">
+								<img src="/static/images/common/mark_web_accessibility.png" alt="웹 접근성 품질인증 마크" class="footer__certification-img" />
+							</li>
+						</ul>
+
+						<address class="footer__address">서울시 송파구 올림픽로 35길 125 삼성SDS (05510)</address>
+
+						<p class="footer__copyright">&copy; SAMSUNG SDS. All rights reserved.</p>
+					</div>
+
+					<div class="footer__side">
+						<div class="footer__social">
+							<a href="#" class="footer__newsletter">뉴스레터 구독신청</a>
+
+							<ul class="footer__social-list">
+								<li class="footer__social-item">
+									<a href="#" class="footer__social-link footer__social-link--linkedin" aria-label="LinkedIn"></a>
+								</li>
+								<li class="footer__social-item">
+									<a href="#" class="footer__social-link footer__social-link--facebook" aria-label="Facebook"></a>
+								</li>
+								<li class="footer__social-item">
+									<a href="#" class="footer__social-link footer__social-link--twitter" aria-label="Twitter"></a>
+								</li>
+								<li class="footer__social-item">
+									<a href="#" class="footer__social-link footer__social-link--instagram" aria-label="Instagram"></a>
+								</li>
+								<li class="footer__social-item">
+									<a href="#" class="footer__social-link footer__social-link--youtube" aria-label="YouTube"></a>
+								</li>
+								<li class="footer__social-item">
+									<a href="#" class="footer__social-link footer__social-link--naver" aria-label="Naver"></a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="footer__language">
+							<button type="button" class="footer__language-button" aria-expanded="false">
+								Korea / 한국어
+								<i class="footer__down-icon" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="floating-menu">
+			<a href="#" class="floating-menu__button floating-menu__button--chat" aria-label="상담 문의"></a>
+
+			<button type="button" class="floating-menu__button floating-menu__button--top js-back-to-top" aria-label="페이지 상단으로 이동"></button>
+		</div>
+
+	</div>
+</body>
+<!-- 페이지 관련 스크립트 -->
+<script>
+	function popupFn() {
+		popup.confirm({
+			text: "들어갈 텍스트\n엔터엔터",
+			cancel: function() {
+				$("#wrap").css("background", "#fff");
+			},
+			check: function() {
+				$("#wrap").css("background", "yellow");
+			},
+		});
+	}
+</script>
+<!--//페이지 관련 스크립트 -->
+
+</html>

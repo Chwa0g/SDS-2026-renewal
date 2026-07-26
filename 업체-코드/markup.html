@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=960" />
+	<meta name="language" content="kr" />
+	<title>마크업</title>
+	<!-- build:css -->
+	<link rel="stylesheet" href="/markup/markup.css" />
+	<!-- endbuild -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- build:js -->
+	<script src="/markup/markup.js"></script>
+	<!-- endbuild -->
+	<script>
+		//state-> 완료: end , 진행중: ing
+		const markupPcList = [{
+				공통: [{
+						depth2: "layout",
+						info: "header, footer",
+						src: "guide/layout",
+						state: ""
+					},
+					// { depth2: "button", info: "style", src: "", state: "guide/button" },
+					{
+						depth2: "ui-guide",
+						info: "block요소 공통",
+						src: "",
+						state: "",
+						src: "guide/ui-guide"
+					},
+					// { depth2: "popup", info: "style", src: "", state: "" },
+				],
+			},
+			{
+				메인: [{
+					depth2: "메인",
+					depth3: "",
+					info: "",
+					src: "index",
+					state: "end"
+				}],
+			},
+			{
+				"디지털&IT서비스": [{
+						depth2: "AI&데이터",
+						depth3: "AI 에이전트 플랫폼 | FabriX",
+						info: "",
+						src: "",
+						state: ""
+					},
+					{
+						depth2: "클라우드&인프라",
+						depth3: "클라우드 서비스 | Samsung Cloud Platform",
+						info: "",
+						src: "",
+						state: ""
+					},
+
+					{
+						depth2: "비즈니스 솔루션",
+						depth3: "협업&생산성 | Brity Works",
+						info: "",
+						src: "",
+						state: ""
+					},
+					{
+						depth2: "",
+						depth3: "Brity Works (공공기관 전용)",
+						info: "",
+						src: "",
+						state: ""
+					},
+					{
+						depth2: "",
+						depth3: "업무 자동화 | Brity Automation",
+						info: "",
+						src: "",
+						state: ""
+					},
+				],
+			},
+			{
+				인사이트: [{
+						depth2: "인사이트 리포트",
+						depth3: "목록",
+						info: "",
+						src: "insight/report",
+						state: "end"
+					},
+					{
+						depth2: "인사이트 리포트",
+						depth3: "상세",
+						info: "상위 postGroup, post class 유지, txt_wrap에 에디터",
+						src: "insight/report-detail_legacy",
+						state: "end"
+					},
+					{
+						depth2: "인사이트 리포트-new",
+						depth3: "상세",
+						info: "리뉴얼 버전",
+						src: "insight/report-detail",
+						state: "end"
+					},
+				],
+			},
+			{
+				문의하기: [{
+					depth2: "문의하기",
+					info: "",
+					src: "",
+					state: ""
+				}],
+			},
+			{
+				"전략 서비스": [{
+						depth2: "AI Full Stack 서비스",
+						info: "상단 서비스 강조 메뉴",
+						src: "",
+						state: ""
+					},
+					{
+						depth2: "디지털 공공",
+						info: "상단 서비스 강조 메뉴",
+						src: "",
+						state: ""
+					},
+				],
+			},
+		];
+		const markupMoList = [];
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- container -->
+		<div id="container">
+			<div class="markup">
+				<!-- <div class="tab-a">
+                        <a href="javascript:void(0);" class="on">반응형</a>
+                    </div> -->
+				<div class="notice">
+					<p class="pub"><strong>*담당자: 안선영</strong></p>
+					<p class="progress">*총 페이지 <strong id="totalCnt"></strong>개 중 <strong id="endCnt"></strong>개 완료 (<strong id="endCntP"></strong>%)</p>
+				</div>
+				<h2>SAMSUNG SDS</h2>
+				<div class="state"><span class="ing">진행중</span><span class="end">완료</span><span class="allEnd">모두완료</span></div>
+				<ul class="urlList">
+					<li class="head">
+						<div class="depth_1">타이틀</div>
+						<div class="depth_2">2Depth</div>
+						<div class="depth_3">3Depth</div>
+						<div class="depth_4">4Depth</div>
+						<div class="info">detail</div>
+						<div class="fileName">folder/name</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //container -->
+	</div>
+</body>
+
+</html>
