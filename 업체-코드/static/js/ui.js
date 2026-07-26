@@ -1,1 +1,1570 @@
-let Device=(()=>{let t="ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch;return{init:function(){var e;(e=$("html")).removeClass("device-mo device-pc"),e.addClass(t?"device-mo":"device-pc")},isMobile:function(){return t}}})();if("undefined"!=typeof Lenis){let t=new Lenis({lerp:.06,smoothWheel:!0,smoothTouch:!1});function raf(e){t.raf(e),requestAnimationFrame(raf)}window.lenisScroll=t,requestAnimationFrame(raf)}let ScrollUtil=(()=>{let t=$(window);function n(){return window.lenisScroll||null}return{getLenis:n,scrollTopReset:function(e=.8){var t=n();e<=0?t&&"function"==typeof t.scrollTo?t.scrollTo(0,{immediate:!0}):$(window).scrollTop(0):t&&"function"==typeof t.scrollTo?t.scrollTo(0,{duration:e}):$("html, body").stop().animate({scrollTop:0},1e3*e)},getScrollTop:function(){var e=n();return e&&"function"==typeof e.getScrollTop?e.getScrollTop():e&&"number"==typeof e.scroll?e.scroll:t.scrollTop()}}})(),NonScroll=(()=>{let o=!1,i=0,s=$();function t(e,t,n){var a=ScrollUtil.getLenis();if(e)return o?void 0:(o=!0,i=ScrollUtil.getScrollTop(),a&&"function"==typeof a.stop&&a.stop(),s=n&&n.length?n:$("#wrap"),$("html, body").addClass("no-scroll"),void s.addClass("is-frozen").css({"margin-top":-i+"px"}));o&&(e=void 0!==t?t:i,o=!1,a&&"function"==typeof a.start&&a.start(),$("html, body").removeClass("no-scroll").removeAttr("style"),s.length&&s.removeClass("is-frozen").css({"margin-top":0}),s=$(),i=e,$("html, body").scrollTop(i))}return{set:t,enable:function(e){t(!0,void 0,e)},disable:function(e){t(!1,e)},isLocked:function(){return o}}})();function createBreakpointHandler(e={}){let n=$(window),a=e.breakpoint??1024,t=e.namespace||".breakpointHandler",o=e.delay??120,i=e.onReset,s=e.onOver,r=e.onUnder,l=e.onChange,u=null,c=!1,d=n.width()<=a;function f(e=!1){var t=n.width()<=a;!e&&d===t||(d=t,"function"==typeof i&&i(d),d?"function"==typeof r&&r(d):"function"==typeof s&&s(d),"function"!=typeof l)||l(d)}return{init:function(e=!1){n.off(t),Device.isMobile()?n.on("orientationchange"+t,function(){c||(c=!0,clearTimeout(u),u=setTimeout(function(){f(),c=!1},o))}):n.on("resize"+t,function(){clearTimeout(u),u=setTimeout(function(){f()},o)}),e&&f(!0)},destroy:function(){n.off(t),clearTimeout(u),u=null,c=!1},update:function(e=!1){f(e)},getState:function(){return{breakpoint:a,isUnder:d,isOver:!d}}}}let Header=(()=>{let e=$(window),o="header--open",r="is-active",t=["a[href]","button:not([disabled])","input:not([disabled])","select:not([disabled])","textarea:not([disabled])",'[tabindex]:not([tabindex="-1"])'].join(","),n=$(),i=$(),a=void $(),s=$(),l=$();function u(e){return e.find(t).filter(":visible").filter(function(){var e=$(this);return!e.closest("[inert]").length&&!e.closest("[hidden]").length&&!e.closest('[aria-hidden="true"]').length})}function c(e){e=u(e).first();e.length&&e.trigger("focus")}function d(){i.hasClass(o)||(i.addClass(o),s.addClass(r).attr({"aria-expanded":"true","aria-label":"전체 메뉴 닫기"}),l.prop({hidden:!1,inert:!1}).attr("aria-hidden","false"),NonScroll.enable(n))}function f(e={}){var{returnFocus:e=!1}=e;i.hasClass(o)&&(i.removeClass(o),s.removeClass(r).attr({"aria-expanded":"false","aria-label":"전체 메뉴 열기"}),l.find(".mega-menu__link--has-depth, .mega-menu__sub-link--has-depth").attr("aria-expanded","false"),l.find(".mega-menu__item, .mega-menu__sub-item").removeClass(r),l.find(".mega-menu__main > .mega-menu__inner > .mega-menu__section").removeClass(r),l.find(".mega-menu__sub").removeClass(r),l.find(".mega-menu__sub-box").each(function(){g($(this))}),l.find(".mega-menu__sub-list[id]").each(function(){g($(this))}),l.prop({hidden:!0,inert:!0}).attr("aria-hidden","true"),NonScroll.disable(),e)&&s.trigger("focus")}function m(){return i.hasClass(o)?f({returnFocus:!1}):d(),!1}function h(e){e=e.attr("aria-controls");return e?l.find("#"+e):$()}function p(e){e=e.attr("id");return e?l.find(`[aria-controls="${e}"]`).first():$()}function g(e){e.prop({inert:!0}).attr("aria-hidden","true").removeClass(r)}function _(e){var t=h(e);return t.length?(e.attr("aria-expanded","true"),e.closest(".mega-menu__item, .mega-menu__sub-item").addClass(r),t.prop({inert:!1}).attr("aria-hidden","false").addClass(r),t):$()}function v(e){e.find(".mega-menu__sub-link--has-depth").attr("aria-expanded","false"),e.find(".mega-menu__sub-item").removeClass(r),e.find(".mega-menu__sub-list[id]").each(function(){g($(this))})}function b(){e.off("keydown.header").on("keydown.header",function(e){var t,n,a;"Escape"===e.key&&i.hasClass(o)&&(t=$(document.activeElement),(n=t.closest(".mega-menu__sub-list[id].is-active")).length?(e.preventDefault(),(a=p(n=n)).length&&(g(n),a.attr("aria-expanded","false").closest(".mega-menu__item, .mega-menu__sub-item").removeClass(r),a.trigger("focus"))):(n=t.closest(".mega-menu__sub-box.is-active")).length?(e.preventDefault(),a=p(n),v(n),g(n),l.find(".mega-menu__sub").removeClass(r),a.length&&(a.attr("aria-expanded","false").closest(".mega-menu__item").removeClass(r),a.closest(".mega-menu__section").removeClass(r),a.trigger("focus"))):f({returnFocus:!0}))})}function k(){l.find(".mega-menu__main").off("click.headerMain").on("click.headerMain",function(e){i.hasClass(o)&&!$(e.target).closest(".mega-menu__link--has-depth").length&&(l.find(".mega-menu__sub-link--has-depth").attr("aria-expanded","false"),l.find(".mega-menu__sub-item").removeClass(r),l.find(".mega-menu__sub-list[id]").each(function(){g($(this))}),l.find(".mega-menu__sub-box").each(function(){g($(this))}),l.find(".mega-menu__sub").removeClass(r),l.find(".mega-menu__link--has-depth").attr("aria-expanded","false"),l.find(".mega-menu__link--has-depth").closest(".mega-menu__item").removeClass(r),l.find(".mega-menu__main > .mega-menu__inner > .mega-menu__section").removeClass(r))})}function y(){i.off("keydown.headerLastFocus").on("keydown.headerLastFocus",function(e){var t;i.hasClass(o)&&"Tab"===e.key&&!e.shiftKey&&(t=u(i).last()).length&&e.target===t[0]&&(e.preventDefault(),f({returnFocus:!1}),(t=$("#mainContent")).length)&&((e=u(t).first()).length?e.trigger("focus"):((e=t.is("[tabindex]"))||t.attr("tabindex","-1"),t.trigger("focus"),e||t.one("blur.headerMainContent",function(){$(this).removeAttr("tabindex")})))})}function C(){s.off("click.header").on("click.header",function(e){e.preventDefault(),m()}),b(),$(document).off("click.headerOutside").on("click.headerOutside",function(e){!i.hasClass(o)||(e=$(e.target)).closest(".header__menu-button").length||e.closest(".header__box").length||f({returnFocus:!1})}),k(),l.find(".mega-menu__link--has-depth").off("click.header").on("click.header",function(e){e.preventDefault();var e=$(this),t="true"===e.attr("aria-expanded");h(e).length&&(l.find(".mega-menu__link--has-depth").attr("aria-expanded","false"),l.find(".mega-menu__link--has-depth").closest(".mega-menu__item").removeClass(r),l.find(".mega-menu__main > .mega-menu__inner > .mega-menu__section").removeClass(r),l.find(".mega-menu__sub-box").each(function(){g($(this))}),l.find(".mega-menu__sub").removeClass(r),v(l),t?e.trigger("focus"):(l.find(".mega-menu__sub").addClass(r),e.closest(".mega-menu__section").addClass(r),c(_(e))))}),l.find(".mega-menu__sub-link").off("click.header").on("click.header",function(e){var t=$(this),n=t.closest(".mega-menu__sub-section"),a=t.closest(".mega-menu__sub-item"),o=n.nextAll(".mega-menu__sub-section"),i=t.hasClass("mega-menu__sub-link--has-depth"),s=h(t);i&&e.preventDefault(),n.find(".mega-menu__sub-link--has-depth").attr("aria-expanded","false"),n.find(".mega-menu__sub-item").removeClass(r),o.find(".mega-menu__sub-link--has-depth").attr("aria-expanded","false"),o.find(".mega-menu__sub-item").removeClass(r),o.find(".mega-menu__sub-list[id]").each(function(){g($(this))}),a.addClass(r),i&&s.length&&c(_(t))}),l.off("keydown.headerBackDepth").on("keydown.headerBackDepth",function(e){var t,n;"Tab"===e.key&&e.shiftKey&&(t=$(e.target).closest(".mega-menu__sub-box.is-active, .mega-menu__sub-list[id].is-active")).length&&(n=u(t).first()).length&&e.target===n[0]&&(n=p(t)).length&&(e.preventDefault(),n.trigger("focus"))}),y()}return{init:function(){n=$("#wrap"),i=$(".header"),a=$(".header__box"),s=$(".header__menu-button"),l=$("#megaMenu"),i.length&&a.length&&s.length&&l.length&&(l.prop({hidden:!0,inert:!0}).attr("aria-hidden","true"),l.find(".mega-menu__sub-box").prop({inert:!0}).attr("aria-hidden","true"),l.find(".mega-menu__sub-list[id]").prop({inert:!0}).attr("aria-hidden","true"),C())},open:d,close:f,toggle:m,reset:function(){f({returnFocus:!1}),l.find(".mega-menu__item").removeClass(r),l.find(".mega-menu__item.is-current").addClass(r)}}})(),Footer=(()=>{let a="is-open",e=".footer",t=void $(),o=$(),i=$();return{init:function(){t=$(".footer"),o=$(".footer__nav-group"),i=$(".footer__nav-group:not(.footer__nav-group--family) .footer__nav-title"),t.length&&o.length&&i.length},reset:function(){o.removeClass(a),i.attr("aria-expanded","false")},enableAccordion:function(){i.attr("aria-expanded","false").off("click"+e).on("click"+e,function(){var e=$(this),t=e.closest(".footer__nav-group"),n=t.hasClass(a);o.removeClass(a),i.attr("aria-expanded","false"),n||(t.addClass(a),e.attr("aria-expanded","true"))})},disableAccordion:function(){i.off("click"+e).attr("aria-expanded","true"),o.removeClass(a)}}})(),createResponsiveSwiper=function(e=[],t={}){let o=t.breakpoint??768,n=t.namespace||".responsiveSwiper",a=null,i=null,s={};function r(){e.forEach(e=>{var t,n,a=$(e.selector);a.length&&(t=e.toggleTarget?$(e.toggleTarget):a,!0===(n=e).always||("number"==typeof n.breakpoint?$(window).width()<n.breakpoint:null===o||!1===o||$(window).width()<o)?(e.noneClass&&t.removeClass(e.noneClass),s[e.key]?s[e.key].update():s[e.key]=new Swiper(a[0],e.options||{})):(e.noneClass&&t.addClass(e.noneClass),s[e.key]&&(s[e.key].destroy(!0,!0),s[e.key]=null)))})}return{init:function(){$(window).off(n),"undefined"!=typeof isMobile&&isMobile?$(window).on("orientationchange"+n,function(){clearTimeout(i),i=setTimeout(function(){r()},200)}):$(window).on("resize"+n,function(){clearTimeout(a),a=setTimeout(function(){r()},150)}),r()},destroy:function(){$(window).off(n),clearTimeout(a),clearTimeout(i),a=null,i=null,Object.keys(s).forEach(e=>{s[e]&&(s[e].destroy(!0,!0),s[e]=null)})},update:function(){r()},swipers:s}},CustomSelectbox=(()=>{let n=".custom-selectbox",i=".custom-selectbox__selected",a=".custom-selectbox__selected-text",c=".custom-selectbox__list",d=".custom-selectbox__option",f=".custom-selectbox__checkbox",o=".custom-selectbox__input",e=".custom-selectbox__close",t=".custom-selectbox__box-inner",s="is-active",m="custom-selectbox__option--all",r="."+m;function h(e){return"true"===e.attr("data-multiple")}function l(e){return void 0!==e.attr("data-placeholder")}function u(e){return h(e)||l(e)}function p(e){var t;void 0===e.data("defaultText")&&e.data("defaultText",(t=(e=e).find(a)).length?$.trim(t.text()):$.trim(e.find(i).text()))}function g(e){return e.find(r)}function _(e){return e.find(d).not(r)}function v(e){return _(e).filter('[aria-selected="true"]')}function b(e){return e.find(f).val()||e.data("value")||""}function k(e){var t=e.find(".custom-selectbox__text");return t.length?$.trim(t.text()):$.trim(e.text())}function y(e,t){t=!0===t;e.attr("aria-selected",t?"true":"false"),e.toggleClass("is-selected",t),e.find(f).prop("checked",t)}function C(e){var t=v(e);return h(e)?t.map(function(){return b($(this))}).get():b(t.first())}function x(e){var t=v(e);return t.length?h(e)?t.map(function(){return k($(this))}).get().join(", "):k(t.first()):l(t=e)?t.attr("data-placeholder")||"":t.data("defaultText")||""}function w(e){var t,n=g(e);n.length&&(t=_(e),e=v(e),y(n,0<t.length&&t.length===e.length))}function S(e){var t=C(e),t=Array.isArray(t)?t.join(","):t;e.find(o).val(t)}function T(e){var t,n;"false"!==e.attr("data-update-title")&&(t=x(e),((n=e.find(a)).length?n:e.find(i)).text(t))}function D(e){w(e);var t=C(e),n=x(e);T(e),S(e),"function"==typeof e.data("onSelect")&&e.data("onSelect")(t,n),e.trigger("change.customSelect",[t,n])}function A(e){e.removeClass(s),e.find(i).attr("aria-expanded","false")}function F(e){$(n).not(e||$()).each(function(){A($(this))})}function E(e){var t=v(e).first(),n=e.find(d).not("[hidden]").first(),t=t.length?t:n;F(e),e.addClass(s),e.find(i).attr("aria-expanded","true"),t.focus()}function L(t,n){var a=h(t),e=n.hasClass(m),o="true"===n.attr("aria-selected");if(e){if(!a)return;let e=!o;_(t).each(function(){y($(this),e)}),y(n,e),void D(t)}else a?y(n,!o):(e=!l(t)||!o,_(t).each(function(){y($(this),!1)}),y(n,e),A(t),t.find(i).focus()),D(t)}function H(e,t){var e=e.find(d).not("[hidden]"),n=$(document.activeElement);let a=e.index(n);a<0?a=0:a+=t,(a=a<0?e.length-1:a)>=e.length&&(a=0),e.eq(a).focus()}function M(){$(document).off("click.customSelect").on("click.customSelect",function(e){$(e.target).closest(t).length||F()}),$(document).off("keydown.customSelect").on("keydown.customSelect",function(e){"Escape"===e.key&&F()}),$(n).off("click.customSelect",i).on("click.customSelect",i,function(e){e.preventDefault(),e.stopPropagation(),("true"===(e=$(this).closest(n)).find(i).attr("aria-expanded")?A:E)(e)}),$(n).off("click.customSelect",e).on("click.customSelect",e,function(e){e.preventDefault(),e.stopPropagation(),A($(this).closest(n)),$(this).closest(n).find(i).focus()}),$(n).off("keydown.customSelect",i).on("keydown.customSelect",i,function(e){var t=$(this).closest(n);"Enter"!==e.key&&" "!==e.key&&"ArrowDown"!==e.key||(e.preventDefault(),E(t)),"Escape"===e.key&&(e.preventDefault(),A(t))}),$(n).off("click.customSelect",d).on("click.customSelect",d,function(e){e.preventDefault(),e.stopPropagation(),L($(this).closest(n),$(this))}),$(n).off("keydown.customSelect",d).on("keydown.customSelect",d,function(e){var t=$(this).closest(n);"Enter"!==e.key&&" "!==e.key||(e.preventDefault(),L(t,$(this))),"ArrowDown"===e.key&&(e.preventDefault(),H(t,1)),"ArrowUp"===e.key&&(e.preventDefault(),H(t,-1)),"Escape"===e.key&&(e.preventDefault(),A(t),t.find(i).focus())})}return{init:function(){var e=$(n);e.length&&(e.each(function(e){{var t=$(this),n=t.find(i),a=t.find(c),o=t.find(d);let s=h(t),r=(p(t),a.attr("id")),l=(r||(r="customSelectList"+(e+1),a.attr("id",r)),n.attr({type:"button","aria-haspopup":"listbox","aria-expanded":"false","aria-controls":r}),a.attr({role:"listbox"}),s?(a.attr("aria-multiselectable","true"),g(t).removeAttr("hidden")):(a.removeAttr("aria-multiselectable"),g(t).attr("hidden",!0)),e=g(t),s&&!0===e.find(f).prop("checked")),u=!1;o.each(function(e){var t=$(this),n=t.find(f),a=t.hasClass(m),o=!!n.length&&!0===n.prop("checked");let i="true"===t.attr("aria-selected")||o;t.attr("id")||t.attr("id",r+"Option"+(e+1)),t.attr({role:"option",tabindex:"-1"}),n.attr("tabindex","-1"),s?l&&!a&&(i=!0):!a&&i&&!u?u=!0:i=!1,y(t,i)}),w(t),T(t),S(t)}}),M())},close:A,closeAll:F,unselect:function(e,t){var n;u(e)&&(n=_(e).filter(function(){return b($(this))===t})).length&&(y(n,!1),D(e))},reset:function(e){u(e)&&(_(e).each(function(){y($(this),!1)}),g(e).each(function(){y($(this),!1)}),D(e))}}})(),LayoutHandler=createBreakpointHandler({breakpoint:1024,namespace:".layoutHandler",onReset:function(){$("html").removeClass("layout-pc layout-mo"),Header.reset(),Footer.reset()},onUnder:function(){$("html").removeClass("layout-pc").addClass("layout-mo"),Footer.enableAccordion()},onOver:function(){$("html").removeClass("layout-mo").addClass("layout-pc"),Footer.disableAccordion()},onChange:function(){}});$(function(){Device.init(),Header.init(),Footer.init(),LayoutHandler.init(!0),$(".js-back-to-top").on("click",function(){ScrollUtil.scrollTopReset(.8)}),$(".view-buttons").each(function(){var e=$(this),t=e.data("view-target");let n=$(t);e.find(".view-button").on("click",function(){var e=$(this),t=e.hasClass("view-button--grid");e.addClass("is-active").siblings(".view-button").removeClass("is-active"),n.removeClass("type-grid type-list").addClass(t?"type-grid":"type-list")})})});
+/* =========================
+   Device
+========================= */
+const Device = (function () {
+    const isMobile = "ontouchstart" in window || (window.DocumentTouch && document instanceof DocumentTouch);
+
+    function setClass() {
+        const $html = $("html");
+
+        $html.removeClass("device-mo device-pc");
+        $html.addClass(isMobile ? "device-mo" : "device-pc");
+    }
+
+    function getIsMobile() {
+        return isMobile;
+    }
+
+    function init() {
+        setClass();
+    }
+
+    return {
+        init,
+        isMobile: getIsMobile,
+    };
+})();
+
+/* =========================
+   Lenis
+========================= */
+if (typeof Lenis !== "undefined") {
+    const lenis = new Lenis({
+        lerp: 0.06,
+        smoothWheel: true,
+        smoothTouch: false,
+    });
+
+    window.lenisScroll = lenis;
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+}
+
+/* =========================
+   Scroll Util
+========================= */
+const ScrollUtil = (function () {
+    const $win = $(window);
+
+    function getLenis() {
+        if (window.lenisScroll) {
+            return window.lenisScroll;
+        }
+
+        return null;
+    }
+
+    function scrollTopReset(duration = 0.8) {
+        const lenis = getLenis();
+
+        if (duration <= 0) {
+            if (lenis && typeof lenis.scrollTo === "function") {
+                lenis.scrollTo(0, {
+                    immediate: true,
+                });
+            } else {
+                $(window).scrollTop(0);
+            }
+
+            return;
+        }
+
+        if (lenis && typeof lenis.scrollTo === "function") {
+            lenis.scrollTo(0, {
+                duration,
+            });
+        } else {
+            $("html, body")
+                .stop()
+                .animate(
+                    {
+                        scrollTop: 0,
+                    },
+                    duration * 1000,
+                );
+        }
+    }
+
+    function getScrollTop() {
+        const lenis = getLenis();
+
+        if (lenis && typeof lenis.getScrollTop === "function") {
+            return lenis.getScrollTop();
+        }
+
+        if (lenis && typeof lenis.scroll === "number") {
+            return lenis.scroll;
+        }
+
+        return $win.scrollTop();
+    }
+
+    return {
+        getLenis,
+        scrollTopReset,
+        getScrollTop,
+    };
+})();
+
+/* =========================
+   Non Scroll
+========================= */
+const NonScroll = (function () {
+    let nonScrollFlag = false;
+    let scrollHeight = 0;
+    let $frozenTarget = $();
+
+    function set(flag, top, $target) {
+        const lenis = ScrollUtil.getLenis();
+
+        if (flag) {
+            if (nonScrollFlag) return;
+
+            nonScrollFlag = true;
+
+            // 현재 위치 저장
+            scrollHeight = ScrollUtil.getScrollTop();
+
+            if (lenis && typeof lenis.stop === "function") {
+                lenis.stop();
+            }
+
+            $frozenTarget = $target && $target.length ? $target : $("#wrap");
+
+            $("html, body").addClass("no-scroll");
+
+            $frozenTarget.addClass("is-frozen").css({
+                "margin-top": -scrollHeight + "px",
+            });
+
+            return;
+        }
+
+        if (!nonScrollFlag) return;
+
+        const restoreTop = top !== undefined ? top : scrollHeight;
+
+        nonScrollFlag = false;
+        if (lenis && typeof lenis.start === "function") {
+            lenis.start();
+        }
+
+        $("html, body").removeClass("no-scroll").removeAttr("style");
+
+        if ($frozenTarget.length) {
+            $frozenTarget.removeClass("is-frozen").css({
+                "margin-top": 0,
+            });
+        }
+
+        $frozenTarget = $();
+
+        scrollHeight = restoreTop;
+        $("html, body").scrollTop(scrollHeight);
+    }
+
+    function enable($target) {
+        set(true, undefined, $target);
+    }
+
+    function disable(top) {
+        set(false, top);
+    }
+
+    function isLocked() {
+        return nonScrollFlag;
+    }
+
+    return {
+        set,
+        enable,
+        disable,
+        isLocked,
+    };
+})();
+
+/* =========================
+   Breakpoint Handler
+========================= */
+function createBreakpointHandler(options = {}) {
+    const $win = $(window);
+
+    const BREAKPOINT = options.breakpoint ?? 1024;
+    const EVENT_NAMESPACE = options.namespace || ".breakpointHandler";
+    const RESIZE_DELAY = options.delay ?? 120;
+
+    const onReset = options.onReset;
+    const onOver = options.onOver;
+    const onUnder = options.onUnder;
+    const onChange = options.onChange;
+
+    let resizeTimer = null;
+    let orientationExecuted = false;
+
+    // true = breakpoint 이하 / false = breakpoint 초과
+    let isUnder = $win.width() <= BREAKPOINT;
+
+    function run(force = false) {
+        const nextIsUnder = $win.width() <= BREAKPOINT;
+
+        if (!force && isUnder === nextIsUnder) return;
+
+        isUnder = nextIsUnder;
+
+        if (typeof onReset === "function") {
+            onReset(isUnder);
+        }
+
+        if (isUnder) {
+            if (typeof onUnder === "function") {
+                onUnder(isUnder);
+            }
+        } else {
+            if (typeof onOver === "function") {
+                onOver(isUnder);
+            }
+        }
+
+        if (typeof onChange === "function") {
+            onChange(isUnder);
+        }
+    }
+
+    function bindEvents() {
+        $win.off(EVENT_NAMESPACE);
+
+        if (Device.isMobile()) {
+            $win.on(`orientationchange${EVENT_NAMESPACE}`, function () {
+                if (orientationExecuted) return;
+
+                orientationExecuted = true;
+                clearTimeout(resizeTimer);
+
+                resizeTimer = setTimeout(function () {
+                    run();
+                    orientationExecuted = false;
+                }, RESIZE_DELAY);
+            });
+        } else {
+            $win.on(`resize${EVENT_NAMESPACE}`, function () {
+                clearTimeout(resizeTimer);
+
+                resizeTimer = setTimeout(function () {
+                    run();
+                }, RESIZE_DELAY);
+            });
+        }
+    }
+
+    function init(runOnInit = false) {
+        bindEvents();
+
+        if (runOnInit) {
+            run(true);
+        }
+    }
+
+    function destroy() {
+        $win.off(EVENT_NAMESPACE);
+        clearTimeout(resizeTimer);
+
+        resizeTimer = null;
+        orientationExecuted = false;
+    }
+
+    function update(force = false) {
+        run(force);
+    }
+
+    function getState() {
+        return {
+            breakpoint: BREAKPOINT,
+            isUnder,
+            isOver: !isUnder,
+        };
+    }
+
+    return {
+        init,
+        destroy,
+        update,
+        getState,
+    };
+}
+
+/* =========================
+   Header
+========================= */
+const Header = (function () {
+    const $win = $(window);
+
+    const ACTIVE_CLASS = "header--open";
+    const ACTIVE_PANEL_CLASS = "is-active";
+
+    const FOCUSABLE_SELECTOR = ["a[href]", "button:not([disabled])", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])", '[tabindex]:not([tabindex="-1"])'].join(",");
+
+    let $wrap = $();
+    let $header = $();
+    let $headerBox = $();
+    let $menuButton = $();
+    let $megaMenu = $();
+
+    function getFocusableElements($scope) {
+        return $scope
+            .find(FOCUSABLE_SELECTOR)
+            .filter(":visible")
+            .filter(function () {
+                const $element = $(this);
+
+                if ($element.closest("[inert]").length) return false;
+                if ($element.closest("[hidden]").length) return false;
+                if ($element.closest('[aria-hidden="true"]').length) return false;
+
+                return true;
+            });
+    }
+
+    function focusFirstItem($panel) {
+        const $first = getFocusableElements($panel).first();
+
+        if (!$first.length) return;
+
+        $first.trigger("focus");
+    }
+
+    function focusMainContent() {
+        const $mainContent = $("#mainContent");
+
+        if (!$mainContent.length) return;
+
+        const $firstFocusable = getFocusableElements($mainContent).first();
+
+        if ($firstFocusable.length) {
+            $firstFocusable.trigger("focus");
+            return;
+        }
+
+        const hasTabindex = $mainContent.is("[tabindex]");
+
+        if (!hasTabindex) {
+            $mainContent.attr("tabindex", "-1");
+        }
+
+        $mainContent.trigger("focus");
+
+        if (!hasTabindex) {
+            $mainContent.one("blur.headerMainContent", function () {
+                $(this).removeAttr("tabindex");
+            });
+        }
+    }
+
+    function open() {
+        if ($header.hasClass(ACTIVE_CLASS)) return;
+
+        $header.addClass(ACTIVE_CLASS);
+
+        $menuButton.addClass(ACTIVE_PANEL_CLASS).attr({
+            "aria-expanded": "true",
+            "aria-label": "전체 메뉴 닫기",
+        });
+
+        $megaMenu
+            .prop({
+                hidden: false,
+                inert: false,
+            })
+            .attr("aria-hidden", "false");
+
+        NonScroll.enable($wrap);
+    }
+
+    function close(options = {}) {
+        const { returnFocus = false } = options;
+
+        if (!$header.hasClass(ACTIVE_CLASS)) return;
+
+        $header.removeClass(ACTIVE_CLASS);
+
+        $menuButton.removeClass(ACTIVE_PANEL_CLASS).attr({
+            "aria-expanded": "false",
+            "aria-label": "전체 메뉴 열기",
+        });
+
+        resetDepth();
+
+        $megaMenu
+            .prop({
+                hidden: true,
+                inert: true,
+            })
+            .attr("aria-hidden", "true");
+
+        NonScroll.disable();
+
+        if (returnFocus) {
+            $menuButton.trigger("focus");
+        }
+    }
+
+    function toggle() {
+        if ($header.hasClass(ACTIVE_CLASS)) {
+            close({
+                returnFocus: false,
+            });
+        } else {
+            open();
+        }
+
+        return false;
+    }
+
+    function getPanel($link) {
+        const panelId = $link.attr("aria-controls");
+
+        if (!panelId) return $();
+
+        return $megaMenu.find("#" + panelId);
+    }
+
+    function getController($panel) {
+        const panelId = $panel.attr("id");
+
+        if (!panelId) return $();
+
+        return $megaMenu.find(`[aria-controls="${panelId}"]`).first();
+    }
+
+    function hidePanel($panel) {
+        $panel
+            .prop({
+                inert: true,
+            })
+            .attr("aria-hidden", "true")
+            .removeClass(ACTIVE_PANEL_CLASS);
+    }
+
+    function showPanel($link) {
+        const $panel = getPanel($link);
+
+        if (!$panel.length) return $();
+
+        $link.attr("aria-expanded", "true");
+
+        $link.closest(".mega-menu__item, .mega-menu__sub-item").addClass(ACTIVE_PANEL_CLASS);
+
+        $panel
+            .prop({
+                inert: false,
+            })
+            .attr("aria-hidden", "false")
+            .addClass(ACTIVE_PANEL_CLASS);
+
+        return $panel;
+    }
+
+    function resetSubDepth($scope) {
+        $scope.find(".mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
+
+        $scope.find(".mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+
+        $scope.find(".mega-menu__sub-list[id]").each(function () {
+            hidePanel($(this));
+        });
+    }
+
+    function resetDepth() {
+        $megaMenu.find(".mega-menu__link--has-depth, " + ".mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
+
+        $megaMenu.find(".mega-menu__item, .mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+
+        $megaMenu.find(".mega-menu__main > " + ".mega-menu__inner > " + ".mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
+
+        $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
+
+        $megaMenu.find(".mega-menu__sub-box").each(function () {
+            hidePanel($(this));
+        });
+
+        $megaMenu.find(".mega-menu__sub-list[id]").each(function () {
+            hidePanel($(this));
+        });
+    }
+
+    function closeSubPanel() {
+        $megaMenu.find(".mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
+
+        $megaMenu.find(".mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+
+        $megaMenu.find(".mega-menu__sub-list[id]").each(function () {
+            hidePanel($(this));
+        });
+
+        $megaMenu.find(".mega-menu__sub-box").each(function () {
+            hidePanel($(this));
+        });
+
+        $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
+    }
+
+    function closeMainDepth() {
+        $megaMenu.find(".mega-menu__link--has-depth").attr("aria-expanded", "false");
+
+        $megaMenu.find(".mega-menu__link--has-depth").closest(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
+
+        $megaMenu.find(".mega-menu__main > " + ".mega-menu__inner > " + ".mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
+    }
+
+    function closeCurrentPanel($panel) {
+        const $controller = getController($panel);
+
+        if (!$controller.length) return false;
+
+        hidePanel($panel);
+
+        $controller.attr("aria-expanded", "false").closest(".mega-menu__item, .mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+
+        $controller.trigger("focus");
+
+        return true;
+    }
+
+    function bindMenuButton() {
+        $menuButton.off("click.header").on("click.header", function (e) {
+            e.preventDefault();
+
+            toggle();
+        });
+    }
+
+    function bindEsc() {
+        $win.off("keydown.header").on("keydown.header", function (e) {
+            if (e.key !== "Escape") return;
+            if (!$header.hasClass(ACTIVE_CLASS)) return;
+
+            const $focused = $(document.activeElement);
+
+            const $subListPanel = $focused.closest(".mega-menu__sub-list[id].is-active");
+
+            if ($subListPanel.length) {
+                e.preventDefault();
+
+                closeCurrentPanel($subListPanel);
+                return;
+            }
+
+            const $subBoxPanel = $focused.closest(".mega-menu__sub-box.is-active");
+
+            if ($subBoxPanel.length) {
+                e.preventDefault();
+
+                const $controller = getController($subBoxPanel);
+
+                resetSubDepth($subBoxPanel);
+                hidePanel($subBoxPanel);
+
+                $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
+
+                if ($controller.length) {
+                    $controller.attr("aria-expanded", "false").closest(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
+
+                    $controller.closest(".mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
+
+                    $controller.trigger("focus");
+                }
+
+                return;
+            }
+
+            close({
+                returnFocus: true,
+            });
+        });
+    }
+
+    function bindOutsideClick() {
+        $(document)
+            .off("click.headerOutside")
+            .on("click.headerOutside", function (e) {
+                if (!$header.hasClass(ACTIVE_CLASS)) return;
+
+                const $target = $(e.target);
+
+                if ($target.closest(".header__menu-button").length) {
+                    return;
+                }
+
+                if (!$target.closest(".header__box").length) {
+                    close({
+                        returnFocus: false,
+                    });
+                }
+            });
+    }
+
+    function bindMainClickCloseSub() {
+        $megaMenu
+            .find(".mega-menu__main")
+            .off("click.headerMain")
+            .on("click.headerMain", function (e) {
+                if (!$header.hasClass(ACTIVE_CLASS)) return;
+
+                const $target = $(e.target);
+
+                if ($target.closest(".mega-menu__link--has-depth").length) {
+                    return;
+                }
+
+                closeSubPanel();
+                closeMainDepth();
+            });
+    }
+
+    function bindDepthHasPanel() {
+        $megaMenu
+            .find(".mega-menu__link--has-depth")
+            .off("click.header")
+            .on("click.header", function (e) {
+                e.preventDefault();
+
+                const $link = $(this);
+                const isOpen = $link.attr("aria-expanded") === "true";
+                const $targetPanel = getPanel($link);
+
+                if (!$targetPanel.length) return;
+
+                $megaMenu.find(".mega-menu__link--has-depth").attr("aria-expanded", "false");
+
+                $megaMenu.find(".mega-menu__link--has-depth").closest(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
+
+                $megaMenu.find(".mega-menu__main > " + ".mega-menu__inner > " + ".mega-menu__section").removeClass(ACTIVE_PANEL_CLASS);
+
+                $megaMenu.find(".mega-menu__sub-box").each(function () {
+                    hidePanel($(this));
+                });
+
+                $megaMenu.find(".mega-menu__sub").removeClass(ACTIVE_PANEL_CLASS);
+
+                resetSubDepth($megaMenu);
+
+                if (isOpen) {
+                    $link.trigger("focus");
+                    return;
+                }
+
+                $megaMenu.find(".mega-menu__sub").addClass(ACTIVE_PANEL_CLASS);
+
+                $link.closest(".mega-menu__section").addClass(ACTIVE_PANEL_CLASS);
+
+                const $openedPanel = showPanel($link);
+
+                focusFirstItem($openedPanel);
+            });
+    }
+
+    function bindSubDepthHasPanel() {
+        $megaMenu
+            .find(".mega-menu__sub-link")
+            .off("click.header")
+            .on("click.header", function (e) {
+                const $link = $(this);
+
+                const $currentSection = $link.closest(".mega-menu__sub-section");
+
+                const $currentItem = $link.closest(".mega-menu__sub-item");
+
+                const $nextSections = $currentSection.nextAll(".mega-menu__sub-section");
+
+                const hasDepth = $link.hasClass("mega-menu__sub-link--has-depth");
+
+                const $targetPanel = getPanel($link);
+
+                if (hasDepth) {
+                    e.preventDefault();
+                }
+
+                $currentSection.find(".mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
+
+                $currentSection.find(".mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+
+                $nextSections.find(".mega-menu__sub-link--has-depth").attr("aria-expanded", "false");
+
+                $nextSections.find(".mega-menu__sub-item").removeClass(ACTIVE_PANEL_CLASS);
+
+                $nextSections.find(".mega-menu__sub-list[id]").each(function () {
+                    hidePanel($(this));
+                });
+
+                $currentItem.addClass(ACTIVE_PANEL_CLASS);
+
+                if (!hasDepth || !$targetPanel.length) {
+                    return;
+                }
+
+                const $openedPanel = showPanel($link);
+
+                focusFirstItem($openedPanel);
+            });
+    }
+
+    function bindBackToParentDepth() {
+        $megaMenu.off("keydown.headerBackDepth").on("keydown.headerBackDepth", function (e) {
+            if (e.key !== "Tab" || !e.shiftKey) return;
+
+            const $focused = $(e.target);
+
+            const $panel = $focused.closest(".mega-menu__sub-box.is-active, " + ".mega-menu__sub-list[id].is-active");
+
+            if (!$panel.length) return;
+
+            const $first = getFocusableElements($panel).first();
+
+            if (!$first.length || e.target !== $first[0]) return;
+
+            const $controller = getController($panel);
+
+            if (!$controller.length) return;
+
+            e.preventDefault();
+
+            $controller.trigger("focus");
+        });
+    }
+
+    function bindLastFocusClose() {
+        $header.off("keydown.headerLastFocus").on("keydown.headerLastFocus", function (e) {
+            if (!$header.hasClass(ACTIVE_CLASS)) return;
+            if (e.key !== "Tab") return;
+            if (e.shiftKey) return;
+
+            const $focusable = getFocusableElements($header);
+
+            const $last = $focusable.last();
+
+            if (!$last.length) return;
+            if (e.target !== $last[0]) return;
+
+            e.preventDefault();
+
+            close({
+                returnFocus: false,
+            });
+
+            focusMainContent();
+        });
+    }
+
+    function reset() {
+        close({
+            returnFocus: false,
+        });
+
+        $megaMenu.find(".mega-menu__item").removeClass(ACTIVE_PANEL_CLASS);
+
+        $megaMenu.find(".mega-menu__item.is-current").addClass(ACTIVE_PANEL_CLASS);
+    }
+
+    function bind() {
+        bindMenuButton();
+        bindEsc();
+        bindOutsideClick();
+        bindMainClickCloseSub();
+        bindDepthHasPanel();
+        bindSubDepthHasPanel();
+        bindBackToParentDepth();
+        bindLastFocusClose();
+    }
+
+    function init() {
+        $wrap = $("#wrap");
+        $header = $(".header");
+        $headerBox = $(".header__box");
+        $menuButton = $(".header__menu-button");
+        $megaMenu = $("#megaMenu");
+
+        if (!$header.length || !$headerBox.length || !$menuButton.length || !$megaMenu.length) {
+            return;
+        }
+
+        $megaMenu
+            .prop({
+                hidden: true,
+                inert: true,
+            })
+            .attr("aria-hidden", "true");
+
+        $megaMenu
+            .find(".mega-menu__sub-box")
+            .prop({
+                inert: true,
+            })
+            .attr("aria-hidden", "true");
+
+        $megaMenu
+            .find(".mega-menu__sub-list[id]")
+            .prop({
+                inert: true,
+            })
+            .attr("aria-hidden", "true");
+
+        bind();
+    }
+
+    return {
+        init,
+        open,
+        close,
+        toggle,
+        reset,
+    };
+})();
+
+/* =========================
+   Footer
+========================= */
+const Footer = (function () {
+    const ACTIVE_CLASS = "is-open";
+    const EVENT_NAMESPACE = ".footer";
+
+    let $footer = $();
+    let $navGroup = $();
+    let $navTitle = $();
+
+    function reset() {
+        $navGroup.removeClass(ACTIVE_CLASS);
+        $navTitle.attr("aria-expanded", "false");
+    }
+
+    function enableAccordion() {
+        $navTitle
+            .attr("aria-expanded", "false")
+            .off(`click${EVENT_NAMESPACE}`)
+            .on(`click${EVENT_NAMESPACE}`, function () {
+                const $button = $(this);
+                const $group = $button.closest(".footer__nav-group");
+                const isOpen = $group.hasClass(ACTIVE_CLASS);
+
+                // 일단 전체 닫기
+                $navGroup.removeClass(ACTIVE_CLASS);
+                $navTitle.attr("aria-expanded", "false");
+
+                // 원래 닫혀있던 애만 다시 열기
+                if (!isOpen) {
+                    $group.addClass(ACTIVE_CLASS);
+                    $button.attr("aria-expanded", "true");
+                }
+            });
+    }
+
+    function disableAccordion() {
+        $navTitle.off(`click${EVENT_NAMESPACE}`).attr("aria-expanded", "true");
+
+        $navGroup.removeClass(ACTIVE_CLASS);
+    }
+
+    function init() {
+        $footer = $(".footer");
+        $navGroup = $(".footer__nav-group");
+        $navTitle = $(".footer__nav-group:not(.footer__nav-group--family) .footer__nav-title");
+
+        if (!$footer.length || !$navGroup.length || !$navTitle.length) return;
+    }
+
+    return {
+        init,
+        reset,
+        enableAccordion,
+        disableAccordion,
+    };
+})();
+
+/* =========================
+   swiper
+========================= */
+const createResponsiveSwiper = function (swiperTargets = [], options = {}) {
+    const DEFAULT_BREAKPOINT = options.breakpoint ?? 768;
+    const EVENT_NAMESPACE = options.namespace || ".responsiveSwiper";
+
+    let resizeTimer = null;
+    let orientationTimer = null;
+
+    const swipers = {};
+
+    function isActiveByItem(item) {
+        if (item.always === true) {
+            return true;
+        }
+
+        if (typeof item.breakpoint === "number") {
+            return $(window).width() < item.breakpoint;
+        }
+
+        if (DEFAULT_BREAKPOINT === null || DEFAULT_BREAKPOINT === false) {
+            return true;
+        }
+
+        return $(window).width() < DEFAULT_BREAKPOINT;
+    }
+
+    function handleSwiper() {
+        swiperTargets.forEach((item) => {
+            const $el = $(item.selector);
+
+            if (!$el.length) return;
+
+            const $toggleTarget = item.toggleTarget ? $(item.toggleTarget) : $el;
+
+            const isActive = isActiveByItem(item);
+
+            if (!isActive) {
+                if (item.noneClass) {
+                    $toggleTarget.addClass(item.noneClass);
+                }
+
+                if (swipers[item.key]) {
+                    swipers[item.key].destroy(true, true);
+                    swipers[item.key] = null;
+                }
+
+                return;
+            }
+
+            if (item.noneClass) {
+                $toggleTarget.removeClass(item.noneClass);
+            }
+
+            if (!swipers[item.key]) {
+                swipers[item.key] = new Swiper($el[0], item.options || {});
+            } else {
+                swipers[item.key].update();
+            }
+        });
+    }
+
+    function bindEvents() {
+        $(window).off(EVENT_NAMESPACE);
+
+        if (typeof isMobile !== "undefined" && isMobile) {
+            $(window).on(`orientationchange${EVENT_NAMESPACE}`, function () {
+                clearTimeout(orientationTimer);
+
+                orientationTimer = setTimeout(function () {
+                    handleSwiper();
+                }, 200);
+            });
+        } else {
+            $(window).on(`resize${EVENT_NAMESPACE}`, function () {
+                clearTimeout(resizeTimer);
+
+                resizeTimer = setTimeout(function () {
+                    handleSwiper();
+                }, 150);
+            });
+        }
+    }
+
+    function init() {
+        bindEvents();
+        handleSwiper();
+    }
+
+    function destroy() {
+        $(window).off(EVENT_NAMESPACE);
+
+        clearTimeout(resizeTimer);
+        clearTimeout(orientationTimer);
+
+        resizeTimer = null;
+        orientationTimer = null;
+
+        Object.keys(swipers).forEach((key) => {
+            if (swipers[key]) {
+                swipers[key].destroy(true, true);
+                swipers[key] = null;
+            }
+        });
+    }
+
+    function update() {
+        handleSwiper();
+    }
+
+    return {
+        init,
+        destroy,
+        update,
+        swipers,
+    };
+};
+
+/* =========================
+   selectbox
+
+<!-- 단일 정렬: 선택 후 해제 불가 -->
+<div class="custom-selectbox" data-update-title="true">
+<!-- 단일 필터: 선택 후 다시 누르면 해제 가능 -->
+<div class="custom-selectbox" data-placeholder="선택" data-update-title="true">
+<!-- 다중 필터: 선택값을 버튼에 보여줄 때 -->
+<div class="custom-selectbox" data-multiple="true" data-placeholder="선택" data-update-title="true">
+<!-- 다중 필터: 버튼명 고정 -->
+<div class="custom-selectbox" data-multiple="true" data-update-title="false">
+
+========================= */
+const CustomSelectbox = (function () {
+    const SELECTOR = ".custom-selectbox";
+    const SELECTED = ".custom-selectbox__selected";
+    const SELECTEDTEXT = ".custom-selectbox__selected-text";
+    const LIST = ".custom-selectbox__list";
+    const OPTION = ".custom-selectbox__option";
+    const CHECKBOX = ".custom-selectbox__checkbox";
+    const INPUT = ".custom-selectbox__input";
+    const CLOSE = ".custom-selectbox__close";
+    const BOX_INNER = ".custom-selectbox__box-inner";
+
+    const ACTIVE_CLASS = "is-active";
+    const ALL_OPTION_CLASS = "custom-selectbox__option--all";
+    const ALL_OPTION = `.${ALL_OPTION_CLASS}`;
+
+    function isMultiple($select) {
+        return $select.attr("data-multiple") === "true";
+    }
+
+    function shouldUpdateTitle($select) {
+        return $select.attr("data-update-title") !== "false";
+    }
+
+    function hasPlaceholder($select) {
+        return typeof $select.attr("data-placeholder") !== "undefined";
+    }
+
+    function canClear($select) {
+        return isMultiple($select) || hasPlaceholder($select);
+    }
+
+    function getDefaultText($select) {
+        const $selectedText = $select.find(SELECTEDTEXT);
+
+        if ($selectedText.length) {
+            return $.trim($selectedText.text());
+        }
+
+        return $.trim($select.find(SELECTED).text());
+    }
+
+    function setDefaultText($select) {
+        if (typeof $select.data("defaultText") !== "undefined") return;
+
+        $select.data("defaultText", getDefaultText($select));
+    }
+
+    function getPlaceholder($select) {
+        if (hasPlaceholder($select)) {
+            return $select.attr("data-placeholder") || "";
+        }
+
+        return $select.data("defaultText") || "";
+    }
+
+    function getAllOption($select) {
+        return $select.find(ALL_OPTION);
+    }
+
+    function getNormalOptions($select) {
+        return $select.find(OPTION).not(ALL_OPTION);
+    }
+
+    function getSelectedOptions($select) {
+        return getNormalOptions($select).filter('[aria-selected="true"]');
+    }
+
+    function getOptionValue($option) {
+        return $option.find(CHECKBOX).val() || $option.data("value") || "";
+    }
+
+    function getOptionText($option) {
+        const $text = $option.find(".custom-selectbox__text");
+
+        if ($text.length) {
+            return $.trim($text.text());
+        }
+
+        return $.trim($option.text());
+    }
+
+    function setOptionSelected($option, selected) {
+        const isSelected = selected === true;
+
+        $option.attr("aria-selected", isSelected ? "true" : "false");
+        $option.toggleClass("is-selected", isSelected);
+        $option.find(CHECKBOX).prop("checked", isSelected);
+    }
+
+    function getValue($select) {
+        const $selectedOptions = getSelectedOptions($select);
+
+        if (isMultiple($select)) {
+            return $selectedOptions
+                .map(function () {
+                    return getOptionValue($(this));
+                })
+                .get();
+        }
+
+        return getOptionValue($selectedOptions.first());
+    }
+
+    function getText($select) {
+        const $selectedOptions = getSelectedOptions($select);
+
+        if (!$selectedOptions.length) {
+            return getPlaceholder($select);
+        }
+
+        if (isMultiple($select)) {
+            return $selectedOptions
+                .map(function () {
+                    return getOptionText($(this));
+                })
+                .get()
+                .join(", ");
+        }
+
+        return getOptionText($selectedOptions.first());
+    }
+
+    function updateAllOptionState($select) {
+        const $allOption = getAllOption($select);
+
+        if (!$allOption.length) return;
+
+        const $normalOptions = getNormalOptions($select);
+        const $selectedOptions = getSelectedOptions($select);
+
+        const isAllSelected = $normalOptions.length > 0 && $normalOptions.length === $selectedOptions.length;
+
+        setOptionSelected($allOption, isAllSelected);
+    }
+
+    function updateInput($select) {
+        const value = getValue($select);
+        const inputValue = Array.isArray(value) ? value.join(",") : value;
+
+        $select.find(INPUT).val(inputValue);
+    }
+
+    function updateSelectedText($select) {
+        if (!shouldUpdateTitle($select)) return;
+
+        const text = getText($select);
+        const $selectedText = $select.find(SELECTEDTEXT);
+
+        if ($selectedText.length) {
+            $selectedText.text(text);
+            return;
+        }
+
+        $select.find(SELECTED).text(text);
+    }
+
+    function updateValue($select) {
+        updateAllOptionState($select);
+
+        const value = getValue($select);
+        const text = getText($select);
+
+        updateSelectedText($select);
+        updateInput($select);
+
+        if (typeof $select.data("onSelect") === "function") {
+            $select.data("onSelect")(value, text);
+        }
+
+        $select.trigger("change.customSelect", [value, text]);
+    }
+
+    function unselect($select, value) {
+        if (!canClear($select)) return;
+
+        const $option = getNormalOptions($select).filter(function () {
+            return getOptionValue($(this)) === value;
+        });
+
+        if (!$option.length) return;
+
+        setOptionSelected($option, false);
+        updateValue($select);
+    }
+
+    function close($select) {
+        $select.removeClass(ACTIVE_CLASS);
+        $select.find(SELECTED).attr("aria-expanded", "false");
+    }
+
+    function closeAll($except) {
+        $(SELECTOR)
+            .not($except || $())
+            .each(function () {
+                close($(this));
+            });
+    }
+
+    function open($select) {
+        const $selectedOption = getSelectedOptions($select).first();
+        const $firstOption = $select.find(OPTION).not("[hidden]").first();
+        const $target = $selectedOption.length ? $selectedOption : $firstOption;
+
+        closeAll($select);
+
+        $select.addClass(ACTIVE_CLASS);
+        $select.find(SELECTED).attr("aria-expanded", "true");
+
+        $target.focus();
+    }
+
+    function toggle($select) {
+        const isOpen = $select.find(SELECTED).attr("aria-expanded") === "true";
+
+        if (isOpen) {
+            close($select);
+        } else {
+            open($select);
+        }
+    }
+
+    function selectOption($select, $option) {
+        const multiple = isMultiple($select);
+        const isAllOption = $option.hasClass(ALL_OPTION_CLASS);
+        const isSelected = $option.attr("aria-selected") === "true";
+
+        if (isAllOption) {
+            if (!multiple) return;
+
+            const nextSelected = !isSelected;
+
+            getNormalOptions($select).each(function () {
+                setOptionSelected($(this), nextSelected);
+            });
+
+            setOptionSelected($option, nextSelected);
+
+            updateValue($select);
+            return;
+        }
+
+        if (multiple) {
+            setOptionSelected($option, !isSelected);
+        } else {
+            const nextSelected = hasPlaceholder($select) ? !isSelected : true;
+
+            getNormalOptions($select).each(function () {
+                setOptionSelected($(this), false);
+            });
+
+            setOptionSelected($option, nextSelected);
+
+            close($select);
+            $select.find(SELECTED).focus();
+        }
+
+        updateValue($select);
+    }
+
+    function focusOption($select, direction) {
+        const $options = $select.find(OPTION).not("[hidden]");
+        const $current = $(document.activeElement);
+
+        let index = $options.index($current);
+
+        if (index < 0) {
+            index = 0;
+        } else {
+            index += direction;
+        }
+
+        if (index < 0) {
+            index = $options.length - 1;
+        }
+
+        if (index >= $options.length) {
+            index = 0;
+        }
+
+        $options.eq(index).focus();
+    }
+
+    function setA11y($select, index) {
+        const $selectedBtn = $select.find(SELECTED);
+        const $list = $select.find(LIST);
+        const $options = $select.find(OPTION);
+        const multiple = isMultiple($select);
+
+        setDefaultText($select);
+
+        let listId = $list.attr("id");
+
+        if (!listId) {
+            listId = `customSelectList${index + 1}`;
+            $list.attr("id", listId);
+        }
+
+        $selectedBtn.attr({
+            type: "button",
+            "aria-haspopup": "listbox",
+            "aria-expanded": "false",
+            "aria-controls": listId,
+        });
+
+        $list.attr({
+            role: "listbox",
+        });
+
+        if (multiple) {
+            $list.attr("aria-multiselectable", "true");
+            getAllOption($select).removeAttr("hidden");
+        } else {
+            $list.removeAttr("aria-multiselectable");
+            getAllOption($select).attr("hidden", true);
+        }
+
+        const $allOption = getAllOption($select);
+        const isAllChecked = multiple && $allOption.find(CHECKBOX).prop("checked") === true;
+
+        let hasInitialSelected = false;
+
+        $options.each(function (optionIndex) {
+            const $option = $(this);
+            const $checkbox = $option.find(CHECKBOX);
+            const isAllOption = $option.hasClass(ALL_OPTION_CLASS);
+            const checked = $checkbox.length ? $checkbox.prop("checked") === true : false;
+
+            let selected = $option.attr("aria-selected") === "true" || checked;
+
+            if (!$option.attr("id")) {
+                $option.attr("id", `${listId}Option${optionIndex + 1}`);
+            }
+
+            $option.attr({
+                role: "option",
+                tabindex: "-1",
+            });
+
+            $checkbox.attr("tabindex", "-1");
+
+            if (multiple) {
+                if (isAllChecked && !isAllOption) {
+                    selected = true;
+                }
+            } else {
+                if (isAllOption) {
+                    selected = false;
+                } else if (selected && !hasInitialSelected) {
+                    hasInitialSelected = true;
+                } else {
+                    selected = false;
+                }
+            }
+
+            setOptionSelected($option, selected);
+        });
+
+        updateAllOptionState($select);
+        updateSelectedText($select);
+        updateInput($select);
+    }
+
+    function reset($select) {
+        if (!canClear($select)) return;
+
+        getNormalOptions($select).each(function () {
+            setOptionSelected($(this), false);
+        });
+
+        getAllOption($select).each(function () {
+            setOptionSelected($(this), false);
+        });
+
+        updateValue($select);
+    }
+
+    function bindEvents() {
+        $(document)
+            .off("click.customSelect")
+            .on("click.customSelect", function (e) {
+                if ($(e.target).closest(BOX_INNER).length) return;
+
+                closeAll();
+            });
+
+        $(document)
+            .off("keydown.customSelect")
+            .on("keydown.customSelect", function (e) {
+                if (e.key === "Escape") {
+                    closeAll();
+                }
+            });
+
+        $(SELECTOR)
+            .off("click.customSelect", SELECTED)
+            .on("click.customSelect", SELECTED, function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                toggle($(this).closest(SELECTOR));
+            });
+
+        $(SELECTOR)
+            .off("click.customSelect", CLOSE)
+            .on("click.customSelect", CLOSE, function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                close($(this).closest(SELECTOR));
+                $(this).closest(SELECTOR).find(SELECTED).focus();
+            });
+
+        $(SELECTOR)
+            .off("keydown.customSelect", SELECTED)
+            .on("keydown.customSelect", SELECTED, function (e) {
+                const $select = $(this).closest(SELECTOR);
+
+                if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+                    e.preventDefault();
+                    open($select);
+                }
+
+                if (e.key === "Escape") {
+                    e.preventDefault();
+                    close($select);
+                }
+            });
+
+        $(SELECTOR)
+            .off("click.customSelect", OPTION)
+            .on("click.customSelect", OPTION, function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                selectOption($(this).closest(SELECTOR), $(this));
+            });
+
+        $(SELECTOR)
+            .off("keydown.customSelect", OPTION)
+            .on("keydown.customSelect", OPTION, function (e) {
+                const $select = $(this).closest(SELECTOR);
+
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    selectOption($select, $(this));
+                }
+
+                if (e.key === "ArrowDown") {
+                    e.preventDefault();
+                    focusOption($select, 1);
+                }
+
+                if (e.key === "ArrowUp") {
+                    e.preventDefault();
+                    focusOption($select, -1);
+                }
+
+                if (e.key === "Escape") {
+                    e.preventDefault();
+                    close($select);
+                    $select.find(SELECTED).focus();
+                }
+            });
+    }
+
+    function init() {
+        const $selects = $(SELECTOR);
+
+        if (!$selects.length) return;
+
+        $selects.each(function (index) {
+            setA11y($(this), index);
+        });
+
+        bindEvents();
+    }
+
+    return {
+        init,
+        close,
+        closeAll,
+        unselect,
+        reset,
+    };
+})();
+
+//$select.trigger("change.customSelect", [value, text]);
+
+/* =========================
+   Layout Handler
+========================= */
+const LayoutHandler = createBreakpointHandler({
+    breakpoint: 1024,
+    namespace: ".layoutHandler",
+
+    onReset: function () {
+        $("html").removeClass("layout-pc layout-mo");
+
+        Header.reset();
+        Footer.reset();
+    },
+
+    onUnder: function () {
+        // 1024 이하
+        $("html").removeClass("layout-pc").addClass("layout-mo");
+
+        Footer.enableAccordion();
+    },
+
+    onOver: function () {
+        // 1024 초과
+        $("html").removeClass("layout-mo").addClass("layout-pc");
+
+        Footer.disableAccordion();
+    },
+
+    onChange: function () {
+        // breakpoint 변경 시 필요한 작업 있으면 추가
+    },
+});
+
+/* =========================
+   초기 실행 - 공통
+========================= */
+$(function () {
+    Device.init();
+    Header.init();
+    Footer.init();
+    LayoutHandler.init(true);
+
+    //const navigation = performance.getEntriesByType("navigation")[0];
+
+    // 탑버튼
+    $(".js-back-to-top").on("click", function () {
+        ScrollUtil.scrollTopReset(0.8);
+    });
+
+    // 뷰타입 버튼
+    $(".view-buttons").each(function () {
+        const $view = $(this);
+        const targetSelector = $view.data("view-target");
+        const $target = $(targetSelector);
+
+        $view.find(".view-button").on("click", function () {
+            const $button = $(this);
+            const isGrid = $button.hasClass("view-button--grid");
+
+            $button.addClass("is-active").siblings(".view-button").removeClass("is-active");
+
+            $target.removeClass("type-grid type-list").addClass(isGrid ? "type-grid" : "type-list");
+        });
+    });
+});
