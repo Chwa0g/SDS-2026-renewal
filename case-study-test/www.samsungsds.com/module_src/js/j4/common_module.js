@@ -8,17 +8,6 @@ if (typeof window !== "undefined" && window.jQuery) {
     if (!$j.isWindow) $j.isWindow = function (obj) { return obj != null && obj === obj.window; };
     if (!$j.cssProps) $j.cssProps = {};
     if (!$j.cssHooks) $j.cssHooks = {};
-    if (!$j.proxy) {
-        $j.proxy = function(fn, context) {
-            if (typeof fn !== "function") return undefined;
-            var args = Array.prototype.slice.call(arguments, 2);
-            var proxy = function() {
-                return fn.apply(context || this, args.concat(Array.prototype.slice.call(arguments)));
-            };
-            proxy.guid = fn.guid = fn.guid || ($j.guid = $j.guid || 1)++;
-            return proxy;
-        };
-    }
     if (typeof Object.prototype.parse === "undefined") {
         Object.defineProperty(Object.prototype, "parse", { value: function () { return this; }, writable: true, configurable: true });
     }
