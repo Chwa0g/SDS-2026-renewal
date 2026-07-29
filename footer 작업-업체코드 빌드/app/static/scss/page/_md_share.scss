@@ -1,0 +1,362 @@
+@charset "utf-8";
+
+/* ==========================================================================
+   md_share - 공유하기 팝업 모듈 (Samsung SDS Event Share Modal)
+   ========================================================================== */
+
+/* Keyframe Animations */
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Share Area Container */
+.md_share_area {
+    display: none;
+    position: absolute;
+
+    &.on {
+        display: block;
+        animation: fade 0.4s;
+        z-index: 7001;
+    }
+
+    &.off {
+        animation: fadeOut 0.3s;
+    }
+}
+
+/* Dim Backdrop */
+.md_share_dimd {
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 130%;
+        background: rgba(0, 0, 0, 0.3);
+        content: "";
+    }
+}
+
+/* Share Box Base & ver2 */
+.md_share_box {
+    position: relative;
+    padding: 15px 26px 10px 26px;
+    background: #fff;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    z-index: 1001;
+
+    .tit {
+        position: absolute !important;
+        top: auto;
+        left: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        text-indent: 0;
+        clip: rect(1px 1px 1px 1px);
+    }
+
+    .li_s {
+        display: inline-block;
+        min-width: 62px;
+        margin: 0 2px;
+        color: #000;
+        font-size: 12px;
+        line-height: 24px;
+        text-align: center;
+        transition: all 0.4s;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        i {
+            display: block;
+            text-align: center;
+
+            img {
+                width: 30px;
+            }
+        }
+
+        span {
+            display: block;
+            margin-top: 5px;
+        }
+
+        &:hover,
+        &:focus {
+            color: #2189ff;
+        }
+    }
+
+    /* Version 2 (Card / Modern Design) */
+    &.ver2 {
+        outline: 1px solid #ccc;
+        padding: 20px 20px 25px 20px;
+        max-width: 290px;
+        border: unset;
+
+        .title_wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            .title {
+                font-size: 1.8rem;
+                font-weight: 600;
+                line-height: 30px;
+                margin: 0;
+                color: #000;
+            }
+        }
+
+        .ico_share_box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+
+            .li_s {
+                width: 60px;
+                height: 60px;
+                min-width: unset;
+                margin: unset;
+                background-color: #f6f6f6;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+
+                i img {
+                    width: 25px;
+                    transition: all 0.4s;
+
+                    &.df_size {
+                        width: 30px;
+                    }
+                }
+
+                &:hover,
+                &:focus {
+                    i img {
+                        filter: invert(45%) sepia(69%) saturate(696%) hue-rotate(155deg) brightness(92%) contrast(94%);
+                    }
+                }
+            }
+        }
+
+        .md_btn_share_close {
+            position: relative;
+
+            span::before {
+                width: 2px;
+            }
+            span::after {
+                height: 2px;
+            }
+        }
+    }
+}
+
+/* Close Button (.md_btn_share_close) */
+.md_btn_share_close {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    span {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 19px;
+        height: 0;
+        padding-top: 19px;
+        margin: -10px 0 0 -10px;
+        transform: rotate(45deg);
+        font-size: 0;
+        text-indent: -9999px;
+        overflow: hidden;
+        transition: transform 0.4s;
+
+        &:before {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            margin-left: -1px;
+            background: #000;
+            content: "";
+        }
+
+        &:after {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            margin-top: -1px;
+            background: #000;
+            content: "";
+        }
+    }
+
+    &:hover,
+    &:focus {
+        span {
+            transform: rotate(225deg);
+
+            &:before,
+            &:after {
+                background: #2189ff;
+            }
+        }
+    }
+}
+
+/* Share Trigger Button (.md_btn_share / .btn_md_share) */
+.md_btn_share {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        background: url('https://image.samsungsds.com/module_src/images/icon/ico_share.svg?queryString=20260619035537') center/cover no-repeat;
+        content: "";
+        transition: all 0.4s;
+    }
+
+    &:hover:before,
+    &:focus:before {
+        filter: invert(45%) sepia(69%) saturate(696%) hue-rotate(155deg) brightness(92%) contrast(94%);
+    }
+}
+
+.btn_md_share {
+    background: url('https://image.samsungsds.com/module_src/images/icon/ico_share02.png?queryString=20260630013551') center/100% no-repeat;
+    border: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: url('https://image.samsungsds.com/module_src/images/icon/ico_share02_over.png?queryString=20260630013551') center/100% no-repeat;
+    }
+}
+
+/* Card image overlay share button style */
+.item .img .md_btn_share {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        position: unset;
+        width: 16px;
+        height: 16px;
+        display: flex;
+    }
+}
+
+/* Mobile Responsiveness (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .md_share_box {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 340px;
+        padding: 10px 22px 30px 22px;
+        transform: translate(-50%, -50%);
+
+        &.ver2 {
+            padding: 20px 20px 25px 20px;
+            max-width: 300px;
+
+            .ico_share_box {
+                gap: 12px;
+                justify-content: flex-start;
+
+                .li_s {
+                    width: 56px;
+                    height: 56px;
+                }
+            }
+
+            .md_btn_share_close {
+                right: 0;
+                top: 0;
+            }
+        }
+
+        .tit {
+            display: block;
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 28px;
+            text-align: center;
+        }
+    }
+
+    .md_btn_share_close {
+        right: 10px;
+        top: 10px;
+
+        span {
+            width: 20px;
+            height: 20px;
+
+            &:before {
+                width: 2px;
+            }
+            &:after {
+                height: 2px;
+            }
+        }
+    }
+}
