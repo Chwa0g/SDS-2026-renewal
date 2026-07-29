@@ -468,6 +468,52 @@
         initShareBtn();
     });
 
+    // 게시글 인쇄 기능 (onclick="printPost();"로 사용 가능)
+    var lastPrintTime = 0;
+
+    function printPost() {
+        var now = new Date().getTime();
+        if (now - lastPrintTime < 500) return false;
+        lastPrintTime = now;
+
+        if (typeof window.beforePrint === 'function' && window.beforePrint !== beforePrint) {
+            window.onbeforeprint = window.beforePrint;
+        } else {
+            window.onbeforeprint = beforePrint;
+        }
+
+        if (typeof window.afterPrint === 'function' && window.afterPrint !== afterPrint) {
+            window.onafterprint = window.afterPrint;
+        } else {
+            window.onafterprint = afterPrint;
+        }
+
+        window.print();
+        return false;
+    }
+
+    function beforePrint() {
+        $(".post.is_reverse").css("display", "none");
+        $(".float-section").css("display", "none");
+        $(".post.is_flow").css("width", "100%").css("padding", "0 20px 0 20px");
+        $(".backToList").css("display", "none");
+        $(".postOtherInfo_viewAll").css("display", "none");
+        $(".post_btnBox").css("display", "none");
+        $(".insight-report-detail__side").css("display", "none");
+        $(".insight-report-detail__share").css("display", "none");
+    }
+
+    function afterPrint() {
+        $(".post.is_reverse").css("display", "");
+        $(".float-section").css("display", "");
+        $(".post.is_flow").css("width", "").css("padding", "");
+        $(".backToList").css("display", "");
+        $(".postOtherInfo_viewAll").css("display", "");
+        $(".post_btnBox").css("display", "");
+        $(".insight-report-detail__side").css("display", "");
+        $(".insight-report-detail__share").css("display", "");
+    }
+
     // 글로벌 네임스페이스 노출 (기존 코드 100% 호환)
     global.md_pop_share = md_pop_share;
     global.md_pop_share02 = md_pop_share02;
@@ -477,5 +523,10 @@
     global.mdShareClose = mdShareClose;
     global.focusTrapOn = focusTrapOn;
     global.focusTrapOff = focusTrapOff;
+    global.printPost = printPost;
+    global.beforePrint = beforePrint;
+    global.afterPrint = afterPrint;
 
 })(typeof window !== 'undefined' ? window : this, typeof jQuery !== 'undefined' ? jQuery : null);
+
+

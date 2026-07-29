@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samsung SDS - md_share 공유하기 팝업 모듈화 보고서</title>
+    <title>Samsung SDS - md_share 공유하기 & printPost 인쇄 모듈화 보고서</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #0057ff;
@@ -53,17 +56,6 @@
             box-shadow: 0 12px 30px rgba(0, 55, 165, 0.25);
             position: relative;
             overflow: hidden;
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
-            border-radius: 50%;
         }
 
         .badge {
@@ -191,12 +183,31 @@
             white-space: pre;
         }
 
-        .tag { color: #f7768e; }
-        .attr { color: #bb9af7; }
-        .val { color: #9ece6a; }
-        .keyword { color: #bb9af7; font-weight: bold; }
-        .func { color: #7aa2f7; }
-        .comment { color: #565f89; font-style: italic; }
+        .tag {
+            color: #f7768e;
+        }
+
+        .attr {
+            color: #bb9af7;
+        }
+
+        .val {
+            color: #9ece6a;
+        }
+
+        .keyword {
+            color: #bb9af7;
+            font-weight: bold;
+        }
+
+        .func {
+            color: #7aa2f7;
+        }
+
+        .comment {
+            color: #565f89;
+            font-style: italic;
+        }
 
         /* Step List */
         .step-list {
@@ -242,65 +253,67 @@
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <!-- Header -->
-    <div class="header">
-        <span class="badge">SAMSUNG SDS RENEWAL PROJECT</span>
-        <h1>md_share 공유하기 팝업 모듈화 보고서</h1>
-        <p>기존 운영 페이지의 분산된 공유 팝업 코드를 추출하여 HTML, SCSS, JS 표준 컴포넌트로 구축하고 하위 호환성 및 웹 접근성(WAI-ARIA)을 확보한 작업 문서입니다.</p>
-    </div>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <span class="badge">SAMSUNG SDS RENEWAL PROJECT</span>
+            <h1>md_share 공유하기 & printPost 인쇄 모듈화 보고서</h1>
+            <p>md_share 팝업 모듈(HTML/SCSS/JS)의 전체 기능과 printPost() 인쇄 기능까지 모두 통합하여 작성한 종합 가이드 보고서입니다.</p>
+        </div>
 
-    <!-- Section 1: Overview -->
-    <div class="card">
-        <h2 class="section-title">1. 개요 및 모듈화 목적</h2>
-        <div class="grid-2">
-            <div class="info-box">
-                <h4>기존 이슈 분석</h4>
-                <ul>
-                    <li>이벤트 및 운영 페이지 전반에 HTML/CSS/JS가 파편화되어 존재</li>
-                    <li>중복 스크립트로 인한 이중 이벤트 호출 및 팝업 토글 오류</li>
-                    <li>웹 접근성(포커스 이동, ESC 닫기) 미지원 문제</li>
-                </ul>
-            </div>
-            <div class="info-box">
-                <h4>모듈화 개선 성과</h4>
-                <ul>
-                    <li><strong>3개 모듈 추출</strong>: <code>md_share.inc</code>, <code>_md_share.scss</code>, <code>md_share.js</code></li>
-                    <li><strong>100% 하위 호환성</strong>: 기존 `md_pop_share04` 함수 유지</li>
-                    <li><strong>WAI-ARIA 규격</strong>: 포커스 트랩(Tab 순환) 및 ESC 제어</li>
-                </ul>
+        <!-- Section 1: Overview -->
+        <div class="card">
+            <h2 class="section-title">1. 개요 및 모듈화 성과</h2>
+            <div class="grid-2">
+                <div class="info-box">
+                    <h4>md_share 공유 팝업 모듈</h4>
+                    <ul>
+                        <li><strong>3개 모듈 추출</strong>: <code>md_share.inc</code>, <code>_md_share.scss</code>,
+                            <code>md_share.js</code></li>
+                        <li><strong>WAI-ARIA 규격</strong>: <code>role="dialog"</code>, 포커스 트랩(Tab 순환), ESC 닫기</li>
+                        <li><strong>7종 SNS 지원</strong>: Linkedin, Facebook, X, KakaoTalk, Instagram, Naver, 링크 복사</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h4>printPost() 인쇄 기능 통합</h4>
+                    <ul>
+                        <li><strong>자유로운 연동</strong>: 클래스 제약 없이 <code>onclick="return printPost();"</code>로 연결</li>
+                        <li><strong>이중 팝업 해결</strong>: 500ms 디바운스 Check 내장</li>
+                        <li><strong>스타일 자동 원복</strong>: 페이지 리로드 없이 <code>afterPrint()</code> 시 요소 원복</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Section 2: Structure -->
-    <div class="card">
-        <h2 class="section-title">2. 추출된 모듈 파일 구조</h2>
-        <div class="code-container">
-            <div class="code-header">Directory Overview</div>
-            <pre>app/
+        <!-- Section 2: Structure -->
+        <div class="card">
+            <h2 class="section-title">2. 구성 모듈 파일 구조</h2>
+            <div class="code-container">
+                <div class="code-header">Directory Overview</div>
+                <pre>app/
 ├── inc/
 │   └── <span class="attr">md_share.inc</span>                 <span class="comment"># [HTML] 공유 팝업 WAI-ARIA 마크업 모듈</span>
 └── static/
     ├── js/
-    │   └── <span class="attr">md_share.js</span>              <span class="comment"># [JS] 팝업 위치 계산, 포커스트랩, SNS 연동</span>
+    │   └── <span class="attr">md_share.js</span>              <span class="comment"># [JS] 팝업 위치 계산, 포커스트랩, SNS 연동, printPost() 인쇄</span>
     └── scss/
         ├── component.scss           <span class="comment"># @import "./page/md_share" 포함</span>
         └── page/
-            └── <span class="attr">_md_share.scss</span>       <span class="comment"># [SCSS] 레이어 팝업, 딤 배경, 페이드 애니메이션</span></pre>
+            └── <span class="attr">_md_share.scss</span>       <span class="comment"># [SCSS] 팝업 레이어, 딤 배경, 페이드 애니메이션</span></pre>
+            </div>
         </div>
-    </div>
 
-    <!-- Section 3: Spec & Code -->
-    <div class="card">
-        <h2 class="section-title">3. 모듈별 상세 코드 사양</h2>
+        <!-- Section 3: Spec & Code -->
+        <div class="card">
+            <h2 class="section-title">3. 모듈별 상세 소스 코드</h2>
 
-        <h3 style="font-size:16px; margin: 16px 0 8px;">① HTML 마크업 모듈 (app/inc/md_share.inc)</h3>
-        <div class="code-container">
-            <div class="code-header">app/inc/md_share.inc</div>
-            <pre><span class="comment">&lt;!-- md_share_area --&gt;</span>
+            <h3 style="font-size:16px; margin: 16px 0 8px;">① HTML 마크업 (app/inc/md_share.inc)</h3>
+            <div class="code-container">
+                <div class="code-header">app/inc/md_share.inc</div>
+                <pre><span class="comment">&lt;!-- md_share_area --&gt;</span>
 &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="val">"md_share_area"</span> <span class="attr">id</span>=<span class="val">"md_share_area"</span>&gt;
     &lt;<span class="tag">span</span> <span class="attr">class</span>=<span class="val">"md_share_dimd"</span> <span class="attr">aria-hidden</span>=<span class="val">"true"</span>&gt;&lt;/<span class="tag">span</span>&gt;
     &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="val">"md_share_box ver2"</span> <span class="attr">role</span>=<span class="val">"dialog"</span> <span class="attr">aria-modal</span>=<span class="val">"true"</span>&gt;
@@ -313,28 +326,43 @@
             &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> <span class="attr">id</span>=<span class="val">"share_facebook"</span> <span class="attr">class</span>=<span class="val">"li_s"</span>&gt;...&lt;/<span class="tag">button</span>&gt;
             &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> <span class="attr">id</span>=<span class="val">"share_twitter"</span> <span class="attr">class</span>=<span class="val">"li_s"</span>&gt;...&lt;/<span class="tag">button</span>&gt;
             &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> <span class="attr">id</span>=<span class="val">"share_kakaotalk"</span> <span class="attr">class</span>=<span class="val">"li_s"</span>&gt;...&lt;/<span class="tag">button</span>&gt;
+            &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> <span class="attr">id</span>=<span class="val">"share_instargram"</span> <span class="attr">class</span>=<span class="val">"li_s"</span>&gt;...&lt;/<span class="tag">button</span>&gt;
+            &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> <span class="attr">id</span>=<span class="val">"share_naver"</span> <span class="attr">class</span>=<span class="val">"li_s"</span>&gt;...&lt;/<span class="tag">button</span>&gt;
             &lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> <span class="attr">id</span>=<span class="val">"share_link"</span> <span class="attr">class</span>=<span class="val">"li_s"</span> <span class="attr">title</span>=<span class="val">"링크 복사"</span>&gt;...&lt;/<span class="tag">button</span>&gt;
         &lt;/<span class="tag">div</span>&gt;
     &lt;/<span class="tag">div</span>&gt;
 &lt;/<span class="tag">div</span>&gt;</pre>
-        </div>
+            </div>
 
-        <h3 style="font-size:16px; margin: 24px 0 8px;">② JavaScript 동작 모듈 (app/static/js/md_share.js)</h3>
-        <div class="code-container">
-            <div class="code-header">app/static/js/md_share.js</div>
-            <pre><span class="comment">// 글로벌 공유 팝업 호출 함수 (하위 호환성 100% 보장)</span>
+            <h3 style="font-size:16px; margin: 24px 0 8px;">② SCSS 모듈 (app/static/scss/page/_md_share.scss)</h3>
+            <div class="code-container">
+                <div class="code-header">app/static/scss/page/_md_share.scss</div>
+                <pre><span class="keyword">.md_share_area</span> {
+    <span class="attr">display</span>: none;
+    <span class="attr">position</span>: absolute;
+    <span class="attr">z-index</span>: 99999;
+
+    <span class="keyword">&.on</span> {
+        <span class="attr">display</span>: block;
+
+        <span class="keyword">.md_share_dimd</span> {
+            <span class="attr">display</span>: block;
+            <span class="attr">opacity</span>: 0.7;
+            <span class="attr">animation</span>: fade 0.3s forwards;
+        }
+    }
+}</pre>
+            </div>
+
+            <h3 style="font-size:16px; margin: 24px 0 8px;">③ JS 스크립트 모듈 (app/static/js/md_share.js)</h3>
+            <div class="code-container">
+                <div class="code-header">app/static/js/md_share.js (md_pop_share04 & printPost)</div>
+                <pre><span class="comment">// 1. 공유 팝업 열기</span>
 <span class="keyword">function</span> <span class="func">md_pop_share04</span>(btn) {
     <span class="keyword">var</span> $btn = $(btn);
     <span class="keyword">var</span> $target = $('#md_share_area');
     <span class="keyword">if</span> (!$target.length) <span class="keyword">return</span> <span class="keyword">false</span>;
 
-    <span class="comment">// 이중 클릭 토글 디바운스 Check</span>
-    <span class="keyword">var</span> lastTime = $target.data('last_share_click') || 0;
-    <span class="keyword">var</span> now = <span class="keyword">new</span> Date().getTime();
-    <span class="keyword">if</span> (now - lastTime &lt; 200) <span class="keyword">return</span> <span class="keyword">false</span>;
-    $target.data('last_share_click', now);
-
-    <span class="comment">// #wrap 좌표 기준 팝업 위치 자동 산출</span>
     <span class="keyword">var</span> offset = $btn.offset();
     <span class="keyword">var</span> wrapOffset = $('#wrap').offset() || { top: 0, left: 0 };
     <span class="keyword">var</span> topPos = offset.top - wrapOffset.top + $btn.outerHeight() + 10;
@@ -344,41 +372,52 @@
     $target.addClass('on');
     focusTrapOn($target);
     <span class="keyword">return</span> <span class="keyword">false</span>;
+}
+
+<span class="comment">// 2. 게시글 인쇄 기능</span>
+<span class="keyword">var</span> lastPrintTime = 0;
+<span class="keyword">function</span> <span class="func">printPost</span>() {
+    <span class="keyword">var</span> now = <span class="keyword">new</span> Date().getTime();
+    <span class="keyword">if</span> (now - lastPrintTime &lt; 500) <span class="keyword">return</span> <span class="keyword">false</span>;
+    lastPrintTime = now;
+
+    window.onbeforeprint = beforePrint;
+    window.onafterprint = afterPrint;
+    window.print();
+    <span class="keyword">return</span> <span class="keyword">false</span>;
+}
+
+<span class="keyword">function</span> <span class="func">afterPrint</span>() {
+    $(<span class="val">".insight-report-detail__side, .insight-report-detail__share"</span>).css(<span class="val">"display"</span>, <span class="val">""</span>);
 }</pre>
+            </div>
+        </div>
+
+        <!-- Section 4: Integration Guide -->
+        <div class="card">
+            <h2 class="section-title">4. 페이지 연동 가이드</h2>
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-title">공유하기 버튼 연동</div>
+                    <div class="code-container" style="margin-top:8px;">
+                        <pre>&lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> <span class="attr">class</span>=<span class="val">"insight-report-detail__share-button--share"</span> <span class="attr">onclick</span>=<span class="val">"return md_pop_share04(this);"</span>&gt;공유하기&lt;/<span class="tag">button</span>&gt;</pre>
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-title">인쇄하기 버튼 연동</div>
+                    <div class="code-container" style="margin-top:8px;">
+                        <pre>&lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> <span class="attr">class</span>=<span class="val">"insight-report-detail__share-button--print"</span> <span class="attr">onclick</span>=<span class="val">"return printPost();"</span>&gt;인쇄하기&lt;/<span class="tag">button</span>&gt;</pre>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-note">
+            Samsung SDS Renewal Project &copy; 2026. All rights reserved.
         </div>
     </div>
 
-    <!-- Section 4: Integration Guide -->
-    <div class="card">
-        <h2 class="section-title">4. 페이지 연동 가이드</h2>
-        <ul class="step-list">
-            <li class="step-item">
-                <div class="step-title">SSI HTML & Script Include</div>
-                <p style="font-size:14px; color:#555;">페이지 푸터 위치 및 script.inc에 모듈을 포함합니다.</p>
-                <div class="code-container" style="margin-top:8px;">
-                    <pre><span class="comment">&lt;!--#include file="/inc/md_share.inc" --&gt;</span>
-&lt;<span class="tag">script</span> <span class="attr">src</span>=<span class="val">"/static/js/md_share.js"</span>&gt;&lt;/<span class="tag">script</span>&gt;</pre>
-                </div>
-            </li>
-            <li class="step-item">
-                <div class="step-title">공유하기 버튼 onclick 이벤트 연동</div>
-                <p style="font-size:14px; color:#555;">공유 버튼 요소에 <code>onclick="return md_pop_share04(this);"</code> 속성을 지정합니다.</p>
-                <div class="code-container" style="margin-top:8px;">
-                    <pre>&lt;<span class="tag">button</span> <span class="attr">type</span>=<span class="val">"button"</span> 
-        <span class="attr">class</span>=<span class="val">"insight-report-detail__share-button insight-report-detail__share-button--share"</span> 
-        <span class="attr">onclick</span>=<span class="val">"return md_pop_share04(this);"</span>&gt;
-    공유하기
-&lt;/<span class="tag">button</span>&gt;</pre>
-                </div>
-            </li>
-        </ul>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer-note">
-        Samsung SDS Renewal Project &copy; 2026. All rights reserved.
-    </div>
-</div>
-
 </body>
+
 </html>
