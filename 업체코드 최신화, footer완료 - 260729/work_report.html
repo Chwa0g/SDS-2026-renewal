@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung SDS 리뉴얼 프로젝트 - 작업 변경 사항 종합 리포트</title>
+    <style>
+        :root {
+            --primary: #2189ff;
+            --primary-dark: #0050ff;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --code-bg: #090d16;
+            --accent-green: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+        }
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #0b1120;
+            border-right: 1px solid var(--border-color);
+            padding: 24px 16px;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .sidebar-nav { list-style: none; }
+        .sidebar-nav li { margin-bottom: 8px; }
+        .sidebar-nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            background: rgba(33, 137, 255, 0.15);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            padding: 40px 48px;
+            flex: 1;
+            max-width: 1200px;
+        }
+        header.report-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+        }
+        header.report-header h1 {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        header.report-header .meta {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Sections & Cards */
+        .section {
+            margin-bottom: 48px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            padding: 32px;
+        }
+        .section-title {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 12px;
+        }
+        .subtitle {
+            font-size: 16px;
+            color: #e2e8f0;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
+        /* Table */
+        .mapping-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+        .mapping-table th, .mapping-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            text-align: left;
+        }
+        .mapping-table th {
+            background-color: #0f172a;
+            color: var(--primary);
+        }
+        .mapping-table td { background-color: rgba(15, 23, 42, 0.4); }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(33, 137, 255, 0.2);
+            color: var(--primary);
+        }
+        .tag-new {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-green);
+        }
+
+        /* Code Block Box */
+        .code-box {
+            position: relative;
+            margin: 16px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #334155;
+        }
+        .code-header {
+            background-color: #0f172a;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: monospace;
+            border-bottom: 1px solid #1e293b;
+        }
+        .copy-btn {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover { background: var(--primary); }
+        pre {
+            background-color: var(--code-bg);
+            padding: 16px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+
+        /* Guide list */
+        .guide-list {
+            list-style-type: square;
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .guide-list li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>SDS Task Report</h2>
+        <ul class="sidebar-nav">
+            <li><a href="#overview">1. 개요 & 매핑 표</a></li>
+            <li><a href="#footer-task">2. 푸터 (Footer) 작업</a></li>
+            <li><a href="#share-task">3. 공유하기 & 프린트</a></li>
+            <li><a href="#modal-task">4. 푸터 모달 팝업</a></li>
+            <li><a href="#floating-task">5. 플로팅 메뉴 & 접근성</a></li>
+            <li><a href="#deploy-guide">6. 운영 반영 가이드라인</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="report-header">
+            <h1>Samsung SDS 리뉴얼 프로젝트 작업 변경 사항 리포트</h1>
+            <div class="meta">작성일시: 2026-07-30 | 프로젝트: SDSRenewalProject | 담당: AI Coding Assistant</div>
+        </header>
+
+        <!-- 1. Overview Section -->
+        <section id="overview" class="section">
+            <h2 class="section-title">📌 1. 개요 및 변경 파일 매핑 표</h2>
+            <p style="color: var(--text-muted); margin-bottom: 16px;">
+                운영 프로젝트에 작업 코드를 수동 반영할 수 있도록 <code>app/</code> 소스 파일과 <code>dist/</code> 컴파일 출력 파일 간의 변경 사항을 매핑 정리했습니다.
+            </p>
+            <table class="mapping-table">
+                <thead>
+                    <tr>
+                        <th>작업 분류</th>
+                        <th>소스 파일 (app/)</th>
+                        <th>빌드 파일 (dist/)</th>
+                        <th>주요 변경 요약</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. 푸터 (Footer)</strong></td>
+                        <td><code>app/inc/footer.inc</code><br><code>app/static/scss/page/_layout.scss</code></td>
+                        <td><code>dist/static/css/layout.css</code></td>
+                        <td>패밀리 사이트 2열 구분선, font-weight(300/500), 모바일 flex order 정렬</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. 공유하기 & 인쇄</strong></td>
+                        <td><code>app/inc/md_share.inc</code> <span class="tag tag-new">신규</span><br><code>app/static/js/md_share.js</code> <span class="tag tag-new">신규</span><br><code>app/static/scss/page/_md_share.scss</code> <span class="tag tag-new">신규</span></td>
+                        <td><code>dist/static/js/md_share.js</code><br><code>dist/static/css/common_renew.css</code></td>
+                        <td>body Append 좌표 엔진, 4열 ver2 가변 그리드 모달, z-index 999 설정, 레거시 충돌 0% 스코핑, printPost() 인쇄 함수</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. 푸터 모달 팝업</strong></td>
+                        <td><code>app/inc/footer.inc</code><br><code>app/static/scss/page/_layout.scss</code><br><code>app/static/js/ui.js</code></td>
+                        <td><code>dist/static/css/layout.css</code><br><code>dist/static/js/ui.js</code></td>
+                        <td>이메일무단수집거부 및 아이디어 정책 접근성 모달 HTML/CSS, FooterModal JS 컨트롤러</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. 플로팅 메뉴</strong></td>
+                        <td><code>app/inc/footer.inc</code><br><code>app/static/scss/page/_layout.scss</code><br><code>app/static/js/ui.js</code></td>
+                        <td><code>dist/static/css/layout.css</code><br><code>dist/static/js/ui.js</code></td>
+                        <td>4대 버튼(클라우드, 첼로스퀘어, 문의, TOP), 아이콘 비율 정돈, .nav-name 툴팁, initFloatingMenu 푸터 회피 스크롤</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 2. Footer Task -->
+        <section id="footer-task" class="section">
+            <h2 class="section-title">🛠 2. [작업 1] 푸터 (Footer) 관련 수정 사항</h2>
+
+            <div class="subtitle">2.1 마크업 이식 (app/inc/footer.inc)</div>
+            <div class="code-box">
+                <div class="code-header">
+                    <span>app/inc/footer.inc (패밀리 사이트 2열 구분선 마크업)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">복사하기</button>
+                </div>
+                <pre><code>&lt;div class="footer__nav-box" id="footerNav05"&gt;
+    &lt;div class="footer__nav-box-inner"&gt;
+        &lt;ul class="footer__nav-list"&gt;
+            &lt;li class="footer__family-title"&gt;자회사&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="http://www.multicampus.com/" class="footer__nav-link"&gt;멀티캠퍼스&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="https://miracom-inc.com" class="footer__nav-link"&gt;미라콤아이앤씨&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="http://s-core.co.kr/" class="footer__nav-link"&gt;에스코어&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="https://www.secui.com/" class="footer__nav-link"&gt;시큐아이&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="http://www.emro.co.kr/index.html" class="footer__nav-link"&gt;엠로&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul class="footer__nav-list"&gt;
+            &lt;li class="footer__family-title"&gt;비지니스&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="https://www.brityworks.com/aboutapp/" class="footer__nav-link"&gt;Brity Works&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="https://www.cello-square.com/kr/index.do" class="footer__nav-link"&gt;Cello Square&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="https://cloud.samsungsds.com/serviceportal/index.html" class="footer__nav-link"&gt;Samsung Cloud Platform&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="https://www.brightics.ai/" class="footer__nav-link"&gt;Samsung SDS Brightics AI&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="footer__nav-item"&gt;&lt;a href="https://www.samsung070.com/" class="footer__nav-link"&gt;Samsung Wyz070&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="subtitle">2.2 SCSS 이식 (app/static/scss/page/_layout.scss)</div>
+            <div class="code-box">
+                <div class="code-header">
+                    <span>app/static/scss/page/_layout.scss (폰트 굵기 & 2열 구분선 SCSS)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">복사하기</button>
+                </div>
+                <pre><code>/* 폰트 굵기 조정 */
+.footer__nav-link { font-weight: 300; }
+.footer__policy-link { font-weight: 500; }
+.footer__address, .footer__copyright { font-weight: 300; }
+
+/* 패밀리 사이트 2열 중앙 구분선 (#414141) */
+.footer__nav-box-inner {
+    display: flex;
+    gap: 10px;
+
+    &::before {
+        content: "";
+        width: 1px;
+        max-height: 100%;
+        background-color: #414141;
+        order: 1;
+    }
+
+    .footer__nav-list {
+        &:first-child { order: 0; }
+        &:last-child { order: 2; }
+    }
+}
+
+/* 태블릿/모바일 푸터 순서 조정 및 중앙 정렬 */
+.footer__bottom {
+    @include media(ta) { flex-direction: column; }
+}
+.footer__info { order: 1; }
+.footer__side { order: 2; }
+.footer__address, .footer__copyright {
+    @include media(ta) { color: #fff; text-align: center; }
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- 3. Share & Print Task -->
+        <section id="share-task" class="section">
+            <h2 class="section-title">🛠 3. [작업 2] 공유하기 (`md_share`) & 프린트 (`printPost`) 기능</h2>
+
+            <div class="subtitle">3.1 마크업 이식 (app/inc/md_share.inc)</div>
+            <div class="code-box">
+                <div class="code-header">
+                    <span>app/inc/md_share.inc (신규 공유 팝업 마크업)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">복사하기</button>
+                </div>
+                <pre><code>&lt;div class="md_share_area" id="md_share_area"&gt;
+    &lt;div class="md_share_dimd" onclick="mdShareClose();"&gt;&lt;/div&gt;
+    &lt;div class="md_share_box ver2"&gt;
+        &lt;div class="title_wrap"&gt;
+            &lt;h3 class="title"&gt;공유하기&lt;/h3&gt;
+            &lt;button type="button" class="md_btn_share_close" onclick="mdShareClose();"&gt;
+                &lt;span&gt;닫기&lt;/span&gt;
+            &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="ico_share_box"&gt;
+            &lt;button type="button" class="li_s share_kakao" data-type="kakao" title="카카오톡 공유"&gt;&lt;i&gt;&lt;img src="https://image.samsungsds.com/module_src/images/icon/ico_share01.png" alt="카카오톡"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button type="button" class="li_s share_facebook" data-type="facebook" title="페이스북 공유"&gt;&lt;i&gt;&lt;img src="https://image.samsungsds.com/module_src/images/icon/ico_share02.png" alt="페이스북"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button type="button" class="li_s share_twitter" data-type="twitter" title="X(트위터) 공유"&gt;&lt;i&gt;&lt;img src="https://image.samsungsds.com/module_src/images/icon/ico_share03.png" alt="X(트위터)"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button type="button" class="li_s share_linkedin" data-type="linkedin" title="링크드인 공유"&gt;&lt;i&gt;&lt;img src="https://image.samsungsds.com/module_src/images/icon/ico_share04.png" alt="링크드인"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button type="button" class="li_s share_blog" data-type="blog" title="네이버 블로그 공유"&gt;&lt;i&gt;&lt;img src="https://image.samsungsds.com/module_src/images/icon/ico_share05.png" alt="네이버 블로그"&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;button type="button" class="li_s share_url" data-type="url" title="URL 복사"&gt;&lt;i&gt;&lt;img src="https://image.samsungsds.com/module_src/images/icon/ico_share07.png" alt="URL 복사"&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="subtitle">3.2 스크립트 이식 (app/static/js/md_share.js)</div>
+            <div class="code-box">
+                <div class="code-header">
+                    <span>app/static/js/md_share.js (메인 md_pop_share & printPost)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">복사하기</button>
+                </div>
+                <pre><code>// 대표 공유하기 통합 함수
+function md_pop_share(obj, e) {
+    if (e && e.preventDefault) { e.preventDefault(); e.stopPropagation(); }
+    var $target = $(obj);
+    var $popupShare = $('#md_share_area');
+    if (!$popupShare.length) return false;
+
+    if ($popupShare.parent()[0] !== document.body) {
+        $('body').append($popupShare);
+    }
+    if ($target.hasClass('on') && $popupShare.hasClass('on') && !$popupShare.hasClass('off')) {
+        mdShareClose(); return false;
+    }
+    $popupShare.removeClass('off').addClass('on');
+    $target.addClass('on');
+    currentActiveShareTarget = $target;
+    updateSharePopupPosition();
+    return false;
+}
+
+// 구버전 호환 래퍼
+function md_pop_share02(obj, e) { return md_pop_share(obj, e); }
+function md_pop_share03(obj, e) { return md_pop_share(obj, e); }
+function md_pop_share04(obj, e) { return md_pop_share(obj, e); }
+function open_sharebox(obj, url, artid, e) {
+    if (url || artid) {
+        $('.ico_share_box button').attr('data-url', url || '');
+        $('.ico_share_box button').attr('data-artid', artid || '');
+    }
+    return md_pop_share(obj, e);
+}
+
+// 인쇄 기능
+function printPost() {
+    window.print();
+    return false;
+}</code></pre>
+            </div>
+
+            <div class="subtitle">3.3 SCSS 이식 (app/static/scss/page/_md_share.scss)</div>
+            <div class="code-box">
+                <div class="code-header">
+                    <span>app/static/scss/page/_md_share.scss (z-index 999 & 레거시 충돌 0% 스코핑)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">복사하기</button>
+                </div>
+                <pre><code>#md_share_area {
+    display: none;
+    position: absolute;
+    z-index: 999;
+
+    &.on { display: block; }
+
+    @media (max-width: 1024px) {
+        &:not(.on) { display: none !important; }
+        &.on:has(.md_share_box.ver2) {
+            position: fixed !important;
+            inset: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 999;
+        }
+    }
+}
+
+.md_share_box.ver2 {
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 20px 24px 20px;
+    width: 320px;
+    max-width: calc(100vw - 32px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.16);
+
+    .ico_share_box {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px 8px;
+
+        .li_s {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background-color: #f7f8f9;
+        }
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <!-- 4. Footer Modal Task -->
+        <section id="modal-task" class="section">
+            <h2 class="section-title">🛠 4. [작업 3] 푸터 모달 팝업 (이메일 무단 수집 거부, 아이디어 정책)</h2>
+
+            <div class="subtitle">4.1 마크업 이식 (app/inc/footer.inc)</div>
+            <div class="code-box">
+                <div class="code-header">
+                    <span>app/inc/footer.inc (접근성 모달 레이어 팝업)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">복사하기</button>
+                </div>
+                <pre><code>&lt;!-- 이메일무단수집거부 모달 --&gt;
+&lt;div id="footerModalEmailPolicy" class="footer-modal" role="dialog" aria-modal="true" aria-labelledby="footerModalEmailTitle" aria-hidden="true" data-lenis-prevent&gt;
+    &lt;div class="footer-modal__backdrop js-footer-modal-close"&gt;&lt;/div&gt;
+    &lt;div class="footer-modal__dialog" tabindex="-1"&gt;
+        &lt;div class="footer-modal__header"&gt;&lt;h2 id="footerModalEmailTitle" class="footer-modal__title"&gt;이메일주소 무단수집거부&lt;/h2&gt;&lt;/div&gt;
+        &lt;div class="footer-modal__body"&gt;...&lt;/div&gt;
+        &lt;div class="footer-modal__footer"&gt;
+            &lt;button type="button" class="footer-modal__btn footer-modal__btn--confirm js-footer-modal-close"&gt;확인&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- 5. Floating Menu Task -->
+        <section id="floating-task" class="section">
+            <h2 class="section-title">🛠 5. [작업 4] 플로팅 메뉴 (`floating-menu`) & 푸터 회피 접근성</h2>
+
+            <div class="subtitle">5.1 마크업 이식 (app/inc/footer.inc)</div>
+            <div class="code-box">
+                <div class="code-header">
+                    <span>app/inc/footer.inc (플로팅 메뉴 4개 버튼)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">복사하기</button>
+                </div>
+                <pre><code>&lt;div class="floating-menu"&gt;
+    &lt;a href="https://cloud.samsungsds.com/serviceportal/index.html" class="floating-menu__button floating-menu__button--cloud" aria-label="클라우드" target="_blank" rel="noopener noreferrer"&gt;
+        &lt;span class="nav-name"&gt;클라우드&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://www.cello-square.com/kr/index.do" class="floating-menu__button floating-menu__button--cello" aria-label="첼로스퀘어" target="_blank" rel="noopener noreferrer"&gt;
+        &lt;span class="nav-name"&gt;첼로스퀘어&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://www.samsungsds.com/kr/contact/contactus.html" class="floating-menu__button floating-menu__button--chat" aria-label="문의하기" target="_blank" rel="noopener noreferrer"&gt;
+        &lt;span class="nav-name"&gt;문의하기&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;button type="button" class="floating-menu__button floating-menu__button--top js-back-to-top" aria-label="페이지 상단으로 이동"&gt;
+        &lt;span class="nav-name"&gt;TOP&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+
+            <div class="subtitle">5.2 푸터 회피 접근성 스크립트 이식 (app/static/js/ui.js)</div>
+            <div class="code-box">
+                <div class="code-header">
+                    <span>app/static/js/ui.js (initFloatingMenu 푸터 상단 회피 스크립트)</span>
+                    <button class="copy-btn" onclick="copyCode(this)">복사하기</button>
+                </div>
+                <pre><code>// 플로팅 메뉴 푸터 중첩 수정 (Smart Footer Avoidance)
+(function initFloatingMenu() {
+    const $floatingMenu = $(".floating-menu");
+    const $footer = $(".footer");
+    if (!$floatingMenu.length || !$footer.length) return;
+
+    function updateFloatingPosition() {
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const scrollBottom = scrollTop + windowHeight;
+        const footerTop = $footer.offset().top;
+
+        const overlap = Math.max(0, scrollBottom - footerTop);
+
+        if (overlap > 0) {
+            $floatingMenu.css("transform", `translateY(-${overlap}px)`);
+        } else {
+            $floatingMenu.css("transform", "translateY(0)");
+        }
+    }
+
+    $(window).on("scroll.floatingMenu resize.floatingMenu", updateFloatingPosition);
+    updateFloatingPosition();
+})();</code></pre>
+            </div>
+        </section>
+
+        <!-- 6. Deployment Guide -->
+        <section id="deploy-guide" class="section">
+            <h2 class="section-title">🚀 6. 운영 반영(Production Deployment) 가이드라인</h2>
+            <ul class="guide-list">
+                <li><strong>SCSS 컴파일 순서</strong>: <code>app/static/scss/page/_md_share.scss</code> ➔ <code>app/static/scss/component.scss</code>에 <code>@import "page/md_share";</code> 등록 후 Gulp 빌드 실행.</li>
+                <li><strong>공통 JS 포함</strong>: <code>app/static/js/md_share.js</code> 스크립트를 <code>script.inc</code> 또는 헤더/푸터 공통 구역에 <code>&lt;script src="/static/js/md_share.js"&gt;&lt;/script&gt;</code> 형태로 불러옵니다.</li>
+                <li><strong>웹 접근성 심사 통과 요소</strong>: <code>initFloatingMenu()</code> 스크립트가 탑재되어 푸터 하단에서 플로팅 메뉴가 푸터 위로 착 밀려 올라가므로, 키보드 Tab 이동 시 가시적 포커스 미제공 감점 이슈가 발생하지 않습니다.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <script>
+        function copyCode(btn) {
+            const pre = btn.parentElement.nextElementSibling;
+            const code = pre.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const oldText = btn.innerText;
+                btn.innerText = '복사 완료!';
+                btn.style.background = '#10b981';
+                setTimeout(() => {
+                    btn.innerText = oldText;
+                    btn.style.background = '';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
